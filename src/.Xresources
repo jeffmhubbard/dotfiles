@@ -1,0 +1,38 @@
+! vim: set filetype=xdefaults :
+
+!! --- Fonts ---
+Xft.autohint:                   0
+Xft.lcdfilter:                  lcddefault
+Xft.hintstyle:                  hintslight
+Xft.hinting:                    1
+Xft.antialias:                  1
+Xft.rgba:                       rgb
+
+!! --- Cursor ---
+Xcursor.theme:                  DMZ-Black
+Xcursor.size:                   16
+
+!! --- URxvt ---
+URxvt*title:                    URxvt
+URxvt*termName:                 rxvt-unicode-256color
+URxvt*depth:                    32
+URxvt*saveLines:                2500
+URxvt*urgentOnBell:             true
+URxvt*internalBorder:           0
+URxvt*lineSpace:                0
+URxvt*scrollBar:                false
+URxvt*cursorBlink:              true
+URxvt*cursorUnderline:          true
+URxvt*colorULMode:              on
+URxvt.blurRadius:               2
+URxvt*font:                     xft:Source Code Pro:pixelsize=12:Regular
+URxvt*boldFont:                 xft:Source Code Pro:pixelsize=12:Bold
+URxvt*italicFont:               xft:Source Code Pro:pixelsize=12:Regular Italic
+URxvt*italicBoldFont:           xft:Source Code Pro:pixelsize=12:Bold Italic
+URxvt*perl-ext-common:          default,matcher,clipboard
+URxvt.url-launcher:             /usr/bin/xdg-open
+URxvt.url-select.autocopy:      true
+URxvt.url-select.underline:     true
+URxvt.matcher.button:           1
+
+#include ".Xresources.ansi"

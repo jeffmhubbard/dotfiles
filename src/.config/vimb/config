@@ -1,0 +1,41 @@
+set home-page=http://duckduckgo.com/
+set download-path=~/Downloads/
+
+set history-max-items=300
+
+set editor-command=urxvt -e "vim %s"
+set input-autohide=true
+set incsearch=true
+set smooth-scrolling=true
+set spacial-navigation=true
+set spell-checking=true
+set webinspector=true
+set default-font="Source Sans Pro"
+set monospace-font="Source Code Pro"
+set sans-serif-font="Source Code Pro"
+set serif-font="Source Serif Pro"
+set font-size=14
+set monospace-font-size=12
+set default-zoom=100
+
+shortcut-default d
+shortcut-add d=https://duckduckgo.com/?q=$0
+shortcut-add g=https://encrypted.google.com/search?hl=en&q=$0
+shortcut-add di=https://duckduckgo.com/?q=$0&ia=images
+shortcut-add al=https://duckduckgo.com/?q=arch%20linux%20$0
+shortcut-add aw=https://wiki.archlinux.org/index.php?title=Special%%3ASearch&search=$0&go=Go
+shortcut-add af=https://bbs.archlinux.org/search.php?action=search&author=&forums=&search_in=0&sort_by=0&sort_dir=DESC&show_as=topics&keywords=$0
+shortcut-add au=https://aur.archlinux.org/packages/?O=0&C=0&SeB=nd&outdated=&SB=n&SO=a&PP=50&do_Search=Go&K=$0
+shortcut-add wi=http://en.wikipedia.org/w/index.php?title=Special:Search&search=$0
+
+# GUI color settings
+# Color scheme: Base16 Eighties (https://github.com/chriskempson/base16)
+set completion-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
+set completion-hover-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
+set completion-selected-css=color:#fefeae;background-color:#515151;font:10pt Source Sans Pro;
+set input-css=color:#e6d89e;background-color:#200725;font:10pt Source Sans Pro;
+set input-error-css=color:#f2777a;background-color:#200725;font:10pt Source Sans Pro;
+set status-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
+set status-ssl-css=color:#b6d39d;background-color:#200725;font:10pt Source Sans Pro;
+set status-ssl-invalid-css=color:#fecf79;background-color:#200725;font:10pt Source Sans Pro;
+

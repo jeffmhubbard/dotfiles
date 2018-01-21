@@ -1,0 +1,303 @@
+;=====================================================
+
+[colors]
+black    = ${xrdb:color0}
+red      = ${xrdb:color1}
+green    = ${xrdb:color2}
+yellow   = ${xrdb:color3}
+blue     = ${xrdb:color4}
+magenta  = ${xrdb:color5}
+cyan     = ${xrdb:color6}
+white    = ${xrdb:color7}
+hblack   = ${xrdb:color8}
+hred     = ${xrdb:color9}
+hgreen   = ${xrdb:color10}
+hyellow  = ${xrdb:color11}
+hblue    = ${xrdb:color12}
+hmagenta = ${xrdb:color13}
+hcyan    = ${xrdb:color14}
+hwhite   = ${xrdb:color15}
+
+background      = ${self.black}
+background-alt  = ${self.hblack}
+foreground      = ${self.hwhite}
+foreground-alt  = ${self.white}
+primary         = ${self.hblue}
+primary-alt     = ${self.blue}
+secondary       = ${self.hgreen}
+secondary-alt   = ${self.green}
+active          = ${self.hcyan}
+active-alt      = ${self.cyan}
+urgent          = ${self.hcyan}
+urgent-alt      = ${self.cyan}
+alert           = ${self.hred}
+alert-alt       = ${self.red}
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+[bar/bottom]
+bottom = true
+width = 100%
+height = 24
+radius = 0.0
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 1
+line-color = ${colors.background-alt}
+border-size = 0
+border-color = ${colors.background-alt}
+padding-left = 2
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+font-0 = Source Sans Pro:pixelsize=10:style=bold;1
+font-1 = FontAwesome:pixelsize=10;1
+font-2 = MaterialIcons:pixelsize=10;1
+font-3 = Termsynu:size=8:antialias=false;0
+modules-left = i3 xwindow
+modules-center = date
+modules-right = cpu temp mem fs bat-1 bat-2 vol eth-1 eth-2 wifi-1
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+tray-background = ${colors.background}
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/i3]
+type = internal/i3
+index-sort = true
+wrapping-scroll = false
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+format-padding = 0
+label-mode-padding = 2
+label-mode-underline = ${colors.secondary}
+label-focused = %icon%
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+label-unfocused = %icon%
+label-unfocused-foreground = ${colors.background-alt}
+label-unfocused-padding = 2
+label-visible = %icon%
+label-visible-padding = 2
+label-urgent = %icon%
+label-urgent-underline = ${colors.urgent}
+label-urgent-padding = 2
+
+
+[module/xwindow]
+type = internal/xwindow
+format-prefix = ""
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+format-prefix-underline = ${colors.foreground-alt}
+label-margin = 2
+label = %title:0:120:...%
+
+[module/date]
+type = internal/date
+interval = 300
+date = "%a, %b %d %I:%M %p"
+format-prefix = " "
+format-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+label = %date%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+label = %percentage:2%%
+
+[module/mem]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+label = %percentage_used%%
+
+[module/temp]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+label = %temperature-f%
+
+format-warn = <ramp> <label-warn>
+format-warn-padding = 2
+format-warn-prefix-foreground = ${colors.background-alt}
+format-warn-underline = ${colors.alert}
+label-warn = %temperature-f%
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+ramp-foreground = ${colors.background-alt}
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-padding = 2
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-padding = 2
+
+format-full-prefix = " "
+format-full-padding = 2
+format-full-prefix-foreground = ${colors.background-alt}
+
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-foreground = ${colors.background-alt}
+
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-foreground = ${colors.background-alt}
+animation-charging-framerate = 1000
+
+[module/bat-1]
+; boxcar, vm-arch
+inherit = module/battery
+battery = BAT0
+adapter = AC
+
+[module/bat-2]
+; pegasus
+inherit = module/battery
+battery = BAT1
+adapter = ACAD
+
+
+
+[module/fs]
+type = internal/fs
+mount-0 = /
+interval = 30
+fixed-values = false
+spacing = 2
+
+format-mounted = <label-mounted>
+format-mounted-padding = 2
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.background-alt}
+label-mounted = %percentage_free%%
+label-mounted-alt = %mountpoint%: %percentage_free%% of %total%
+
+format-unmounted = <label-unmounted>
+format-unmounted-padding = 2
+format-unmounted-prefix = " "
+format-unmounted-prefix-foreground = ${colors.urgent}
+format-unmounted-underline = ${colors.urgent}
+label-unmounted = %mountpoint%: not mounted
+
+[module/vol]
+type = internal/volume
+
+;master-soundcard = default
+;speaker-soundcard = default
+;headphone-soundcard = default
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 2
+format-prefix-foreground = ${colors.background-alt}
+label-volume = %percentage%%
+
+format-muted-prefix = " "
+format-muted-padding = 2
+format-muted-prefix-foreground = ${colors.alert}
+format-muted-underline = ${colors.alert}
+label-muted = MUTE
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-foreground = ${colors.background-alt}
+
+[module/ethernet]
+; template for inherit
+type = internal/network
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-padding = 2
+format-connected-prefix-foreground = ${colors.background-alt}
+format-connected-underline = ${colors.secondary}
+label-connected = %ifname%
+
+format-disconnected-prefix = " "
+format-disconnected-padding = 2
+format-disconnected-prefix-foreground = ${colors.background-alt}
+format-disconnected-underline = ${colors.alert}
+label-disconnected = %ifname%
+
+[module/eth-1]
+; dragon, wired
+inherit = module/ethernet
+interface = eno1
+
+[module/eth-2]
+; boxcar, arch-vm, wired
+inherit = module/ethernet
+interface = enp0s3
+
+[module/wireless]
+type = internal/network
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-prefix = ${colors.background-alt}
+format-connected-foreground = ${colors.foreground}
+format-connected-underline = ${colors.secondary}
+label-connected = %downspeed:9%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = " "
+ramp-signal-1 = " "
+ramp-signal-2 = " "
+ramp-signal-3 = " "
+ramp-signal-4 = " "
+ramp-signal-foreground = ${colors.background-alt}
+
+; Only applies if <animation-packetloss> is used
+animation-packetloss-0 = "⚠ "
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = "📶 "
+animation-packetloss-1-foreground = #000000
+; Framerate in milliseconds
+animation-packetloss-framerate = 500
+
+[module/wifi-1]
+; pegasus, wifi
+inherit = module/wireless
+interface = wlp7s0b1
+
+
+; vim:ft=dosini

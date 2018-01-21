@@ -1,0 +1,52 @@
+" vim: set ft=vim:
+runtime! archlinux.vim
+"runtime! debian.vim
+
+if has("syntax")
+  syntax on
+endif
+
+colorscheme linuxit
+
+if has("autocmd")
+  filetype plugin indent on
+endif
+
+set background=dark
+set laststatus=2
+set showmode
+set number
+set cursorline
+set nowrap
+set showcmd
+set showmatch
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set autowrite
+set hidden
+set wildmenu
+set wildmode=longest:full,full
+set scrolloff=3
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+set encoding=utf-8
+set fileencoding=utf-8
+
+" tab navigation
+nnoremap TH  :tabfirst<CR>
+nnoremap TJ  :tabprev<CR>
+nnoremap TK  :tabnext<CR>
+nnoremap TL  :tablast<CR>
+nnoremap TE  :tabedit<SPACE>
+nnoremap TC  :tabclose<CR>
+
+" save as root
+cmap w!! w !sudo tee % > /dev/null
