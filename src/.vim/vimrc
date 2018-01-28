@@ -1,6 +1,5 @@
 " vim: set ft=vim:
 runtime! archlinux.vim
-"runtime! debian.vim
 
 if has("syntax")
   syntax on
@@ -13,6 +12,7 @@ if has("autocmd")
 endif
 
 set background=dark
+set term=screen-256color
 set laststatus=2
 set showmode
 set number
@@ -42,8 +42,8 @@ set fileencoding=utf-8
 
 " tab navigation
 nnoremap TH  :tabfirst<CR>
-nnoremap TJ  :tabprev<CR>
-nnoremap TK  :tabnext<CR>
+nnoremap TJ  :tabnext<CR>
+nnoremap TK  :tabprev<CR>
 nnoremap TL  :tablast<CR>
 nnoremap TE  :tabedit<SPACE>
 nnoremap TC  :tabclose<CR>
