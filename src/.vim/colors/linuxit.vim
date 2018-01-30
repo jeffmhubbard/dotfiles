@@ -165,7 +165,7 @@ call s:h("FoldColumn", {}) " 'foldcolumn'
 call s:h("SignColumn", {}) " column where signs are displayed
 call s:h("IncSearch", { "fg": s:yellow, "bg": s:comment_grey }) " 'incsearch' highlighting; also used for the text replaced with ":s///c"
 call s:h("LineNr", { "fg": s:gutter_fg_grey }) " Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-call s:h("CursorLineNr", { "bg": s:dark_grey, "fg": s:dark_white, "cterm": "bold" }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+call s:h("CursorLineNr", { "fg": s:dark_white, "cterm": "bold" }) " Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
 call s:h("MatchParen", { "fg": s:cyan, "gui": "underline" }) " The character under the cursor or just before it, if it is a paired bracket, and its match.
 call s:h("ModeMsg", { "bg": s:dark_grey, "fg": s:cyan }) " 'showmode' message (e.g., "-- INSERT --")
 call s:h("MoreMsg",{  "bg": s:dark_grey, "fg": s:cyan }) " more-prompt
@@ -183,13 +183,10 @@ call s:h("SpellBad", { "fg": s:red, "gui": "underline", "cterm": "underline" }) 
 call s:h("SpellCap", { "fg": s:dark_yellow }) " Word that should start with a capital. This will be combined with the highlighting used otherwise.
 call s:h("SpellLocal", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
 call s:h("SpellRare", { "fg": s:dark_yellow }) " Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-call s:h("StatusLine", { "fg": s:white, "bg": s:dark_grey }) " status line of current window
-call s:h("StatusLineNC", { "bg": s:dark_grey, "fg": s:dark_white }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-"call s:h("TabLine", { "bg": s:dark_grey, "fg": s:comment_grey }) " tab pages line, not active tab page label
+call s:h("StatusLine", { "fg": s:white, "cterm": "bold" }) " status line of current window
+call s:h("StatusLineNC", { "fg": s:grey }) " status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 call s:h("TabLine", { "fg": s:comment_grey }) " tab pages line, not active tab page label
-"call s:h("TabLineFill", { "bg": s:dark_grey, "fg": s:comment_grey }) " tab pages line, where there are no labels
 call s:h("TabLineFill", { "fg": s:comment_grey }) " tab pages line, where there are no labels
-"call s:h("TabLineSel", {  "bg": s:blue, "fg": s:dark_grey }) " tab pages line, active tab page label
 call s:h("TabLineSel", {  "bg": s:blue, "fg": s:dark_grey }) " tab pages line, active tab page label
 call s:h("Title", { "fg": s:green }) " titles for output from ":set all", ":autocmd" etc.
 call s:h("Visual", { "fg": s:visual_black, "bg": s:visual_grey }) " Visual mode selection
