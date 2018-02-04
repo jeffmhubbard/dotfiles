@@ -26,7 +26,7 @@ function setprompt () {
   local left right invisible rightcontent leftcontent
 
   left='%B%F{green}%n@%m '
-  left+='%B%F{blue}%~'
+  left+='%B%F{blue}%47<...<%~%<<'
   left+=$'%f%b'
 
   lprompt='%B%F{cyan}$(virtualenv_prompt_info)'
