@@ -111,7 +111,7 @@ label = %title:0:120:...%
 
 [module/date]
 type = internal/date
-interval = 300
+interval = 1.0
 date = "%a, %b %d %I:%M %p"
 format-prefix = " "
 format-padding = 2
@@ -193,7 +193,6 @@ battery = BAT1
 adapter = ACAD
 
 
-
 [module/fs]
 type = internal/fs
 mount-0 = /
@@ -205,8 +204,8 @@ format-mounted = <label-mounted>
 format-mounted-padding = 2
 format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.background-alt}
-label-mounted = %percentage_free%%
-label-mounted-alt = %mountpoint%: %percentage_free%% of %total%
+label-mounted = %percentage_used%%
+#label-mounted-alt = %mountpoint%: %percentage_free%% of %total%
 
 format-unmounted = <label-unmounted>
 format-unmounted-padding = 2
