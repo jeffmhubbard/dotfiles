@@ -102,11 +102,11 @@ label-urgent-padding = 2
 
 [module/xwindow]
 type = internal/xwindow
-format-prefix = ""
+format-prefix = ""
 format-prefix-padding = 2
 format-prefix-foreground = ${colors.background-alt}
-format-prefix-underline = ${colors.foreground-alt}
 label-margin = 2
+;label-underline = ${colors.active-alt}
 label = %title:0:120:...%
 
 [module/date]
@@ -174,9 +174,9 @@ ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-foreground = ${colors.background-alt}
 
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 1000
 
@@ -297,6 +297,5 @@ animation-packetloss-framerate = 500
 ; pegasus, wifi
 inherit = module/wireless
 interface = wlp7s0b1
-
 
 ; vim:ft=dosini
