@@ -215,7 +215,7 @@ format-unmounted-underline = ${colors.urgent}
 label-unmounted = %mountpoint%: not mounted
 
 [module/vol]
-type = internal/volume
+type = internal/alsa
 
 ;master-soundcard = default
 ;speaker-soundcard = default
