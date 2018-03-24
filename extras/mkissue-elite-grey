@@ -1,0 +1,9 @@
+echo -e '' > issue
+echo -e '  \e[1;30m▄▄▄· ▄▄▄   ▄▄·  ▄ .▄    ▄▄▌  ▪   ▐ ▄ ▄• ▄▌▐▄• ▄  ' >> issue
+echo -e ' \e[1;30m▐█ ▀█ ▀▄ █·▐█ ▌▪██▪▐█    ██•  ██ •█▌▐██▪██▌ █▌█▌▪ ' >> issue
+echo -e ' \e[1;30m▄█▀▀█ ▐▀▀▄ ██ ▄▄██▀▐█    ██▪  ▐█·▐█▐▐▌█▌▐█▌ ·██·  ' >> issue
+echo -e ' \e[1;30m▐█ ▪▐▌▐█•█▌▐███▌██▌▐▀    ▐█▌▐▌▐█▌██▐█▌▐█▄█▌▪▐█·█▌ ' >> issue
+echo -e '  \e[1;30m▀  ▀ .▀  ▀·▀▀▀ ▀▀▀ ·    .▀▀▀ ▀▀▀▀▀ █▪ ▀▀▀ •▀▀ ▀▀ ' >> issue
+echo -e '\e[0m' >> issue
+echo -e '\e[1;37mWelcome to Arch Linux! \e[30m(\e[37m\\r\e[30m)' >> issue
+echo -e '\e[0m' >> issue
