@@ -26,7 +26,7 @@ precmd(){
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))
     print -Pr $'\n'"$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
-PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}▶ %%%f%b '
+PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}▶ %#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
 
 LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
