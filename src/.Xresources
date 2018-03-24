@@ -35,4 +35,5 @@ URxvt.url-select.autocopy:      true
 URxvt.url-select.underline:     true
 URxvt.matcher.button:           1
 
+! Comment out next line if using pywal
 #include ".Xresources.ansi"

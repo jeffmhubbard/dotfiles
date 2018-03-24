@@ -34,19 +34,20 @@ fi
 # sound
 start-pulseaudio-x11 &
 
-# pywal
-#wal -R -q -a 75
-
-# set background (if not using pywal)
+# set background
+# comment out next line if using pywal
 sh ~/.fehbg
+
+# uncomment next line to use pywal
+#wal -R -q -a 75
 
 # X compositor
 compton &
 
-# notification tray
+# notifications
 dunst &
 
-# hide cursor
+# hide mouse cursor
 unclutter -root &
 
 # start wm
