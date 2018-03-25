@@ -24,7 +24,7 @@ precmd(){
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))
-    print -Pr $'\n'"$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
+    print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}▶ %#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
