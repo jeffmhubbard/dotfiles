@@ -11,18 +11,13 @@ configuration {
 	xoffset: 3;
 	fixed-num-lines: false;
 	show-icons: true;
-	drun-icon-theme: "hicolor";
+	drun-icon-theme: "Boxcar";
 	sort: true;
 	separator-style: "none";
 	hide-scrollbar: true;
 	fake-transparency: false;
 	click-to-exit: true;
 	show-match: true;
-/*	theme: ;*/
-/*	color-normal: "argb:00000000, #e5e5e5, argb:00000000, #5c5cff, #000000"; */
-/*	color-urgent: "argb:00000000, #ffffff, argb:00000000, #5c5cff, #ff0000"; */
-/*	color-active: "argb:00000000, #00ffff, argb:00000000, #00ffff, #000000"; */
-/*	color-window: "argb:f2000000, argb:f2000000, argb:f200ffff";             */
 	display-window: "Windows";
 	display-run: "Commands";
 	display-drun: "Programs";

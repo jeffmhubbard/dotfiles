@@ -35,5 +35,12 @@ URxvt.url-select.autocopy:      true
 URxvt.url-select.underline:     true
 URxvt.matcher.button:           1
 
+!! --- rofi ---
+rofi.color-enabled: true
+rofi.color-window: argb:f2000000, argb:f2000000, argb:f200ffff
+rofi.color-normal: argb:00000000, #e5e5e5, argb:00000000, #5c5cff, #000000
+rofi.color-active: argb:00000000, #00ffff, argb:00000000, #00ffff, #000000
+rofi.color-urgent: argb:00000000, #ffffff, argb:00000000, #5c5cff, #ff0000
+
 ! Comment out next line if using pywal
 #include ".Xresources.ansi"
