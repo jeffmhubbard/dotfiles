@@ -8,7 +8,7 @@ configuration {
 	location: 7;
 	padding: 1;
 	yoffset: -28;
-	xoffset: 3;
+	xoffset: 2;
 	fixed-num-lines: false;
 	show-icons: true;
 	drun-icon-theme: "Boxcar";
@@ -18,7 +18,7 @@ configuration {
 	fake-transparency: false;
 	click-to-exit: true;
 	show-match: true;
-	display-window: "Windows";
-	display-run: "Commands";
-	display-drun: "Programs";
+	display-window: " ";
+	display-run: " ";
+	display-drun: " ";
 }
