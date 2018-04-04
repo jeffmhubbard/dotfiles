@@ -1,19 +1,50 @@
-*color0:        #000000
-*color1:        #cd0000
-*color2:        #00cd00
-*color3:        #cdcd00
-*color4:        #0000ee
-*color5:        #cd00cd
-*color6:        #00cdcd
-*color7:        #e5e5e5
-*color8:        #7f7f7f
-*color9:        #ff0000
-*color10:       #00ff00
-*color11:       #ffff00
-*color12:       #5c5cff
-*color13:       #ff00ff
-*color14:       #00ffff
-*color15:       #ffffff
-*background:    [80]#000000
-*foreground:    #ffffff
-*cursorColor:   #00ff00
+! vim: set filetype=xdefaults :
+
+!! define color aliases
+#define black     #000000
+#define red       #cd0000
+#define green     #00cd00
+#define yellow    #cdcd00
+#define blue      #0000ee
+#define magenta   #cd00cd
+#define cyan      #00cdcd
+#define white     #e5e5e5
+#define hblack    #7f7f7f
+#define hred      #ff0000
+#define hgreen    #00ff00
+#define hyellow   #ffff00
+#define hblue     #5c5cff
+#define hmagenta  #ff00ff
+#define hcyan     #00ffff
+#define hwhite    #ffffff
+
+#define transparent f2000000
+#define opaque      00000000
+#define active      0000ffff
+
+!! --- Default colors ---
+*color0:        black
+*color1:        red
+*color2:        green
+*color3:        yellow
+*color4:        blue
+*color5:        magenta
+*color6:        cyan
+*color7:        white
+*color8:        hblack
+*color9:        hred
+*color10:       hgreen
+*color11:       hyellow
+*color12:       hblue
+*color13:       hmagenta
+*color14:       hcyan
+*color15:       hwhite
+*background:    black
+*foreground:    hwhite
+*cursorColor:   hgreen
+
+!! --- rofi ---
+rofi.color-window: argb:transparent, argb:transparent, argb:active
+rofi.color-normal: argb:opaque, white, argb:opaque, hblue, black
+rofi.color-active: argb:opaque, hcyan, argb:opaque, hcyan, black
+rofi.color-urgent: argb:opaque, hwhite, argb:opaque, hblue, hred
