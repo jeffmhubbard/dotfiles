@@ -38,6 +38,8 @@ URxvt.url-launcher:             /usr/bin/xdg-open
 URxvt.url-select.autocopy:      true
 URxvt.url-select.underline:     true
 URxvt.matcher.button:           1
+URxvt*transparent: true
+urxvt*shading:  30
 
 !! --- Xterm ---
 xterm*boldColors:               false
@@ -54,3 +56,8 @@ xterm*renderFont:               true
 xterm*selectToClipboard:        true
 xterm*termName:                 xterm-256color
 xterm*toolBar:                  false
+
+bspwm.active_border_color:      hblack
+bspwm.focused_border_color:     hblue
+bspwm.normal_border_color:      black
+bspwm.presel_feedback_color:    hblack

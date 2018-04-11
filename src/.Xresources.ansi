@@ -39,7 +39,7 @@
 *color13:       hmagenta
 *color14:       hcyan
 *color15:       hwhite
-*background:    black
+*background:    [80]black
 *foreground:    hwhite
 *cursorColor:   hgreen
 

@@ -47,8 +47,15 @@ compton &
 # notifications
 dunst &
 
+# set mouse cursor
+xsetroot -cursor_name left_ptr
+
 # hide mouse cursor
 unclutter -root &
 
+# start terminal daemon
+urxvtd -q -o -f &
+
 # start wm
-exec i3
+#exec i3
+exec bspwm
