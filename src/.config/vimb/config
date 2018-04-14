@@ -29,13 +29,12 @@ shortcut-add au=https://aur.archlinux.org/packages/?O=0&C=0&SeB=nd&outdated=&SB=
 shortcut-add wi=http://en.wikipedia.org/w/index.php?title=Special:Search&search=$0
 
 # GUI color settings
-# Color scheme: Base16 Eighties (https://github.com/chriskempson/base16)
-set completion-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
-set completion-hover-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
-set completion-selected-css=color:#fefeae;background-color:#515151;font:10pt Source Sans Pro;
-set input-css=color:#e6d89e;background-color:#200725;font:10pt Source Sans Pro;
-set input-error-css=color:#f2777a;background-color:#200725;font:10pt Source Sans Pro;
-set status-css=color:#fefeae;background-color:#200725;font:10pt Source Sans Pro;
-set status-ssl-css=color:#b6d39d;background-color:#200725;font:10pt Source Sans Pro;
-set status-ssl-invalid-css=color:#fecf79;background-color:#200725;font:10pt Source Sans Pro;
-
+# .Xresources.ansi
+set completion-css=color:#e5e5e5;background-color:#000000;font:10pt Source Sans Pro;
+set completion-hover-css=color:#000000;background-color:#7f7f7f;font:10pt Source Sans Pro;
+set completion-selected-css=color:#ffffff;background-color:#5c5cff;font:10pt Source Sans Pro;
+set input-css=color:#e5e5e5;background-color:#000000;font:10pt Source Sans Pro;
+set input-error-css=color:#ff0000;background-color:#000000;font:10pt Source Sans Pro;
+set status-css=color:#e5e5e5;background-color:#000000;font:10pt Source Sans Pro ;
+set status-ssl-css=color:#00ff00;background-color:#000000;font:10pt Source Sans Pro;
+set status-ssl-invalid-css=color:#ff0000;background-color:#000000;font:10pt Source Sans Pro;
