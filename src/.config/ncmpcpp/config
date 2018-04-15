@@ -1,16 +1,5 @@
-##############################################################################
-## This is the example configuration file. Copy it to $HOME/.ncmpcpp/config ##
-## or $XDG_CONFIG_HOME/ncmpcpp/config and set up your preferences.          ##
-##############################################################################
-#
-##### directories ######
 ##
-## Directory for storing ncmpcpp related files.  Changing it is useful if you
-## want to store everything somewhere else and provide command line setting for
-## alternative location to config file which defines that while launching
-## ncmpcpp.
-##
-#
+
 #ncmpcpp_directory = ~/.ncmpcpp
 #
 ##
@@ -263,6 +252,7 @@ mpd_music_dir = D:/media/music
 ##
 #
 #song_columns_list_format = (20)[]{a} (6f)[green]{NE} (50)[white]{t|f:Title} (20)[cyan]{b} (7f)[magenta]{l}
+
 #
 ##### various settings #####
 #
@@ -317,7 +307,7 @@ mpd_music_dir = D:/media/music
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-progressbar_look = :|
+#progressbar_look = "─╼─"
 #
 ## Available values: database, playlist.
 ##
@@ -325,7 +315,7 @@ progressbar_look = :|
 #
 ## Available values: classic, alternative.
 ##
-user_interface = alternative
+#user_interface = alternative
 #
 #data_fetching_delay = yes
 #
@@ -442,7 +432,7 @@ generate_win32_compatible_filenames = yes
 #
 #block_search_constraints_change_if_items_found = yes
 #
-mouse_support = yes
+#mouse_support = yes
 #
 #mouse_list_scroll_whole_page = yes
 #
@@ -454,7 +444,7 @@ mouse_support = yes
 #
 #media_library_sort_by_mtime = no
 #
-enable_window_title = yes
+#enable_window_title = yes
 #
 ##
 ## Note: You can choose default search mode for search engine. Available modes
@@ -470,9 +460,9 @@ enable_window_title = yes
 ##       database and local one for searching in current playlist)
 ##
 #
-#search_engine_default_search_mode = 1
+#search_engine_default_search_mode = 2
 #
-#external_editor = nano
+#external_editor = vim
 #
 ## Note: set to yes if external editor is a console application.
 ##
@@ -512,25 +502,25 @@ enable_window_title = yes
 #
 #empty_tag_color = cyan
 #
-#header_window_color = default
+#header_window_color = 16_1
 #
-#volume_color = default
+#volume_color = 16_1
 #
 #state_line_color = default
 #
 #state_flags_color = default:b
 #
-#main_window_color = yellow
+#main_window_color = white
 #
-#color1 = white
+#color1 = green
 #
-#color2 = green
+#color2 = white
 #
-#progressbar_color = black:b
+#progressbar_color = 1:b
 #
 #progressbar_elapsed_color = green:b
 #
-#statusbar_color = default
+#statusbar_color = green
 #
 #statusbar_time_color = default:b
 #
@@ -542,3 +532,136 @@ enable_window_title = yes
 #
 #active_window_border = red
 #
+##############################################################################
+
+#
+# colors_enabled                        = "yes"
+# song_status_format                    = "$0{$8%t$9} on {$5%b$9} by {$3%a}"
+# song_columns_list_format              = "(30)[green]{a} (40)[]{t|f} (30)[blue]{b}"
+# now_playing_prefix                    = "$b$8> $/b$9"
+# now_playing_suffix                    = ""
+# progressbar_look                      = "─  "
+# progressbar_boldness                  = "no"
+#
+# user_interface                        = "classic"
+# playlist_display_mode                 = "columns"
+# #media_library_disable_two_column_mode = "yes"
+# header_visibility                     = "no"
+# statusbar_visibility                  = "yes"
+# titles_visibility                     = "no"
+# playlist_disable_highlight_delay      = "1"
+# message_delay_time                    = "1"
+# autocenter_mode                       = "yes"
+# centered_cursor                       = "yes"
+# mouse_support                         = "yes"
+# discard_colors_if_item_is_selected    = "yes"
+# #fancy_scrolling                       = "yes"
+# ignore_leading_the                    = "yes"
+#
+# main_window_color           = "default"
+# main_window_highlight_color = "default"
+# progressbar_color           = "red"
+# active_column_color         = "yellow"
+# enable_window_title         = "yes"
+
+# playlist_display_mode = "classic" (classic/columns)
+#
+# main_window_color = "8"
+# main_window_highlight_color = "13"
+#
+# progressbar_color = "1"
+# progressbar_elapsed_color = "11"
+# #progressbar_look = "─╼─"
+# progressbar_look = "░█ "
+#
+# statusbar_color = "9"
+# active_column_color = "11"
+#
+# song_list_format = "[%l] {%a - %t}|{%f} {$R %b}"
+
+
+
+# Columns
+# song_columns_list_format = "(3f)[239]{} (35)[246]{t|f} (30)[blue]{a} (30)[green]{b} (5f)[240]{l}"
+# song_list_format = "{$5 %a$9 $1│$9 $8%t$9 }|{ $8%f$9}$R{$5%b $7}"
+# song_status_format = "{{{$5%a$9}} $8-$9 {$2%t$9}|{$0%f$9}{ $8-$9 $3%b$9{ $8-$9 $5%y$9}}}"
+# song_library_format = "{%n $8-$9 }{%t}|{%f}"
+# now_playing_prefix = "$8$b ➤ "
+
+# song_list_format = "{$1►$3 %t}|{$1►$8 <untitled>}|{$1►$8 %f} $1$R{$8 %a}|{$8 <unknown artist>} {$1◀ %l}"
+# song_status_format = {$8%t}{$8 "%b"}|{$8 "%a"}$8
+#
+# browser_playlist_prefix = "playlist"
+#selected_item_prefix = "$5"
+#selected_item_suffix = "$9"
+# song_window_title_format = "{%t}|{%f} - {%a}"
+
+# playlist_display_mode = "classic" (classic/columns)
+
+# main_window_color = "white"
+# main_window_highlight_color = "green"
+
+# progressbar_color = "white"
+# progressbar_elapsed_color = "white"
+
+# statusbar_color = "white"
+# active_column_color = "green"
+
+# song_list_format = "[%l] {%a - %t}|{%f} {$R %b}"
+
+discard_colors_if_item_is_selected = "yes"
+autocenter_mode = "yes"
+centered_cursor = "yes"
+incremental_seeking = "yes"
+seek_time = "1"
+cyclic_scrolling = "no"
+lines_scrolled = "2"
+follow_now_playing_lyrics = "yes"
+show_hidden_files_in_local_browser = "no"
+jump_to_now_playing_song_at_start = "yes"
+clock_display_seconds = "no"
+display_volume_level = "no"
+display_bitrate = "yes"
+display_remaining_time = "no"
+regular_expressions = "extended"
+ignore_leading_the = "yes"
+block_search_constraints_change_if_items_found = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "yes"
+
+external_editor = "vim"
+use_console_editor = "yes"
+
+user_interface = "classic"
+header_visibility = "yes"
+titles_visibility = "no"
+header_text_scrolling = "yes"
+colors_enabled = "yes"
+
+progressbar_look = "─╼ "
+progressbar_color = "1"
+progressbar_elapsed_color = "11"
+
+song_columns_list_format              = "(30)[]{a} (40)[]{t|f} (30)[]{b}"
+
+
+song_status_format                    = "{%a} - {%t}"
+now_playing_prefix = ""
+now_playing_suffix = ""
+
+# Various
+playlist_show_remaining_time = "no"
+playlist_shorten_total_times = "yes"
+playlist_separate_albums = "no"
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+
+empty_tag_color = "8"
+header_window_color = "16"
+state_line_color = "9"
+state_flags_color = "9"
+main_window_color = "8"
+# main_window_highlight_color = "white"
+statusbar_color = "8"
+active_window_border = "9"
