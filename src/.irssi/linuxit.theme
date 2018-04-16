@@ -58,7 +58,8 @@ info_eol = "false";
 
 # these characters are automatically replaced with specified color
 # (dark grey by default)
-replaces = { "[]\(\)\:\\\/=" = "%K$*%n"; };
+#replaces = { "[]\(\)\:\\\/=" = "%K$*%n"; };
+replaces = { "[]\(\)\\\/=" = ""; "\:" = "%K$*%N%N"; };
 
 abstracts = {
   ##
@@ -69,13 +70,13 @@ abstracts = {
   line_start = "";
 
   # timestamp styling, nothing by default
-  timestamp = "%W$*%n| ";
+  timestamp = "%_$*%_";
 
   # any kind of text that needs hilighting, default is to bold
   hilight = "%_$*%_";
 
   # any kind of error message, default is bright red
-  error = "%R$*%n";
+  error = "%_%R$*%_";
 
   # channel name is printed
   channel = "%_$*%_";
@@ -84,7 +85,7 @@ abstracts = {
   nick = "%_$*%_";
 
   # nick host is printed
-  nickhost = "[$*]";
+  nickhost = "($*)";
 
   # server name is printed
   server = "%_$*%_";
@@ -96,32 +97,32 @@ abstracts = {
   reason = "{comment $*}";
 
   # mode change is printed ([+o nick])
-  mode = "{comment $*}";
+  mode = "{comment %_$*%_}";
 
   ##
   ## channel specific messages
   ##
 
   # highlighted nick/host is printed (joins)
-  channick_hilight = "%C$*%n";
+  channick_hilight = "%_%C$*%n";
   chanhost_hilight = "{nickhost %c$*%n}";
 
   # nick/host is printed (parts, quits, etc.)
-  channick = "%M$*%n";
-  chanhost = "{nickhost %m$*%n}";
+  channick = "%_%R$*%n";
+  chanhost = "{nickhost %r$*%n}";
 
   # highlighted channel name is printed
-  channelhilight = "%B$*%n";
+  channelhilight = "%_%B$*%n";
 
   # ban/ban exception/invite list mask is printed
-  ban = "%M$*%n";
+  ban = "%_%R$*%n";
 
   ##
   ## messages
   ##
 
   # the basic styling of how to print message, $0 = nick mode, $1 = nick
-  msgnick = "%K<%n$0$1-%K>%n %|";
+  msgnick = "%M$0%n$1-%N %|";
 
   # message from you is printed. "ownnick" specifies the styling of the
   # nick ($0 part in msgnick) and "ownmsgnick" specifies the styling of the
@@ -141,15 +142,15 @@ abstracts = {
 
   # $0 = nick mode, $1 = nick
   ownmsgnick = "{msgnick $0 $1-}";
-  ownnick = "%g$*%n";
+  ownnick = "%_%g$*%n";
 
   # public message in channel, $0 = nick mode, $1 = nick
   pubmsgnick = "{msgnick $0 $1-}";
-  pubnick = "%G$*%n";
+  pubnick = "%_%G$*%n";
 
   # public message in channel meant for me, $0 = nick mode, $1 = nick
   pubmsgmenick = "{msgnick $0 $1-}";
-  menick = "%Y$*%n";
+  menick = "%_%Y$*%n";
 
   # public highlighted message in channel
   # $0 = highlight color, $1 = nick mode, $2 = nick
@@ -165,11 +166,11 @@ abstracts = {
   ownprivmsg = "%r$0%K(%R$1-%K)%n ";
 
   # own private message in query
-  ownprivmsgnick = "{msgnick  $*}";
+  ownprivmsgnick = "{msgnick $*}";
   ownprivnick = "%_$*%n";
 
   # private message in query
-  privmsgnick = "{msgnick  %R$*%n}";
+  privmsgnick = "{msgnick %R$*%n}";
 
   ##
   ## Actions (/ME stuff)
@@ -271,19 +272,19 @@ abstracts = {
   # used for anything.
   sbend = " ";
 
-  sb_topic = "$0%n";
+  sb_topic = "$0";
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*}";
 
-  prompt = "%K[%B$*%K>%N %|";
+  prompt = "%_%B($*)%N %|";
 
-  sb = "%K[%n$*%K]%n";
-  sbmode = "%K(%M+$*%K)%n";
-  sbaway = "%K(%9%Caway%K)%n";
+  sb = "%9$*%_ ";
+  sbmode = "%K%9(+$*)%_%n";
+  sbaway = "%R%9(away)%_%n";
   sbservertag = "%K:%G$0%n";
-  sbnickmode = "%R$0%n";
+  sbnickmode = "%k$0%n";
 
-  sbmore = "%_*%_";
+  sbmore = "%9*%_";
   sblag = "{sb lag: $0-}";
   sbact = "{sb act: $0-}";
 
@@ -294,9 +295,9 @@ abstracts = {
   # normal text
   sb_act_text = "%B$*";
   # public message
-  sb_act_msg = "%B$*%R'";
+  sb_act_msg = "%C$*";
   # hilight
-  sb_act_hilight = "%C$*%R\"";
+  sb_act_hilight = "%R$*";
   # hilight with specified color, $0 = color, $1 = text
-  sb_act_hilight_color = "$0$1-%n";
+  sb_act_hilight_color = "%_$0$1-%_";
 };
