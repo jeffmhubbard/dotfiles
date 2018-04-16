@@ -33,11 +33,9 @@ bspc config normal_border_color       $(xresources normal_border_color)
 bspc config presel_feedback_color     $(xresources presel_feedback_color)
 
 # --- rules ---
-bspc rule -a URxvt      desktop='^1' state=floating focus=on follow=on
 bspc rule -a Chromium   desktop='^2' focus=on follow=on
 bspc rule -a Min        desktop='^2' focus=on follow=on
 bspc rule -a Vimb       desktop='^2' focus=on follow=on
 bspc rule -a Atom       desktop='^3' focus=on follow=on
 bspc rule -a Thunar     desktop='^4' focus=on follow=on
 bspc rule -a Gimp       desktop='^4' state=floating follow=on
-# bspc rule -a feh        desktop='^4' state=floating manage=off

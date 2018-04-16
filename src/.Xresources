@@ -5,6 +5,7 @@
 !#include ".Xresources.boxcar"
 
 !! --- Fonts ---
+
 Xft.autohint:                   0
 Xft.lcdfilter:                  lcddefault
 Xft.hintstyle:                  hintslight
@@ -60,4 +61,4 @@ xterm*toolBar:                  false
 bspwm.active_border_color:      hblack
 bspwm.focused_border_color:     hblue
 bspwm.normal_border_color:      black
-bspwm.presel_feedback_color:    hblack
+bspwm.presel_feedback_color:    transparent

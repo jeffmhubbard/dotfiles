@@ -3,15 +3,15 @@
 # --- session ---
 
 # reload desktop
-super + ctrl + r
-~/.config/bspwm/bspwmrc
+super + alt + r
+	sh ~/.config/bspwm/bspwmrc
 
 # reload keybindings
-super + ctrl + c
+super + alt + c
 	pkill -USR1 -x sxhkd
 
 # quit bspwm normally
-super + ctrl + q
+super + alt + q
 	bspc quit
 
 # window list
@@ -37,14 +37,14 @@ super + Return
 
 # alternate between the tiled and monocle layout
 super + m
-bspc desktop -l next
+	bspc desktop -l next
 
 # swap the current node and the biggest node
 super + g
-bspc node -s biggest
+	bspc node -s biggest
 
 # close and kill
-super + {_,shift + }w
+super + {_,ctrl + }k
 	bspc node -{c,k}
 
 
@@ -116,7 +116,7 @@ super + x
 	bspc node -p cancel
 
 # cancel the preselection for the focused desktop
-super + ctrl + shift + space
+super + ctrl + x
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
