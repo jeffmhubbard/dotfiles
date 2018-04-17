@@ -76,7 +76,7 @@ abstracts = {
   timestamp = "%W%_$*%_%N";
 
   # any kind of text that needs hilighting, default is to bold
-  hilight = "%Y%_$*%_";
+  hilight = "%_$*%_";
 
   # any kind of error message, default is bright red
   error = "%R%_$*%_%n";
@@ -279,13 +279,13 @@ abstracts = {
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*} ";
 
-  prompt = "%B%_($*)%W▶%_%N %|";
+  prompt = "%B%_($*)%W▶%N %|";
 
-  sb = "%W%_$*%K|%_%N";
-  sbmode = "%M(+$*)%n";
+  sb = "%W%_$*%K|%N";
+  sbmode = "%N%M%_(+$*)%_%n";
   sbaway = "%K%_|%R(away)%_%n";
-  sbservertag = "%K%_:%G$0%_%n";
-  sbnickmode = "%G$0%n";
+  sbservertag = "%K%_:%n$0";
+  sbnickmode = "$0";
 
   sbmore = "%C%_*%_%n";
   sblag = "{sb lag: %_$0-%_}";
@@ -302,5 +302,5 @@ abstracts = {
   # hilight
   sb_act_hilight = "%R$*";
   # hilight with specified color, $0 = color, $1 = text
-  sb_act_hilight_color = "$0$1-%N";
+  sb_act_hilight_color = "%_$0$1-%N";
 };
