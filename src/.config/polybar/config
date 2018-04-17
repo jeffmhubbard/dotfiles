@@ -44,8 +44,7 @@ margin-top = 0
 margin-bottom = 0
 
 
-[bar/left]
-monitor = VGA-1
+[bar/bottom]
 ; theme
 bottom = true
 width = 100%
@@ -69,8 +68,8 @@ font-2 = MaterialIcons:pixelsize=10;1
 font-3 = Termsynu:size=8:antialias=false;0
 ; polybar modules
 modules-left = bspwm xwindow
-modules-center =
-modules-right = date
+modules-center = date
+modules-right = cpu temp mem fs bat-vbox vol eth-vbox
 ; notification tray
 tray-position = right
 tray-padding = 2
@@ -80,41 +79,19 @@ tray-background = ${colors.background}
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/right]
-monitor = DP-1
-; theme
-bottom = true
-width = 100%
-height = 24
-radius = 0.0
-fixed-center = true
-background = ${colors.background}
-foreground = ${colors.foreground}
-line-size = 1
-line-color = ${colors.background-alt}
-border-size = 0
-border-color = ${colors.background-alt}
-padding-left = 2
-padding-right = 2
-module-margin-left = 1
-module-margin-right = 1
-; font order
-font-0 = Source Sans Pro:pixelsize=10:style=bold;1
-font-1 = FontAwesome:pixelsize=10;1
-font-2 = MaterialIcons:pixelsize=10;1
-font-3 = Termsynu:size=8:antialias=false;0
-; polybar modules
+[bar/left]
+inherit = bar/bottom
+monitor = VGA-1
 modules-left = bspwm xwindow
 modules-center =
-modules-right = cpu temp mem fs bat-vbox bat-real vol eth-ws eth-vbox
-; notification tray
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-tray-background = ${colors.background}
-; mouse actions
-cursor-click = pointer
-cursor-scroll = ns-resize
+modules-right = date
+
+[bar/right]
+inherit = bar/bottom
+monitor = DP-1
+modules-left = bspwm xwindow
+modules-center =
+modules-right = cpu temp mem fs vol eth-ws
 
 [module/bspwm]
 type = internal/bspwm
