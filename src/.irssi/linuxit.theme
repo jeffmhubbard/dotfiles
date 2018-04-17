@@ -59,7 +59,10 @@ info_eol = "false";
 # these characters are automatically replaced with specified color
 # (dark grey by default)
 #replaces = { "[]\(\)\:\\\/=" = "%K$*%n"; };
-replaces = { "[]()=" = ""; "\:\\/" = "%K%_$*%_%n"; };
+replaces = {
+  "[]()=" = "";
+  "\:\\/" = "%K%_$*%_%n";
+};
 
 abstracts = {
   ##
@@ -70,10 +73,10 @@ abstracts = {
   line_start = "";
 
   # timestamp styling, nothing by default
-  timestamp = "%K$*%n";
+  timestamp = "%W%_$*%_%N";
 
   # any kind of text that needs hilighting, default is to bold
-  hilight = "%_$*%_";
+  hilight = "%Y%_$*%_";
 
   # any kind of error message, default is bright red
   error = "%R%_$*%_%n";
@@ -85,19 +88,19 @@ abstracts = {
   nick = "%G%_$*%_%n";
 
   # nick host is printed
-  nickhost = "(%g$*%n)";
+  nickhost = "%g$*%n";
 
   # server name is printed
-  server = "%M%_$*%_%n";
+  server = "%G%_$*%_%n";
 
   # some kind of comment is printed
-  comment = "[$*]";
+  comment = "%_$*%_";
 
   # reason for something is printed (part, quit, kick, ..)
   reason = "{comment $*}";
 
   # mode change is printed ([+o nick])
-  mode = "{comment %_$*%_}";
+  mode = "{comment $*}";
 
   ##
   ## channel specific messages
@@ -273,10 +276,10 @@ abstracts = {
   sbend = " ";
 
   sb_topic = "$0";
-  topicsbstart = "";
-  topicsbend = " ";
+  topicsbstart = "{sbstart $*}";
+  topicsbend = "{sbend $*} ";
 
-  prompt = "%B%_($*)%_%N %|";
+  prompt = "%B%_($*)%W▶%_%N %|";
 
   sb = "%W%_$*%K|%_%N";
   sbmode = "%M(+$*)%n";
@@ -291,13 +294,13 @@ abstracts = {
   # activity in statusbar
 
   # ',' separator
-  sb_act_sep = "%K$*%n";
+  sb_act_sep = "%K$*";
   # normal text
-  sb_act_text = "%B$*%n";
+  sb_act_text = "%B$*";
   # public message
-  sb_act_msg = "%C$*%n";
+  sb_act_msg = "%C$*";
   # hilight
-  sb_act_hilight = "%R$*%n";
+  sb_act_hilight = "%R$*";
   # hilight with specified color, $0 = color, $1 = text
-  sb_act_hilight_color = "$0$1-";
+  sb_act_hilight_color = "$0$1-%N";
 };
