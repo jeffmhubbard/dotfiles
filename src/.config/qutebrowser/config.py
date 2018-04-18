@@ -168,7 +168,7 @@ c.colors.hints.fg = xres['*color15']
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-c.colors.hints.match.fg = xres['*color10']
+c.colors.hints.match.fg = xres['*color11']
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -180,75 +180,75 @@ c.colors.keyhint.fg = xres['*color15']
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-c.colors.keyhint.suffix.fg = '#FFFF00'
+c.colors.keyhint.suffix.fg = xres['*color10']
 
 ## Background color of an error message.
 ## Type: QssColor
-# c.colors.messages.error.bg = 'red'
+c.colors.messages.error.bg = xres['*color9']
 
 ## Border color of an error message.
 ## Type: QssColor
-# c.colors.messages.error.border = '#bb0000'
+c.colors.messages.error.border = xres['*color0']
 
 ## Foreground color of an error message.
 ## Type: QssColor
-c.colors.messages.error.fg = xres['*color15']
+c.colors.messages.error.fg = xres['*color0']
 
 ## Background color of an info message.
 ## Type: QssColor
-c.colors.messages.info.bg = xres['*color0']
+c.colors.messages.info.bg = xres['*color14']
 
 ## Border color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.border = '#333333'
+c.colors.messages.info.border = xres['*color0']
 
 ## Foreground color of an info message.
 ## Type: QssColor
-c.colors.messages.info.fg = xres['*color15']
+c.colors.messages.info.fg = xres['*color0']
 
 ## Background color of a warning message.
 ## Type: QssColor
-# c.colors.messages.warning.bg = 'darkorange'
+c.colors.messages.warning.bg = xres['*color11']
 
 ## Border color of a warning message.
 ## Type: QssColor
-# c.colors.messages.warning.border = '#d47300'
+c.colors.messages.warning.border = xres['*color0']
 
 ## Foreground color of a warning message.
 ## Type: QssColor
-c.colors.messages.warning.fg = xres['*color15']
+c.colors.messages.warning.fg = xres['*color0']
 
 ## Background color for prompts.
 ## Type: QssColor
-# c.colors.prompts.bg = '#444444'
+c.colors.prompts.bg = xres['*color0']
 
 ## Border used around UI elements in prompts.
 ## Type: String
-# c.colors.prompts.border = '1px solid gray'
+c.colors.prompts.border = '1px solid '+xres['*color8']
 
 ## Foreground color for prompts.
 ## Type: QssColor
-c.colors.prompts.fg = xres['*color15']
+c.colors.prompts.fg = xres['*color7']
 
 ## Background color for the selected item in filename prompts.
 ## Type: QssColor
-# c.colors.prompts.selected.bg = 'grey'
+c.colors.prompts.selected.bg = xres['*color12']
 
 ## Background color of the statusbar in caret mode.
 ## Type: QssColor
-# c.colors.statusbar.caret.bg = 'purple'
+c.colors.statusbar.caret.bg = xres['*color0']
 
 ## Foreground color of the statusbar in caret mode.
 ## Type: QssColor
-c.colors.statusbar.caret.fg = xres['*color15']
+c.colors.statusbar.caret.fg = xres['*color13']
 
 ## Background color of the statusbar in caret mode with a selection.
 ## Type: QssColor
-# c.colors.statusbar.caret.selection.bg = '#a12dff'
+c.colors.statusbar.caret.selection.bg = xres['*color13']
 
 ## Foreground color of the statusbar in caret mode with a selection.
 ## Type: QssColor
-c.colors.statusbar.caret.selection.fg = xres['*color15']
+c.colors.statusbar.caret.selection.fg = xres['*color0']
 
 ## Background color of the statusbar in command mode.
 ## Type: QssColor
