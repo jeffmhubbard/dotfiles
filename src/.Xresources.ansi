@@ -43,6 +43,14 @@
 *foreground:    hwhite
 *cursorColor:   hgreen
 
+
+!! --- bspwm ---
+bspwm.active_border_color:      hblack
+bspwm.focused_border_color:     hblue
+bspwm.normal_border_color:      black
+bspwm.presel_feedback_color:    black
+
+
 !! --- rofi ---
 rofi.color-window: argb:transparent, argb:transparent, argb:active
 rofi.color-normal: argb:opaque, white, argb:opaque, hblue, black

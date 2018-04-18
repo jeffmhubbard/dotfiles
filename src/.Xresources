@@ -14,7 +14,7 @@ Xft.antialias:                  1
 Xft.rgba:                       rgb
 
 !! --- Cursor ---
-Xcursor.theme:                  DMZ-Black
+Xcursor.theme:                  whiteglass
 Xcursor.size:                   16
 
 !! --- URxvt ---
@@ -57,8 +57,3 @@ xterm*renderFont:               true
 xterm*selectToClipboard:        true
 xterm*termName:                 xterm-256color
 xterm*toolBar:                  false
-
-bspwm.active_border_color:      hblack
-bspwm.focused_border_color:     hblue
-bspwm.normal_border_color:      black
-bspwm.presel_feedback_color:    transparent
