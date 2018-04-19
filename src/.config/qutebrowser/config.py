@@ -300,7 +300,7 @@ c.colors.statusbar.private.fg = xres['*color15']
 
 ## Background color of the progress bar.
 ## Type: QssColor
-c.colors.statusbar.progress.bg = xres['*color15']
+c.colors.statusbar.progress.bg = xres['*color10']
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
