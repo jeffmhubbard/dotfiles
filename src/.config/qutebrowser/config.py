@@ -312,7 +312,7 @@ c.colors.statusbar.url.fg = xres['*color7']
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
-c.colors.statusbar.url.hover.fg = xres['*color11']
+c.colors.statusbar.url.hover.fg = xres['*color14']
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
@@ -798,7 +798,7 @@ c.fonts.monospace = 'Source Code Pro'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '12pt monospace'
+c.fonts.prompts = '10pt monospace'
 
 ## Font used in the statusbar.
 ## Type: Font
