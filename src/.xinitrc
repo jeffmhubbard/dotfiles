@@ -1,61 +1,26 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
-#sysresources=/etc/X11/xinit/.Xresources
-#sysmodmap=/etc/X11/xinit/.Xmodmap
-#
-## merge in defaults and keymaps
-#
-#if [ -f $sysresources ]; then
-#    xrdb -merge $sysresources
-#fi
-#
-#if [ -f $sysmodmap ]; then
-#    xmodmap $sysmodmap
-#fi
+# --- Xresources ---
+xrdb -merge ~/.Xresources
 
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-# start some nice programs
-#if [ -d /etc/X11/xinit/xinitrc.d ] ; then
-# for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-#  [ -x "$f" ] && . "$f"
-# done
-# unset f
-#fi
-
-# sound
+# --- sound ---
 start-pulseaudio-x11 &
 
-# set background
-# comment out next line if using pywal
-sh ~/.fehbg
-
-# uncomment next line to use pywal
-#wal -R -q -a 75 &
-
-# X compositor
-compton &
-
-# notifications
-dunst &
-
-# set mouse cursor
-xsetroot -cursor_name left_ptr
-
-# hide mouse cursor
+# --- mouse ---
+xsetroot -cursor_name left_ptr &
 unclutter -root &
 
-# start terminal daemon
+# --- compositor ---
+compton &
+
+# --- notifications ---
+dunst &
+
+# --- wallpaper ---
+sh ~/.fehbg &
+
+# --- terminal ---
 urxvtd -q -o -f &
 
-# start wm
-#exec i3
+# --- window manager ---
 exec bspwm
