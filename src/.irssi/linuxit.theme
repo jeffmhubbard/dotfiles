@@ -125,7 +125,7 @@ abstracts = {
   ##
 
   # the basic styling of how to print message, $0 = nick mode, $1 = nick
-  msgnick = "%M$0$1-%N %|";
+  msgnick = "$0$1- %|";
 
   # message from you is printed. "ownnick" specifies the styling of the
   # nick ($0 part in msgnick) and "ownmsgnick" specifies the styling of the
@@ -281,9 +281,9 @@ abstracts = {
 
   prompt = "%B%_($*)%W▶%N %|";
 
-  sb = "%W%_$*%K|%N";
+  sb = "%W%_$* %N";
   sbmode = "%N%M%_(+$*)%_%n";
-  sbaway = "%K%_|%R(away)%_%n";
+  sbaway = " %_%R(away)%_%n";
   sbservertag = "%K%_:%n$0";
   sbnickmode = "$0";
 
