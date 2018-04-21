@@ -64,7 +64,7 @@ set norunexec
 
 " Selected color scheme
 
-colorscheme Default
+colorscheme linuxit
 
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
@@ -93,7 +93,7 @@ set smartcase
 
 " Don't highlight search results automatically
 
-set nohlsearch
+"set nohlsearch
 
 " Use increment searching (search while typing)
 set incsearch
@@ -110,7 +110,7 @@ endif
 
 " Set custom status line look
 
-set statusline="%= %A %10u:%-7g %15s %20d  "
+set statusline="%A %= %A %10u:%-7g %15E %20d  "
 
 " ------------------------------------------------------------------------------
 
@@ -216,6 +216,8 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 filextype *.html,*.htm
         \ {Open with dwb}
         \ dwb %f %i &,
+        \ {Open with qutebrowser}
+        \ qutebrowser %f %i &,
         \ {Open with firefox}
         \ firefox %f &,
         \ {Open with uzbl}
@@ -233,12 +235,15 @@ fileviewer *.[1-8] man ./%c | col -b
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
         \ sxiv %f,
+        \ {View in feh}
+        \ feh -Z %d --start-at %d/%c 2>/dev/null,
         \ {View in gpicview}
         \ gpicview %c,
         \ {View in shotwell}
         \ shotwell,
-fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-         \ convert -identify %f -verbose /dev/null
+"fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+"         \ convert -identify %f -verbose /dev/null
+fileviewer *.jpg,*.png shellpic %c
 
 " OpenRaster
 filextype *.ora
@@ -354,11 +359,11 @@ filextype */
 "
 " Or leave it for automatic detection
 "
-" fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 
 " Displaying pictures in terminal
 "
-" fileviewer *.jpg,*.png shellpic %c
+fileviewer *.jpg,*.png shellpic %c
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
