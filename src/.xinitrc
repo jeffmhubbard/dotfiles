@@ -1,7 +1,10 @@
 #!/bin/sh
 
 # --- Xresources ---
-xrdb -merge ~/.Xresources
+userresources=$HOME/.Xresources
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
 
 # --- sound ---
 start-pulseaudio-x11 &
@@ -21,6 +24,8 @@ sh ~/.fehbg &
 
 # --- terminal ---
 urxvtd -q -o -f &
+
+# --- extensions ---
 
 # --- window manager ---
 exec bspwm
