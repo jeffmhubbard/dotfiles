@@ -29,6 +29,7 @@ bspc config focus_follows_pointer     true
 bspc config pointer_follows_monitor   true
 bspc config border_width              1
 bspc config window_gap                15
+bspc config initial_polarity          second_child
 # --- borders ---
 bspc config active_border_color       $(xres active_border_color)
 bspc config focused_border_color      $(xres focused_border_color)
@@ -42,4 +43,4 @@ bspc rule -a Thunar     desktop='^5' focus=on follow=on
 bspc rule -a Gimp       desktop='^6' state=floating follow=on manage=off
 bspc rule -a Lxappearance desktop='^6' state=floating follow=on center=true
 
-bspc config external_rules_command ~/.bin/pseudo_automatic_mode
+#bspc config external_rules_command ~/.bin/pseudo_automatic_mode

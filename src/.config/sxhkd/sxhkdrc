@@ -82,12 +82,21 @@ super + {a,c}
 #	bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
+# super + bracket{left,right}
+# 	bspc desktop -f {prev,next}.local
+
+# focus monitor left/right
 super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+	bspc monitor -f {west,east}
 
 # focus the last node/desktop
 super + {_,shift + }slash
 	bspc {node,desktop} -f last
+
+# rotate desktops.
+super + {_,shift} + r
+  bspc node @/ -R {90,270}
+
 
 # focus the older or newer node in the focus history
 super + {comma,period}
