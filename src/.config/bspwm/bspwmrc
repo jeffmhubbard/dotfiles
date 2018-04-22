@@ -1,4 +1,4 @@
-#! /bin/sh
+# vim: set filetype=sh :
 
 # --- Xresources ---
 xres() {
@@ -38,9 +38,11 @@ bspc config presel_feedback_color     $(xres presel_feedback_color)
 
 # --- rules ---
 bspc rule -a qutebrowser    desktop='^4' focus=on follow=on
-bspc rule -a Atom       desktop='^2' focus=on follow=on
-bspc rule -a Thunar     desktop='^5' focus=on follow=on
-bspc rule -a Gimp       desktop='^6' state=floating follow=on manage=off
-bspc rule -a Lxappearance desktop='^6' state=floating follow=on center=true
-
-#bspc config external_rules_command ~/.bin/pseudo_automatic_mode
+bspc rule -a Zathura        desktop='^4' state=tiled focus=on follow=on
+bspc rule -a Atom           desktop='^2' focus=on follow=on
+bspc rule -a Thunar         desktop='^5' focus=on follow=on
+bspc rule -a Gimp           desktop='^6' state=floating follow=on manage=on center=true
+bspc rule -a Inkscape       desktop='^6' focus=on follow=on
+bspc rule -a feh            state=floating focus=on follow=on center=true
+bspc rule -a Lxappearance   desktop='^6' state=floating focus=on follow=on
+bspc rule -a Oomox          desktop='^6' state=floating focus=on follow=on

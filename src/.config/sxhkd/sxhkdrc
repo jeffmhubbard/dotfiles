@@ -1,7 +1,6 @@
-#!/bin/sh
+# vim: set filetype=sh :
 
 # --- session ---
-
 # reload desktop
 super + ctrl + r
 	sh ~/.config/bspwm/bspwmrc
