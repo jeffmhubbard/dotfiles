@@ -1,4 +1,4 @@
-# vim: set filetype=sh :
+# sxhkdrc 2018 linuxit
 
 # --- session ---
 # reload desktop
@@ -142,3 +142,5 @@ super + shift + alt + {h,j,k,l}
 # move a floating window
 super + alt + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# vim: set filetype=sh :

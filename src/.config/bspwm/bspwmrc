@@ -1,4 +1,4 @@
-# vim: set filetype=sh :
+#!/bin/sh
 
 # --- Xresources ---
 xres() {
@@ -46,3 +46,5 @@ bspc rule -a Inkscape       desktop='^6' focus=on follow=on
 bspc rule -a feh            state=floating focus=on follow=on center=true
 bspc rule -a Lxappearance   desktop='^6' state=floating focus=on follow=on
 bspc rule -a Oomox          desktop='^6' state=floating focus=on follow=on
+
+# vim: set filetype=sh :
