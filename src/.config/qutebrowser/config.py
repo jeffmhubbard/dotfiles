@@ -388,7 +388,7 @@ c.colors.tabs.selected.odd.fg = xres['*color0']
 ## Background color for webpages if unset (or empty to use the theme's
 ## color).
 ## Type: QtColor
-c.colors.webpage.bg = xres['*color8']
+c.colors.webpage.bg = xres['*color15']
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
