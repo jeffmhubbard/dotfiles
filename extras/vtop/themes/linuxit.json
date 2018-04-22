@@ -1,0 +1,33 @@
+{
+	"name": "linuxit",
+	"author": "Jeff M. Hubbard",
+	"title": {
+		"fg": "#FFFFFF"
+	},
+	"chart": {
+		"fg": "#00ff00",
+		"border": {
+			"type": "line",
+			"fg": "#ffffff"
+		}
+	},
+	"table": {
+		"fg": "fg",
+		"items": {
+			"selected": {
+				"bg": "#262b30",
+				"fg": "fg"
+			},
+			"item": {
+				"fg": "fg"
+			}
+		},
+		"border": {
+			"type": "line",
+			"fg": "#ffffff"
+		}
+	},
+	"footer": {
+		"fg": "fg"
+	}
+}
