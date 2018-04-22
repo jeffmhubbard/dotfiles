@@ -29,3 +29,5 @@ urxvtd -q -o -f &
 
 # --- window manager ---
 exec bspwm
+
+# vim: set filetype=sh :

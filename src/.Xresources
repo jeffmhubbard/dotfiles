@@ -1,6 +1,4 @@
-! vim: set filetype=xdefaults :
-
-!! Comment out next line if using pywal
+!! Include color scheme
 #include ".Xresources.ansi"
 !#include ".Xresources.boxcar"
 
@@ -57,3 +55,5 @@ xterm*renderFont:               true
 xterm*selectToClipboard:        true
 xterm*termName:                 xterm-256color
 xterm*toolBar:                  false
+
+! vim: set filetype=xdefaults :

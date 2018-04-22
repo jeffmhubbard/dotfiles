@@ -1,5 +1,3 @@
-! vim: set filetype=xdefaults :
-
 !! define color aliases
 #define black     #000000
 #define red       #cd0000
@@ -56,3 +54,5 @@ rofi.color-window: argb:transparent, argb:transparent, argb:active
 rofi.color-normal: argb:opaque, white, argb:opaque, hblue, black
 rofi.color-active: argb:opaque, hcyan, argb:opaque, hcyan, black
 rofi.color-urgent: argb:opaque, hwhite, argb:opaque, hblue, hred
+
+! vim: set filetype=xdefaults :
