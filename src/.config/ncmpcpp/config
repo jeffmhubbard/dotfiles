@@ -264,7 +264,7 @@ song_columns_list_format = (20)[]{a} (6f)[]{NE} (50)[]{t|f:Title} (20)[]{b} (7f)
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = "MPD_HOST=10.0.0.1 mpdnotify"
 #
 ##
 ## Note: Custom command that will be executed each time player state
