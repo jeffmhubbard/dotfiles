@@ -1,14 +1,20 @@
 # linuxit
 
-set font                        "Source Code Pro Bold 10"
+set font                        "Source Code Pro 10"
 set default-bg                  "#000000"
 set default-fg                  "#ffffff"
 
-set statusbar-fg                "#7f7f7f"
+set highlight-color             "#ffff00"
+set highlight-active-color      "#00ffff"
+
 set statusbar-bg                "#000000"
+set statusbar-fg                "#ffffff"
 
 set inputbar-bg                 "#000000"
 set inputbar-fg                 "#ffffff"
+
+set notification-bg             "#000000"
+set notification-fg             "#00ffff"
 
 set notification-error-bg       "#ff0000"
 set notification-error-fg       "#000000"
@@ -16,23 +22,17 @@ set notification-error-fg       "#000000"
 set notification-warning-bg     "#00ffff"
 set notification-warning-fg     "#000000"
 
-set highlight-color             "#ffff00"
-set highlight-active-color      "#00ffff"
-
-set completion-highlight-fg     "#000000"
-set completion-highlight-bg     "#5c5cff"
+set completion-bg               "#000000"
+set completion-fg               "#e5e5e5"
 
 set completion-group-bg         "#ffffff"
 set completion-group-fg         "#000000"
 
-set completion-bg               "#000000"
-set completion-fg               "#e5e5e5"
+set completion-highlight-bg     "#5c5cff"
+set completion-highlight-fg     "#000000"
 
-set notification-bg             "#000000"
-set notification-fg             "#00ffff"
-
-set recolor-lightcolor          "#ffffff"
 set recolor-darkcolor           "#000000"
+set recolor-lightcolor          "#ffffff"
 set recolor                     "true"
 
 # setting recolor-keep true will keep any color your pdf has.
@@ -40,3 +40,15 @@ set recolor                     "true"
 set recolor-keephue             "true"
 
 # Rest of your configs go here:
+set window-title-basename       "true"
+set window-title-home-tilde     "false"
+set statusbar-basename          "false"
+set statusbar-home-tilde        "true"
+set pages-per-row 1
+
+map = zoom in
+map - zoom out
+map + zoom best-fit
+map f zoom width
+
+set adjust-open best-fit
