@@ -1,5 +1,4 @@
-# i3 config
-# Jeff Hubbard 2017
+# antsy 2018
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -125,8 +124,8 @@ bindsym $super+Tab      exec --no-startup-id rofi -show window
 bindsym $super+Return   exec --no-startup-id i3-sensible-terminal
 
 # screenshot
-bindsym --release $super+Print exec scrot -m '/home/jeff/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'
-bindsym --release $super+$shft+Print exec scrot -s '/home/jeff/Screenshots/%s_%H%M_%d%m%Y_$wx$h.png'
+bindsym --release $super+Print exec scrot -m '$HOME/Screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'
+bindsym --release $super+$shft+Print exec scrot -s '$HOME/Screenshots/%s_%H%M_%d%m%Y_$wx$h.png'
 
 # Pulse Audio controls
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%

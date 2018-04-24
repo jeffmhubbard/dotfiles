@@ -1,6 +1,6 @@
 " vim:fdm=marker
 " Vim Color File
-" Name:       linuxit.vim
+" Name:       antsy.vim
 " Maintainer: https://github.com/jeffmhubbard/dotfiles/
 " License:    The MIT License (MIT)
 " Based On:   https://github.com/joshdick/onedark.vim/
@@ -15,7 +15,7 @@ endif
 
 
 
-let g:colors_name="linuxit"
+let g:colors_name="antsy"
 
 " Set to "256" for 256-color terminals, or
 " set to "16" to use your terminal emulator's native colors
@@ -61,7 +61,7 @@ endfunction
 
 " public {{{
 
-function! linuxit#set_highlight(group, style)
+function! antsy#set_highlight(group, style)
   call s:h(a:group, a:style)
 endfunction
 
@@ -71,7 +71,7 @@ endfunction
 
 " Color Variables {{{
 
-let s:colors = linuxit#GetColors()
+let s:colors = antsy#GetColors()
 
 let s:dark_grey = s:colors.dark_grey
 let s:grey = s:colors.grey

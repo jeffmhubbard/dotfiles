@@ -1,5 +1,4 @@
-# LinuxIt Zsh Prompt
-# Jeff M. Hubbard, 2017 2018
+# antsy 2018
 
 setopt prompt_subst
 

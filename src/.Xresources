@@ -1,6 +1,5 @@
 !! Include color scheme
-#include ".Xresources.ansi"
-!#include ".Xresources.boxcar"
+#include ".Xresources.antsy"
 
 !! --- Fonts ---
 

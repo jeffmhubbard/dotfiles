@@ -1,4 +1,4 @@
-" autoload/linuxit.vim
+" autoload/antsy.vim
 
 let s:overrides = get(g:, "theme_color_overrides", {})
 
@@ -30,6 +30,6 @@ let s:colors = {
       \ "vertsplit": get(s:overrides, "vertsplit", { "gui": "#7f7f7f", "cterm": "8", "cterm16": "8" }),
       \}
 
-function! linuxit#GetColors()
+function! antsy#GetColors()
   return s:colors
 endfunction
