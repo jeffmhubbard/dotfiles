@@ -37,7 +37,7 @@
 *color13:       hmagenta
 *color14:       hcyan
 *color15:       hwhite
-*background:    [80]black
+*background:    #000000
 *foreground:    hwhite
 *cursorColor:   hgreen
 
@@ -47,12 +47,5 @@ bspwm.active_border_color:      hblack
 bspwm.focused_border_color:     hblue
 bspwm.normal_border_color:      black
 bspwm.presel_feedback_color:    black
-
-
-!! --- rofi ---
-rofi.color-window: argb:transparent, argb:transparent, argb:active
-rofi.color-normal: argb:opaque, white, argb:opaque, hblue, black
-rofi.color-active: argb:opaque, hcyan, argb:opaque, hcyan, black
-rofi.color-urgent: argb:opaque, hwhite, argb:opaque, hblue, hred
 
 ! vim: set filetype=xdefaults :

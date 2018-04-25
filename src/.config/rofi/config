@@ -1,0 +1,23 @@
+rofi.modi: window,drun,run
+rofi.width: -50
+rofi.lines: 15
+rofi.columns: 1
+rofi.font: Source Code Pro Bold 10
+rofi.bw: 1
+rofi.location: 7
+rofi.padding: 1
+rofi.yoffset: -28
+rofi.xoffset: 3
+rofi.fixed-num-lines: false
+rofi.show-icons: true
+rofi.drun-icon-theme: hicolor
+rofi.sort: true
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.fake-transparency: false
+rofi.click-to-exit: true
+rofi.show-match: true
+rofi.display-window: 
+rofi.display-run: 
+rofi.display-drun: 
+rofi.theme: ~/.config/rofi/antsy.rasi
