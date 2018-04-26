@@ -2,7 +2,7 @@ rofi.modi: window,drun,run
 rofi.width: -50
 rofi.lines: 15
 rofi.columns: 1
-rofi.font: Source Code Pro Bold 10
+rofi.font: Source Code Pro Bold 9
 rofi.bw: 1
 rofi.location: 7
 rofi.padding: 1
