@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# --- ---
+export MPD_HOST=python
+export MPD_PORT=6600
+
 # --- Xresources ---
 userresources=$HOME/.Xresources
 if [ -f "$userresources" ]; then

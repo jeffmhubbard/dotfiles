@@ -1,9 +1,11 @@
 # sxhkdrc
 
+
 # --- session ---
+
 # reload desktop
 super + ctrl + r
-	sh ~/.config/bspwm/bspwmrc
+	$HOME/.config/bspwm/bspwmrc
 
 # reload keybindings
 super + ctrl + c
@@ -27,12 +29,10 @@ super + grave
 
 # launch terminal
 super + Return
-	urxvtc
+	urxvt
 
 
-#
-# bspwm hotkeys
-#
+# --- bspwm hotkeys ---
 
 # alternate between the tiled and monocle layout
 super + f
@@ -46,15 +46,12 @@ super + g
 super + {w,q}
 	bspc node -{c,k}
 
-
 # send the newest marked node to the newest preselected node
 super + alt + g
 	bspc node newest.marked.local -n newest.!automatic.local
 
 
-#
-# state/flags
-#
+# --- state/flags ---
 
 # set the window state
 super + {t,shift + t,s}
@@ -64,9 +61,8 @@ super + {t,shift + t,s}
 super + alt + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
+
+# --- focus/swap ---
 
 # focus the node in the given direction
 super + {_,shift + }{Up,Down,Left,Right}
@@ -96,7 +92,6 @@ super + {_,shift + }slash
 super + {_,shift} + r
   bspc node @/ -R {90,270}
 
-
 # focus the older or newer node in the focus history
 super + {comma,period}
 	bspc wm -h off; \
@@ -107,9 +102,8 @@ super + {comma,period}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
+
+# --- preselect ---
 
 # preselect the direction
 super + alt + {Up,Down,Left,Right}
@@ -127,9 +121,8 @@ super + Escape
 super + ctrl + Escape
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
+
+# --- move/resize ---
 
 # expand a window by moving one of its side outward
 super + shift + {h,j,k,l}
@@ -142,5 +135,27 @@ super + shift + alt + {h,j,k,l}
 # move a floating window
 super + alt + {h,j,k,l}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+# --- media keys ---
+
+# raise or lower volume
+XF86Audio{Raise,Lower}Volume
+  pamixer -{i,d} 5
+
+# toggle mute
+XF86AudioMute
+  pamixer -t
+
+# toggle play and pause
+XF86AudioPlay
+#  MPD_HOST=python mpc toggle
+  mpc toggle
+
+# previous or next track
+XF86Audio{Prev,Next}
+#  MPD_HOST=python mpc -q {prev,next}
+  mpc -q {prev,next}
+
 
 # vim: set filetype=sh :
