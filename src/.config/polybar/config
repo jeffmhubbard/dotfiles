@@ -76,8 +76,8 @@ cursor-scroll = ns-resize
 inherit = bar/base
 bottom = true
 modules-left = bspwm xwindow
-modules-center = date
-modules-right = cpu temp mem fs bat-vbox vol eth-vbox
+modules-center =
+modules-right = cpu temp mem fs bat-vbox pulseaudio eth-vbox date
 
 [bar/left]
 inherit = bar/base
@@ -85,7 +85,7 @@ monitor = VGA-1
 bottom = true
 modules-left = bspwm xwindow
 modules-center =
-modules-right = date
+modules-right = cpu temp mem fs pulseaudio eth-ws
 
 [bar/right]
 inherit = bar/base
@@ -93,7 +93,7 @@ monitor = DP-1
 bottom = true
 modules-left = bspwm xwindow
 modules-center =
-modules-right = cpu temp mem fs vol eth-ws
+modules-right = date
 
 [module/bspwm]
 type = internal/bspwm
@@ -131,12 +131,13 @@ format-padding = 1
 
 label-monitor = %name%
 
-label-dimmed-padding = 1
-label-dimmed-foreground = ${colors.background-alt}
-
 label-focused = %icon%
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
+
+label-dimmed-padding = 1
+label-dimmed-foreground = ${colors.background-alt}
+label-dimmed-focused-underline = ${colors.foreground}
 
 label-occupied= %icon%
 label-occupied-underline = ${colors.background-alt}
@@ -158,7 +159,6 @@ format-prefix = "▫"
 format-prefix-padding = 1
 format-prefix-foreground = ${colors.background-alt}
 label-margin = 0
-;label-underline = ${colors.active-alt}
 label = %title:0:120:...%
 
 
@@ -271,12 +271,10 @@ battery = BAT1
 adapter = ACAD
 
 
-[module/vol]
-type = internal/alsa
-
-;master-soundcard = default
-;speaker-soundcard = default
-;headphone-soundcard = default
+[module/pulseaudio]
+type = internal/pulseaudio
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
@@ -285,13 +283,13 @@ label-volume = %percentage%%
 
 format-muted-prefix = " "
 format-muted-padding = 1
-format-muted-prefix-foreground = ${colors.alert}
+format-muted-prefix-foreground = ${colors.background-alt}
 format-muted-underline = ${colors.alert}
 label-muted = MUTE
 
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 ramp-volume-foreground = ${colors.background-alt}
 
 
