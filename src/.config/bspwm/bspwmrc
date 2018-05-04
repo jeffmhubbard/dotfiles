@@ -9,7 +9,7 @@ xres() {
 sxhkd &
 
 # --- polybar ---
-~/.config/polybar/launch.sh &
+$HOME/.config/polybar/launch.sh &
 
 # --- monitors ---
 if [ "$(bspc query -M | wc -l)" = "1" ]; then
@@ -28,7 +28,7 @@ bspc config gapless_monocle           false
 bspc config focus_follows_pointer     true
 bspc config pointer_follows_monitor   true
 bspc config border_width              1
-bspc config window_gap                15
+bspc config window_gap                16
 bspc config initial_polarity          second_child
 # --- borders ---
 bspc config active_border_color       $(xres active_border_color)
@@ -41,10 +41,12 @@ bspc rule -a Atom           desktop='^2' focus=on follow=on
 bspc rule -a Lxappearance   desktop='^3' state=floating focus=on follow=on
 bspc rule -a Oomox          desktop='^3' state=floating focus=on follow=on
 bspc rule -a qutebrowser    desktop='^4' focus=on follow=on
+bspc rule -a Chromium       desktop='^4' focus=on follow=on
 bspc rule -a Zathura        desktop='^4' state=tiled focus=on follow=on
 bspc rule -a Thunar         desktop='^5' focus=on follow=on
 bspc rule -a Gimp-2.8       desktop='^6' state=floating focus=on follow=on manage=on
 bspc rule -a Inkscape       desktop='^6' state=floating focus=on follow=on
-bspc rule -a feh            desktop='^6' state=floating focus=on follow=on manage=off
+bspc rule -a feh            state=floating focus=on follow=on manage=on
+bspc rule -a mpv            state=floating focus=on follow=on manage=on
 
 # vim: set filetype=sh :
