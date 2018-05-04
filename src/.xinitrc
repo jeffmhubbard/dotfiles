@@ -4,6 +4,8 @@
 export MPD_HOST=python
 export MPD_PORT=6600
 
+export RTV_BROWSER=qutebrowser
+
 # --- Xresources ---
 userresources=$HOME/.Xresources
 if [ -f "$userresources" ]; then
