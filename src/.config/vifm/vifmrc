@@ -110,7 +110,7 @@ endif
 
 " Set custom status line look
 
-set statusline=" %A %10u:%-7g %15E %= %20d "
+set statusline=" %t %= %A %10u:%-7g %15E %20d "
 
 " ------------------------------------------------------------------------------
 
@@ -177,7 +177,7 @@ fileviewer *.pdf pdftotext -nopgbrk %c -
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
         \ {View in zathura}
-        \ zathura %f,
+        \ zathura %c %i &,
         \ {View in gv}
         \ gv %c %i &,
 
@@ -187,6 +187,11 @@ filextype *.djvu
         \ zathura %f,
         \ {View in apvlv}
         \ apvlv %f,
+
+" eBooks & Comics
+filextype *.cbr,*.epub,*.mobi
+        \ {View in zathura}
+        \ zathura %c %i &
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
