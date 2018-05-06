@@ -77,7 +77,7 @@ inherit = bar/base
 bottom = true
 modules-left = bspwm xwindow
 modules-center =
-modules-right = cpu temp mem fs bat-vbox pulseaudio eth-vbox date
+modules-right = cpu temp mem fs bat-real pulseaudio wifi date
 
 [bar/left]
 inherit = bar/base
@@ -94,6 +94,7 @@ bottom = true
 modules-left = bspwm xwindow
 modules-center =
 modules-right = date
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -127,7 +128,7 @@ ws-icon-default = 
 
 
 format = <label-state> <label-mode>
-format-padding = 0
+format-padding = 1
 
 label-monitor = %name%
 
@@ -258,13 +259,6 @@ animation-charging-2 = " "
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 1000
 
-
-[module/bat-vbox]
-inherit = module/battery
-battery = BAT0
-adapter = AC
-
-
 [module/bat-real]
 inherit = module/battery
 battery = BAT1
@@ -316,9 +310,9 @@ inherit = module/ethernet
 interface = eno1
 
 
-[module/eth-vbox]
+[module/eth-lp]
 inherit = module/ethernet
-interface = enp0s3
+interface = enp1s0
 
 
 [module/wireless]
@@ -326,34 +320,49 @@ type = internal/network
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-prefix = ${colors.background-alt}
+format-connected-padding = 1
 format-connected-foreground = ${colors.foreground}
 format-connected-underline = ${colors.secondary}
-label-connected = %downspeed:9%
+label-connected = %essid:2%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-prefix = " "
+format-disconnected-foreground = ${colors.background-alt}
+format-disconnected-padding = 1
+format-disconnected-underline = ${colors.alert}
+label-disconnected = %ifname%
 
-ramp-signal-0 = " "
-ramp-signal-1 = " "
-ramp-signal-2 = " "
-ramp-signal-3 = " "
-ramp-signal-4 = " "
+format-packetloss = <animation-packetloss> <label-connected>
+format-packetloss-padding = 1
+format-packetloss-underline = ${colors.urgent}
+label-packetloss-foreground = ${colors.urgent-alt}
+label-packetloss = %essid%
+
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
 ramp-signal-foreground = ${colors.background-alt}
 
 ; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = "⚠ "
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = ${colors.urgent}
 animation-packetloss-1 = "📶 "
-animation-packetloss-1-foreground = #000000
+animation-packetloss-1-foreground = ${colors.alert}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 500
+
+[module/wifi]
+; gargoyle
+inherit = module/wireless
+interface = wlo1
 
 [module/wifi-1]
 ; pegasus, wifi
 inherit = module/wireless
 interface = wlp7s0b1
+
 
 [module/mpd]
 type = internal/mpd
