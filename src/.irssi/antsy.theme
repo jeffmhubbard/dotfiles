@@ -59,10 +59,7 @@ info_eol = "false";
 # these characters are automatically replaced with specified color
 # (dark grey by default)
 #replaces = { "[]\(\)\:\\\/=" = "%K$*%n"; };
-replaces = {
-  "[]()=" = "";
-  "\:\\/" = "%K%_$*%_%n";
-};
+replaces = { "[]()=" = ""; ":\\/" = "%K%_$*%_%n"; };
 
 abstracts = {
   ##
@@ -207,7 +204,7 @@ abstracts = {
   whois = "%# $[8]0 : $1-";
 
   # notices
-  ownnotice = "%r%_$0\:%B%_$1-%_%n ";
+  ownnotice = "%r%_$0:%B%_$1-%_%n ";
   notice = "%K-%M$*%K-%n ";
   pubnotice_channel = "%K:%m$*";
   pvtnotice_host = " %m$*%n ";
