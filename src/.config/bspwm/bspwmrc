@@ -48,5 +48,6 @@ bspc rule -a Gimp-2.8       desktop='^6' state=floating focus=on follow=on manag
 bspc rule -a Inkscape       desktop='^6' state=floating focus=on follow=on
 bspc rule -a feh            state=floating focus=on follow=on manage=on
 bspc rule -a mpv            state=floating focus=on follow=on manage=on
+bspc rule -a vlc            state=floating focus=on follow=on manage=on
 
 # vim: set filetype=sh :
