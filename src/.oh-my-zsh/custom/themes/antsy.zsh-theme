@@ -2,6 +2,8 @@
 
 setopt prompt_subst
 
+ZLE_RPROMPT_INDENT=0
+
 ZSH_THEME_GIT_PROMPT_PREFIX='±'
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
 ZSH_THEME_GIT_PROMPT_DIRTY=''
@@ -19,7 +21,7 @@ ZSH_THEME_VIRTUALENV_SUFFIX=")"
 
 precmd(){
     local preprompt_left="%B%F{green}%n@%m %B%F{blue}%47<...<%~%<<%f%b"
-    local preprompt_right="%B%F{red}$(git_prompt_info)%B%F{red}$(git_prompt_status) %f%b"
+    local preprompt_right="%B%F{red}$(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))

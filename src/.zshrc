@@ -88,6 +88,10 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# history
+export HISTSIZE=9999
+export SAVEHIST=1000
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -97,5 +101,6 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
-alias vtop="vtop -t antsy"
+#alias vtop="vtop -t antsy"
 alias rtv="rtv --theme antsy"
+alias mutt="neomutt"
