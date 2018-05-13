@@ -1,0 +1,16 @@
+# Gmail settings
+set imap_user = 'user.name@gmail.com'
+set imap_pass = 'password'
+
+set folder="imaps://imap.gmail.com"
+set spoolfile="imaps://imap.gmail.com/INBOX"
+set record="imaps://imap.gmail.com/[Gmail]/Sent Mail"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+
+set from = 'user.name@gmail.com'
+set realname = 'User X. Name'
+
+set smtp_url = 'smtp://user.name@smtp.gmail.com:587/'
+set smtp_pass='password'
+
+# vi: ft=muttrc ts=4 sw=4 sts=4 et
