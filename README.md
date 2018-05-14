@@ -16,3 +16,4 @@
 - zathura
 - rtv
 
+![Terminal](terminal.png?raw=true "Terminal")
