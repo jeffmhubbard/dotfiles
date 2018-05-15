@@ -15,10 +15,10 @@
 #  color message        color230      default
 
 # --- slightly less yellow text colors ---
-color normal            default         default # mod
+color normal            white           default # mod
 # color normal          color253        color233 # mod
 #  color normal         color253        default # mod
-color indicator         yellow          default
+color indicator         black           brightblue
 color status            brightblack     default
 #  color tree           color113        default
 #  color tree           color173        default
@@ -32,12 +32,7 @@ color tilde             brightblack     default
 color search            black           yellow
 color markers           cyan            default
 
-#  mono bold          reverse
-#  color bold         color173 color191
-#  mono underline     reverse
-#  color underline    color48  color191
-
-color quoted        color107     default             # quoted text
+color quoted        yellow      default             # quoted text
 color quoted1       color66      default
 color quoted2       color32      default
 color quoted3       color30      default
@@ -48,27 +43,14 @@ color quoted7       color109     default
 color quoted8       color41      default
 color quoted9       color138     default
 
-# color body          cyan  default  "((ftp|http|https)://|news:)[^ >)\"\t]+"
-# color body          cyan  default  "[-a-z_0-9.+]+@[-a-z_0-9.]+"
-# color body          red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
-# color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[\n]"
-# color body          red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
-# color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
 color index         brightmagenta   default  ~F         # Flagged
 color index         brightwhite     default  ~N         # New
 color index         brightwhite     default  ~O
 color index         black           yellow   ~T         # Tagged
 color index         red             default  ~D         # Deleted
 
-# ---
-
-#mono body      reverse         '^(subject):.*'
-#color body     brightwhite magenta     '^(subject):.*'
-#mono body      reverse         '[[:alpha:]][[:alnum:]-]+:'
-#color body     black cyan      '[[:alpha:]][[:alnum:]-]+:'
 
 # --- header ---
-
 color hdrdefault        default         default
 color header            brightyellow    default    '^date:'
 color header            brightblue      default    '^(to|cc|bcc):'
@@ -77,20 +59,4 @@ color header            brightwhite     default    '^subject:'
 color header            brightblack     default    '^user-agent:'
 color header            brightgreen     default    '^reply-to:'
 
-#color header   magenta default '^(status|lines|date|received|sender|references):'
-#color header   magenta default '^(pr|mime|x-|user|return|content-)[^:]*:'
-#color header   brightyellow default '^content-type:'
-#color header   magenta default '^content-type: *text/plain'
-# color header  brightgreen default '^list-[^:]*:'
-#mono  header    bold               '^(subject):.*$'
-#color header   brightcyan default      '^(disposition)'
-#color header   green default   '^(mail-)?followup'
-#color header   white default   '^reply'
-#color header   brightwhite default     '^(resent)'
-# color header  brightwhite default     '^from:'
-
-#mono index     bold '~h "^content-type: *(multipart/(mixed|signed|encrypted)|application/)"'
-#color index    green black '~h "^content-type: *multipart/(signed|encrypted)"'
-
-#color sidebar_new color39 default
 # vi: ft=muttrc ts=4 sw=4 sts=4 et

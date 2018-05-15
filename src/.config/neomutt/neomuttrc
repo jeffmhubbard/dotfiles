@@ -1,10 +1,11 @@
 # NeoMutt config
 
-# load private settings
+# --- load external ---
 source $HOME/.config/neomutt/neomuttrc.priv
+source $HOME/.config/neomutt/colors
+source $HOME/.config/neomutt/sidebar
 
-set sendmail="/usr/sbin/ssmtp"
-
+# --- paths ---
 set header_cache = "~/.cache/mutt/headers"
 set message_cachedir = "~/.cache/mutt/bodies"
 set certificate_file = "~/.config/neomutt/certificates"
@@ -43,7 +44,5 @@ set status_format = "─(F: %f)─(M:%r%m%?n?(%n new)?%?d?(%d to delete)?%?t?(%t
 
 auto_view text/html
 
-source $HOME/.config/neomutt/colors
-source $HOME/.config/neomutt/sidebar
-
+set sendmail="/usr/sbin/ssmtp"
 # vi: ft=muttrc ts=4 sw=4 sts=4 et

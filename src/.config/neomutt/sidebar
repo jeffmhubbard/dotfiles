@@ -1,45 +1,33 @@
 # NeoMutt sidebar
 
-set imap_check_subscribed
+# --- options ---
+set mail_check_stats = yes
+set imap_check_subscribed = yes
+
+# --- style ---
 set sidebar_visible = yes
-set sidebar_width = 25
+set sidebar_width = 20
 set sidebar_short_path = yes
 set sidebar_delim_chars = '/.'
 set sidebar_folder_indent = yes
-set sidebar_indent_string = '  '
+set sidebar_indent_string = ' ▹'
 set sidebar_new_mail_only = no
 set sidebar_next_new_wrap = yes
 set sidebar_divider_char = '│'
-set mail_check_stats = yes
 set sidebar_format = '%B %?N?(%N)?%* %S'
 set sidebar_sort_method = path
 
-# CTRL-P: Move the highlight to the *previous* mailbox
-bind index,pager \Cp sidebar-prev
-# CTRL-N: Move the highlight to the *next* mailbox
-bind index,pager \Cn sidebar-next
-# CTRL-O: *Open* the highlighted mailbox
-bind index,pager \Co sidebar-open
-# Move the highlight to the previous page
-# This is useful if you have a LOT of mailboxes.
-bind index,pager <F3> sidebar-page-up
-# Move the highlight to the next page
-# This is useful if you have a LOT of mailboxes.
-bind index,pager <F4> sidebar-page-down
-# Move the highlight to the previous mailbox
-# containing new, or flagged, mail.
-bind index,pager <F5> sidebar-prev-new
-# Move the highlight to the next mailbox
-# containing new, or flagged, mail.
-bind index,pager <F6> sidebar-next-new
-# B: Toggle (open/close) the visibility of the Sidebar.
-bind index,pager B sidebar-toggle-visible
-
-
-color indicator             black           brightblue
-color sidebar_highlight     brightcyan      default
+# --- colors ---
+#color indicator             brightwhite     default
+color sidebar_highlight     black           brightwhite
 color sidebar_divider       brightblack     default
 color sidebar_flagged       brightyellow    default
-color sidebar_new           brightwhite     default
+color sidebar_new           brightcyan      default
+
+# --- key bindings ---
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+bind index,pager \Cb sidebar-toggle-visible
 
 # vi: ft=muttrc ts=4 sw=4 sts=4 et
