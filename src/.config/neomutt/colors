@@ -22,15 +22,15 @@ color indicator         yellow          default
 color status            brightblack     default
 #  color tree           color113        default
 #  color tree           color173        default
-color tree              color208        default
-color signature         color102        default
-color message           color253        default
-color attachment        color117        default
-color error             color30         default
-color tilde             color130        default
+color tree              brightblack     default
+color signature         red             default
+color message           default         default
+color attachment        brightblue      default
+color error             brightred       default
+color tilde             brightblack     default
 
-color search            color100        default
-color markers           color138        default
+color search            black           yellow
+color markers           cyan            default
 
 #  mono bold          reverse
 #  color bold         color173 color191
@@ -54,11 +54,11 @@ color quoted9       color138     default
 # color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[\n]"
 # color body          red   default  "(^| )\\*[-a-z0-9*]+\\*[,.?]?[ \n]"
 # color body          green default  "(^| )_[-a-z0-9_]+_[,.?]?[ \n]"
-color index             color202        default  ~F         # Flagged
-color index             color39         default  ~N          # New
-color index             color39         default  ~O
-color index             color229        color22  ~T         # Tagged
-color index             color240        default  ~D         # Deleted
+color index         brightmagenta   default  ~F         # Flagged
+color index         brightwhite     default  ~N         # New
+color index         brightwhite     default  ~O
+color index         black           yellow   ~T         # Tagged
+color index         red             default  ~D         # Deleted
 
 # ---
 
@@ -69,13 +69,13 @@ color index             color240        default  ~D         # Deleted
 
 # --- header ---
 
-color hdrdefault        color30         color233
-color header            color132        color233    '^date:'
-color header            color153        color233    '^(to|cc|bcc):'
-color header            color120        color233    '^from:'
-color header            color178        color233    '^subject:'
-color header            color31         color233    '^user-agent:'
-color header            color29         color233    '^reply-to:'
+color hdrdefault        default         default
+color header            brightyellow    default    '^date:'
+color header            brightblue      default    '^(to|cc|bcc):'
+color header            brightgreen     default    '^from:'
+color header            brightwhite     default    '^subject:'
+color header            brightblack     default    '^user-agent:'
+color header            brightgreen     default    '^reply-to:'
 
 #color header   magenta default '^(status|lines|date|received|sender|references):'
 #color header   magenta default '^(pr|mime|x-|user|return|content-)[^:]*:'
@@ -93,3 +93,4 @@ color header            color29         color233    '^reply-to:'
 #color index    green black '~h "^content-type: *multipart/(signed|encrypted)"'
 
 #color sidebar_new color39 default
+# vi: ft=muttrc ts=4 sw=4 sts=4 et
