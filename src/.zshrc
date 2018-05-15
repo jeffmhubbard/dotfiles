@@ -56,7 +56,7 @@ plugins=( \
         systemd \
         archlinux \
         history \
-        colored-man-pages \
+#        colored-man-pages \
         command-not-found \
         tmux \
         git \
@@ -101,6 +101,6 @@ export SAVEHIST=1000
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
-#alias vtop="vtop -t antsy"
+alias vit="vim -p"
 alias rtv="rtv --theme antsy"
 alias mutt="neomutt"
