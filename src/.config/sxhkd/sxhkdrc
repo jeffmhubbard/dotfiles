@@ -31,9 +31,13 @@ super + grave
 super + Return
 	urxvt
 
-# take screenshot
-{shift + ,_} Print
-    scrot {--select,_} '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send 'Screenshot captured'
+## screenshot
+Print
+    scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send 'Screenshot captured'
+
+## screenshot focused window
+shift + Delete
+    scrot -u '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send 'Screenshot captured'
 
 # --- bspwm hotkeys ---
 
