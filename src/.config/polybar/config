@@ -44,7 +44,7 @@ margin-top = 0
 margin-bottom = 0
 
 
-[bar/base]
+[bar/base-bottom]
 ; theme
 width = 100%
 height = 24
@@ -71,28 +71,31 @@ tray-background = ${colors.background}
 ; mouse actions
 cursor-click = pointer
 cursor-scroll = ns-resize
+modules-left = bspwm
+modules-center = xwindow
+modules-right = date
 
-[bar/bottom]
-inherit = bar/base
+[bar/gargoyle-bottom]
+inherit = bar/base-bottom
 bottom = true
-modules-left = bspwm xwindow
-modules-center =
-modules-right = cpu temp mem fs bat-vbox pulseaudio eth-vbox date
+modules-left = bspwm
+modules-center = xwindow
+modules-right = cpu temp mem fs bat-gargoyle pulseaudio eth-gargoyle wifi-gargoyle date
 
-[bar/left]
-inherit = bar/base
+[bar/dragon-left]
+inherit = bar/base-bottom
 monitor = VGA-1
 bottom = true
-modules-left = bspwm xwindow
-modules-center =
+modules-left = bspwm
+modules-center = xwindow
 modules-right = cpu temp mem fs pulseaudio eth-ws
 
-[bar/right]
-inherit = bar/base
+[bar/dragon-right]
+inherit = bar/base-bottom
 monitor = DP-1
 bottom = true
 modules-left = bspwm xwindow
-modules-center =
+modules-center = xwindow
 modules-right = date
 
 [module/bspwm]
