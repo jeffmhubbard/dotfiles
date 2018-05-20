@@ -6,6 +6,8 @@ export MPD_PORT=6600
 
 export RTV_BROWSER=qutebrowser
 
+export QT_QPA_PLATFORMTHEME=gtk2
+
 # --- Xresources ---
 userresources=$HOME/.Xresources
 if [ -f "$userresources" ]; then
