@@ -60,47 +60,41 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-; font order
-font-0 = Source Code Pro:pixelsize=9:style=bold;1
-font-1 = FontAwesome:pixelsize=10;1
-; notification tray
 tray-position = right
 tray-padding = 1
 ;tray-transparent = true
 tray-background = ${colors.background}
-; mouse actions
 cursor-click = pointer
 cursor-scroll = ns-resize
-modules-left = bspwm
-modules-center = xwindow
+font-0 = Source Code Pro:pixelsize=9:style=bold;1
+font-1 = Source Sans Pro:pixelsize=9:style=bold;1
+font-2 = FontAwesome:pixelsize=10;1
+;font-3 = Font Awesome 5 Free:pixelsize=10;1
+;font-4 = Font Awesome 5 Free Solid:pixelsize=10;1
+;font-5 = Font Awesome 5 Brands:pixelsize=10;1
+modules-left = bspwm xwindow
 modules-right = date
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
 bottom = true
-modules-left = bspwm
-modules-center = xwindow
-modules-right = cpu temp mem fs bat-gargoyle pulseaudio eth-gargoyle wifi-gargoyle date
+modules-right = cpu temp mem fs bat-gargoyle pulseaudio wifi-gargoyle date
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 bottom = true
-modules-left = bspwm
-modules-center = xwindow
 modules-right = cpu temp mem fs pulseaudio eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
 monitor = DP-1
 bottom = true
-modules-left = bspwm xwindow
-modules-center = xwindow
 modules-right = date
+
 
 [module/bspwm]
 type = internal/bspwm
-
 pin-workspaces = true
 inline-mode = false
 enable-click = false
@@ -131,7 +125,6 @@ ws-icon-default = 
 
 format = <label-state> <label-mode>
 format-padding = 0
-
 label-monitor = %name%
 
 label-focused = %icon%
@@ -146,12 +139,12 @@ label-occupied= %icon%
 label-occupied-underline = ${colors.background-alt}
 label-occupied-padding = 1
 
-label-empty = %icon%
-label-empty-padding = 1
-
 label-urgent = %icon%
 label-urgent-underline = ${colors.urgent}
 label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-padding = 1
 
 
 [module/xwindow]
@@ -162,7 +155,7 @@ format-prefix = "▫"
 format-prefix-padding = 1
 format-prefix-foreground = ${colors.background-alt}
 label-margin = 0
-label = %title:0:120:...%
+label = %title:0:80:...%
 
 
 [module/date]
@@ -227,7 +220,6 @@ format-mounted-padding = 1
 format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.background-alt}
 label-mounted = %percentage_used%%
-#label-mounted-alt = %mountpoint%: %percentage_free%% of %total%
 
 format-unmounted = <label-unmounted>
 format-unmounted-padding = 1
@@ -261,14 +253,12 @@ animation-charging-2 = " "
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 1000
 
+;[module/bat-vbox]
+;inherit = module/battery
+;battery = BAT0
+;adapter = AC
 
-[module/bat-vbox]
-inherit = module/battery
-battery = BAT0
-adapter = AC
-
-
-[module/bat-real]
+[module/bat-gargoyle]
 inherit = module/battery
 battery = BAT1
 adapter = ACAD
@@ -297,7 +287,6 @@ ramp-volume-foreground = ${colors.background-alt}
 
 
 [module/ethernet]
-; base settings (for inherit only)
 type = internal/network
 interval = 3.0
 
@@ -313,13 +302,15 @@ format-disconnected-prefix-foreground = ${colors.background-alt}
 format-disconnected-underline = ${colors.alert}
 label-disconnected = %ifname%
 
-
-[module/eth-ws]
+[module/eth-dragon]
 inherit = module/ethernet
 interface = eno1
 
+[module/eth-gargoyle]
+inherit = module/ethernet
+interface = enp1s0
 
-[module/eth-vbox]
+[module/eth-pegasus]
 inherit = module/ethernet
 interface = enp0s3
 
@@ -329,34 +320,37 @@ type = internal/network
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-prefix = ${colors.background-alt}
 format-connected-foreground = ${colors.foreground}
 format-connected-underline = ${colors.secondary}
-label-connected = %downspeed:9%
+label-connected = %essid%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.background-alt}
+format-disconnected-underline = ${colors.alert}
+label-disconnected = %ifname%
 
-ramp-signal-0 = " "
-ramp-signal-1 = " "
-ramp-signal-2 = " "
-ramp-signal-3 = " "
-ramp-signal-4 = " "
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
 ramp-signal-foreground = ${colors.background-alt}
 
-; Only applies if <animation-packetloss> is used
 animation-packetloss-0 = "⚠ "
 animation-packetloss-0-foreground = #ffa64c
 animation-packetloss-1 = "📶 "
 animation-packetloss-1-foreground = #000000
-; Framerate in milliseconds
 animation-packetloss-framerate = 500
 
-[module/wifi-1]
-; pegasus, wifi
+[module/wifi-gargoyle]
 inherit = module/wireless
-interface = wlp7s0b1
+interface = wlo1
+
+;[module/wifi-pegasus]
+;inherit = module/wireless
+;interface = wlp7s0b1
+
 
 [module/mpd]
 type = internal/mpd
