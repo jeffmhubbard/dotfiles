@@ -402,7 +402,7 @@ c.colors.webpage.bg = xres['*color15']
 
 ## Height (in pixels or as percentage of the window) of the completion.
 ## Type: PercOrInt
-# c.completion.height = '50%'
+c.completion.height = '30%'
 
 ## Minimum amount of characters needed to update completions.
 ## Type: Int
@@ -454,7 +454,7 @@ c.colors.webpage.bg = xres['*color15']
 ##   - multiple-tabs: Show a confirmation if multiple tabs are opened.
 ##   - downloads: Show a confirmation if downloads are running
 ##   - never: Never show a confirmation.
-# c.confirm_quit = ['never']
+c.confirm_quit = ['downloads']
 
 ## Enable support for the HTML 5 web application cache feature. An
 ## application cache acts like an HTTP cache in some sense. For documents
@@ -1322,7 +1322,7 @@ c.hints.mode = 'number'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = 'about:blank'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.
@@ -1344,11 +1344,15 @@ c.hints.mode = 'number'
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {
+    "DEFAULT": "https://www.google.com/search?q={}",
+    'd': 'https://duckduckgo.com/?q={}',
+    "wa": "https://wiki.archlinux.org/?search={}"
+}
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://www.google.com']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String
@@ -1361,7 +1365,7 @@ c.hints.mode = 'number'
 ## Format to use for the window title. The same placeholders like for
 ## `tabs.title.format` are defined.
 ## Type: FormatString
-# c.window.title_format = '{perc}{title}{title_sep}qutebrowser'
+c.window.title_format = '{perc}{title}'
 
 ## Default zoom level.
 ## Type: Perc
