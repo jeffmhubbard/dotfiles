@@ -1,18 +1,27 @@
 " vim: set ft=vim:
+" ~/.vim/vimrc 2018
+
+" for Arch Linux
 runtime! archlinux.vim
 
+" enable syntax highlighting if available
 if has("syntax")
   syntax on
 endif
-
-colorscheme antsy
 
 if has("autocmd")
   filetype plugin indent on
 endif
 
+" enable pathogen
+execute pathogen#infect()
+
+" set theme
+colorscheme antsy
 set background=dark
 set term=screen-256color
+
+" common settings
 set laststatus=2
 set showmode
 set number
@@ -39,14 +48,36 @@ set nofoldenable
 set foldlevel=2
 set encoding=utf-8
 set fileencoding=utf-8
+set mouse=a
 
-" tab navigation
-nnoremap TH  :tabfirst<CR>
-nnoremap TJ  :tabnext<CR>
-nnoremap TK  :tabprev<CR>
-nnoremap TL  :tablast<CR>
-nnoremap TE  :tabedit<SPACE>
-nnoremap TC  :tabclose<CR>
+" nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
-" save as root
+" nerdtree-git
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "●✹",
+    \ "Staged"    : "▲",
+    \ "Untracked" : "✱",
+    \ "Renamed"   : "➤",
+    \ "Unmerged"  : "♦",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" buftabline
+let g:buftabline_show = 1
+let g:buftabline_numbers = 1
+let g:buftabline_indicators = "on"
+let g:buftabline_separators = "on"
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
+" close buffer
+nnoremap c :bp\|bd #<CR>
+
+" save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
