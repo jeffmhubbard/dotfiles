@@ -69,9 +69,6 @@ cursor-scroll = ns-resize
 font-0 = Source Code Pro:pixelsize=9:style=bold;1
 font-1 = Source Sans Pro:pixelsize=9:style=bold;1
 font-2 = FontAwesome:pixelsize=10;1
-;font-3 = Font Awesome 5 Free:pixelsize=10;1
-;font-4 = Font Awesome 5 Free Solid:pixelsize=10;1
-;font-5 = Font Awesome 5 Brands:pixelsize=10;1
 modules-left = bspwm xwindow
 modules-right = date
 
@@ -84,7 +81,7 @@ modules-right = cpu temp mem fs bat-gargoyle pulseaudio wifi-gargoyle date
 inherit = bar/base-bottom
 monitor = VGA-1
 bottom = true
-modules-right = cpu temp mem fs pulseaudio eth-ws
+modules-right = cpu temp mem fs pulseaudio eth-dragon
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -102,14 +99,15 @@ enable-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-default = 
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-default = 
 
+; fa4
 ;ws-icon-0 = 1;
 ;ws-icon-1 = 2;
 ;ws-icon-2 = 3;
@@ -151,7 +149,7 @@ label-empty-padding = 1
 type = internal/xwindow
 pin-output = true
 pin-show-last = true
-format-prefix = "▫"
+format-prefix = ""
 format-prefix-padding = 1
 format-prefix-foreground = ${colors.background-alt}
 label-margin = 0
