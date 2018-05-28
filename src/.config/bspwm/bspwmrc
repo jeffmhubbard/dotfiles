@@ -43,9 +43,9 @@ bspc rule -a Oomox          desktop='^3' state=floating focus=on follow=on
 bspc rule -a qutebrowser    desktop='^4' focus=on follow=on
 bspc rule -a Chromium       desktop='^4' focus=on follow=on
 bspc rule -a Zathura        desktop='^4' state=tiled focus=on follow=on
-bspc rule -a Thunar         desktop='^5' focus=on follow=on
-bspc rule -a Gimp-2.10      desktop='^6' state=floating focus=on follow=on manage=on
-bspc rule -a Inkscape       desktop='^6' state=floating focus=on follow=on
+bspc rule -a Thunar         desktop='^6' focus=on follow=on
+bspc rule -a Gimp-2.10      desktop='^5' state=floating focus=on follow=on manage=on
+bspc rule -a Inkscape       desktop='^5' state=floating focus=on follow=on
 bspc rule -a feh            state=floating focus=on follow=on manage=on
 bspc rule -a mpv            state=floating focus=on follow=on manage=on
 bspc rule -a vlc            state=floating focus=on follow=on manage=on
