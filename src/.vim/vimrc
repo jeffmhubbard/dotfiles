@@ -54,9 +54,14 @@ set mouse=a
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+let NERDTreeShowHidden = 1
+let NERDTreeStatusline = 0
+let NERDTreeWinSize = 25
+let NERDTreeMinimalUI=1
+
 " nerdtree-git
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "●✹",
+    \ "Modified"  : "●",
     \ "Staged"    : "▲",
     \ "Untracked" : "✱",
     \ "Renamed"   : "➤",
