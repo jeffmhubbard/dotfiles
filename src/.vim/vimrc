@@ -82,7 +82,7 @@ nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
 " close buffer
-nnoremap c :bp\|bd #<CR>
+nnoremap cc :bp\|bd #<CR>
 
 " save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
