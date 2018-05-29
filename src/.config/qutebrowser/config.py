@@ -794,7 +794,7 @@ c.fonts.messages.warning = 'bold 10pt monospace'
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-c.fonts.monospace = 'Sauce Code Pro Nerd Font'
+c.fonts.monospace = 'SauceCodePro Nerd Font Mono'
 
 ## Font used for prompts.
 ## Type: Font

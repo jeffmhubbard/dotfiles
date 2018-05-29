@@ -2,7 +2,7 @@ rofi.modi: window,drun,run
 rofi.width: -50
 rofi.lines: 15
 rofi.columns: 1
-rofi.font: Sauce Code Pro Nerd Font Bold 10
+rofi.font: SauceCodePro Nerd Font Bold 10
 rofi.bw: 1
 rofi.bc: #5c5cff
 rofi.location: 7
