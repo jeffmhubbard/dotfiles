@@ -23,11 +23,11 @@ set term=screen-256color
 
 " common settings
 set laststatus=2
-set showmode
+set noshowmode
+set noshowcmd
+set nowrap
 set number
 set cursorline
-set nowrap
-set showcmd
 set showmatch
 set ignorecase
 set smartcase
@@ -49,17 +49,23 @@ set foldlevel=2
 set encoding=utf-8
 set fileencoding=utf-8
 set mouse=a
+set statusline=""
+
+" lightline
+let g:lightline = { 'colorscheme': 'antsy', }
 
 " nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 let NERDTreeShowHidden = 1
-let NERDTreeStatusline = 0
+let NERDTreeStatusline = -1
 let NERDTreeWinSize = 25
 let NERDTreeMinimalUI=1
+map <C-=> :NERDTreeToggle<CR>
 
 " nerdtree-git
+let g:NERDTreeShowGitStatus = 1
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "●",
     \ "Staged"    : "▲",
@@ -69,7 +75,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Deleted"   : "✖",
     \ "Dirty"     : "✗",
     \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
+    \ "Ignored"   : '☒',
     \ "Unknown"   : "?"
     \ }
 
@@ -77,12 +83,12 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:buftabline_show = 1
 let g:buftabline_numbers = 1
 let g:buftabline_indicators = "on"
-let g:buftabline_separators = "on"
+let g:buftabline_separators = "off"
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
 " close buffer
-nnoremap cc :bp\|bd #<CR>
+"nnoremap cc :bp\|bd #<CR>
 
 " save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
