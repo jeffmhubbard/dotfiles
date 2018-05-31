@@ -30,11 +30,6 @@ dunst &
 # --- wallpaper ---
 sh ~/.fehbg &
 
-# --- terminal ---
-urxvtd -q -o -f &
-
-# --- extensions ---
-
 # --- window manager ---
 exec bspwm
 

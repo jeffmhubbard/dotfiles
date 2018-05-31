@@ -34,7 +34,8 @@
 }
 window {
     background-color: @background;
-    border:           1;
+    border-color: @selected-normal-background;
+    border:           2;
     padding:          1;
 }
 mainbox {

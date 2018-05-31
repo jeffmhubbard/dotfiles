@@ -1,5 +1,5 @@
 [global]
-    font = SauceCodePro Nerd Font Bold 10
+    font = SauceCodePro Nerd Font Mono Bold 10
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -73,7 +73,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing windowmanager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 10
+    transparency = 0
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -139,15 +139,15 @@
     dmenu = /usr/bin/rofi -dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/xdg-open
+    browser = qutebrowser
 
     # Align icons left/right/off
     icon_position = left
 
     # Paths to default icons.
-    icon_path = /home/jeff/.icons/oomox-antsy/status/scalable/:/home/jeff/.icons/oomox-antsy/devices/scalable/
+    #icon_path = /home/jeff/.icons/oomox-antsy/status/scalable/:/home/jeff/.icons/oomox-antsy/devices/scalable/
 
-    frame_width = 1
+    frame_width = 2
 
 [shortcuts]
 

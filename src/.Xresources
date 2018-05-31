@@ -19,7 +19,7 @@ URxvt*termName:                 rxvt-unicode-256color
 URxvt*depth:                    32
 URxvt*saveLines:                2500
 URxvt*urgentOnBell:             true
-URxvt*internalBorder:           0
+URxvt*internalBorder:           3
 URxvt*lineSpace:                0
 URxvt*scrollBar:                false
 URxvt*cursorBlink:              true
@@ -28,21 +28,19 @@ URxvt*colorULMode:              on
 URxvt.blurRadius:               2
 URxvt*font:                     xft:SauceCodePro Nerd Font Mono:pixelsize=13:Regular
 URxvt*boldFont:                 xft:SauceCodePro Nerd Font Mono:pixelsize=13:Bold
-!URxvt*italicFont:               xft:Sauce Code Pro Nerd Font:pixelsize=13:Regular Italic
-!URxvt*italicBoldFont:           xft:Sauce Code Pro Nerd Font:pixelsize=13:Bold Italic
 URxvt*perl-ext-common:          default,matcher
 URxvt.url-launcher:             qutebrowser
 URxvt.matcher.button:           1
 
 !! --- Xterm ---
-xterm*boldColors:               false
+xterm*boldColors:               true
 xterm*borderWidth:              0
 xterm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 xterm*cursorBlind:              true
 xterm*cutNewLine:               false
 xterm*dynamicColors:            true
-xterm*faceName:                 SauceCodePro Nerd Font,SauceCodePro Nerd Font Semibold
-xterm*faceSize:                 11
+xterm*faceName:                 SauceCodePro Nerd Font Mono,SauceCodePro Nerd Font Mono Semibold
+xterm*faceSize:                 10
 xterm*internalBorder:           4
 xterm*pointerMode:              2
 xterm*renderFont:               true

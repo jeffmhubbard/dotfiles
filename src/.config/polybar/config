@@ -2,37 +2,37 @@
 
 [colors]
 ; full color palette
-black    = ${xrdb:color0}
-red      = ${xrdb:color1}
-green    = ${xrdb:color2}
-yellow   = ${xrdb:color3}
-blue     = ${xrdb:color4}
-magenta  = ${xrdb:color5}
-cyan     = ${xrdb:color6}
-white    = ${xrdb:color7}
-hblack   = ${xrdb:color8}
-hred     = ${xrdb:color9}
-hgreen   = ${xrdb:color10}
-hyellow  = ${xrdb:color11}
-hblue    = ${xrdb:color12}
-hmagenta = ${xrdb:color13}
-hcyan    = ${xrdb:color14}
-hwhite   = ${xrdb:color15}
+black           = ${xrdb:color0}
+dark_grey       = ${xrdb:color8}
+dark_red        = ${xrdb:color1}
+red             = ${xrdb:color9}
+dark_green      = ${xrdb:color2}
+green           = ${xrdb:color10}
+dark_yellow     = ${xrdb:color3}
+yellow          = ${xrdb:color11}
+dark_blue       = ${xrdb:color4}
+blue            = ${xrdb:color12}
+dark_magenta    = ${xrdb:color5}
+magenta         = ${xrdb:color13}
+dark_cyan       = ${xrdb:color6}
+cyan            = ${xrdb:color14}
+grey            = ${xrdb:color7}
+white           = ${xrdb:color15}
 ; color aliases
 background      = ${self.black}
-background-alt  = ${self.hblack}
-foreground      = ${self.hwhite}
-foreground-alt  = ${self.white}
-primary         = ${self.hblue}
-primary-alt     = ${self.blue}
-secondary       = ${self.hgreen}
-secondary-alt   = ${self.green}
-active          = ${self.hcyan}
-active-alt      = ${self.cyan}
-urgent          = ${self.hcyan}
-urgent-alt      = ${self.cyan}
-alert           = ${self.hred}
-alert-alt       = ${self.red}
+background-alt  = ${self.dark_grey}
+foreground      = ${self.white}
+foreground-alt  = ${self.grey}
+primary         = ${self.blue}
+primary-alt     = ${self.dark_blue}
+secondary       = ${self.green}
+secondary-alt   = ${self.dark_green}
+active          = ${self.cyan}
+active-alt      = ${self.dark_cyan}
+urgent          = ${self.cyan}
+urgent-alt      = ${self.dark_cyan}
+alert           = ${self.red}
+alert-alt       = ${self.dark_red}
 
 
 [settings]
@@ -47,12 +47,12 @@ margin-bottom = 0
 [bar/base-bottom]
 ; theme
 width = 100%
-height = 24
+height = 28
 radius = 0.0
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 1
+line-size = 2
 line-color = ${colors.background-alt}
 border-size = 0
 border-color = ${colors.background-alt}
@@ -66,8 +66,9 @@ tray-padding = 1
 tray-background = ${colors.background}
 cursor-click = pointer
 cursor-scroll = ns-resize
+;font-0 = Source Sans Pro:pixelsize=10:style=bold;1
 font-0 = SauceCodePro Nerd Font:pixelsize=10:style=bold;1
-font-1 = FontAwesome:pixelsize=10;1
+;font-1 = FontAwesome:pixelsize=10;1
 modules-left = bspwm xwindow
 modules-right = date
 
