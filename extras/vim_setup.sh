@@ -12,3 +12,4 @@ git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
 git clone https://github.com/mhinz/vim-signify.git ~/.vim/bundle/vim-signify
 git clone https://github.com/airblade/vim-gitgutter.git ~/.vim/bundle/vim-gitgutter
 git clone https://github.com/vifm/vifm.vim.git ~/.vim/bundle/vifm.vim
+git clone https://github.com/jeffmhubbard/antsy.vim.git ~/.vim/bundle/antsy.vim

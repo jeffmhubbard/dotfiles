@@ -1,5 +1,4 @@
 " vim: set ft=vim:
-" antsy.vim 2018
 
 " for Arch Linux
 runtime! archlinux.vim
@@ -18,7 +17,6 @@ execute pathogen#infect()
 
 " set theme
 colorscheme antsy
-set background=dark
 set term=screen-256color
 
 " common settings
@@ -96,9 +94,6 @@ nnoremap <C-P> :bprev<CR>
 
 " vim-devicons
 let g:webdevicons_conceal_nerdtree_brackets = 1
-
-" close buffer
-"nnoremap cc :bp\|bd #<CR>
 
 " save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
