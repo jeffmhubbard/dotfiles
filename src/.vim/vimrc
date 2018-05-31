@@ -1,5 +1,5 @@
 " vim: set ft=vim:
-" ~/.vim/vimrc 2018
+" antsy.vim 2018
 
 " for Arch Linux
 runtime! archlinux.vim
@@ -23,6 +23,7 @@ set term=screen-256color
 
 " common settings
 set laststatus=2
+set shortmess+=F
 set noshowmode
 set noshowcmd
 set nowrap
@@ -51,21 +52,26 @@ set fileencoding=utf-8
 set mouse=a
 set statusline=""
 
-" lightline
+" lightline.vim
 let g:lightline = { 'colorscheme': 'antsy', }
 
 " nerdtree
+" auto open NERDTree when vim starts with directory
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-
+" close vim if NERDTree is only window remaining
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" options
 let NERDTreeShowHidden = 1
-let NERDTreeStatusline = -1
+let NERDTreeStatusline = 2
 let NERDTreeWinSize = 25
 let NERDTreeMinimalUI=1
-map <C-=> :NERDTreeToggle<CR>
+" toggle NERDTree
+map <C-\> :NERDTreeToggle<CR>
 
 " nerdtree-git
 let g:NERDTreeShowGitStatus = 1
+" icons to match oh-my-zsh prompt
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "●",
     \ "Staged"    : "▲",
@@ -73,9 +79,9 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Renamed"   : "➤",
     \ "Unmerged"  : "♦",
     \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ "Ignored"   : '☒',
+    \ "Dirty"     : "",
+    \ "Clean"     : "",
+    \ "Ignored"   : '',
     \ "Unknown"   : "?"
     \ }
 
@@ -84,8 +90,12 @@ let g:buftabline_show = 1
 let g:buftabline_numbers = 1
 let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
+" map next and previous buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
+
+" vim-devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
 
 " close buffer
 "nnoremap cc :bp\|bd #<CR>
