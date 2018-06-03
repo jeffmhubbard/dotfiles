@@ -1,3 +1,10 @@
+##  File: neomutt/neomuttrc.gmail
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: June 2, 2018
+
+# example Gmail setup
+
 # Gmail settings
 set imap_user = 'user.name@gmail.com'
 set imap_pass = 'password'
@@ -13,4 +20,4 @@ set realname = 'User X. Name'
 set smtp_url = 'smtp://user.name@smtp.gmail.com:587/'
 set smtp_pass='password'
 
-# vi: ft=muttrc ts=4 sw=4 sts=4 et
+# vim: set ft=muttrc :
