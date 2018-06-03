@@ -1,4 +1,7 @@
-" vim: set ft=vim:
+""  File: vim/vimrc
+""  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+""  License: The MIT License (MIT)
+""  Modified: June 2, 2018
 
 " for Arch Linux
 runtime! archlinux.vim
@@ -22,6 +25,7 @@ set term=screen-256color
 " common settings
 set laststatus=2
 set shortmess+=F
+set fillchars+=vert:│
 set noshowmode
 set noshowcmd
 set nowrap
@@ -97,3 +101,5 @@ let g:webdevicons_conceal_nerdtree_brackets = 1
 
 " save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
+
+" vim: set ft=vim:
