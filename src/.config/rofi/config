@@ -1,14 +1,19 @@
+!!  File: rofi/config
+!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+!!  License: The MIT License (MIT)
+!!  Modified: June 2, 2018
+
 rofi.modi: window,drun,run
 rofi.width: -50
 rofi.lines: 15
 rofi.columns: 1
-rofi.font: SauceCodePro Nerd Font Mono Bold 10
+rofi.font: Hack Nerd Font 10
 rofi.bw: 1
 rofi.bc: #5c5cff
 rofi.location: 7
 rofi.padding: 1
-rofi.yoffset: -28
-rofi.xoffset: 4
+rofi.yoffset: -33
+rofi.xoffset: 5
 rofi.fixed-num-lines: false
 rofi.show-icons: true
 rofi.drun-icon-theme: hicolor
@@ -21,4 +26,5 @@ rofi.show-match: true
 rofi.display-window: Windows
 rofi.display-run: Commands
 rofi.display-drun: Applications
+rofi.terminal: urxvt
 rofi.theme: ~/.config/rofi/antsy.rasi

@@ -1,4 +1,9 @@
-!! Include color scheme
+!!  File: .Xresources
+!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+!!  License: The MIT License (MIT)
+!!  Modified: June 2, 2018
+
+!! Colors
 #include ".Xresources.antsy"
 
 !! --- Fonts ---
@@ -26,26 +31,12 @@ URxvt*cursorBlink:              true
 URxvt*cursorUnderline:          true
 URxvt*colorULMode:              on
 URxvt.blurRadius:               2
-URxvt*font:                     xft:SauceCodePro Nerd Font Mono:pixelsize=13:Regular
-URxvt*boldFont:                 xft:SauceCodePro Nerd Font Mono:pixelsize=13:Bold
+URxvt*font:                     xft:Hack Nerd Font:pixelsize=13:Regular
+URxvt*boldFont:                 xft:Hack Nerd Font:pixelsize=13:Regular:Bold
+URxvt.italicFont:               xft:Hack Nerd Font:pixelsize=11:Italic
+URxvt.boldItalicFont:           xft:Hack Nerd Font:pixelsize=11:Italic:Bold
 URxvt*perl-ext-common:          default,matcher
 URxvt.url-launcher:             qutebrowser
 URxvt.matcher.button:           1
 
-!! --- Xterm ---
-xterm*boldColors:               true
-xterm*borderWidth:              0
-xterm*charClass:                33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
-xterm*cursorBlind:              true
-xterm*cutNewLine:               false
-xterm*dynamicColors:            true
-xterm*faceName:                 SauceCodePro Nerd Font Mono,SauceCodePro Nerd Font Mono Semibold
-xterm*faceSize:                 10
-xterm*internalBorder:           4
-xterm*pointerMode:              2
-xterm*renderFont:               true
-xterm*selectToClipboard:        true
-xterm*termName:                 xterm-256color
-xterm*toolBar:                  false
-
-! vim: set filetype=xdefaults :
+! vim: set ft=xdefaults :

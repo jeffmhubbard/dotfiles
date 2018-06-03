@@ -1,51 +1,51 @@
-!! define color aliases
-#define black     #000000
-#define red       #cd0000
-#define green     #00cd00
-#define yellow    #cdcd00
-#define blue      #0000ee
-#define magenta   #cd00cd
-#define cyan      #00cdcd
-#define white     #e5e5e5
-#define hblack    #7f7f7f
-#define hred      #ff0000
-#define hgreen    #00ff00
-#define hyellow   #ffff00
-#define hblue     #5c5cff
-#define hmagenta  #ff00ff
-#define hcyan     #00ffff
-#define hwhite    #ffffff
+!!  File: .Xresources.antsy
+!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+!!  License: The MIT License (MIT)
+!!  Modified: June 2, 2018
 
-#define transparent f2000000
-#define opaque      00000000
-#define active      0000ffff
+!! --- Aliases ---
+#define black           #000000
+#define dark_red        #cd0000
+#define dark_green      #00cd00
+#define dark_yellow     #cdcd00
+#define dark_blue       #0000ee
+#define dark_magenta    #cd00cd
+#define dark_cyan       #00cdcd
+#define grey            #e5e5e5
+#define dark_grey       #7f7f7f
+#define red             #ff0000
+#define green           #00ff00
+#define yellow          #ffff00
+#define blue            #5c5cff
+#define magenta         #ff00ff
+#define cyan            #00ffff
+#define white           #ffffff
 
-!! --- Default colors ---
+!! --- Colors ---
 *color0:        black
-*color1:        red
-*color2:        green
-*color3:        yellow
-*color4:        blue
-*color5:        magenta
-*color6:        cyan
-*color7:        white
-*color8:        hblack
-*color9:        hred
-*color10:       hgreen
-*color11:       hyellow
-*color12:       hblue
-*color13:       hmagenta
-*color14:       hcyan
-*color15:       hwhite
+*color1:        dark_red
+*color2:        dark_green
+*color3:        dark_yellow
+*color4:        dark_blue
+*color5:        dark_magenta
+*color6:        dark_cyan
+*color7:        grey
+*color8:        dark_grey
+*color9:        red
+*color10:       green
+*color11:       yellow
+*color12:       blue
+*color13:       magenta
+*color14:       cyan
+*color15:       white
 *background:    black
-*foreground:    hwhite
-*cursorColor:   hgreen
+*foreground:    white
+*cursorColor:   green
 
-
-!! --- bspwm ---
-bspwm.active_border_color:      hblack
-bspwm.focused_border_color:     hblue
+!! --- Windows ---
+bspwm.active_border_color:      dark_grey
+bspwm.focused_border_color:     blue
 bspwm.normal_border_color:      black
 bspwm.presel_feedback_color:    black
 
-! vim: set filetype=xdefaults :
+! vim: set ft=xdefaults :

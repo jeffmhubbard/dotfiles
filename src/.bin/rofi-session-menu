@@ -1,0 +1,35 @@
+#!/bin/sh
+
+##  File: rofi-session-menu
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: June 2, 2018
+
+##  use rofi to create a simple session menu
+
+declare -A OPTIONS
+OPTIONS=(
+  ["Reload Desktop"]="$HOME/.config/bspwm/bspwmrc"
+  ["Reload Shortcuts"]="pkill -USR1 -x sxhkd"
+  ["Exit Desktop"]="bspc quit"
+)
+
+get_options() {
+    for choice in "${!OPTIONS[@]}"
+    do
+      echo "$choice"
+    done
+}
+
+main() {
+  choice=$( (get_options) | rofi -dmenu -p "Session" )
+  if [[ -n "$choice" ]]; then
+    exec ${OPTIONS[$choice]}
+  fi
+}
+
+main
+
+exit 0
+
+# vim: set ft=sh :

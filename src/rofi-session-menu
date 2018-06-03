@@ -1,0 +1,29 @@
+#!/bin/sh
+
+declare -A SESSION
+
+SESSION=(
+  ["Reload Desktop"]="$HOME/.config/bspwm/bspwmrc"
+  ["Reload Shortcuts"]="pkill -USR1 -x sxhkd"
+  ["Exit Desktop"]="bspc quit"
+)
+
+# List for rofi
+gen_list() {
+    for i in "${!SESSION[@]}"
+    do
+      echo "$i"
+    done
+}
+
+main() {
+  # Pass the list to rofi
+  option=$( (gen_list) | rofi -dmenu -p "Session" )
+  if [[ -n "$option" ]]; then
+    exec ${SESSION[$option]}
+  fi
+}
+
+main 
+
+exit 0

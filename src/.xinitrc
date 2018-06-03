@@ -1,36 +1,36 @@
 #!/bin/sh
 
-# --- ---
+##  File: .xinitrc
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: June 2, 2018
+
+# --- Enviroment ---
 export MPD_HOST=python
 export MPD_PORT=6600
-
 export RTV_BROWSER=qutebrowser
-
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # --- Xresources ---
-userresources=$HOME/.Xresources
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# --- sound ---
+# --- Sound ---
 start-pulseaudio-x11 &
 
-# --- mouse ---
+# --- Shortcuts ---
+sxhkd &
+
+# --- Mouse ---
 xsetroot -cursor_name left_ptr &
 unclutter -root &
 
-# --- compositor ---
-compton &
-
-# --- notifications ---
+# --- Notifications ---
 dunst &
 
-# --- wallpaper ---
+# --- Wallpaper ---
 sh ~/.fehbg &
 
-# --- window manager ---
+# --- Window Manager ---
 exec bspwm
 
-# vim: set filetype=sh :
+# vim: set ft=sh :
