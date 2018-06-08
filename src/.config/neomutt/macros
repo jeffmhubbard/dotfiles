@@ -1,0 +1,7 @@
+##  File: neomutt/macros
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: June 8, 2018
+
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"

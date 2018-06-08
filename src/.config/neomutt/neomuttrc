@@ -7,6 +7,7 @@
 source $HOME/.config/neomutt/neomuttrc.priv
 source $HOME/.config/neomutt/colors
 source $HOME/.config/neomutt/sidebar
+source $HOME/.config/neomutt/macros
 
 # --- Paths ---
 set header_cache = "~/.cache/mutt/headers"
@@ -45,6 +46,6 @@ set editor='vim + -c "set nocp" -c "set textwidth=72" -c "set wrap" -c "silent /
 
 # --- Status ---
 set status_chars  = " *%A"
-set status_format = "─(F: %f)─(M:%r%m%?n?(%n new)?%?d?(%d to delete)?%?t?(%t tagged)?)───%>─%?p?(%p postponed)?───"
+set status_format = "───────────────────┴──[F: %f]──[M:%r%m%?n?(%n new)?%?d?(%d to delete)?%?t?(%t tagged)?]───%>─%?p?(%p postponed)?───"
 
 # vim: set ft=muttrc :
