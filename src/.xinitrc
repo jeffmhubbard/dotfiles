@@ -28,7 +28,8 @@ unclutter -root &
 dunst &
 
 # --- Wallpaper ---
-sh ~/.fehbg &
+xsetroot -solid grey20
+[[ -f ~/.fehbg ]] && sh ~/.fehbg &
 
 # --- Window Manager ---
 exec bspwm

@@ -91,6 +91,8 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export HISTSIZE=9999
 export SAVEHIST=1000
 
+export BROWSER=/usr/bin/qutebrowser
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -100,5 +102,3 @@ export SAVEHIST=1000
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi="vim"
-#alias rtv="rtv --theme antsy"
-alias mutt="neomutt"

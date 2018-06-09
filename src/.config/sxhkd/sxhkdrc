@@ -14,8 +14,11 @@ super + space
 super + grave
 	rofi -show run
 # rofi-session-menu
-super + alt + b
+super + ctrl + equal
 	rofi-session-menu
+# rofi-randr
+super + shift + equal
+	rofi-randr
 
 # --- Commands ---
 # launch terminal
