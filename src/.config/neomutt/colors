@@ -17,22 +17,22 @@ color tree          color8          default # arrow in threads (`-->')
 color status        color8          default
 color status        color15         default     '(M|F): [:alnum:]+'
 color status        color8          default     '\([^)]+/[^)]+\)'
-color status        color13         default     '\(threads/last-date-received\)'
-color status        color5          default     '\[([^]]+)\]' 1
+color status        color5          default     '\(threads/last-date-received\)'
+color status        color7          default     '\[([^]]+)\]' 1
 
 ## mono
 mono bold           bold
 mono underline      underline
 mono indicator      reverse
 mono error          bold
-mono header         bold                            "^(From|Subject|Date|To|Cc|Bcc):"
+mono header         bold                        "^(From|Subject|Date|To|Cc|Bcc):"
 mono quoted         bold
 
 # --- Index ---
-color index         color7          default        "~A"            # all messages
-color index         brightcolor15   default        "~N"            # new messages
-color index         brightcolor15   default        "~U"            # unread messages
-color index         brightcolor11   default        "~F"            # flagged messages
+color index         color7          default     "~A"            # all messages
+color index         brightcolor15   default     "~N"            # new messages
+color index         brightcolor15   default     "~U"            # unread messages
+color index         brightcolor11   default     "~F"            # flagged messages
 
 # --- Headers ---
 color hdrdefault    default         default

@@ -16,13 +16,13 @@ set certificate_file = "~/.config/neomutt/certificates"
 
 # --- Options ---
 set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"
-set sendmail="/usr/sbin/ssmtp"
 set sort=threads
 set move = no
 set imap_keepalive = 900
 set sleep_time = 0
 set new_mail_command="notify-send -u normal 'New Email' '%n new messages, %u unread.' &"
 set beep = no
+set sendmail="/usr/sbin/ssmtp"
 
 set use_from = yes
 set envelope_from                    # which from?
