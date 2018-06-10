@@ -17,13 +17,11 @@ pkill -USR1 -x sxhkd
 $HOME/.config/polybar/launch.sh &
 
 # --- Monitors ---
-if [ "$(bspc query -M | wc -l)" = "1" ]; then
-  # default
-  bspc monitor -d 1 2 3 4 5 6
-else
-  # dragon
+if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
   bspc monitor VGA-1 -d 1 2 3
   bspc monitor DP-1 -d 4 5 6
+else
+  bspc monitor -d 1 2 3 4 5 6
 fi
 
 # --- Options ---
@@ -42,7 +40,6 @@ bspc config normal_border_color       $(colors normal_border_color)
 bspc config presel_feedback_color     $(colors presel_feedback_color)
 
 # --- Rules ---
-bspc rule -a Gimp-2.10      desktop='^5' state=floating focus=on follow=on manage=on
 bspc rule -a feh            state=floating focus=on follow=on manage=on
 bspc rule -a mpv            state=floating focus=on follow=on manage=on
 bspc rule -a vlc            state=floating focus=on follow=on manage=on
