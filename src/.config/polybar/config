@@ -1,7 +1,10 @@
-;=====================================================
+;;  File: polybar/config
+;;  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+;;  License: The MIT License (MIT)
+;;  Modified: June 10, 2018
 
 [colors]
-; full color palette
+; --- Palette ---
 black           = ${xrdb:color0}
 dark_grey       = ${xrdb:color8}
 dark_red        = ${xrdb:color1}
@@ -18,7 +21,7 @@ dark_cyan       = ${xrdb:color6}
 cyan            = ${xrdb:color14}
 grey            = ${xrdb:color7}
 white           = ${xrdb:color15}
-; color aliases
+; --- Aliases ---
 background      = ${self.black}
 background-alt  = ${self.dark_grey}
 foreground      = ${self.white}
@@ -34,10 +37,8 @@ urgent-alt      = ${self.dark_cyan}
 alert           = ${self.red}
 alert-alt       = ${self.dark_red}
 
-
 [settings]
-screenchange-reload = true
-
+screenchange-reload = false
 
 [global/wm]
 margin-top = 0
@@ -45,10 +46,11 @@ margin-bottom = 0
 
 
 [bar/base-bottom]
-; theme
+; --- Template ---
 width = 100%
 height = 28
 radius = 0.0
+bottom = true
 fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -71,27 +73,23 @@ modules-left = bspwm xwindow
 modules-center = 
 modules-right = date
 
-[bar/gargoyle-bottom]
+[bar/dragon-bottom]
 inherit = bar/base-bottom
-bottom = true
-modules-right = cpu temp mem fs bat-gargoyle pulseaudio wifi-gargoyle date
+modules-right = cpu temp mem fs snd-dragon eth-dragon date
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
-bottom = true
-modules-right = cpu temp mem fs pulseaudio eth-dragon
+modules-right = cpu temp mem fs snd-dragon eth-dragon
 
 [bar/dragon-right]
 inherit = bar/base-bottom
 monitor = DP-1
-bottom = true
 modules-right = date
 
-[bar/dragon-bottom]
+[bar/gargoyle-bottom]
 inherit = bar/base-bottom
-bottom = true
-modules-right = cpu temp mem fs pulseaudio eth-dragon date
+modules-right = cpu temp mem fs bat-gargoyle snd-gargoyle wifi-gargoyle date
 
 [module/bspwm]
 type = internal/bspwm
@@ -240,20 +238,19 @@ animation-charging-2 = " "
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 1000
 
-;[module/bat-vbox]
-;inherit = module/battery
-;battery = BAT0
-;adapter = AC
-
 [module/bat-gargoyle]
 inherit = module/battery
 battery = BAT1
 adapter = ACAD
 
+[module/bat-pegasus]
+inherit = module/battery
+battery = BAT0
+adapter = AC
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
-;sink = alsa_output.pci-0000_12_00.3.analog-stereo
 use-ui-max = true
 
 format-volume = <ramp-volume> <label-volume>
@@ -271,6 +268,18 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.background-alt}
+
+[module/snd-dragon]
+inherit = module/pulseaudio
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+[module/snd-gargoyle]
+inherit = module/pulseaudio
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+[module/snd-pegasus]
+inherit = module/pulseaudio
+;sink = alsa_output.pci-0000_12_00.3.analog-stereo
 
 
 [module/ethernet]
@@ -324,12 +333,6 @@ ramp-signal-3 = ""
 ramp-signal-4 = ""
 ramp-signal-foreground = ${colors.background-alt}
 
-animation-packetloss-0 = "⚠ "
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = "📶 "
-animation-packetloss-1-foreground = #000000
-animation-packetloss-framerate = 500
-
 [module/wifi-gargoyle]
 inherit = module/wireless
 interface = wlo1
@@ -337,90 +340,6 @@ interface = wlo1
 ;[module/wifi-pegasus]
 ;inherit = module/wireless
 ;interface = wlp7s0b1
-
-
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-password =
-
-; Seconds to sleep between progressbar/song timer sync
-; Default: 1
-interval = 2
-
-; Available tags:
-;   <label-song> (default)
-;   <label-time>
-;   <bar-progress>
-;   <toggle> - gets replaced with <icon-(pause|play)>
-;   <toggle-stop> - gets replaced with <icon-(stop|play)>
-;   <icon-random>
-;   <icon-repeat>
-;   <icon-repeatone>
-;   <icon-consume>
-;   <icon-prev>
-;   <icon-stop>
-;   <icon-play>
-;   <icon-pause>
-;   <icon-next>
-;   <icon-seekb>
-;   <icon-seekf>
-format-online = <label-song> <label-time> <icon-prev> <icon-stop> <toggle> <icon-next>
-;format-playing = ${self.format-online}
-;format-paused = ${self.format-online}
-;format-stopped = ${self.format-online}
-
-; Available tags:
-;   <label-offline>
-;format-offline = <label-offline>
-
-; Available tokens:
-;   %artist%
-;   %album%
-;   %date%
-;   %title%
-; Default: %artist% - %title%
-label-song = 𝄞 %artist% - %title%
-
-; Available tokens:
-;   %elapsed%
-;   %total%
-; Default: %elapsed% / %total%
-;label-time = %elapsed% / %total%
-
-; Available tokens:
-;   None
-label-offline = mpd is offline
-
-; Only applies if <icon-X> is used
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-seekb = 
-icon-seekf = 
-icon-random = 
-icon-repeat = 
-icon-repeatone = 
-icon-consume = 
-
-; Used to display the state of random/repeat/repeatone
-; Only applies if <icon-[random|repeat|repeatone]> is used
-toggle-on-foreground = #ff
-toggle-off-foreground = #55
-
-; Only applies if <bar-progress> is used
-bar-progress-width = 45
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
-
-
-
-
 
 
 ; vim:ft=dosini
