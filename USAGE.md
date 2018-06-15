@@ -1,7 +1,4 @@
-##  File: cheatsheet.txt
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 15, 2018
+## USAGE.md
 
 # session menu (exit, reload settings)
 super + ctrl + = (equal)
@@ -121,4 +118,4 @@ Print
 # screenshot focused window
 shift + Delete
 
-# vim: set ft=txt:
+# vim: set ft=md:
