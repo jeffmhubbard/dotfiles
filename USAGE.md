@@ -1,121 +1,120 @@
-## USAGE.md
+# USAGE.md
 
-# session menu (exit, reload settings)
+### session menu (exit, reload settings)
 super + ctrl + = (equal)
 
-# display settings (xrandr)
+### display settings (xrandr)
 super + shift + = (equal)
 
-# window list
+### window list
 super + Tab
 
-# application launcher
+### application launcher
 super + space
 
-# run command
+### run command
 super + ` (grave)
 
-# launch terminal
+### launch terminal
 super + Return
 
-# focus given desktop
+### focus given desktop
 super + 1-6
 
-# focus display left/right
+### focus display left/right
 super + , (comma), . (period)
 
-# focus window in given direction
+### focus window in given direction
 super + Up, Down, Left, Right
 
-# move forward or back in focus history
+### move forward or back in focus history
 super + [ (bracket), ] (bracket)
 
-# select parent node
+### select parent node
 super + a
 
-# select child node
+### select child node
 super + c
 
-# rotate windows 
+### rotate windows 
 super + r
 super + shift + r
 
-# set window tiled
+### set window tiled
 super + t
 
-# set window psuedo-tiled
+### set window psuedo-tiled
 super + shift + t
 
-# set window floating
+### set window floating
 super + f
 
-# set window fullscreen
+### set window fullscreen
 super + shift + f
 
-# toggle monocle layout
+### toggle monocle layout
 super + m
 
-# set window marked
+### set window marked
 super + ctrl + m
 
-# set window locked
+### set window locked
 super + ctrl + l
 
-# set window sticky
+### set window sticky
 super + ctrl + s
 
-# set window private
+### set window private
 super + ctrl + p
 
-# preselect in given direction
+### preselect in given direction
 super + ctrl + Up, Down, Left, Right
 
-# cancel preselection
+### cancel preselection
 super + Escape
 
-# cancel preselection for focused desktop
+### cancel preselection for focused desktop
 super + ctrl + Escape
 
-# move window in given direction
+### move window in given direction
 super + shift + Up, Down, Left, Right
 
-# send to given desktop
+### send to given desktop
 super + shift + 1-6
 
-# send marked window to preselection
+### send marked window to preselection
 super + shift + g
 
-# grow window
+### grow window
 super + shift + h, j, k, l
 
-# shrink window
+### shrink window
 super + shift + alt + h, j, k, l
 
-# move floating window
+### move floating window
 super + alt + Up, Down, Left, Right
 
-# close window
+### close window
 super + w
 
-# kill window
+### kill window
 super + q
 
-# close notification
+### close notification
 super + x
 
-# close all notifications
+### close all notifications
 super + ctrl + x
 
-# notification history
+### notification history
 super + shift + x
 
-# notification context
+### notification context
 super + shift + period
 
-# screenshot
+### screenshot
 Print
 
-# screenshot focused window
+### screenshot focused window
 shift + Delete
 
-# vim: set ft=md:
