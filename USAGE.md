@@ -1,10 +1,10 @@
 # USAGE.md
 
 ### session menu (exit, reload settings)
-super + ctrl + = (equal)
+super + ctrl + =
 
 ### display settings (xrandr)
-super + shift + = (equal)
+super + shift + =
 
 ### window list
 super + Tab
@@ -13,7 +13,7 @@ super + Tab
 super + space
 
 ### run command
-super + ` (grave)
+super + `
 
 ### launch terminal
 super + Return
@@ -22,13 +22,15 @@ super + Return
 super + 1-6
 
 ### focus display left/right
-super + , (comma), . (period)
+super + [
+super + ]
 
 ### focus window in given direction
 super + Up, Down, Left, Right
 
 ### move forward or back in focus history
-super + [ (bracket), ] (bracket)
+super + ,
+super + .
 
 ### select parent node
 super + a

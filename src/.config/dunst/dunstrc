@@ -1,7 +1,7 @@
 ##  File: dunst/dunstrc
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+##  Modified: June 15, 2018
 
 [global]
 startup_notification = false
@@ -20,6 +20,8 @@ font = Hack Nerd Font 10
 markup = yes
 alignment = left
 icon_position = left
+max_icon_size = 16
+icon_path = /usr/share/icons/oomox-antsy/status/scalable/:/usr/share/icons/oomox-antsy/devices/scalable/
 word_wrap = yes
 ignore_newline = no
 show_indicators = yes
@@ -31,14 +33,14 @@ idle_threshold = 120
 sticky_history = yes
 history_length = 20
 indicate_hidden = yes
-browser = qutebrowser
+browser = /usr/bin/qutebrowser
 dmenu = /usr/bin/rofi -dmenu -p dunst:
 
 [shortcuts]
-close = mod4+x
-close_all = mod4+ctrl+x
-history = mod4+shift+x
-context = ctrl+shift+period
+close = mod4+apostrophe
+close_all = mod4+mod1+apostrophe
+history = mod4+ctrl+apostrophe
+context = mod4+ctrl+semicolon
 
 [urgency_low]
 background = "#000000"
@@ -58,4 +60,4 @@ foreground = "#000000"
 frame_color = "#ff0000"
 timeout = 0
 
-# vim: ft=cfg
+# vim: set ft=cfg:
