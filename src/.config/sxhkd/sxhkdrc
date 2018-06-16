@@ -59,9 +59,7 @@ super + {a,c}
 	bspc node -f @{parent,brother}
 # focus monitor left/right
 super + bracket{left,right}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+	bspc monitor -f {west,east}
 # focus the last node/desktop
 super + {_,shift + }slash
 	bspc {node,desktop} -f last
@@ -70,7 +68,9 @@ super + {_,shift} + r
   bspc node @/ -R {90,270}
 # focus the older or newer node in the focus history
 super + {comma,period}
-	bspc monitor -f {west,east}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
