@@ -26,9 +26,15 @@ if [ $(hostname) = "gargoyle" ]; then
     polybar gargoyle-bottom &
 fi
 
+# pegasus
+if [ $(hostname) = "pegasus" ]; then
+    polybar pegasus-bottom &
+fi
+
 # if no bar was started, use base
 if [ $(( `pgrep -u $UID -x polybar | wc -l` )) -eq 0 ]; then
     polybar base-bottom &
 fi
 
+# extbin: pgrep, xrandr, polybar
 # vim: set ft=sh:
