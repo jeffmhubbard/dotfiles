@@ -3,13 +3,7 @@
 ##  File: .xinitrc
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
-
-# --- Enviroment ---
-export MPD_HOST=python
-export MPD_PORT=6600
-export RTV_BROWSER=qutebrowser
-export QT_QPA_PLATFORMTHEME=gtk2
+##  Modified: June 17, 2018
 
 # --- Xresources ---
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
