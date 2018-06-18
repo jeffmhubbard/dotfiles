@@ -4,8 +4,6 @@
 " Source: https://github.com/joshdick/onedark.vim.git
 " Modified: June 13, 2018
 
-:vsplit
-
 colorscheme antsy
 
 set vicmd=vim
