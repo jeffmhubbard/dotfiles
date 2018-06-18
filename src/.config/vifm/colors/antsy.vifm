@@ -1,81 +1,96 @@
-" Name: vifm/colors/antsy.vim
-" Maintainer: https://github.com/jeffmhubbard/dotfiles/
-" License: The MIT License (MIT)
-" Source: https://github.com/joshdick/onedark.vim.git
-" Modified: June 17, 2018
+"" Name: vifm/colors/antsy.vim
+"" Maintainer: https://github.com/jeffmhubbard/dotfiles/
+"" License: The MIT License (MIT)
+"" Source: https://github.com/joshdick/onedark.vim.git
+"" Modified: June 18, 2018
 
 highlight clear
 
-highlight Win cterm=none ctermfg=none ctermbg=none
-highlight Directory cterm=none ctermfg=12 ctermbg=default
-highlight Link cterm=none ctermfg=14 ctermbg=default
-highlight BrokenLink cterm=reverse ctermfg=1 ctermbg=default
-highlight Socket cterm=reverse ctermfg=13 ctermbg=default
-highlight Device cterm=none ctermfg=11 ctermbg=default
-highlight Fifo cterm=reverse ctermfg=11 ctermbg=default
-highlight Executable cterm=bold ctermfg=10 ctermbg=default
-highlight Selected cterm=none ctermfg=0 ctermbg=14
-highlight CurrLine cterm=none ctermfg=0 ctermbg=12
-highlight OtherLine cterm=none ctermfg=0 ctermbg=15
-highlight TopLine cterm=none ctermfg=8 ctermbg=none
-highlight TopLineSel cterm=bold ctermfg=15 ctermbg=default
-highlight StatusLine cterm=bold ctermfg=7 ctermbg=none
-highlight WildMenu cterm=bold ctermfg=11 ctermbg=default
-highlight CmdLine cterm=none ctermfg=7 ctermbg=none
-highlight ErrorMsg cterm=none ctermfg=0 ctermbg=9
-highlight Border cterm=none ctermfg=8 ctermbg=none
-highlight JobLine cterm=bold,reverse ctermfg=0 ctermbg=15
-highlight SuggestBox cterm=bold ctermfg=default ctermbg=default
-highlight CmpMismatch cterm=bold ctermfg=7 ctermbg=9
-highlight AuxWin cterm=bold,underline,reverse,standout ctermfg=default ctermbg=default
+highlight Win           ctermfg=none    ctermbg=none    cterm=none
+highlight Directory     ctermfg=12      ctermbg=default cterm=none 
+highlight Link          ctermfg=14      ctermbg=default cterm=none
+highlight BrokenLink    ctermfg=1       ctermbg=default cterm=reverse
+highlight Socket        ctermfg=13      ctermbg=default cterm=reverse
+highlight Device        ctermfg=11      ctermbg=default cterm=none
+highlight Fifo          ctermfg=11      ctermbg=default cterm=reverse
+highlight Executable    ctermfg=10      ctermbg=default cterm=bold
+highlight Selected      ctermfg=0       ctermbg=14      cterm=none
+highlight CurrLine      ctermfg=0       ctermbg=12      cterm=none
+highlight OtherLine     ctermfg=0       ctermbg=15      cterm=none
+highlight TopLine       ctermfg=8       ctermbg=none    cterm=none
+highlight TopLineSel    ctermfg=15      ctermbg=default cterm=bold
+highlight StatusLine    ctermfg=7       ctermbg=none    cterm=bold
+highlight WildMenu      ctermfg=11      ctermbg=default cterm=bold
+highlight CmdLine       ctermfg=7       ctermbg=none    cterm=none
+highlight ErrorMsg      ctermfg=0       ctermbg=9       cterm=none
+highlight Border        ctermfg=8       ctermbg=none    cterm=none
+highlight JobLine       ctermfg=0       ctermbg=15      cterm=bold,reverse
+highlight SuggestBox    ctermfg=default ctermbg=default cterm=bold
+highlight CmpMismatch   ctermfg=7       ctermbg=9       cterm=bold
+highlight AuxWin        ctermfg=default ctermbg=default cterm=bold,underline,reverse,standout
 
 " paths
-set classify=' :dir:/, ::..::, :link:'
+set classify=' :dir:/, ::../::, :exe:, :reg:, :link:'
 " exec
 set classify+=' ::*.sh,,*.zsh,,*.bash::'
-set classify+=' ::*.bin,,*.run,,*.install,,*.x86,,*.exe,,*.msi,,*.dmg::'
-highlight {*.sh,*.run,*.bin,*.install,*.bash,*.zsh,*.x86,*.exe,*.msi,*.dmg}
-        \ cterm=bold ctermfg=10 ctermbg=default
+set classify+=' ::*.bin,,*.run,,*.install,,*.x86,,*.exe,,*.msi,,*.dmg::'
+highlight {*.sh,*.zsh,*.bash,*.bin,*.run,*.install,*.x86,*.exe,*.msi,*.dmg}
+        \   ctermfg=10      ctermbg=default cterm=bold
+" text
+set classify+=' ::*.txt,,*.log,,*.csv,,*.vcf::'
+highlight {*.txt,*.log,*.csv,*.vcf}
+        \   ctermfg=8       ctermbg=default cterm=none
+" config
+set classify+=' ::*.ini,,*.cfg,,*.conf,,.*rc,,.*.conf,,*rc::'
+set classify+='ﬥ ::*.json::'
+set classify+=' ::.bash*;;.zsh*::'
+highlight {*.ini,*.cfg,*.conf,.*rc,.*.conf,*rc,*.json;.bash*;.zsh*}
+        \   ctermfg=8       ctermbg=default cterm=none
 " documents
 set classify+=' ::*.doc,,*.docx,,*.odt,,*.rtf::, ::*.xls,,*.xls[mx],,*.ods::, ::*.ppt,,*.pptx,,*.odp::'
 set classify+=' ::*.epub,,*.cbr,,*.mobi::, ::*.pdf,,*.ps,,*.ps.gz::'
 highlight {*.doc,*.docx,*.odt,*.rtf,*.xls,*.xlsx,*.ods,*.ppt,*.pptx,*.odp,*.epub,*.cbr,*.mobi,*.pdf,*.ps,*.ps.gz}
-        \ cterm=none ctermfg=3 ctermbg=default
+        \   ctermfg=3       ctermbg=default cterm=none
 " media
 set classify+=' ::*.jpg,,*.jpeg,,*.JPG,,*.png,,*.gif,,*.png,,*.bmp,,*.ico,,*.svg,,*.svgz,,*.xcf,,*.ai::'
 set classify+=' ::*.mpg,,*.mpeg,,*.avi,,*.mkv,,*.mp4v,,*.gifv,,*.ogv::'
 set classify+=' ::*.mp3,,*.mp4,,*.aac,,*.m4a,,*.flac,,*.ogg,,*.wav,,*.m3u::'
 highlight {*.jpg,*.jpeg,*.JPG,*.png,*.gif,*.png,*.bmp,*.ico,*.svg,*.svgz,*.xcf,*.ai,*.mpg,*.mpeg,*.avi,*.mkv,*.mp4v,*.gifv,*.ogv,*.mp3,*.mp4,*.aac,*.m4a,*.flac,*.ogg,*.wav,*.m3u}
-        \ cterm=none ctermfg=5 ctermbg=default
+        \   ctermfg=5       ctermbg=default cterm=none
 " archives
 set classify+=' ::*.tar,,*.zip,,*.gz,,*.bz2,,*.xz,,*.tgz,,*.deb,,*.rpm,,*.jar,,*.rar,,*.iso,,*.7z::'
 highlight {*.tar,*.zip,*.gz,*.bz2,*.xz,*.tgz,*.deb,*.rpm,*.jar,*.rar,*.iso,*.7z}
-        \ cterm=none ctermfg=1 ctermbg=default
+        \   ctermfg=1       ctermbg=default cterm=none
 " programming 
 set classify+=' ::*.[hc]pp::, ::*.[hc]::'
 set classify+=' ::*.py,,*.pyc,,*.pyo::'
-set classify+=' ::*.java::'
-set classify+=' ::*.rb::'
 set classify+=' ::*.pl,,*.pm::'
 set classify+=' ::*.hs,,*.lhs::'
+set classify+=' ::*.java::'
+set classify+=' ::*.rb::'
+set classify+=' ::*.go::'
 set classify+=' ::*.diff,,*.patch::'
-highlight {*.java,*.py,*.pyc,*.pyo,*.pl,*.pm,*.rb,*.hs,*.lhs,*.cpp,*.cxx,*.C,*.cc,*.c,*.h,*.hxx,*.H,*.hh,*.hpp,*.patch,*.diff}
-        \ cterm=none ctermfg=2 ctermbg=default
+highlight {*.cpp,*.cxx,*.C,*.cc,*.c,*.h,*.hxx,*.H,*.hh,*.hpp,*.py,*.pyc,*.pyo,*.pl,*.pm,*.hs,*.lhs,*.java,*.rb,*.go,*.patch,*.diff}
+        \   ctermfg=2       ctermbg=default cterm=none
+" build
+set classify+=' ::PKGBUILD,,Makefile,,Makefile.am,,Makefile.in,,Makefile.win,,*.mak,,*.mk,,CMakeLists.txt,,*.ac,,*.in,,*.m4::'
+set classify+=' ::*.pyc,,*.pyo::, ::*.o::'
+highlight {PKGBUILD,Makefile,Makefile.am,Makefile.in,Makefile.win,*.mak,*.mk,CMakeLists.txt,*.ac,*.in,*.m4,*.pyc,*.pyo,*.o}
+        \   ctermfg=8       ctermbg=default cterm=none
 " markup
-set classify+=' ::*.html,,*.xml,,*.css,,*.haml,,*.erb,,*.xml,,*.xslt,,*.tmpl,,*.ini,,*.conf,,*.cfg,,*.yml,,*.yaml::'
-highlight {*.html,*.xml,*.css,*.haml,*.erb,*.xml,*.xslt,*.tmpl,*.ini,*.conf,*.cfg,*.yml,*.yaml}
-        \ cterm=none ctermfg=6 ctermbg=default
+set classify+=' ::*.html,,*.xml,,*.css,,*.haml,,*.erb,,*.xml,,*.xslt,,*.tmpl,,*.yml,,*.yaml::'
+highlight {*.html,*.xml,*.css,*.haml,*.erb,*.xml,*.xslt,*.tmpl,*.yml,*.yaml}
+        \   ctermfg=6       ctermbg=default cterm=none
 " database
 set classify+=' ::*.db,,*.sql,,*.sqlite*::'
 highlight {*.db,*.sql,*.sqlite*}
-        \ cterm=none ctermfg=4 ctermbg=default
+        \   ctermfg=4       ctermbg=default cterm=none
 " info
-set classify+=' ::COPYRIGHT,,COPYING*,,BUGS,,ChangeLog*,,FAQ,,INSTALL*,,LICENSE,,NEWS,,README*,,AUTHORS,,TODO,,THANKS,,*.md,,*.rst::'
-highlight {COPYRIGHT,COPYING*,BUGS,ChangeLog*,FAQ,INSTALL*,LICENSE,NEWS,README*,AUTHORS,TODO,THANKS,*.md,*.rst}
-        \ cterm=reverse ctermfg=15 ctermbg=default
+set classify+=' ::COPYRIGHT,,COPYING,,BUGS,,Change*,,FAQ,,INSTALL,,LICENSE,,NEWS,,README*,,AUTHORS,,TODO,,MANIFEST,,THANKS,,*.md,,*.rst::'
+highlight {*COPYRIGHT*,COPYING,*BUGS*,*ChangeLog*,*FAQ*,*INSTALL*,*LICENSE*,*NEWS*,*README*,*AUTHORS*,*TODO,*MANIFEST,*THANKS*,*.md,*.rst}
+        \   ctermfg=15      ctermbg=default cterm=bold
 " extras
 set classify+=' ::*.vim,,*.swp,,*vimrc,,.viminfo::'
 set classify+=' ::.git,,*.git::'
-
 
 " vim: set ft=vim:
