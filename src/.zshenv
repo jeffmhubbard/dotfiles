@@ -1,7 +1,9 @@
+#!/usr/bin/zsh
+
 ##  File: .zshenv
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 17, 2018
+##  Modified: June 18, 2018
 
 export PATH=$HOME/.bin:$PATH
 
@@ -17,7 +19,5 @@ export TERMINAL=urxvt
 export QT_QPA_PLATFORMTHEME=gtk2
 export MPD_HOST=python
 export MPD_PORT=6600
-
-eval $(dircolors -b $HOME/.dircolors)
 
 # vim: set ft=zsh:

@@ -1,14 +1,17 @@
 ##  File: .zshrc
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 17, 2018
+##  Modified: June 18, 2018
 
+# oh-my-zsh path
 export ZSH=~/.oh-my-zsh
 
+# oh-my-zsh env
 ZSH_THEME="antsy"
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
+# oh-my-zsh plugins
 plugins=( \
         archlinux \
         systemd \
@@ -22,13 +25,18 @@ plugins=( \
         fabric \
         )
 
+# oh-my-zsh init
 source $ZSH/oh-my-zsh.sh
 
+# env
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export HISTSIZE=9999
 export SAVEHIST=1000
+
+# LS_COLORS
+eval $(dircolors ~/.dircolors)
 
 # aliases
 alias vi="vim"
