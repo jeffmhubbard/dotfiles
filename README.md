@@ -2,7 +2,7 @@
 
 Mmm. Terminals...
 
-![Terminal](terminal.png | width=320 | height=180 "Terminal")
+![Terminal](terminal.png | width=320 "Terminal")
 
 ### Install
 Pick and choose; or clobber with `install.py`
