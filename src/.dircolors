@@ -15,6 +15,7 @@ TERM            rxvt
 TERM            rxvt-unicode-256color
 TERM            screen
 TERM            screen-256color
+TERM            tmux-256color
 TERM            vt100
 TERM            xterm
 TERM            xterm-16color

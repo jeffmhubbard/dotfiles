@@ -3,19 +3,22 @@
 ##  File: .zshenv
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 18, 2018
+##  Modified: June 21, 2018
 
+# PATHS
 export PATH=$HOME/.bin:$PATH
 
+# TEXT
 export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
 
+# GUI
 export BROWSER=/usr/bin/qutebrowser
 export RTV_BROWSER=$BROWSER
-export TERM=rxvt-unicode-256color
 export TERMINAL=urxvt
 
+# MISC
 export QT_QPA_PLATFORMTHEME=gtk2
 export MPD_HOST=python
 export MPD_PORT=6600

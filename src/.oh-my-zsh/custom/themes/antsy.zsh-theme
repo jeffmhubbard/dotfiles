@@ -1,8 +1,13 @@
-# antsy 2018
+##  File: antsy.zsh-theme
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: June 21, 2018
 
 setopt prompt_subst
 
-ZLE_RPROMPT_INDENT=0
+if [[ ! $TERM == 'linux' ]]; then
+    ZLE_RPROMPT_INDENT=0
+fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX='±'
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
@@ -20,32 +25,34 @@ ZSH_THEME_VIRTUALENV_PREFIX="("
 ZSH_THEME_VIRTUALENV_SUFFIX=")"
 
 precmd(){
-    local preprompt_left="%B%F{green}%n@%m %B%F{blue}%47<...<%~%<<%f%b"
+    if [ $UID -eq 0 ]; then
+        admin="%F{red}!"
+    fi
+    local preprompt_left="%B%F{green}$admin%n@%m %B%F{blue}%47<...<%~%<<%f%b"
     local preprompt_right="%B%F{red}$(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
+
 PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}▶ %#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
-
-LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:';
-export GREP_COLOR='1;33'
-export LS_COLORS
 
 # colored-man-pages (antsy)
 function man() {
 	env \
-		LESS_TERMCAP_mb=$(printf "\e[0;94m") \
-		LESS_TERMCAP_md=$(printf "\e[01;97m") \
+		LESS_TERMCAP_mb=$(printf "\e[01;38;5;11m") \
+		LESS_TERMCAP_md=$(printf "\e[01;38;5;9m") \
 		LESS_TERMCAP_me=$(printf "\e[0m") \
 		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[1;40;90m") \
+		LESS_TERMCAP_so=$(printf "\e[0;48;5;12;38;5;11m") \
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[0;94m") \
+		LESS_TERMCAP_us=$(printf "\e[01;38;5;10m") \
 		PAGER="${commands[less]:-$PAGER}" \
 		_NROFF_U=1 \
 		PATH="$HOME/bin:$PATH" \
 			man "$@"
 }
+
+# vim: set ft=zsh:
