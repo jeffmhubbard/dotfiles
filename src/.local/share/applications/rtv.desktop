@@ -3,6 +3,8 @@
 Version=1.0
 Terminal=true
 Type=Application
-Name=rtv
+Name=Reddit Terminal Viewer
+GenericName=RTV
+Comment=RTV provides a text-based interface to view and interact with reddit
 Exec=rtv
 Icon=internet-feed-reader

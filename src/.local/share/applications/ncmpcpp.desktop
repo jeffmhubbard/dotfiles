@@ -3,6 +3,8 @@
 Version=1.0
 Terminal=true
 Type=Application
-Name=ncmpcpp
+Name=NCurses Music Player Client (Plus Plus)
+GenericName=ncmpcpp
+Comment=ncmpcpp – featureful ncurses based MPD client inspired by ncmpc
 Exec=ncmpcpp
 Icon=music-library

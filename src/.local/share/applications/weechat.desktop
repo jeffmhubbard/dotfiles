@@ -4,5 +4,7 @@ Version=1.0
 Terminal=true
 Type=Application
 Name=WeeChat
+GenericName=WeeChat
+Comment=WeeChat, the extensible chat client
 Exec=weechat
 Icon=weechat
