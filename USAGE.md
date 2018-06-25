@@ -103,16 +103,16 @@ super + w
 super + q
 
 ### close notification
-super + x
+super + '
 
 ### close all notifications
-super + ctrl + x
+super + shift + '
 
 ### notification history
-super + shift + x
+super + ctrl + '
 
 ### notification context
-super + shift + period
+super + ctrl + ;
 
 ### screenshot
 Print
