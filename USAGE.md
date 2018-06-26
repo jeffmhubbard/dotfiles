@@ -106,10 +106,10 @@ super + q
 super + '
 
 ### close all notifications
-super + shift + '
+super + ctrl + '
 
 ### notification history
-super + ctrl + '
+super + alt + '
 
 ### notification context
 super + ctrl + ;

@@ -38,8 +38,8 @@ dmenu = /usr/bin/rofi -dmenu -p dunst:
 
 [shortcuts]
 close = mod4+apostrophe
-close_all = mod4+mod1+apostrophe
-history = mod4+ctrl+apostrophe
+close_all = mod4+ctrl+apostrophe
+history = mod4+mod1+apostrophe
 context = mod4+ctrl+semicolon
 
 [urgency_low]
