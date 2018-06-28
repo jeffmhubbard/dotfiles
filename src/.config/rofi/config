@@ -4,8 +4,8 @@
 !!  Modified: June 2, 2018
 
 rofi.modi: window,drun,run
-rofi.width: -50
-rofi.lines: 15
+rofi.width: 384
+rofi.lines: 16
 rofi.columns: 1
 rofi.font: Hack Nerd Font 10
 rofi.bw: 1
