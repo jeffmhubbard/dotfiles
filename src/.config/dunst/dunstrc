@@ -7,7 +7,7 @@
 startup_notification = false
 monitor = 0
 follow = mouse
-geometry = "480x16-5-33"
+geometry = "384x16-5-33"
 shrink = yes
 frame_width = 2
 padding = 8
@@ -38,8 +38,8 @@ dmenu = /usr/bin/rofi -dmenu -p dunst:
 
 [shortcuts]
 close = mod4+apostrophe
-close_all = mod4+ctrl+apostrophe
-history = mod4+mod1+apostrophe
+close_all = mod4+mod1+apostrophe
+history = mod4+ctrl+apostrophe
 context = mod4+ctrl+semicolon
 
 [urgency_low]
