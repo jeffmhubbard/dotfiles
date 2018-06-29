@@ -28,7 +28,7 @@ precmd(){
     if [ $UID -eq 0 ]; then
         admin="%F{red}!"
     fi
-    local preprompt_left="%B%F{green}$admin%n@%m %B%F{blue}%47<...<%~%<<%f%b"
+    local preprompt_left="%B%F{green}$admin%n%F{green}@%m %B%F{blue}%47<...<%~%<<%f%b"
     local preprompt_right="%B%F{red}$(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
