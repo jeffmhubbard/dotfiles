@@ -3,7 +3,7 @@
 ##  File: bspwm/bspwmrc
 ##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
 ##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+##  Modified: June 28, 2018
 
 # --- Colors ---
 colors() {
@@ -42,7 +42,7 @@ bspc config presel_feedback_color     $(colors presel_feedback_color)
 # --- Rules ---
 bspc rule -a feh            state=floating focus=on follow=on manage=on
 bspc rule -a mpv            state=floating focus=on follow=on manage=on
-bspc rule -a vlc            state=floating focus=on follow=on manage=on
 bspc rule -a Zathura        state=tiled focus=on follow=on manage=on
+
 
 # vim: set ft=sh:
