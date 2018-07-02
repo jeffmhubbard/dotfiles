@@ -1,10 +1,5 @@
 #!/bin/sh
 
-##  File: bspwm/bspwmrc
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 28, 2018
-
 # --- Colors ---
 colors() {
   xrdb -query | grep -E "^(bspwm|\*)\.$1" | sed -r "s/^[^:]+:\s+//" | tail -n 1
@@ -18,8 +13,8 @@ $HOME/.config/polybar/launch.sh &
 
 # --- Monitors ---
 if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
-  bspc monitor VGA1 -d 1 2 3
-  bspc monitor DP1 -d 4 5 6
+  bspc monitor VGA-1 -d 1 2 3
+  bspc monitor DP-1 -d 4 5 6
 else
   bspc monitor -d 1 2 3 4 5 6
 fi
@@ -33,6 +28,7 @@ bspc config pointer_follows_monitor   true
 bspc config border_width              2
 bspc config window_gap                10
 bspc config initial_polarity          second_child
+
 # --- Theme ---
 bspc config active_border_color       $(colors active_border_color)
 bspc config focused_border_color      $(colors focused_border_color)

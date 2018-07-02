@@ -75,13 +75,13 @@ modules-right = clock
 ; --- Inherit ---
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = cpu temp mem fs-dragon pa-dragon eth-dragon clock
+modules-right = cpu temp mem fs-dragon volume eth-dragon clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = cpu temp mem fs-dragon pa-dragon eth-dragon
+modules-right = cpu temp mem fs-dragon volume eth-dragon
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -91,11 +91,11 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = cpu temp mem fs-gargoyle bat-gargoyle pa-gargoyle wifi-gargoyle clock
+modules-right = cpu temp mem fs-gargoyle bat-gargoyle volume wifi-gargoyle clock
 
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
-modules-right = bat-pegasus pa-pegasus wifi-pegasus clock
+modules-right = bat-pegasus volume wifi-pegasus clock
 
 
 [module/bspwm]
@@ -137,6 +137,49 @@ label-urgent-padding = 1
 
 label-empty = %icon%
 label-empty-padding = 1
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = false
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-5 = 3;
+ws-icon-3 = 4;
+ws-icon-2 = 5;
+ws-icon-4 = 6;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+format-padding = 0
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-underline = ${colors.secondary}
+
+label-focused = %icon%
+label-focused-underline = ${colors.primary}
+label-focused-padding = 1
+
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.background-alt}
+label-unfocused-focused-underline = ${colors.foreground}
+
+label-visible = %icon%
+label-visible-underline = ${colors.background-alt}
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-underline = ${colors.urgent}
+label-urgent-padding = 1
 
 
 [module/xwindow]
@@ -311,6 +354,30 @@ inherit = module/pulseaudio
 
 [module/pa-pegasus]
 inherit = module/pulseaudio
+
+
+[module/volume]
+; --- Template ---
+type = internal/volume
+master-soundcard = default
+master-mixer = Master
+mapped = true
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+format-prefix-foreground = ${colors.background-alt}
+label-volume = %percentage%%
+
+format-muted-prefix = " "
+format-muted-padding = 1
+format-muted-prefix-foreground = ${colors.background-alt}
+format-muted-underline = ${colors.alert}
+label-muted = MUTE
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.background-alt}
 
 
 [module/ethernet]
