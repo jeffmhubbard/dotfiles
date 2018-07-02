@@ -1,7 +1,4 @@
-!!  File: .Xresources.antsy
-!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-!!  License: The MIT License (MIT)
-!!  Modified: June 2, 2018
+! .Xresources.antsy
 
 !! --- Aliases ---
 #define black           #000000
@@ -39,7 +36,7 @@
 *color14:       cyan
 *color15:       white
 *background:    black
-*foreground:    white
+*foreground:    grey
 *cursorColor:   green
 
 !! --- Windows ---
@@ -48,4 +45,5 @@ bspwm.focused_border_color:     blue
 bspwm.normal_border_color:      black
 bspwm.presel_feedback_color:    black
 
-! vim: set ft=xdefaults :
+
+! vim: set ft=xdefaults:

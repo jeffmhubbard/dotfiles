@@ -1,10 +1,10 @@
-!!  File: .Xresources
-!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-!!  License: The MIT License (MIT)
-!!  Modified: June 2, 2018
-
-!! Colors
+! .Xresources
+ 
+!! --- Colors ---
 #include ".Xresources.antsy"
+
+!! --- Screensaver ---
+#include ".Xresources.xlock"
 
 !! --- Fonts ---
 Xft.autohint:                   0

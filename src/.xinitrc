@@ -1,10 +1,5 @@
 #!/bin/sh
 
-##  File: .xinitrc
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 17, 2018
-
 # --- Xresources ---
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
@@ -25,7 +20,11 @@ dunst &
 xsetroot -solid grey20
 [[ -f ~/.fehbg ]] && sh ~/.fehbg &
 
+# --- Screensaver ---
+xautolock &
+
 # --- Window Manager ---
 exec bspwm
+
 
 # vim: set ft=sh :
