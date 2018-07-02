@@ -1,0 +1,12 @@
+#!/bin/sh
+
+##  File: Xsetup_local
+##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
+##  License: The MIT License (MIT)
+##  Modified: July 1, 2018
+
+# set background color
+xsetroot -solid grey20
+
+
+# vim: set ft=sh:
