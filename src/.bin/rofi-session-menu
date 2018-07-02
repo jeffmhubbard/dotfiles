@@ -1,14 +1,10 @@
 #!/bin/sh
 
-##  File: rofi-session-menu
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
-
-##  use rofi to create a simple session menu
+# use rofi to create a simple session menu
 
 declare -A OPTIONS
 OPTIONS=(
+  ["Lock Desktop"]="xautolock -locknow"
   ["Reload Desktop"]="$HOME/.config/bspwm/bspwmrc"
   ["Reload Shortcuts"]="pkill -USR1 -x sxhkd"
   ["Exit Desktop"]="bspc quit"
@@ -31,5 +27,6 @@ main() {
 main
 
 exit 0
+
 
 # vim: set ft=sh :
