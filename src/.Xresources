@@ -3,9 +3,6 @@
 !! --- Colors ---
 #include ".Xresources.antsy"
 
-!! --- Screensaver ---
-#include ".Xresources.xlock"
-
 !! --- Fonts ---
 Xft.autohint:                   0
 Xft.lcdfilter:                  lcddefault
@@ -38,5 +35,42 @@ URxvt.boldItalicFont:           xft:Hack Nerd Font:pixelsize=11:Italic:Bold
 URxvt*perl-ext-common:          default,matcher
 URxvt.url-launcher:             qutebrowser
 URxvt.matcher.button:           1
+
+!! --- Screensaver ---
+xscreensaver.mode:			                blank
+xscreensaver.timeout:		                0:10:00
+xscreensaver.lock:			                True
+xscreensaver.lockTimeout:		            0:10:00
+xscreensaver.passwdTimeout:		            0:00:30
+xscreensaver.dpmsEnabled:		            True
+xscreensaver.dpmsOff:		                0:20:00
+xscreensaver.nice:			                10
+xscreensaver.memoryLimit:		            0
+xscreensaver.verbose:		                False
+xscreensaver.timestamp:		                False
+xscreensaver.fade:			                False
+xscreensaver.unfade:		                False
+xscreensaver.splash:		                False
+
+xscreensaver.passwd.heading.label:          Arch Linux
+xscreensaver.passwd.body.label:             
+xscreensaver.passwd.unlock.label:           
+xscreensaver.passwd.login.label:
+xscreensaver.passwd.user.label:             Username:
+xscreensaver.passwd.thermometer.width:      0
+xscreensaver.passwd.asterisks:              True
+xscreensaver.passwd.uname:                  True
+
+xscreensaver.Dialog.logo.width:		        210
+xscreensaver.Dialog.logo.height:		    210
+xscreensaver.Dialog.internalBorderWidth:    0
+xscreensaver.Dialog.borderWidth:		    0
+xscreensaver.Dialog.shadowThickness:	    0
+
+xscreensaver.Dialog.headingFont:	        -*-helvetica-bold-r-*-*-*-180-*-*-*-*-iso8859-1
+xscreensaver.Dialog.labelFont:	            -*-helvetica-bold-r-*-*-*-140-*-*-*-*-iso8859-1
+xscreensaver.Dialog.unameFont:	            -*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-1
+xscreensaver.passwd.passwdFont:	            -*-courier-medium-r-*-*-*-140-*-*-*-iso8859-1
+
 
 ! vim: set ft=xdefaults :

@@ -21,7 +21,7 @@ xsetroot -solid grey20
 [[ -f ~/.fehbg ]] && sh ~/.fehbg &
 
 # --- Screensaver ---
-xautolock &
+xscreensaver &
 
 # --- Window Manager ---
 exec bspwm

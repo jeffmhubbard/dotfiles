@@ -4,7 +4,7 @@
 
 declare -A OPTIONS
 OPTIONS=(
-  ["Lock Desktop"]="xautolock -locknow"
+  ["Lock Desktop"]="xscreensaver-command -lock"
   ["Reload Desktop"]="$HOME/.config/bspwm/bspwmrc"
   ["Reload Shortcuts"]="pkill -USR1 -x sxhkd"
   ["Exit Desktop"]="bspc quit"
