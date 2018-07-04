@@ -1,9 +1,6 @@
 #!/bin/sh
 
-##  File: polybar/launch.sh
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 10, 2018
+# polybar/launch.sh
 
 # kill existing polybar
 killall -q polybar
