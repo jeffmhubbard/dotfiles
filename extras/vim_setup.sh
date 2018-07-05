@@ -22,11 +22,5 @@ git clone https://github.com/vifm/vifm.vim.git ~/.vim/bundle/vifm.vim
 # install colorscheme
 git clone https://github.com/jeffmhubbard/antsy.vim.git ~/.vim/bundle/antsy.vim
 
-# usage
 
-cat <<EOF
-
-See my poorly commented vimrc for more:
-https://raw.githubusercontent.com/jeffmhubbard/dotfiles/master/src/.vim/vimrc
-
-EOF 
+# vim: set ft=sh:
