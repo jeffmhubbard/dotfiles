@@ -1,10 +1,5 @@
 #!/usr/bin/zsh
 
-##  File: .zshenv
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 21, 2018
-
 # PATHS
 export PATH=$HOME/.bin:$PATH
 

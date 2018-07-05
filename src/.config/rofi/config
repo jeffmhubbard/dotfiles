@@ -1,7 +1,4 @@
-!!  File: rofi/config
-!!  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-!!  License: The MIT License (MIT)
-!!  Modified: June 2, 2018
+! rofi/config
 
 rofi.modi: window,drun,run
 rofi.width: 384

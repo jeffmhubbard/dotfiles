@@ -1,7 +1,4 @@
-##  File: antsy.zsh-theme
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 21, 2018
+# antsy.zsh-theme
 
 setopt prompt_subst
 

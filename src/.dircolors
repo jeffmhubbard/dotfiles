@@ -1,7 +1,4 @@
-##  File: .dircolors
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 18, 2018
+# .dircolors
 
 COLOR           tty
 OPTIONS         -F -T 0

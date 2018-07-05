@@ -1,7 +1,4 @@
-""  File: vim/vimrc
-""  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-""  License: The MIT License (MIT)
-""  Modified: June 2, 2018
+" vim/vimrc
 
 " for Arch Linux
 runtime! archlinux.vim

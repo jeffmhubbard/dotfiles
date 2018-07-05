@@ -1,8 +1,4 @@
-" Name: vifm/vifmrc
-" Maintainer: https://github.com/jeffmhubbard/dotfiles/
-" License: The MIT License (MIT)
-" Source: https://github.com/joshdick/onedark.vim.git
-" Modified: June 13, 2018
+" vifm/vifmrc
 
 colorscheme antsy
 

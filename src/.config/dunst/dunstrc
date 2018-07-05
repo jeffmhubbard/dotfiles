@@ -1,7 +1,4 @@
-##  File: dunst/dunstrc
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 15, 2018
+# dunst/dunstrc
 
 [global]
 startup_notification = false

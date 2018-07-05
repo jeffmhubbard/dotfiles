@@ -1,7 +1,4 @@
-##  File: ncmpcpp/bindings
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+# ncmpcpp/bindings
 
 #def_key "ctrl-`"
 #  run_external_command "false"

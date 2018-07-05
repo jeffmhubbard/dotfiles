@@ -1,7 +1,4 @@
-##  File: neomutt/colors
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+# neomutt/colors
 
 # --- Main ---
 color error         color1          default # message line error text
@@ -13,14 +10,14 @@ color search        color0          color11 # search patterns in pager
 color indicator     color0          color12 # selected email in index
 color tree          color8          default # arrow in threads (`-->')
 
-## status
+# --- Status ---
 color status        color8          default
 color status        color15         default     '(M|F): [:alnum:]+'
 color status        color8          default     '\([^)]+/[^)]+\)'
 color status        color5          default     '\(threads/last-date-received\)'
 color status        color7          default     '\[([^]]+)\]' 1
 
-## mono
+# --- Mono ---
 mono bold           bold
 mono underline      underline
 mono indicator      reverse
@@ -51,13 +48,13 @@ color signature     color8          default     # everything below /^--\s*$/
 color quoted        color5          default
 color quoted1       color6          default
 
-## urls
+# --- URLs ---
 color body          brightcolor12   default     "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
 color body          brightcolor12   default     "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
 color body		    brightcolor12   default	    "(ftp|https?|gopher|news|telnet|finger)://[^ \"\t\r\n]+"
 color body		    brightcolor12   default	    "[-a-z_0-9.]+@[-a-z_0-9.]+"
 
-## pgp
+# --- PGP ---
 color body          color1          default     "(BAD signature)"
 color body          color2          default     "(Good signature)"
 color body          color3          default     "^gpg: Good signature .*"
@@ -72,5 +69,6 @@ color sidebar_highlight     black           color12
 color sidebar_divider       brightblack     default
 color sidebar_flagged       brightyellow    default
 color sidebar_new           brightcyan      default
+
 
 # vim: set ft=muttrc :

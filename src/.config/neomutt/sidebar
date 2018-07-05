@@ -1,7 +1,4 @@
-##  File: neomutt/sidebar
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+# neomutt/sidebar
 
 # --- Options ---
 set mail_check_stats = yes
@@ -24,5 +21,6 @@ set sidebar_sort_method = path
 bind index,pager \Cp sidebar-prev
 bind index,pager \Cn sidebar-next
 bind index,pager \Co sidebar-open
+
 
 # vim: set ft=muttrc :

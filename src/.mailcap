@@ -1,7 +1,4 @@
-##  File: .mailcap
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 28, 2018
+# .mailcap
 
 image/x-imgur-album; feh -g 640x480 %s; test=test -n "$DISPLAY"
 image/gif; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"

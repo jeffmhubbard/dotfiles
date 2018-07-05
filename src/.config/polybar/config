@@ -1,7 +1,4 @@
-;;  File: polybar/config
-;;  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-;;  License: The MIT License (MIT)
-;;  Modified: June 10, 2018
+; polybar/config
 
 [colors]
 ; --- Palette ---

@@ -1,7 +1,4 @@
-##  File: ncmpcpp/config
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 2, 2018
+# ncmpcpp/config
 
 # --- Server ---
 mpd_host = 10.0.0.1

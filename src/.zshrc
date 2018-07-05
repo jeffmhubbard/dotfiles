@@ -1,10 +1,5 @@
 #!/usr/bin/zsh
 
-##  File: .zshrc
-##  Maintainer: https://github.com/jeffmhubbard/dotfiles/
-##  License: The MIT License (MIT)
-##  Modified: June 21, 2018
-
 # oh-my-zsh path
 export ZSH=~/.oh-my-zsh
 
