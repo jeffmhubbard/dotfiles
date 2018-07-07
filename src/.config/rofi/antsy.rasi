@@ -124,6 +124,7 @@ prompt {
     text-color:         @active;
     background-color:   @background;
     spacing:            0;
+    padding:            0px 0px 0px 3px;
 }
 textbox-prompt-colon {
     text-color:         @active;

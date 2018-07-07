@@ -20,8 +20,8 @@ rofi.hide-scrollbar: true
 rofi.fake-transparency: false
 rofi.click-to-exit: true
 rofi.show-match: true
-rofi.display-window: Windows
-rofi.display-run: Commands
-rofi.display-drun: Applications
+rofi.display-window:  Windows
+rofi.display-run:  Run
+rofi.display-drun:  Applications
 rofi.terminal: urxvt
 rofi.theme: ~/.config/rofi/antsy.rasi
