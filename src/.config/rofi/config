@@ -13,7 +13,7 @@ rofi.yoffset: -33
 rofi.xoffset: 5
 rofi.fixed-num-lines: false
 rofi.show-icons: true
-rofi.drun-icon-theme: hicolor
+rofi.drun-icon-theme: oomox-antsy
 rofi.sort: true
 rofi.separator-style: none
 rofi.hide-scrollbar: true
