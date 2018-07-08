@@ -39,38 +39,38 @@ highlight {*.sh,*.zsh,*.bash,*.bin,*.run,*.install,*.x86,*.exe,*.msi,*.dmg}
 " text
 set classify+=' ::*.txt,,*.log,,*.csv,,*.vcf::'
 highlight {*.txt,*.log,*.csv,*.vcf}
-        \   ctermfg=8       ctermbg=default cterm=none
+        \   ctermfg=7       ctermbg=default cterm=none
 " config
 set classify+=' ::*.ini,,*.cfg,,*.conf,,.*rc,,.*.conf,,*rc::'
 set classify+='ﬥ ::*.json::'
-set classify+=' ::.bash*;;.zsh*::'
+set classify+=' ::.bash*,,.zsh*::'
 highlight {*.ini,*.cfg,*.conf,.*rc,.*.conf,*rc,*.json;.bash*;.zsh*}
-        \   ctermfg=8       ctermbg=default cterm=none
+        \   ctermfg=8       ctermbg=default cterm=bold
 " documents
 set classify+=' ::*.doc,,*.docx,,*.odt,,*.rtf::, ::*.xls,,*.xls[mx],,*.ods::, ::*.ppt,,*.pptx,,*.odp::'
 set classify+=' ::*.epub,,*.cbr,,*.mobi::, ::*.pdf,,*.ps,,*.ps.gz::'
 highlight {*.doc,*.docx,*.odt,*.rtf,*.xls,*.xlsx,*.ods,*.ppt,*.pptx,*.odp,*.epub,*.cbr,*.mobi,*.pdf,*.ps,*.ps.gz}
-        \   ctermfg=3       ctermbg=default cterm=none
+        \   ctermfg=7       ctermbg=default cterm=bold
 " media
 set classify+=' ::*.jpg,,*.jpeg,,*.JPG,,*.png,,*.gif,,*.png,,*.bmp,,*.ico,,*.svg,,*.svgz,,*.xcf,,*.ai::'
 set classify+=' ::*.mpg,,*.mpeg,,*.avi,,*.mkv,,*.mp4v,,*.gifv,,*.ogv::'
 set classify+=' ::*.mp3,,*.mp4,,*.aac,,*.m4a,,*.flac,,*.ogg,,*.wav,,*.m3u::'
 highlight {*.jpg,*.jpeg,*.JPG,*.png,*.gif,*.png,*.bmp,*.ico,*.svg,*.svgz,*.xcf,*.ai,*.mpg,*.mpeg,*.avi,*.mkv,*.mp4v,*.gifv,*.ogv,*.mp3,*.mp4,*.aac,*.m4a,*.flac,*.ogg,*.wav,*.m3u}
-        \   ctermfg=5       ctermbg=default cterm=none
+        \   ctermfg=5       ctermbg=default cterm=bold
 " archives
 set classify+=' ::*.tar,,*.zip,,*.gz,,*.bz2,,*.xz,,*.tgz,,*.deb,,*.rpm,,*.jar,,*.rar,,*.iso,,*.7z::'
 highlight {*.tar,*.zip,*.gz,*.bz2,*.xz,*.tgz,*.deb,*.rpm,*.jar,*.rar,*.iso,*.7z}
-        \   ctermfg=1       ctermbg=default cterm=none
+        \   ctermfg=1       ctermbg=default cterm=bold
 " programming 
 set classify+=' ::*.[hc]pp::, ::*.[hc]::'
-set classify+=' ::*.py,,*.pyc,,*.pyo::'
+set classify+=' ::*.py::'
 set classify+=' ::*.pl,,*.pm::'
 set classify+=' ::*.hs,,*.lhs::'
 set classify+=' ::*.java::'
 set classify+=' ::*.rb::'
 set classify+=' ::*.go::'
 set classify+=' ::*.diff,,*.patch::'
-highlight {*.cpp,*.cxx,*.C,*.cc,*.c,*.h,*.hxx,*.H,*.hh,*.hpp,*.py,*.pyc,*.pyo,*.pl,*.pm,*.hs,*.lhs,*.java,*.rb,*.go,*.patch,*.diff}
+highlight {*.cpp,*.cxx,*.C,*.cc,*.c,*.h,*.hxx,*.H,*.hh,*.hpp,*.py,*.pl,*.pm,*.hs,*.lhs,*.java,*.rb,*.go,*.patch,*.diff}
         \   ctermfg=2       ctermbg=default cterm=none
 " build
 set classify+=' ::PKGBUILD,,Makefile,,Makefile.am,,Makefile.in,,Makefile.win,,*.mak,,*.mk,,CMakeLists.txt,,*.ac,,*.in,,*.m4::'
@@ -80,15 +80,15 @@ highlight {PKGBUILD,Makefile,Makefile.am,Makefile.in,Makefile.win,*.mak,*.mk,CMa
 " markup
 set classify+=' ::*.html,,*.xml,,*.css,,*.haml,,*.erb,,*.xml,,*.xslt,,*.tmpl,,*.yml,,*.yaml::'
 highlight {*.html,*.xml,*.css,*.haml,*.erb,*.xml,*.xslt,*.tmpl,*.yml,*.yaml}
-        \   ctermfg=6       ctermbg=default cterm=none
+        \   ctermfg=4       ctermbg=default cterm=none
 " database
 set classify+=' ::*.db,,*.sql,,*.sqlite*::'
 highlight {*.db,*.sql,*.sqlite*}
-        \   ctermfg=4       ctermbg=default cterm=none
+        \   ctermfg=6       ctermbg=default cterm=none
 " info
 set classify+=' ::COPYRIGHT,,COPYING,,BUGS,,Change*,,FAQ,,INSTALL,,LICENSE,,NEWS,,README*,,AUTHORS,,TODO,,MANIFEST,,THANKS,,*.md,,*.rst::'
 highlight {*COPYRIGHT*,COPYING,*BUGS*,*ChangeLog*,*FAQ*,*INSTALL*,*LICENSE*,*NEWS*,*README*,*AUTHORS*,*TODO,*MANIFEST,*THANKS*,*.md,*.rst}
-        \   ctermfg=15      ctermbg=default cterm=bold
+        \   ctermfg=7      ctermbg=default cterm=bold
 " extras
 set classify+=' ::*.vim,,*.swp,,*vimrc,,.viminfo::'
 set classify+=' ::.git,,*.git::'
