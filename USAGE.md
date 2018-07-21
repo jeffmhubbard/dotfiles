@@ -13,7 +13,7 @@ super + Tab
 super + space
 
 ### run command
-super + `
+super + ` (shift+return to launch in terminal)
 
 ### launch terminal
 super + Return
