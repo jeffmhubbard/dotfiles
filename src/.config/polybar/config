@@ -72,13 +72,13 @@ modules-right = clock
 ; --- Inherit ---
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = cpu temp mem fs-dragon volume eth-dragon clock
+modules-right = keyboard cpu temp mem fs-dragon volume eth-dragon clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = cpu temp mem fs-dragon volume eth-dragon
+modules-right = keyboard cpu temp mem fs-dragon volume eth-dragon
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -210,6 +210,23 @@ format-prefix = " "
 format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
 label = %date% %time%
+
+
+[module/keyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format-prefix = ""
+format-padding = 1
+format-prefix-foreground = ${colors.background-alt}
+label-layout = 
+
+label-indicator = "CAPS"
+label-indicator-padding = 1
+label-indicator-foreground = ${colors.foreground}
+label-indicator-underline = ${colors.active}
+
 
 [module/cpu]
 type = internal/cpu
@@ -355,7 +372,7 @@ inherit = module/pulseaudio
 
 [module/volume]
 ; --- Template ---
-type = internal/volume
+type = internal/alsa
 master-soundcard = default
 master-mixer = Master
 mapped = true
