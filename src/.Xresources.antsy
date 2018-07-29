@@ -1,7 +1,7 @@
 ! .Xresources.antsy
 
 !! --- Aliases ---
-#define black           #000000
+#define black           black
 #define dark_red        #cd0000
 #define dark_green      #00cd00
 #define dark_yellow     #cdcd00
@@ -16,7 +16,7 @@
 #define blue            #5c5cff
 #define magenta         #ff00ff
 #define cyan            #00ffff
-#define white           #ffffff
+#define white           white
 
 !! --- Colors ---
 *color0:        black
@@ -46,15 +46,15 @@ bspwm.normal_border_color:      black
 bspwm.presel_feedback_color:    black
 
 !! --- Screensaver ---
-xscreensaver.Dialog.foreground:		#e5e5e5
-xscreensaver.Dialog.background:		#000000
-xscreensaver.Dialog.Button.foreground:	#ffffff
-xscreensaver.Dialog.Button.background:	#000000
-xscreensaver.Dialog.text.foreground:	#ffffff
-xscreensaver.Dialog.text.background:	#000000
-xscreensaver.Dialog.topShadowColor:		#000000
-xscreensaver.Dialog.bottomShadowColor:	#000000
-xscreensaver.passwd.thermometer.foreground:	#00ff00
-xscreensaver.passwd.thermometer.background:	#000000
+xscreensaver.Dialog.foreground:		        grey
+xscreensaver.Dialog.background:		        black
+xscreensaver.Dialog.Button.foreground:	    white
+xscreensaver.Dialog.Button.background:	    black
+xscreensaver.Dialog.text.foreground:	    white
+xscreensaver.Dialog.text.background:	    black
+xscreensaver.Dialog.topShadowColor:		    black
+xscreensaver.Dialog.bottomShadowColor:	    black
+xscreensaver.passwd.thermometer.foreground: green
+xscreensaver.passwd.thermometer.background: black
 
 ! vim: set ft=xdefaults:
