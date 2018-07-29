@@ -1,7 +1,7 @@
 ! .Xresources.antsy
 
 !! --- Aliases ---
-#define black           black
+#define black           #000000
 #define dark_red        #cd0000
 #define dark_green      #00cd00
 #define dark_yellow     #cdcd00
@@ -16,7 +16,7 @@
 #define blue            #5c5cff
 #define magenta         #ff00ff
 #define cyan            #00ffff
-#define white           white
+#define white           #ffffff
 
 !! --- Colors ---
 *color0:        black
