@@ -12,7 +12,7 @@ Xft.antialias:                  1
 Xft.rgba:                       rgb
 
 !! --- Cursor ---
-Xcursor.theme:                  whiteglass
+Xcursor.theme:                  "OpenZone Black"
 Xcursor.size:                   16
 
 !! --- URxvt ---
