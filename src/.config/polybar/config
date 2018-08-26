@@ -72,13 +72,13 @@ modules-right = clock
 ; --- Inherit ---
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard cpu temp mem fs-dragon volume eth-dragon clock
+modules-right = keyboard updates cpu temp mem fs-dragon volume eth-dragon clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard cpu temp mem fs-dragon volume eth-dragon
+modules-right = keyboard updates cpu temp mem fs-dragon volume eth-dragon
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -104,12 +104,10 @@ enable-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-5 = 3;
-ws-icon-3 = 4;
-ws-icon-2 = 5;
-ws-icon-4 = 6;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
@@ -458,4 +456,16 @@ inherit = module/wireless
 interface = wlp7s0b1
 
 
-; vim:ft=dosini
+[module/updates]
+type = custom/script
+exec = ~/.bin/updates-arch-combined.sh
+interval = 300
+format = <label>
+format-prefix = " "
+format-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.background-alt}
+format-padding = 1
+label = %output%
+
+
+; vim: set ft=config:
