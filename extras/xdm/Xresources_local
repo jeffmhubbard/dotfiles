@@ -78,4 +78,5 @@ Chooser*list.font:		    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-i
 Chooser*Command.font:		-*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
 
 !! --- Cursor ---
-Xcursor.theme:              whiteglass
+Xcursor.theme:                  "OpenZone Black"
+Xcursor.size:                   16
