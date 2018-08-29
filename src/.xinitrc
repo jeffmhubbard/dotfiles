@@ -15,7 +15,13 @@ xsetroot -solid grey20 -cursor_name left_ptr &
 unclutter -root &
 
 # --- Screensaver ---
-#xscreensaver &
+xautolock -resetsaver \
+    -time 10 \
+    -notify 30 \
+    -notifier "notify-send -u low -t 10000 Attention 'The screen will lock in 30 seconds.'" \
+    -locker "csxlock -f '-misc-hack nerd font-medium-r-normal--0-0-0-0-p-0-iso8859-1' -b '#000000' -o '#ffffff' -w '#ff0000'" \
+    -nowlocker "csxlock -f '-misc-hack nerd font-medium-r-normal--0-0-0-0-p-0-iso8859-1' -b '#000000' -o '#ffffff' -w '#ff0000'" \
+    &
 
 # --- Sound ---
 start-pulseaudio-x11 &
