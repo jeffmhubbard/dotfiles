@@ -27,8 +27,8 @@ primary         = ${self.blue}
 primary-alt     = ${self.dark_blue}
 secondary       = ${self.green}
 secondary-alt   = ${self.dark_green}
-active          = ${self.cyan}
-active-alt      = ${self.dark_cyan}
+active          = ${self.white}
+active-alt      = ${self.grey}
 urgent          = ${self.cyan}
 urgent-alt      = ${self.dark_cyan}
 alert           = ${self.red}
@@ -88,11 +88,11 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = cpu temp mem fs-gargoyle bat-gargoyle volume wifi-gargoyle clock
+modules-right = keyboard updates cpu temp mem fs-gargoyle bat-gargoyle volume wifi-gargoyle clock
 
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
-modules-right = bat-pegasus volume wifi-pegasus clock
+modules-right = keyboard updates bat-pegasus volume wifi-pegasus clock
 
 
 [module/bspwm]
@@ -215,15 +215,14 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-format-prefix = ""
-format-padding = 1
-format-prefix-foreground = ${colors.background-alt}
 label-layout = 
 
 label-indicator = "CAPS"
-label-indicator-padding = 1
 label-indicator-foreground = ${colors.foreground}
-label-indicator-underline = ${colors.active}
+format-prefix = ""
+format-padding = 1
+format-prefix-foreground = ${colors.background-alt}
+format-underline = ${colors.active}
 
 
 [module/cpu]
@@ -458,12 +457,12 @@ interface = wlp7s0b1
 
 [module/updates]
 type = custom/script
-exec = ~/.bin/updates-arch-combined.sh
+exec = arch-updates
 interval = 300
 format = <label>
 format-prefix = " "
-format-foreground = ${colors.foreground}
 format-prefix-foreground = ${colors.background-alt}
+format-underline = ${colors.urgent}
 format-padding = 1
 label = %output%
 
