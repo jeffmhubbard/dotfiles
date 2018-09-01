@@ -102,7 +102,7 @@ inline-mode = false
 enable-click = false
 enable-scroll = false
 reverse-scroll = false
-fuzzy-match = true
+fuzzy-match = false
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -135,6 +135,9 @@ label-urgent-padding = 1
 label-empty = %icon%
 label-empty-padding = 1
 
+;label-separator = 0
+;label-separator-padding = 0
+;label-separator-foreground = ${colors.background}
 
 [module/i3]
 type = internal/i3
@@ -215,8 +218,8 @@ label = %date% %time%
 
 [module/keyboard]
 type = internal/xkeyboard
-blacklist-0 = num lock
-blacklist-1 = scroll lock
+;blacklist-0 = num lock
+blacklist-0 = scroll lock
 
 label-layout = 
 
@@ -306,24 +309,34 @@ mount-0 = /
 type = internal/battery
 full-at = 98
 
+label-charging = %percentage%%
 format-charging = <animation-charging> <label-charging>
 format-charging-padding = 1
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-padding = 1
-format-full-prefix = " "
-format-full-padding = 1
-format-full-prefix-foreground = ${colors.background-alt}
-
-ramp-capacity-0 = " "
-ramp-capacity-1 = " "
-ramp-capacity-2 = " "
-ramp-capacity-foreground = ${colors.background-alt}
-
-animation-charging-0 = " "
-animation-charging-1 = " "
-animation-charging-2 = " "
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.background-alt}
-animation-charging-framerate = 1000
+animation-charging-framerate = 750
+
+label-discharging = %percentage%%
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-padding = 1
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-foreground = ${colors.background-alt}
+animation-discharging-framerate = 500
+
+label-full = %percentage%
+label-full-foreground = ${colors.secondary}
+format-full-prefix = 
+format-full-prefix-foreground = ${colors.background-alt}
+format-full-padding = 1
+
 
 ; --- Inherit ---
 [module/bat-gargoyle]
@@ -335,39 +348,6 @@ adapter = ACAD
 inherit = module/battery
 battery = BAT0
 adapter = AC
-
-
-[module/pulseaudio]
-; --- Template ---
-type = internal/pulseaudio
-use-ui-max = true
-
-format-volume = <ramp-volume> <label-volume>
-format-volume-padding = 1
-format-prefix-foreground = ${colors.background-alt}
-label-volume = %percentage%%
-
-format-muted-prefix = " "
-format-muted-padding = 1
-format-muted-prefix-foreground = ${colors.background-alt}
-format-muted-underline = ${colors.alert}
-label-muted = MUTE
-
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.background-alt}
-
-; --- Inherit ---
-[module/pa-dragon]
-inherit = module/pulseaudio
-;sink = alsa_output.pci-0000_12_00.3.analog-stereo
-
-[module/pa-gargoyle]
-inherit = module/pulseaudio
-
-[module/pa-pegasus]
-inherit = module/pulseaudio
 
 
 [module/volume]
