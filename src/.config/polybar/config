@@ -186,8 +186,9 @@ pin-show-last = true
 format-prefix = ""
 format-prefix-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+label = %title%
+label-maxlen = 60
 label-margin = 0
-label = %title:0:80:...%
 
 
 [module/clock]
@@ -459,7 +460,7 @@ interface = wlp7s0b1
 
 [module/updates]
 type = custom/script
-exec = arch-updates
+exec = $HOME/.bin/arch-updates
 interval = 300
 format = <label>
 format-prefix = " "
@@ -469,4 +470,4 @@ format-padding = 1
 label = %output%
 
 
-; vim: set ft=config:
+; vim: set ft=dosini:
