@@ -12,12 +12,14 @@ pkill -USR1 -x sxhkd
 $HOME/.config/polybar/launch.sh &
 
 # --- Monitors ---
-if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
-  bspc monitor VGA-1 -d 1 2 3
-  bspc monitor DP-1 -d 4 5 6
-else
-  bspc monitor -d 1 2 3 4 5 6
-fi
+i=1
+n=`bspc query -M | wc -l`
+per=$(( 6 / n ))
+for monitor in `bspc query -M`; do
+    bspc monitor $monitor -d `seq $i $(( i + per - 1 ))` 
+    i=$(( i + per ))
+done
+unset i per
 
 # --- Options ---
 bspc config split_ratio               0.50
