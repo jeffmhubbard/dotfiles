@@ -13,13 +13,13 @@ $HOME/.config/polybar/launch.sh &
 
 # --- Monitors ---
 i=1
-n=`bspc query -M | wc -l`
+n=$((`xrandr --listactivemonitors | wc -l`-1))
 per=$(( 6 / n ))
 for monitor in `bspc query -M`; do
     bspc monitor $monitor -d `seq $i $(( i + per - 1 ))` 
     i=$(( i + per ))
 done
-unset i per
+unset i n per
 
 # --- Options ---
 bspc config split_ratio               0.50
