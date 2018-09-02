@@ -280,16 +280,16 @@ spacing = 1
 
 format-mounted = <label-mounted>
 format-mounted-padding = 1
-format-mounted-prefix = " "
+format-mounted-prefix = 
 format-mounted-prefix-foreground = ${colors.background-alt}
-label-mounted = %percentage_used%%
+label-mounted = %mountpoint%: %percentage_used%%
 
 format-unmounted = <label-unmounted>
 format-unmounted-padding = 1
-format-unmounted-prefix = " "
-format-unmounted-prefix-foreground = ${colors.urgent}
-format-unmounted-underline = ${colors.urgent}
-label-unmounted = %mountpoint%: not mounted
+format-unmounted-prefix = 
+format-unmounted-prefix-foreground = ${colors.background-alt}
+format-unmounted-underline = ${colors.alert}
+label-unmounted = %mountpoint%
 
 [module/fs-dragon]
 inherit = module/fs
@@ -331,10 +331,10 @@ animation-discharging-4 = 
 animation-discharging-foreground = ${colors.background-alt}
 animation-discharging-framerate = 500
 
-label-full = %percentage%
-label-full-foreground = ${colors.secondary}
+label-full = %percentage%%
 format-full-prefix = 
 format-full-prefix-foreground = ${colors.background-alt}
+format-full-underline = ${colors.secondary}
 format-full-padding = 1
 
 
@@ -366,7 +366,8 @@ format-muted-prefix = " "
 format-muted-padding = 1
 format-muted-prefix-foreground = ${colors.background-alt}
 format-muted-underline = ${colors.alert}
-label-muted = MUTE
+label-muted = ---
+;label-muted-padding = 1
 
 ramp-volume-0 = 
 ramp-volume-1 = 
