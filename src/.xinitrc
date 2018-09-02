@@ -10,6 +10,9 @@ sxhkd &
 # --- Notifications ---
 dunst &
 
+# --- Wallpaper ---
+[[ -f ~/.fehbg ]] && sh ~/.fehbg
+
 # --- Misc ---
 xsetroot -solid grey20 -cursor_name left_ptr &
 unclutter -root &
