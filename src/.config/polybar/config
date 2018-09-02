@@ -1,7 +1,6 @@
 ; polybar/config
 
 [colors]
-; --- Palette ---
 black           = ${xrdb:color0}
 dark_grey       = ${xrdb:color8}
 dark_red        = ${xrdb:color1}
@@ -18,7 +17,7 @@ dark_cyan       = ${xrdb:color6}
 cyan            = ${xrdb:color14}
 grey            = ${xrdb:color7}
 white           = ${xrdb:color15}
-; --- Aliases ---
+
 background      = ${self.black}
 background-alt  = ${self.dark_grey}
 foreground      = ${self.white}
@@ -34,6 +33,7 @@ urgent-alt      = ${self.dark_cyan}
 alert           = ${self.red}
 alert-alt       = ${self.dark_red}
 
+
 [settings]
 screenchange-reload = false
 
@@ -43,42 +43,49 @@ margin-bottom = 0
 
 
 [bar/base-bottom]
-; --- Template ---
 width = 100%
 height = 28
 radius = 0.0
 bottom = true
 fixed-center = true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
+
 line-size = 2
 line-color = ${colors.background-alt}
+
 border-size = 0
 border-color = ${colors.background-alt}
+
 padding-left = 0
 padding-right = 0
+
 module-margin-left = 0
 module-margin-right = 0
+
 tray-position = right
 tray-padding = 1
 tray-background = ${colors.background}
+
 cursor-click = pointer
 cursor-scroll = ns-resize
+
 font-0 = Hack Nerd Font:pixelsize=10:style=bold;1
+
 modules-left = bspwm xwindow
 modules-center = 
 modules-right = clock
 
-; --- Inherit ---
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-dragon volume eth-dragon clock
+modules-right = keyboard updates cpu temp mem fs-ws volume eth-ws clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard updates cpu temp mem fs-dragon volume eth-dragon
+modules-right = keyboard updates cpu temp mem fs-ws volume eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -88,11 +95,11 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-gargoyle bat-gargoyle volume wifi-gargoyle clock
+modules-right = keyboard updates cpu temp mem fs-lt1 bat-lt1 volume wifi-lt1 clock
 
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates bat-pegasus volume wifi-pegasus clock
+modules-right = keyboard updates bat-lt2 volume wifi-lt2 clock
 
 
 [module/bspwm]
@@ -114,15 +121,14 @@ ws-icon-default = 
 
 format = <label-state> <label-mode>
 format-padding = 0
-label-monitor = %name%
 
 label-focused = %icon%
 label-focused-underline = ${colors.primary}
 label-focused-padding = 1
 
-label-dimmed-padding = 1
 label-dimmed-foreground = ${colors.background-alt}
 label-dimmed-focused-underline = ${colors.foreground}
+label-dimmed-padding = 1
 
 label-occupied= %icon%
 label-occupied-underline = ${colors.background-alt}
@@ -135,63 +141,19 @@ label-urgent-padding = 1
 label-empty = %icon%
 label-empty-padding = 1
 
-;label-separator = 0
-;label-separator-padding = 0
-;label-separator-foreground = ${colors.background}
-
-[module/i3]
-type = internal/i3
-pin-workspaces = true
-strip-wsnumbers = true
-index-sort = false
-enable-click = true
-enable-scroll = false
-wrapping-scroll = false
-reverse-scroll = false
-fuzzy-match = true
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-5 = 3;
-ws-icon-3 = 4;
-ws-icon-2 = 5;
-ws-icon-4 = 6;
-ws-icon-default = 
-
-format = <label-state> <label-mode>
-format-padding = 0
-
-label-mode = %mode%
-label-mode-padding = 1
-label-mode-underline = ${colors.secondary}
-
-label-focused = %icon%
-label-focused-underline = ${colors.primary}
-label-focused-padding = 1
-
-label-unfocused-padding = 1
-label-unfocused-foreground = ${colors.background-alt}
-label-unfocused-focused-underline = ${colors.foreground}
-
-label-visible = %icon%
-label-visible-underline = ${colors.background-alt}
-label-visible-padding = 1
-
-label-urgent = %icon%
-label-urgent-underline = ${colors.urgent}
-label-urgent-padding = 1
-
 
 [module/xwindow]
 type = internal/xwindow
 pin-output = true
 pin-show-last = true
-format-prefix = ""
-format-prefix-padding = 1
+
+format-prefix = " "
 format-prefix-foreground = ${colors.background-alt}
+format-padding = 1
+
 label = %title%
+label-padding = 0
 label-maxlen = 60
-label-margin = 0
 
 
 [module/clock]
@@ -199,9 +161,11 @@ type = internal/date
 interval = 1.0
 time = "%I:%M %p"
 time-alt = "%a, %b %d %I:%M %p"
+
 format-prefix = " "
 format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+
 label = %time%
 label-alt = %time-alt%
 
@@ -210,34 +174,40 @@ type = internal/date
 interval = 1.0
 date = "%a, %b %d"
 time = "%I:%M %p"
+
 format-prefix = " "
 format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+
 label = %date% %time%
 
 
 [module/keyboard]
 type = internal/xkeyboard
-;blacklist-0 = num lock
-blacklist-0 = scroll lock
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+format-prefix = ""
+format-prefix-foreground = ${colors.background-alt}
+format-underline = ${colors.active}
+format-padding = 1
 
 label-layout = 
 
 label-indicator = "CAPS"
 label-indicator-foreground = ${colors.foreground}
-format-prefix = ""
-format-padding = 1
-format-prefix-foreground = ${colors.background-alt}
-format-underline = ${colors.active}
 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
+
 format-prefix = " "
-format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+format-padding = 1
+
 label = %percentage:2%%
+label-padding = 0
 
 
 [module/temp]
@@ -246,195 +216,218 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+format-padding = 1
+
 label = %temperature-f%
+label-padding = 0
 
 format-warn = <ramp> <label-warn>
-format-warn-padding = 1
 format-warn-prefix-foreground = ${colors.background-alt}
 format-warn-underline = ${colors.alert}
-label-warn = %temperature-f%
+format-warn-padding = 1
 
-ramp-0 = ""
-ramp-1 = ""
-ramp-2 = ""
+label-warn = %temperature-f%
+label-warn-padding = 0
+
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
 ramp-foreground = ${colors.background-alt}
 
 
 [module/mem]
 type = internal/memory
 interval = 2
+
 format-prefix = " "
-format-padding = 1
 format-prefix-foreground = ${colors.background-alt}
+format-padding = 1
+
 label = %percentage_used%%
+label-padding = 0
 
 
 [module/fs]
-; --- Template ---
 type = internal/fs
 interval = 30
 fixed-values = false
 spacing = 1
 
 format-mounted = <label-mounted>
-format-mounted-padding = 1
-format-mounted-prefix = 
+format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.background-alt}
-label-mounted = %mountpoint%: %percentage_used%%
+format-mounted-padding = 1
+
+label-mounted = %mountpoint% %percentage_used%%
+label-mounted-padding = 0
 
 format-unmounted = <label-unmounted>
-format-unmounted-padding = 1
-format-unmounted-prefix = 
+format-unmounted-prefix = " "
 format-unmounted-prefix-foreground = ${colors.background-alt}
 format-unmounted-underline = ${colors.alert}
+format-unmounted-padding = 1
+
 label-unmounted = %mountpoint%
+label-unmounted-padding = 0
 
-[module/fs-dragon]
+[module/fs-ws]
 inherit = module/fs
 mount-0 = /
 
-[module/fs-gargoyle]
+[module/fs-lt1]
 inherit = module/fs
 mount-0 = /
 
-[module/fs-pegasus]
+[module/fs-lt2]
 inherit = module/fs
 mount-0 = /
 
 
 [module/battery]
-; --- Template ---
 type = internal/battery
-full-at = 98
+full-at = 99
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = ${colors.active}
+format-charging-padding = 1
 
 label-charging = %percentage%%
-format-charging = <animation-charging> <label-charging>
-format-charging-padding = 1
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+label-charging-padding = 0
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-padding = 1
+
+label-discharging = %percentage%%
+label-discharging-padding = 0
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.background-alt}
+format-full-underline = ${colors.foreground}
+format-full-padding = 1
+
+label-full = %percentage%%
+label-full-padding = 0
+
+animation-charging-0 = ""
+animation-charging-1 = ""
+animation-charging-2 = ""
+animation-charging-3 = ""
+animation-charging-4 = ""
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 750
 
-label-discharging = %percentage%%
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-padding = 1
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
+animation-discharging-0 = ""
+animation-discharging-1 = ""
+animation-discharging-2 = ""
+animation-discharging-3 = ""
+animation-discharging-4 = ""
 animation-discharging-foreground = ${colors.background-alt}
 animation-discharging-framerate = 500
 
-label-full = %percentage%%
-format-full-prefix = 
-format-full-prefix-foreground = ${colors.background-alt}
-format-full-underline = ${colors.secondary}
-format-full-padding = 1
-
-
-; --- Inherit ---
-[module/bat-gargoyle]
+[module/bat-lt1]
 inherit = module/battery
 battery = BAT1
 adapter = ACAD
 
-[module/bat-pegasus]
+[module/bat-lt2]
 inherit = module/battery
 battery = BAT0
 adapter = AC
 
 
 [module/volume]
-; --- Template ---
 type = internal/alsa
 master-soundcard = default
 master-mixer = Master
 mapped = true
 
 format-volume = <ramp-volume> <label-volume>
+format-volume-prefix-foreground = ${colors.background-alt}
 format-volume-padding = 1
-format-prefix-foreground = ${colors.background-alt}
+
 label-volume = %percentage%%
+label-volume-padding = 0
 
 format-muted-prefix = " "
-format-muted-padding = 1
 format-muted-prefix-foreground = ${colors.background-alt}
 format-muted-underline = ${colors.alert}
-label-muted = ---
-;label-muted-padding = 1
+format-muted-padding = 1
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+label-muted = "---"
+label-muted-padding = 0
+
+ramp-volume-0 = ""
+ramp-volume-1 = ""
+ramp-volume-2 = ""
 ramp-volume-foreground = ${colors.background-alt}
 
 
 [module/ethernet]
-; --- Template ---
 type = internal/network
 interval = 3.0
 
 format-connected-prefix = " "
-format-connected-padding = 1
 format-connected-prefix-foreground = ${colors.background-alt}
 format-connected-underline = ${colors.secondary}
+format-connected-padding = 1
+
 label-connected = %ifname%
+label-connected-padding = 0
 
 format-disconnected-prefix = " "
-format-disconnected-padding = 1
 format-disconnected-prefix-foreground = ${colors.background-alt}
 format-disconnected-underline = ${colors.alert}
-label-disconnected = %ifname%
+format-disconnected-padding = 1
 
-; --- Inherit ---
-[module/eth-dragon]
+label-disconnected = %ifname%
+label-disconnected-padding = 0
+
+[module/eth-ws]
 inherit = module/ethernet
 interface = eno1
 
-[module/eth-gargoyle]
+[module/eth-lt1]
 inherit = module/ethernet
 interface = enp1s0
 
-[module/eth-pegasus]
+[module/eth-lt2]
 inherit = module/ethernet
 interface = enp0s3
 
 
 [module/wireless]
-; --- Template ---
 type = internal/network
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.foreground}
 format-connected-underline = ${colors.secondary}
+format-connected-padding = 1
+
 label-connected = %essid%
+label-connected-padding = 0
 
 format-disconnected = <label-disconnected>
 format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = ${colors.background-alt}
 format-disconnected-underline = ${colors.alert}
-label-disconnected = %ifname%
+format-disconnected-padding = 1
 
-ramp-signal-0 = ""
-ramp-signal-1 = ""
-ramp-signal-2 = ""
-ramp-signal-3 = ""
-ramp-signal-4 = ""
+label-disconnected = %ifname%
+label-disconnected-padding = 0
+
+ramp-signal-0 = " "
+ramp-signal-1 = " "
+ramp-signal-2 = " "
+ramp-signal-3 = " "
+ramp-signal-4 = " "
 ramp-signal-foreground = ${colors.background-alt}
 
-; --- Inherit ---
-[module/wifi-gargoyle]
+[module/wifi-lt1]
 inherit = module/wireless
 interface = wlo1
 
-[module/wifi-pegasus]
+[module/wifi-lt2]
 inherit = module/wireless
 interface = wlp7s0b1
 
@@ -443,12 +436,14 @@ interface = wlp7s0b1
 type = custom/script
 exec = $HOME/.bin/arch-updates
 interval = 300
-format = <label>
-format-prefix = " "
+
+format-prefix = " "
 format-prefix-foreground = ${colors.background-alt}
 format-underline = ${colors.urgent}
 format-padding = 1
+
 label = %output%
+label-padding = 0
 
 
 ; vim: set ft=dosini:
