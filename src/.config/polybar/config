@@ -106,7 +106,7 @@ modules-right = keyboard updates bat-lt2 volume wifi-lt2 clock
 type = internal/bspwm
 pin-workspaces = true
 inline-mode = false
-enable-click = false
+enable-click = true
 enable-scroll = false
 reverse-scroll = false
 fuzzy-match = false
@@ -147,7 +147,7 @@ type = internal/xwindow
 pin-output = true
 pin-show-last = true
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.background-alt}
 format-padding = 1
 
@@ -286,7 +286,7 @@ mount-0 = /
 
 [module/battery]
 type = internal/battery
-full-at = 99
+full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.yellow}
