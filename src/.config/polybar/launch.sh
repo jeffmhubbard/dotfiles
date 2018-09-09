@@ -7,8 +7,11 @@ killall -q polybar
 # wait for it end
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# get short hostname
+HOST=$(hostname -s)
+
 # dragon
-if [ $(hostname) = "dragon" ]; then
+if [ $HOST = "dragon" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
         polybar dragon-left &
@@ -19,12 +22,12 @@ if [ $(hostname) = "dragon" ]; then
 fi
 
 # gargoyle
-if [ $(hostname) = "gargoyle" ]; then
+if [ $HOST = "gargoyle" ]; then
     polybar gargoyle-bottom &
 fi
 
 # pegasus
-if [ $(hostname) = "pegasus" ]; then
+if [ $HOST = "pegasus" ]; then
     polybar pegasus-bottom &
 fi
 
