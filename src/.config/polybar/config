@@ -289,21 +289,22 @@ type = internal/battery
 full-at = 99
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.active}
+format-charging-underline = ${colors.yellow}
 format-charging-padding = 1
 
 label-charging = %percentage%%
 label-charging-padding = 0
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${colors.foreground}
 format-discharging-padding = 1
 
 label-discharging = %percentage%%
 label-discharging-padding = 0
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.background-alt}
-format-full-underline = ${colors.foreground}
+format-full-underline = ${colors.background-alt}
 format-full-padding = 1
 
 label-full = %percentage%%
@@ -317,13 +318,13 @@ animation-charging-4 = ""
 animation-charging-foreground = ${colors.background-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = ""
-animation-discharging-1 = ""
-animation-discharging-2 = ""
-animation-discharging-3 = ""
-animation-discharging-4 = ""
-animation-discharging-foreground = ${colors.background-alt}
-animation-discharging-framerate = 500
+ramp-capacity-0 = ""
+ramp-capacity-1 = ""
+ramp-capacity-2 = ""
+ramp-capacity-3 = ""
+ramp-capacity-4 = ""
+ramp-capacity-foreground = ${colors.background-alt}
+ramp-capacity-framerate = 500
 
 [module/bat-lt1]
 inherit = module/battery
