@@ -77,15 +77,31 @@ modules-left = bspwm xwindow
 modules-center = 
 modules-right = clock
 
+[bar/python-bottom]
+inherit = bar/base-bottom
+modules-right = keyboard updates cpu temp mem fs-dt vol-dt eth-dt clock
+
+[bar/python-left]
+inherit = bar/base-bottom
+monitor = HDMI-0
+tray-position = right
+modules-right = keyboard updates cpu temp mem fs-dt vol-dt eth-dt
+
+[bar/python-right]
+inherit = bar/base-bottom
+monitor = DVI-I-1
+tray-position = 
+modules-right = clock-full
+
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-ws volume eth-ws clock
+modules-right = keyboard updates cpu temp mem fs-ws vol-ws eth-ws clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard updates cpu temp mem fs-ws volume eth-ws
+modules-right = keyboard updates cpu temp mem fs-ws vol-ws eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -275,6 +291,10 @@ label-unmounted-padding = 0
 inherit = module/fs
 mount-0 = /
 
+[module/fs-dt]
+inherit = module/fs
+mount-0 = /
+
 [module/fs-lt1]
 inherit = module/fs
 mount-0 = /
@@ -337,11 +357,11 @@ battery = BAT0
 adapter = AC
 
 
-[module/volume]
-type = internal/alsa
-master-soundcard = default
-master-mixer = Master
-mapped = true
+[module/pulseaudio]
+type = internal/pulseaudio
+;sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+;use-ui-max = true
+;interval = 5
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-prefix-foreground = ${colors.background-alt}
@@ -362,6 +382,18 @@ ramp-volume-0 = ""
 ramp-volume-1 = ""
 ramp-volume-2 = ""
 ramp-volume-foreground = ${colors.background-alt}
+
+[module/vol-dt]
+inherit = module/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+use-ui-max = true
+interval = 5
+
+[module/vol-ws]
+inherit = module/pulseaudio
+sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+use-ui-max = true
+interval = 5
 
 
 [module/ethernet]
@@ -387,6 +419,10 @@ label-disconnected-padding = 0
 [module/eth-ws]
 inherit = module/ethernet
 interface = eno1
+
+[module/eth-dt]
+inherit = module/ethernet
+interface = enp2s0
 
 [module/eth-lt1]
 inherit = module/ethernet
