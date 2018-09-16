@@ -111,11 +111,11 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-lt1 bat-lt1 volume wifi-lt1 clock
+modules-right = keyboard updates cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
 
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates bat-lt2 volume wifi-lt2 clock
+modules-right = keyboard updates bat-lt2 vol-lt2 wifi-lt2 clock
 
 
 [module/bspwm]
@@ -392,6 +392,18 @@ interval = 5
 [module/vol-ws]
 inherit = module/pulseaudio
 sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+use-ui-max = true
+interval = 5
+
+[module/vol-lt1]
+inherit = module/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+use-ui-max = true
+interval = 5
+
+[module/vol-lt2]
+inherit = module/pulseaudio
+sink = alsa_output.pci-0000_00_14.2.analog-stereo
 use-ui-max = true
 interval = 5
 
