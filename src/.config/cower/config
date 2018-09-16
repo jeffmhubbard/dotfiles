@@ -1,0 +1,11 @@
+# cower/config
+
+Color = auto
+#ConnectTimeout =
+IgnoreOOD
+#IgnorePkg =
+#IgnoreRepo =
+#TargetDir =
+#MaxThreads =
+
+# vim: ft=conf
