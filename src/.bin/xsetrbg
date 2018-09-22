@@ -5,7 +5,8 @@
 #   Set random color as root X window background.
 #
 
-# so many colors
+# Lots O' Screen Colors
+# http://sub-atomic.com/~moses/decimalcol.html
 declare -a COLORS
 COLORS=( \
     Snow SlateBlue1 DarkOrange1 \
