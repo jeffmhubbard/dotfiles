@@ -49,6 +49,9 @@ radius = 0.0
 bottom = true
 fixed-center = true
 
+override-redirect = true
+wm-restack = bspwm
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
