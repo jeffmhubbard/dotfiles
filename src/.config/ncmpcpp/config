@@ -52,10 +52,12 @@ playlist_shorten_total_times = yes
 playlist_separate_albums = no
 
 # --- Formats ---
-song_list_format = {%a - }{%t}|{%f}{(%l)}
-song_columns_list_format = (20)[]{a} (6f)[]{NE} (50)[]{t|f:Title} (20)[]{b} (7f)[]{l}
+song_list_format = {%a - }{%t}|{%f}
+song_columns_list_format = (3f)[]{NE} (20)[]{aE} (50)[]{t|f:Title} (20)[]{brE} (5f)[]{yE} (5f)[]{lE}
 alternative_header_first_line_format = $b$(16) {%a - %t}|{%f} $/b$(end)
-alternative_header_second_line_format = $b$(13){%b (%y)}|{%D}$/b$(end)
+alternative_header_second_line_format = $b$(9){%b (%y)}|{%D}$/b$(end)
+song_status_format = {%a - }{%t}|{%f} 
+song_window_title_format = { ncmpcpp: }{%a - }{%t}|{%f}
 current_item_prefix = $(13)$r
 current_item_suffix = $/r$(end)
 current_item_inactive_column_prefix = $(16)$r
@@ -66,7 +68,7 @@ browser_playlist_prefix = "$2playlist$9 "
 selected_item_prefix = $(15)$r
 selected_item_suffix = $/r$(end)
 modified_item_prefix = $(11)> $(end)
-progressbar_look = "▃▃ "
+progressbar_look = "┅┥┅"
 
 # --- Colors ---
 colors_enabled = yes
@@ -80,7 +82,7 @@ state_flags_color = 14:b
 main_window_color = 8
 color1 = 11
 color2 = 8
-progressbar_color = 1
+progressbar_color = 9
 progressbar_elapsed_color = 11
 statusbar_color = 16
 statusbar_time_color = 12
@@ -89,12 +91,13 @@ alternative_ui_separator_color = 9
 window_border_color = 9
 active_window_border = 9
 
+# --- Visualizer ---
 visualizer_fifo_path = "~/.cache/mpd.fifo"
-visualizer_output_name = "grey_vis"
-visualizer_sync_interval = "30" 
+visualizer_output_name = "my_vis"
+visualizer_sync_interval = "20" 
 visualizer_in_stereo = "no"
-visualizer_type = "wave_filled"
-visualizer_look = "██"
-visualizer_color = 236, 239, 242, 245, 248, 251, 254
+visualizer_type = "spectrum"
+visualizer_look = "╏╏"
+visualizer_color = 6
 
-# vim: set ft=cfg :
+# vim: set ft=dosini :
