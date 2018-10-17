@@ -82,29 +82,29 @@ modules-right = clock
 
 [bar/python-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-dt vol-dt eth-dt clock
+modules-right = keyboard upd-mint cpu temp mem fs-dt vol-dt eth-dt clock
 
 [bar/python-left]
 inherit = bar/base-bottom
-monitor = HDMI-0
+monitor = DVI-I-1
 tray-position = right
-modules-right = keyboard updates cpu temp mem fs-dt vol-dt eth-dt
+modules-right = keyboard upd-mint cpu temp mem fs-dt vol-dt eth-dt
 
 [bar/python-right]
 inherit = bar/base-bottom
-monitor = DVI-I-1
+monitor = HDMI-0
 tray-position = 
 modules-right = clock-full
 
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-ws vol-ws eth-ws clock
+modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard updates cpu temp mem fs-ws vol-ws eth-ws
+modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -114,11 +114,11 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
+modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
 
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard updates bat-lt2 vol-lt2 wifi-lt2 clock
+modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
 
 
 [module/bspwm]
@@ -484,7 +484,7 @@ inherit = module/wireless
 interface = wlp7s0b1
 
 
-[module/updates]
+[module/upd-arch]
 type = custom/script
 exec = $HOME/.bin/arch-updates
 interval = 300
@@ -497,5 +497,18 @@ format-padding = 1
 label = %output%
 label-padding = 0
 
+[module/upd-mint]
+type = custom/script
+exec = $HOME/.bin/lm-updates
+interval = 300
 
-; vim: set ft=dosini:
+format-prefix = "m "
+format-prefix-foreground = ${colors.background-alt}
+format-underline = ${colors.urgent}
+format-padding = 1
+
+label = %output%
+label-padding = 0
+
+
+; vim: set filetype=dosini:
