@@ -1,23 +1,28 @@
-#!/bin/sh
-# extbin: xrdb, sxhkd, dunst, xsetroot, unclutter, xscreensaver, start-pulseaudio-x11, bspwm
+#!/usr/bin/env bash
+# extbin: xrdb, sxhkd, dunst, xsetroot, unclutter, start-pulseaudio-x11, bspwm
 
-# --- Xresources ---
+# Load X settings
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-# --- Shortcuts ---
+# Start keybind daemon
 sxhkd &
 
-# --- Notifications ---
+# Start notification daemon
 dunst &
 
-# --- Wallpaper ---
-[[ -f ~/.fehbg ]] && sh ~/.fehbg
+# Set mouse pointer
+xsetroot -cursor_name left_ptr &
 
-# --- Misc ---
-xsetroot -solid grey20 -cursor_name left_ptr &
+# Hide mouse cursor when not in use
 unclutter -root &
 
-# --- Screensaver ---
+# Set random background color
+[[ -f ~/.bin/xsetrbg ]] && sh ~/.bin/xsetrbg &
+
+# Restore wallpaper
+[[ -f ~/.fehbg ]] && sh ~/.fehbg &
+
+# Screenlocker
 xautolock -resetsaver \
     -time 10 \
     -notify 30 \
@@ -26,10 +31,10 @@ xautolock -resetsaver \
     -nowlocker "csxlock -f '-misc-hack nerd font-medium-r-normal--0-0-0-0-p-0-iso8859-1' -b '#000000' -o '#ffffff' -w '#ff0000'" \
     &
 
-# --- Sound ---
+# Sound daemon
 start-pulseaudio-x11 &
 
-# --- Window Manager ---
+# Start window manager
 exec bspwm
 
 # vim: set ft=sh:
