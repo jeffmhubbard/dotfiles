@@ -511,4 +511,4 @@ label = %output%
 label-padding = 0
 
 
-; vim: set filetype=dosini:
+;vim: set ft=dosini:

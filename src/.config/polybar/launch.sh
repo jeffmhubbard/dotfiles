@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# extbin: pgrep, killall, xrandr, polybar
 
 # polybar/launch.sh
 
@@ -45,5 +46,4 @@ if [ $(( `pgrep -u $UID -x polybar | wc -l` )) -eq 0 ]; then
     polybar base-bottom &
 fi
 
-# extbin: pgrep, xrandr, polybar
 # vim: set ft=sh:
