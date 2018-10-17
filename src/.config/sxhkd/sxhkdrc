@@ -99,10 +99,10 @@ super + alt + {Up,Down,Left,Right}
 # --- media keys ---
 # raise or lower volume
 XF86Audio{Raise,Lower}Volume
-  pamixer -{i,d} 5
+  pactl set-sink-volume 1 {+,-}5%
 # toggle mute
 XF86AudioMute
-  pamixer -t
+  pactl set-sink-mute 1 toggle
 # toggle play and pause
 XF86AudioPlay
   mpc toggle
