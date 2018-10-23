@@ -53,11 +53,11 @@ playlist_separate_albums = no
 
 # --- Formats ---
 song_list_format = {%a - }{%t}|{%f}
-song_columns_list_format = (3f)[]{NE} (20)[]{aE} (50)[]{t|f:Title} (20)[]{brE} (5f)[]{yE} (5f)[]{lE}
+song_columns_list_format = (3f)[]{NE} (20)[]{aE} (40)[]{t|f:Title} (30)[]{brE} (5f)[]{yE} (5f)[]{lE}
 alternative_header_first_line_format = $b$(16) {%a - %t}|{%f} $/b$(end)
 alternative_header_second_line_format = $b$(9){%b (%y)}|{%D}$/b$(end)
 song_status_format = {%a - }{%t}|{%f} 
-song_window_title_format = { ncmpcpp: }{%a - }{%t}|{%f}
+song_window_title_format = { : }{%a - }{%t}|{%f}
 current_item_prefix = $(13)$r
 current_item_suffix = $/r$(end)
 current_item_inactive_column_prefix = $(16)$r
@@ -68,7 +68,7 @@ browser_playlist_prefix = "$2playlist$9 "
 selected_item_prefix = $(15)$r
 selected_item_suffix = $/r$(end)
 modified_item_prefix = $(11)> $(end)
-progressbar_look = "┅┥┅"
+progressbar_look = "━┥╸"
 
 # --- Colors ---
 colors_enabled = yes
