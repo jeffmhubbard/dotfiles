@@ -52,8 +52,20 @@ set mouse=a
 set statusline=""
 
 " lightline.vim
-let g:lightline = { 'colorscheme': 'antsy', }
-
+let g:lightline = {
+      \ 'colorscheme': 'antsy',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'gitbranch' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ],
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 " nerdtree
 " auto open NERDTree when vim starts with directory
 autocmd StdinReadPre * let s:std_in=1
@@ -89,12 +101,12 @@ let g:buftabline_show = 1
 let g:buftabline_numbers = 1
 let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
+" vim-devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
 " map next and previous buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
-
-" vim-devicons
-let g:webdevicons_conceal_nerdtree_brackets = 1
 
 " save as root (only works with NOPASSWD sudo access)
 cmap w!! w !sudo tee % > /dev/null
