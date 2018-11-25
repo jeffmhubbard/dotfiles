@@ -68,7 +68,7 @@ browser_playlist_prefix = "$2playlist$9 "
 selected_item_prefix = $(15)$r
 selected_item_suffix = $/r$(end)
 modified_item_prefix = $(11)> $(end)
-progressbar_look = "━┥╸"
+progressbar_look = "━╸ "
 
 # --- Colors ---
 colors_enabled = yes
@@ -94,10 +94,10 @@ active_window_border = 9
 # --- Visualizer ---
 visualizer_fifo_path = "~/.cache/mpd.fifo"
 visualizer_output_name = "my_vis"
-visualizer_sync_interval = "20" 
+visualizer_sync_interval = "10" 
 visualizer_in_stereo = "no"
 visualizer_type = "spectrum"
-visualizer_look = "╏╏"
+visualizer_look = "▰▰"
 visualizer_color = 6
 
 # vim: set ft=dosini :

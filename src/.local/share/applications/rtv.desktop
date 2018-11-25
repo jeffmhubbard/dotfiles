@@ -1,10 +1,10 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
-Terminal=true
+Terminal=false
 Type=Application
 Name=Reddit Terminal Viewer
 GenericName=RTV
 Comment=RTV provides a text-based interface to view and interact with reddit
-Exec=rtv
+Exec=urxvt -name RTV -e rtv
 Icon=internet-feed-reader

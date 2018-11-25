@@ -13,11 +13,11 @@ def read_xresources(prefix):
     return props
 xres = read_xresources('*')
 
-c.url.start_pages = ['https://www.google.com']
+c.url.start_pages = ['https://duckduckgo.com']
 c.url.default_page = 'about:blank'
 c.url.searchengines = {
-    "DEFAULT": "https://www.google.com/search?q={}",
-    'd': 'https://duckduckgo.com/?q={}',
+    "DEFAULT": 'https://duckduckgo.com/?q={}',
+    "g": "https://www.google.com/search?q={}",
     "wa": "https://wiki.archlinux.org/?search={}"
 }
 c.confirm_quit = ['downloads']
@@ -26,7 +26,7 @@ c.hints.mode = 'number'
 c.window.title_format = '{perc}{title}'
 c.completion.height = '30%'
 
-c.colors.webpage.bg                                 = xres['*color15']
+c.colors.webpage.bg                                 = xres['*color8']
 c.hints.border                                      = '1px solid '+xres['*color15']
 
 c.colors.completion.category.bg                     = xres['*color0']
@@ -115,18 +115,18 @@ c.colors.tabs.selected.even.fg                      = xres['*color0']
 c.colors.tabs.selected.odd.bg                       = xres['*color12']
 c.colors.tabs.selected.odd.fg                       = xres['*color0']
 
-c.fonts.completion.category =   'bold 10pt monospace'
-c.fonts.completion.entry =      '10pt monospace'
-c.fonts.debug_console =         '10pt monospace'
-c.fonts.downloads =             '10pt monospace'
-c.fonts.hints =                 'bold 10pt monospace'
-c.fonts.keyhint =               '10pt monospace'
-c.fonts.messages.error =        'bold 10pt monospace'
-c.fonts.messages.info =         'bold 10pt monospace'
-c.fonts.messages.warning =      'bold 10pt monospace'
-c.fonts.monospace =             'Hack Nerd Font Mono'
-c.fonts.prompts =               '10pt monospace'
-c.fonts.statusbar =             '10pt monospace'
-c.fonts.tabs =                  '10pt monospace'
+c.fonts.completion.category                         = 'bold 10pt monospace'
+c.fonts.completion.entry                            = '10pt monospace'
+c.fonts.debug_console                               = '10pt monospace'
+c.fonts.downloads                                   = '10pt monospace'
+c.fonts.hints                                       = 'bold 10pt monospace'
+c.fonts.keyhint                                     = '10pt monospace'
+c.fonts.messages.error                              = 'bold 10pt monospace'
+c.fonts.messages.info                               = 'bold 10pt monospace'
+c.fonts.messages.warning                            = 'bold 10pt monospace'
+c.fonts.monospace                                   = 'Hack Nerd Font Mono'
+c.fonts.prompts                                     = '10pt monospace'
+c.fonts.statusbar                                   = '10pt monospace'
+c.fonts.tabs                                        = '10pt monospace'
 
 # vim: set ft=python :

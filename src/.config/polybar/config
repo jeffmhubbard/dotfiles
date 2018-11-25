@@ -82,13 +82,13 @@ modules-right = clock
 
 [bar/python-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-mint cpu temp mem fs-dt vol-dt eth-dt clock
+modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt clock
 
 [bar/python-left]
 inherit = bar/base-bottom
 monitor = DVI-I-1
 tray-position = right
-modules-right = keyboard upd-mint cpu temp mem fs-dt vol-dt eth-dt
+modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt
 
 [bar/python-right]
 inherit = bar/base-bottom
@@ -499,10 +499,10 @@ label-padding = 0
 
 [module/upd-mint]
 type = custom/script
-exec = $HOME/.bin/lm-updates
-interval = 300
+exec = lm-updates
+interval = 90
 
-format-prefix = "m "
+format-prefix = " "
 format-prefix-foreground = ${colors.background-alt}
 format-underline = ${colors.urgent}
 format-padding = 1

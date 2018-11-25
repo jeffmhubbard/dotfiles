@@ -110,4 +110,14 @@ XF86AudioPlay
 XF86Audio{Prev,Next}
   mpc -q {prev,next}
 
+# playfetch i'm feeling lucky
+XF86Tools
+    playfetch -fcls lucky -t 100
+# playfetch rank --up
+super + alt + u
+    playfetch rank --up && notify-send -u normal 'Thumbs Up!'
+# playfetch rank --down
+super + alt + d
+    playfetch rank --down && notify-send -u normal 'Thumbs Down!' 'Skipping...'
+
 # vim: set ft=sxhkd :

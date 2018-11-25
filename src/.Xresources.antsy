@@ -45,16 +45,5 @@ bspwm.focused_border_color:     blue
 bspwm.normal_border_color:      black
 bspwm.presel_feedback_color:    black
 
-!! --- Screensaver ---
-xscreensaver.Dialog.foreground:		        grey
-xscreensaver.Dialog.background:		        black
-xscreensaver.Dialog.Button.foreground:	    white
-xscreensaver.Dialog.Button.background:	    black
-xscreensaver.Dialog.text.foreground:	    white
-xscreensaver.Dialog.text.background:	    black
-xscreensaver.Dialog.topShadowColor:		    black
-xscreensaver.Dialog.bottomShadowColor:	    black
-xscreensaver.passwd.thermometer.foreground: green
-xscreensaver.passwd.thermometer.background: black
 
 ! vim: set ft=xdefaults:

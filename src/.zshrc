@@ -11,6 +11,7 @@ COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh plugins
 plugins=( \
         archlinux \
+        debian \
         systemd \
         history \
         command-not-found \
@@ -18,6 +19,7 @@ plugins=( \
         git \
         ssh-agent \
         virtualenv \
+        virtualenvwrapper \
         django \
         fabric \
         )
@@ -37,5 +39,6 @@ eval $(dircolors ~/.dircolors)
 
 # aliases
 alias vi="vim"
+alias pf="playfetch"
 
 # vim: set ft=zsh:

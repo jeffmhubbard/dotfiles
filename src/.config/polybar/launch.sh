@@ -9,8 +9,10 @@ killall -q polybar
 # wait for it end
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
+# get hostname
+HOSTNAME="$(hostname -s)"
 # python
-if [ $(hostname -s) = "python" ]; then
+if [ ${HOSTNAME} = "python" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
         polybar python-left &
@@ -21,7 +23,7 @@ if [ $(hostname -s) = "python" ]; then
 fi
 
 # dragon
-if [ $(hostname -s) = "dragon" ]; then
+if [ ${HOSTNAME} = "dragon" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
         polybar dragon-left &
@@ -32,12 +34,12 @@ if [ $(hostname -s) = "dragon" ]; then
 fi
 
 # gargoyle
-if [ $(hostname) = "gargoyle" ]; then
+if [ ${HOSTNAME} = "gargoyle" ]; then
     polybar gargoyle-bottom &
 fi
 
 # pegasus
-if [ $(hostname) = "pegasus" ]; then
+if [ ${HOSTNAME} = "pegasus" ]; then
     polybar pegasus-bottom &
 fi
 

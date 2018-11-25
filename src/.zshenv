@@ -1,8 +1,9 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 
 # PATHS
 export PATH=$HOME/.bin:$PATH
-
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Envs
 # TEXT
 export PAGER=less
 export EDITOR=vim

@@ -1,0 +1,12 @@
+[playfetch]
+proxy = http://localhost:9999
+dest = ~/.config/mpd/playlists
+prefix = jeff
+
+[mpd]
+host = 10.0.0.1
+port = 6600
+clear = False
+load = False
+start = False
+
