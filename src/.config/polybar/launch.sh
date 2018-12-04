@@ -16,6 +16,7 @@ if [ ${HOSTNAME} = "python" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
         polybar python-left &
+        sleep 1 &
         polybar python-right &
     else
         polybar python-bottom &
@@ -27,6 +28,7 @@ if [ ${HOSTNAME} = "dragon" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
         polybar dragon-left &
+        sleep 1 &
         polybar dragon-right &
     else
         polybar dragon-bottom &

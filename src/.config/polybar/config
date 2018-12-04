@@ -49,8 +49,10 @@ radius = 0.0
 bottom = true
 fixed-center = true
 
-override-redirect = true
-wm-restack = bspwm
+#override-redirect = true
+#wm-restack = bspwm
+override-redirect = false
+wm-restack = i3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -76,7 +78,8 @@ cursor-scroll = ns-resize
 
 font-0 = Hack Nerd Font:pixelsize=10:style=bold;1
 
-modules-left = bspwm xwindow
+;modules-left = bspwm xwindow
+modules-left = i3 xwindow
 modules-center = 
 modules-right = clock
 
@@ -119,6 +122,48 @@ modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 c
 [bar/pegasus-bottom]
 inherit = bar/base-bottom
 modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = false
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+format-padding = 0
+
+label-mode = %mode%
+
+label-focused = %icon%
+label-focused-underline = ${colors.primary}
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-foreground = ${colors.background-alt}
+label-unfocused-underline = ${colors.background-alt}
+label-unfocused-padding = 1
+
+label-visible = %icon%
+label-visible-underline = ${colors.foreground}
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-underline = ${colors.urgent}
+label-urgent-padding = 1
 
 
 [module/bspwm]
@@ -499,7 +544,7 @@ label-padding = 0
 
 [module/upd-mint]
 type = custom/script
-exec = lm-updates
+exec = $HOME/.bin/lm-updates
 interval = 90
 
 format-prefix = " "
@@ -511,4 +556,4 @@ label = %output%
 label-padding = 0
 
 
-;vim: set ft=dosini:
+;vim: set filetype=dosini
