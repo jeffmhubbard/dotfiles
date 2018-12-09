@@ -1,9 +1,8 @@
 # .mailcap
 
-image/x-imgur-album; feh -g 640x480 %s; test=test -n "$DISPLAY"
+image/x-imgur-album; feh -Z -B black -g 800x450 %s; test=test -n "$DISPLAY"
 image/gif; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
-#image/*; feh -g 640x480 '%s'; test=test -n "$DISPLAY"
-image/*; feh -Z -B grey20 '%s'; test=test -n "$DISPLAY"
+image/*; feh -Z -B black -g 800x450 '%s'; test=test -n "$DISPLAY"
 video/x-youtube; mpv --ytdl-format=best '%s' --autofit 640x480; test=test -n "$DISPLAY"
 video/*; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
 text/html; w3m -I %{charset} -T text/html; copiousoutput;

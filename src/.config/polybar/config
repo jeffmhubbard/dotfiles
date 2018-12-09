@@ -49,15 +49,13 @@ radius = 0.0
 bottom = true
 fixed-center = true
 
-#override-redirect = true
-#wm-restack = bspwm
 override-redirect = false
 wm-restack = i3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 1
 line-color = ${colors.background-alt}
 
 border-size = 0
@@ -78,22 +76,21 @@ cursor-scroll = ns-resize
 
 font-0 = Hack Nerd Font:pixelsize=10:style=bold;1
 
-;modules-left = bspwm xwindow
 modules-left = i3 xwindow
 modules-center = 
 modules-right = clock
 
-[bar/python-bottom]
+[bar/pythos-bottom]
 inherit = bar/base-bottom
 modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt clock
 
-[bar/python-left]
+[bar/pythos-left]
 inherit = bar/base-bottom
 monitor = DVI-I-1
 tray-position = right
 modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt
 
-[bar/python-right]
+[bar/pythos-right]
 inherit = bar/base-bottom
 monitor = HDMI-0
 tray-position = 
@@ -129,15 +126,16 @@ type = internal/i3
 pin-workspaces = true
 strip-wsnumbers = true
 index-sort = true
-enable-click = false
+enable-click = true
 enable-scroll = false
 wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-ws-icon-0 = 1;
+;               
+ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;

@@ -23,5 +23,5 @@ rofi.show-match: true
 rofi.display-window:  Windows
 rofi.display-run:  Run
 rofi.display-drun:  Applications
-rofi.terminal: urxvt
+rofi.terminal: urxvtc
 rofi.theme: ~/.config/rofi/antsy.rasi

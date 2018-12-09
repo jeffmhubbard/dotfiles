@@ -6,7 +6,7 @@ monitor = 0
 follow = mouse
 geometry = "384x16-5-33"
 shrink = yes
-frame_width = 2
+frame_width = 1
 padding = 8
 horizontal_padding = 8
 separator_color = frame
@@ -41,20 +41,20 @@ context = mod4+ctrl+semicolon
 
 [urgency_low]
 background = "#000000"
-foreground = "#7f7f7f"
+foreground = "#e5e5e5"
 frame_color = "#7f7f7f"
 timeout = 15
 
 [urgency_normal]
 background = "#000000"
 foreground = "#ffffff"
-frame_color = "#5c5cff"
+frame_color = "#ffffff"
 timeout = 30
 
 [urgency_critical]
-background = "#ff0000"
-foreground = "#000000"
-frame_color = "#ff0000"
+background = "#000000"
+foreground = "#ffffff"
+frame_color = "#00ffff"
 timeout = 0
 
 [music]

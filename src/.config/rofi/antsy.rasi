@@ -13,8 +13,8 @@ window {
     text-color:         @foreground;
     background-color:   @background;
     border-color:       @border;
-    border:             2px;
-    padding:            1px;
+    border:             1px;
+    padding:            0px;
 }
 mainbox {
     text-color:         @foreground;
@@ -39,7 +39,7 @@ listview {
     border-color:       @border;
     border:             0px ;
     spacing:            2px ;
-    scrollbar:          true;
+    scrollbar:          false;
     padding:            2px 0px 0px ;
     fixed-height:       0;
 }

@@ -11,15 +11,15 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # get hostname
 HOSTNAME="$(hostname -s)"
-# python
-if [ ${HOSTNAME} = "python" ]; then
+# pythos
+if [ ${HOSTNAME} = "pythos" ]; then
     # check for dual screen and load two bars
     if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
-        polybar python-left &
+        polybar pythos-left &
         sleep 1 &
-        polybar python-right &
+        polybar pythos-right &
     else
-        polybar python-bottom &
+        polybar pythos-bottom &
     fi
 fi
 
