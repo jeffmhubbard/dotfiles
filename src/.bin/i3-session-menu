@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # use rofi to create a simple session menu
 
@@ -17,9 +17,9 @@ get_options() {
     done
 }
 
-# 
+#    
 main() {
-  choice=$( (get_options) | rofi -dmenu -p " Session" )
+  choice=$( (get_options) | rofi -dmenu -p " Session" )
   if [[ -n "$choice" ]]; then
     exec ${OPTIONS[$choice]}
   fi
@@ -30,4 +30,4 @@ main
 exit 0
 
 
-# vim: set ft=sh :
+# vim: set ft=sh:

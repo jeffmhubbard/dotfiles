@@ -1,0 +1,7 @@
+[mpnotd]
+host = 10.0.0.1
+port = 6600
+auth = 
+time = 10
+music = /mnt/storage/Media/Music
+

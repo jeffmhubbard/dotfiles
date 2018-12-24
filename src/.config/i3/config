@@ -24,41 +24,41 @@ set $ws6 "6"
 new_window 1pixel
 gaps inner 10
 
-## default orientation
-#default_orientation auto
+# default orientation
+default_orientation auto
+
+# mode for new top level containers
+workspace_layout default
+
+# default for new window
+default_border 1pixel
+
+# default for new floating window
+default_floating_border 1pixel
+
 #
-##
-#workspace_layout default
+hide_edge_borders none
+
+# focus follows mouse
+focus_follows_mouse yes
+
 #
-##
-#default_border pixel 2
+mouse_warping output
+
+# popup focus
+popup_during_fullscreen smart
+
+# wrap if no container in direction
+focus_wrapping no
+
+# back and forth workplace switching
+workspace_auto_back_and_forth yes
+
 #
-##
-#default_floating_border pixel 2
-#
-##
-#hide_edge_borders none
-#
-## focus follows mouse
-#focus_follows_mouse yes
-#
-##
-#mouse_warping output
-#
-## popup focus
-#popup_during_fullscreen smart
-#
-##
-#focus_wrapping no
-#
-## back and forth workplace switching
-#workspace_auto_back_and_forth no
-#
-##
-#force_display_urgency_hint 500 ms
-#
-## window focus
-#focus_on_window_activation none
+force_display_urgency_hint 500 ms
+
+# window focus
+focus_on_window_activation smart
 
 
 
@@ -129,7 +129,7 @@ bindsym XF86AudioPrev exec --no-startup-id mpc -q prev
 bindsym XF86Tools exec $HOME/.bin/playfetch -fcls lucky -t 100
 bindsym $super+$alt+period exec $HOME/.bin/playfetch rank --up && notify-send -u normal -t 3000 'Thumbs Up!'
 bindsym $super+$alt+comma exec $HOME/.bin/playfetch rank --down && notify-send -u critical -t 3000 'Thumbs Down!' 'Skipping...'
-bindsym $super+$alt+slash exec notify-send -u normal -t 10000 "Now Playing..." "$(mpc current)"
+bindsym $super+$alt+slash exec $HOME/.bin/mpnotd
 
 # scrot
 bindsym Print exec scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
@@ -242,7 +242,7 @@ for_window [class="feh"] floating enable
 for_window [class="mpv"] floating enable
 
 assign [class="Steam"] 3
-for_window [class="Steam"] floating enable
+for_window [class="^Steam$"] floating enable
 
 assign [class="csgo_linux64"] 3
 for_window [class="csgo_linux64"] floating enable focus

@@ -39,16 +39,16 @@ RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
 # colored-man-pages (antsy)
 function man() {
 	env \
-		LESS_TERMCAP_mb=$(printf "\e[01;38;5;11m") \
-		LESS_TERMCAP_md=$(printf "\e[01;38;5;9m") \
+		LESS_TERMCAP_mb=$(printf "\e[1;34m") \
+		LESS_TERMCAP_md=$(printf "\e[1;35m") \
 		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[0;107;30m") \
 		LESS_TERMCAP_se=$(printf "\e[0m") \
-		LESS_TERMCAP_so=$(printf "\e[0;48;5;12;38;5;11m") \
+		LESS_TERMCAP_us=$(printf "\e[1;4;32m") \
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
-		LESS_TERMCAP_us=$(printf "\e[01;38;5;10m") \
 		PAGER="${commands[less]:-$PAGER}" \
 		_NROFF_U=1 \
-		PATH="$HOME/bin:$PATH" \
+		PATH="$PATH" \
 			man "$@"
 }
 
