@@ -1,20 +1,17 @@
 servers = (
   {
     address = "ipv6.cerberus.network";
-    chatnet = "CerberusZNC";
+    chatnet = "freenode-znc";
     port = "26667";
     use_tls = "no";
     tls_verify = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   }
 );
 
-chatnets = {
-  CerberusZNC = { type = "IRC"; };
-};
+chatnets = { znc = { type = "IRC"; }; "freenode-znc" = { type = "IRC"; }; };
 
-channels = (
-);
+channels = ( );
 
 aliases = {
   ATAG = "WINDOW SERVER";
@@ -182,21 +179,21 @@ statusbar = {
     topicbarstart = "{topicsbstart}";
     topicbarend = "{topicsbend}";
 
-    time = "{sb $Z}";
-    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+    time = "{sb %Y$Z}";
+    user = "{sb %M{sbnickmode $cumode}%9%G$N@$tag {sbaway $A}}";
 
-    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
-    window_empty = "{sb $winref{sbservertag $tag}}";
+    window = "{sb %K%n $winref} ";
+    window_empty = "{sb %K歷%n $winref} ";
 
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
 
-    topic = " $topic";
-    topic_empty = " Irssi v$J - http://www.irssi.org";
+    topic = " %W%n | $topic";
+    topic_empty = " %W%n | Irssi v$J";
 
-    lag = "{sb Lag: $0-}";
-    act = "{sb Act: $0-}";
-    more = "-- more --";
+    lag = "{sb %K $0-}";
+    act = "{sb %K $0-}";
+    more = "{sb %R $0-}";
   };
 
   default = {
@@ -211,13 +208,13 @@ statusbar = {
 
       items = {
         barstart = { priority = "100"; };
-        time = { };
         user = { };
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
         act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
+        time = { priority = "99"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
