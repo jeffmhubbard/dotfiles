@@ -173,27 +173,29 @@ statusbar = {
 
   items = {
 
-    barstart = "{sbstart}";
-    barend = "{sbend}";
-
     topicbarstart = "{topicsbstart}";
     topicbarend = "{topicsbend}";
 
-    time = "{sb %Y$Z}";
-    user = "{sb %M{sbnickmode $cumode}%9%G$N@$tag {sbaway $A}}";
+    topic = " %W%n │ $topic";
+    topic_empty = " %W%n │ Irssi v$J";
 
-    window = "{sb %K%n $winref} ";
-    window_empty = "{sb %K歷%n $winref} ";
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    user = "{sb %M{sbnickmode $cumode}%9%G$N {sbaway $A}}";
+
+    window = "{sb %K%n $winref} ";
+    window_empty = "{sb %K%n %g$tag%n} ";
+
+    act = "{sb %K $0-}";
+
+    lag = " {sb %R $0-}";
+    more = " {sb %R $0-}";
+    time = " {sb %Y$Z}";
 
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
 
-    topic = " %W%n | $topic";
-    topic_empty = " %W%n | Irssi v$J";
-
-    lag = "{sb %K $0-}";
-    act = "{sb %K $0-}";
-    more = "{sb %R $0-}";
   };
 
   default = {
