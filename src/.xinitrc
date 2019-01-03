@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# extbin: xrdb, xsetroot, feh, compton, unclutter, dunst, xautolock, xtrlock, start-pulseaudio-x11, urxvtd, i3
+# extbin: xrdb, xsetroot, feh, compton, unclutter, dunst, xautolock,
+#       betterlockscreen, start-pulseaudio-x11, urxvtd, i3
 
 # Environment variables
+export QT_QPA_PLATFORMTHEME=gtk2
 export MPD_HOST=pythos
 export MPD_PORT=6600
 
@@ -14,8 +16,8 @@ export MPD_PORT=6600
     xsetroot -cursor_name left_ptr &
 
 # Set random background color
-[[ -f ~/.bin/xsetrbg ]] && \
-    sh ~/.bin/xsetrbg Slate &
+[[ "command -v xset" ]] && \
+    xset s off -dpms &
 
 # Restore wallpaper
 [[ -f ~/.fehbg ]] && \
@@ -37,10 +39,8 @@ export MPD_PORT=6600
 [[ "command -v xautolock" ]] && \
     xautolock -resetsaver \
         -time 10 \
-        -notify 30 \
-        -notifier "notify-send -u critical -t 10000 Attention 'The screen will lock in 30 seconds.'" \
-        -locker "xtrlock -b" \
-        -nowlocker "xtrlock -b" \
+        -locker "betterlockscreen -l dim" \
+        -nowlocker "betterlockscreen -l dim" \
         &
 
 # Sound daemon
