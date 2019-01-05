@@ -6,5 +6,5 @@ Type=Application
 Name=NCurses Music Player Client (Plus Plus)
 GenericName=ncmpcpp
 Comment=ncmpcpp – featureful ncurses based MPD client inspired by ncmpc
-Exec=urxvt -name ncmpcpp -e ncmpcpp
+Exec=urxvt -name ncmpcpp -title ncmpcpp -e ncmpcpp
 Icon=audio-player

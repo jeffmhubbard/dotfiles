@@ -6,6 +6,6 @@ Type=Application
 Name=NeoMutt
 GenericName=NeoMutt
 Comment=NeoMutt is a command line mail reader 
-Exec=urxvt -name NeoMutt -e neomutt %u
+Exec=urxvt -name NeoMutt -title NeoMutt -e neomutt %u
 Icon=internet-mail
 MimeType=x-scheme-handler/mailto;
