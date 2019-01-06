@@ -39,11 +39,4 @@
 *foreground:    grey
 *cursorColor:   green
 
-!! --- Windows ---
-bspwm.active_border_color:      dark_grey
-bspwm.focused_border_color:     blue
-bspwm.normal_border_color:      black
-bspwm.presel_feedback_color:    black
-
-
 ! vim: set ft=xdefaults:

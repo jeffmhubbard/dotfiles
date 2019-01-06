@@ -14,9 +14,4 @@ export BROWSER=/usr/bin/qutebrowser
 export RTV_BROWSER=$BROWSER
 export TERMINAL=urxvt
 
-# MISC
-#export QT_QPA_PLATFORMTHEME=gtk2
-#export MPD_HOST=pythos
-#export MPD_PORT=6600
-
 # vim: set ft=zsh:

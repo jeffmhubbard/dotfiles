@@ -11,7 +11,6 @@ COMPLETION_WAITING_DOTS="true"
 # oh-my-zsh plugins
 plugins=( \
         archlinux \
-        debian \
         systemd \
         history \
         command-not-found \
