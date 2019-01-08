@@ -13,7 +13,11 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 # Extra X settings
 [[ "command -v xsetroot" ]] && \
-    xsetroot -solid grey -cursor_name left_ptr &
+    xsetroot -solid grey20 -cursor_name left_ptr &
+
+# Disable DPMS
+[[ "command -v xset" ]] && \
+    xset s off -dpms &
 
 # Hide idle mouse cursor
 [[ "command -v unclutter" ]] && \
@@ -27,16 +31,12 @@ export QT_QPA_PLATFORMTHEME=gtk2
 [[ -f ~/.fehbg ]] && \
     sh ~/.fehbg &
 
-# Disable DPMS
-[[ "command -v xset" ]] && \
-    xset s off -dpms &
-
 # Lock screen
 [[ "command -v xautolock" ]] && \
     xautolock -resetsaver \
         -time 5 \
-        -locker "betterlockscreen -l dimblur" \
-        -nowlocker "betterlockscreen -l dimblur" \
+        -locker "betterlockscreen -l blur" \
+        -nowlocker "betterlockscreen -l blur" \
         &
 
 # Start notification daemon
