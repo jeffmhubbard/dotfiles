@@ -78,8 +78,6 @@ let NERDTreeShowHidden = 1
 let NERDTreeStatusline = 2
 let NERDTreeWinSize = 25
 let NERDTreeMinimalUI=1
-" toggle NERDTree
-map <C-\> :NERDTreeToggle<CR>
 
 " nerdtree-git
 let g:NERDTreeShowGitStatus = 1
@@ -102,14 +100,25 @@ let g:buftabline_show = 1
 let g:buftabline_numbers = 1
 let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
+
+" Tagbar
+let g:tagbar_compact = 1
+
 " vim-devicons
 let g:webdevicons_conceal_nerdtree_brackets = 1
+
+" toggle NERDTree
+map <F5> :NERDTreeToggle<CR>
+
+" toggle paste\nopaste
+nnoremap <F6> :set invpaste paste?<CR>
+set pastetoggle=<F6>
+
+" toggle Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " map next and previous buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
-
-" save as root (only works with NOPASSWD sudo access)
-cmap w!! w !sudo tee % > /dev/null
 
 " vim: set ft=vim:

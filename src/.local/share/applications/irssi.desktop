@@ -6,5 +6,5 @@ Type=Application
 Name=Irssi
 GenericName=irssi
 Comment=Text mode chat client
-Exec=urxvt -name Irssi -title Irssi -e irssi
+Exec=urxvtc -name Irssi -title Irssi -e irssi
 Icon=im-message-new

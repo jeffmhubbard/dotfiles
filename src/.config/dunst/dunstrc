@@ -5,24 +5,25 @@ startup_notification = false
 monitor = 0
 ;follow = mouse
 follow = keyboard
-geometry = "256x16-5-33"
-shrink = no
+geometry = "320x16-5+33"
+shrink = yes
 frame_width = 1
 padding = 5
+notification_height = 0
 horizontal_padding = 5
 separator_color = frame
 separator_height = 2
 transparency = 0
 format = "%s\n%b"
 font = Hack Nerd Font 10
-markup = yes
+markup = full
 alignment = left
 icon_position = left
-max_icon_size = 48
-icon_path = /usr/share/icons/oomox-antsy/status/scalable/:/usr/share/icons/oomox-antsy/devices/scalable/
+max_icon_size = 64
+#icon_path = /usr/share/icons/HighContrast/48x48/status:/usr/share/icons/HighContrast/48x48/stock:/usr/share/icons/HighContrast/48x48/actions
+icon_path = /usr/share/icons/oomox-antsy/actions/scalable:/usr/share/icons/oomox-antsy/status/scalable:/usr/share/icons/oomox-antsy/stock/scalable
 word_wrap = no
 ignore_newline = no
-show_indicators = yes
 line_height = 0
 sort = yes
 bounce_freq = 0
@@ -30,10 +31,15 @@ show_age_threshold = 60
 idle_threshold = 0
 sticky_history = yes
 history_length = 20
-indicate_hidden = yes
+indicate_hidden = true
 stack_duplicates = true
+hide_duplicate_count = true
+show_indicators = yes
 browser = /usr/bin/qutebrowser
 dmenu = /usr/bin/rofi -dmenu -p dunst:
+title = Dunst
+class = Dunst
+
 
 [shortcuts]
 close = mod4+apostrophe
@@ -43,24 +49,24 @@ context = mod4+ctrl+semicolon
 
 [urgency_low]
 background = "#000000"
-foreground = "#e5e5e5"
-frame_color = "#7f7f7f"
+foreground = "#cbcccd"
+frame_color = "#818383"
 timeout = 15
 
 [urgency_normal]
 background = "#000000"
-foreground = "#ffffff"
-frame_color = "#ffffff"
+foreground = "#e9ebeb"
+frame_color = "#e9ebeb"
 timeout = 30
 
 [urgency_critical]
 background = "#000000"
-foreground = "#ffffff"
-frame_color = "#00ffff"
+foreground = "#e9ebeb"
+frame_color = "#14f0f0"
 timeout = 0
 
 [music]
-appname = mpdnotify
+appname = mpnotd
 new_icon = "/usr/share/icons/oomox-antsy/mimetypes/scalable/audio-x-generic.svg"
 
 [mail]

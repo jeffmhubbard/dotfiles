@@ -42,15 +42,15 @@ margin-top = 0
 margin-bottom = 0
 
 
-[bar/base-bottom]
+[bar/base-top]
 width = 100%
 height = 28
 radius = 0.0
-bottom = true
+bottom = false
 fixed-center = true
 
 override-redirect = false
-wm-restack = i3
+;wm-restack = i3
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -80,44 +80,44 @@ modules-left = i3 xwindow
 modules-center = 
 modules-right = clock
 
-[bar/pythos-bottom]
-inherit = bar/base-bottom
-modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt clock
+[bar/pythos-top]
+inherit = bar/base-top
+modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt clock
 
 [bar/pythos-left]
-inherit = bar/base-bottom
+inherit = bar/base-top
 monitor = DVI-I-1
 tray-position = right
-modules-right = keyboard upd-mint cpu mem fs-dt vol-dt eth-dt
+modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt
 
 [bar/pythos-right]
-inherit = bar/base-bottom
+inherit = bar/base-top
 monitor = HDMI-0
 tray-position = 
 modules-right = clock-full
 
 [bar/dragon-bottom]
-inherit = bar/base-bottom
+inherit = bar/base-top
 modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws clock
 
 [bar/dragon-left]
-inherit = bar/base-bottom
+inherit = bar/base-top
 monitor = VGA-1
 tray-position = right
 modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws
 
 [bar/dragon-right]
-inherit = bar/base-bottom
+inherit = bar/base-top
 monitor = DP-1
 tray-position = 
 modules-right = clock-full
 
 [bar/gargoyle-bottom]
-inherit = bar/base-bottom
+inherit = bar/base-top
 modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
 
 [bar/pegasus-bottom]
-inherit = bar/base-bottom
+inherit = bar/base-top
 modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
 
 

@@ -19,7 +19,7 @@ if [ ${HOSTNAME} = "pythos" ]; then
         sleep 1 &
         polybar pythos-right &
     else
-        polybar pythos-bottom &
+        polybar pythos-top &
     fi
 fi
 
@@ -31,23 +31,18 @@ if [ ${HOSTNAME} = "dragon" ]; then
         sleep 1 &
         polybar dragon-right &
     else
-        polybar dragon-bottom &
+        polybar dragon-top &
     fi
 fi
 
 # gargoyle
 if [ ${HOSTNAME} = "gargoyle" ]; then
-    polybar gargoyle-bottom &
+    polybar gargoyle-top &
 fi
 
 # pegasus
 if [ ${HOSTNAME} = "pegasus" ]; then
-    polybar pegasus-bottom &
-fi
-
-# if no bar was started, use base
-if [ $(( `pgrep -u $UID -x polybar | wc -l` )) -eq 0 ]; then
-    polybar base-bottom &
+    polybar pegasus-top &
 fi
 
 # vim: set ft=sh:

@@ -6,5 +6,5 @@ Type=Application
 Name=Reddit Terminal Viewer
 GenericName=RTV
 Comment=RTV provides a text-based interface to view and interact with reddit
-Exec=urxvt -name RTV -title RTV -e rtv
+Exec=urxvtc -name RTV -title RTV -e rtv
 Icon=internet-feed-reader

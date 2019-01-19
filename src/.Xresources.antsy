@@ -1,22 +1,22 @@
-! .Xresources.antsy
+! .Xresources.app
 
 !! --- Aliases ---
 #define black           #000000
-#define dark_red        #cd0000
-#define dark_green      #00cd00
-#define dark_yellow     #cdcd00
-#define dark_blue       #0000ee
-#define dark_magenta    #cd00cd
-#define dark_cyan       #00cdcd
-#define grey            #e5e5e5
-#define dark_grey       #7f7f7f
-#define red             #ff0000
-#define green           #00ff00
-#define yellow          #ffff00
-#define blue            #5c5cff
-#define magenta         #ff00ff
-#define cyan            #00ffff
-#define white           #ffffff
+#define dark_red        #c23621
+#define dark_green      #25bc24
+#define dark_yellow     #adad27
+#define dark_blue       #492ee1
+#define dark_magenta    #d338d3
+#define dark_cyan       #33bbc8
+#define grey            #cbcccd
+#define dark_grey       #818383
+#define red             #fc391f
+#define green           #31e722
+#define yellow          #eaec23
+#define blue            #5833ff
+#define magenta         #f935f8
+#define cyan            #14f0f0
+#define white           #e9ebeb
 
 !! --- Colors ---
 *color0:        black
@@ -40,3 +40,4 @@
 *cursorColor:   green
 
 ! vim: set ft=xdefaults:
+

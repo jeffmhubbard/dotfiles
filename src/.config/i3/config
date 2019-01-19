@@ -104,6 +104,7 @@ bindsym $super+$ctrl+i exec $HOME/.bin/i3-session-menu
 bindsym $super+Tab exec rofi -show window
 
 # application launcher
+#bindcode 133 --release exec rofi -show drun
 bindsym $super+space exec rofi -show drun
 	
 # command launcher
@@ -126,13 +127,14 @@ bindsym XF86AudioNext exec --no-startup-id mpc -q next
 bindsym XF86AudioPrev exec --no-startup-id mpc -q prev
 
 # playfetch
-bindsym XF86Tools exec $HOME/.bin/playfetch -fcls lucky -t 100
-bindsym $super+$alt+period exec $HOME/.bin/playfetch rank --up && notify-send -u normal -t 3000 'Thumbs Up!'
-bindsym $super+$alt+comma exec $HOME/.bin/playfetch rank --down && notify-send -u critical -t 3000 'Thumbs Down!' 'Skipping...'
-bindsym $super+$alt+slash exec $HOME/.bin/mpnotd
+bindsym XF86Tools exec playfetch -fcls lucky -t 100
+bindsym $super+$alt+period exec playfetch rank --up && notify-send -u normal -t 3000 'Thumbs Up!'
+bindsym $super+$alt+comma exec playfetch rank --down && notify-send -u critical -t 3000 'Thumbs Down!' 'Skipping...'
+bindsym $super+$alt+slash exec mpnotd
 
 # scrot
-bindsym Print exec scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
+#bindsym Print exec scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
+bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && notify-send -u low 'Screenshot captured'
 bindsym $super+Print exec scrot -u '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
 
 # change focus (vi)
@@ -269,6 +271,9 @@ for_window [class="^URxvt$" instance="^LitStats$"] floating enable focus
 
 assign [class="^Gimp-2.8$"] 6
 for_window [class="^Gimp-2.8$"] floating enable focus
+
+assign [class="^Lutris$"] 3
+for_window [class="^Lutris$"] floating enable focus
 
 
 # startup

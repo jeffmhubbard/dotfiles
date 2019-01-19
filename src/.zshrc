@@ -16,6 +16,7 @@ plugins=( \
         command-not-found \
         tmux \
         git \
+        fzf \
         ssh-agent \
         virtualenv \
         virtualenvwrapper \

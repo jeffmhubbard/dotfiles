@@ -2,7 +2,15 @@
 
 # Xsetup_local
 
-# set background color
-xsetroot -solid grey20
+# set black background
+[[ "command -v xsetroot" ]] && \
+    xsetroot -solid black &
+
+# set wallpaper
+[[ "command -v feh" ]] && \
+    feh --no-xinerama --bg-fill /etc/X11/xdm/background.png &
+
+# screenshot xdm
+sleep 15 && import -w root /tmp/xdm.png &
 
 # vim: set ft=sh:

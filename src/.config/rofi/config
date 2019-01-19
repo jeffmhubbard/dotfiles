@@ -1,15 +1,15 @@
 ! rofi/config
 
 rofi.modi: window,drun,run
-rofi.width: 384
+rofi.width: 320
 rofi.lines: 16
 rofi.columns: 1
 rofi.font: Hack Nerd Font 10
 rofi.bw: 1
 rofi.bc: #5c5cff
-rofi.location: 7
+rofi.location: 1
 rofi.padding: 1
-rofi.yoffset: -33
+rofi.yoffset: +33
 rofi.xoffset: 5
 rofi.fixed-num-lines: false
 rofi.show-icons: true

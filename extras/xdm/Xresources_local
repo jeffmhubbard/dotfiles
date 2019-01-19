@@ -34,13 +34,13 @@ xlogin*passwdPrompt:        Password:\040
 xlogin*fail:                Authentication Error
 
 xlogin*shdColor:            #000000
-xlogin*hiColor:             #7f7f7f
+xlogin*hiColor:             #818383
 xlogin*background:          #000000
 xlogin*inpColor:            #000000
-xlogin*foreground:          #ffffff
-xlogin*greetColor:          #00ff00
-xlogin*failColor:           #ff0000
-*Foreground:                #e5e5e5
+xlogin*foreground:          #e9ebeb
+xlogin*greetColor:          #31e722
+xlogin*failColor:           #fc391f
+*Foreground:                #cbcccd
 *Background:                #000000
 
 xlogin*greetFont: 	        -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
@@ -60,7 +60,7 @@ XConsole*font:		        -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-i
 
 !! --- Xmessage ---
 Xmessage*geometry:	        300x200+0+0
-Xmessage*foreground:        #e5e5e5
+Xmessage*foreground:        #cbcccd
 Xmessage*background:        #000000
 Xmessage*message.scrollVertical:        Never
 Xmessage*message.scrollHorizontal:      Never

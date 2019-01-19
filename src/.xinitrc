@@ -3,6 +3,9 @@
 #       betterlockscreen, start-pulseaudio-x11, urxvtd, i3
 
 # Environment variables
+export BROWSER=/usr/bin/qutebrowser
+export RTV_BROWSER=$BROWSER
+export TERMINAL=urxvtc
 export MPD_HOST=pythos
 export MPD_PORT=6600
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -13,7 +16,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 # Extra X settings
 [[ "command -v xsetroot" ]] && \
-    xsetroot -solid grey20 -cursor_name left_ptr &
+    xsetroot -solid black -cursor_name left_ptr &
 
 # Disable DPMS
 [[ "command -v xset" ]] && \

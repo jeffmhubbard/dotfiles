@@ -6,5 +6,5 @@ Type=Application
 Name=Console-based Audio Visualizer for Alsa
 GenericName=cava
 Comment=Console-based Audio Visualizer for Alsa
-Exec=urxvt -name CAVA -title CAVA -e cava
+Exec=urxvtc -name CAVA -title CAVA -e cava
 Icon=visualization

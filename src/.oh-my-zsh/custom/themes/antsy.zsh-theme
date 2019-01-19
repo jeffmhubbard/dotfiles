@@ -48,7 +48,6 @@ function man() {
 		LESS_TERMCAP_ue=$(printf "\e[0m") \
 		PAGER="${commands[less]:-$PAGER}" \
 		_NROFF_U=1 \
-		PATH="$PATH" \
 			man "$@"
 }
 
