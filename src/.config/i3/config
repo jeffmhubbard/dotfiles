@@ -83,7 +83,6 @@ set_from_resource $white       color15 #000000
 
 # class                 border      backgr      text        indicator   child_border
 client.focused          $blue       $blue       $black      $blue       $blue
-#client.focused_inactive $darkgrey   $darkgrey   $black      $darkgrey   $darkgrey
 client.focused_inactive $black      $black      $lightgrey  $black      $black
 client.unfocused        $black      $black      $lightgrey  $black      $black
 client.urgent           $cyan       $cyan       $black      $cyan       $cyan
@@ -104,14 +103,16 @@ bindsym $super+$ctrl+i exec $HOME/.bin/i3-session-menu
 bindsym $super+Tab exec rofi -show window
 
 # application launcher
-#bindcode 133 --release exec rofi -show drun
 bindsym $super+space exec rofi -show drun
-	
+
 # command launcher
-bindsym $super+grave exec rofi -show run
+bindsym $super+semicolon exec rofi -show run
 
 # start a terminal
 bindsym $super+Return exec urxvtc
+
+# wmfocus
+bindsym $alt+Tab exec $HOME/.bin/wmfocus.sh
 
 # kill focused window
 bindsym $super+$ctrl+q kill
@@ -128,14 +129,12 @@ bindsym XF86AudioPrev exec --no-startup-id mpc -q prev
 
 # playfetch
 bindsym XF86Tools exec playfetch -fcls lucky -t 100
-bindsym $super+$alt+period exec playfetch rank --up && notify-send -u normal -t 3000 'Thumbs Up!'
-bindsym $super+$alt+comma exec playfetch rank --down && notify-send -u critical -t 3000 'Thumbs Down!' 'Skipping...'
-bindsym $super+$alt+slash exec mpnotd
+bindsym $super+$alt+period exec playfetch rank --up && dunstify -u normal -t 3000 'Thumbs Up!'
+bindsym $super+$alt+comma exec playfetch rank --down && dunstify -u critical -t 3000 'Thumbs Down!' 'Skipping...'
 
-# scrot
-#bindsym Print exec scrot '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
-bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && notify-send -u low 'Screenshot captured'
-bindsym $super+Print exec scrot -u '%F_%H-%M-%S_$wx$h.png' -e 'mv $f ~/Screenshots/ ' && notify-send -u low 'Screenshot captured'
+# sceenshot
+bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
+bindsym $super+Print exec maim -s ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
 
 # change focus (vi)
 bindsym $super+h focus left
@@ -144,10 +143,10 @@ bindsym $super+k focus up
 bindsym $super+l focus right
 
 # change focus
-bindsym $super+Left focus left
-bindsym $super+Down focus down
-bindsym $super+Up focus up
-bindsym $super+Right focus right
+#bindsym $super+Left focus left
+#bindsym $super+Down focus down
+#bindsym $super+Up focus up
+#bindsym $super+Right focus right
 
 # move window (vi)
 bindsym $super+$shift+h move left
@@ -156,10 +155,10 @@ bindsym $super+$shift+k move up
 bindsym $super+$shift+l move right
 
 # move window
-bindsym $super+$shift+Left move left
-bindsym $super+$shift+Down move down
-bindsym $super+$shift+Up move up
-bindsym $super+$shift+Right move right
+#bindsym $super+$shift+Left move left
+#bindsym $super+$shift+Down move down
+#bindsym $super+$shift+Up move up
+#bindsym $super+$shift+Right move right
 
 # split horizontal
 bindsym $super+bar split h
@@ -183,7 +182,7 @@ bindsym $super+f floating toggle
 bindsym $super+$shift+f fullscreen toggle
 
 # focus urgent window
-bindsym $super+comma [urgent=latest] focus
+bindsym $super+quote [urgent=latest] focus
 
 # assign workspace to output
 workspace $ws1 output $mon1
@@ -229,7 +228,7 @@ mode "resize" {
 bindsym $super+r mode "resize"
 
 # float dialogs
-#for_window [window_type="dialog"] floating enable
+for_window [window_type="dialog"] floating enable
 #for_window [window_type="utility"] floating enable
 #for_window [window_type="toolbar"] floating enable
 #for_window [window_type="splash"] floating enable
@@ -275,6 +274,7 @@ for_window [class="^Gimp-2.8$"] floating enable focus
 assign [class="^Lutris$"] 3
 for_window [class="^Lutris$"] floating enable focus
 
+for_window [class="Zathura"] floating enable focus
 
 # startup
 exec_always --no-startup-id ~/.config/polybar/launch.sh &

@@ -1,13 +1,13 @@
 /* rofi/antsy.rasi */
 
 * {
-    foreground:         rgba ( 203, 204, 205, 100 % );
+    foreground:         rgba ( 229, 229, 229, 100 % );
     background:         rgba ( 0, 0, 0, 100 % );
-    border:             rgba ( 81, 81, 255, 100 % );
-    active:             rgba ( 235, 235, 235, 100 % );
-    selected:           rgba ( 81, 81, 255, 100 % );
-    urgent:             rgba ( 20, 240, 240, 100 % );
-    muted:              rgba ( 129, 131, 131, 100 % );
+    border:             rgba ( 92, 92, 255, 100 % );
+    active:             rgba ( 255, 255, 255, 100 % );
+    selected:           rgba ( 92, 92, 255, 100 % );
+    urgent:             rgba ( 0, 255, 255, 100 % );
+    muted:              rgba ( 127, 127, 127, 100 % );
     spacing:            2;
 }
 window {

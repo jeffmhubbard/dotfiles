@@ -77,7 +77,7 @@ cursor-scroll = ns-resize
 font-0 = Hack Nerd Font:pixelsize=10:style=bold;1
 
 modules-left = i3 xwindow
-modules-center = 
+modules-center =
 modules-right = clock
 
 [bar/pythos-top]
@@ -93,10 +93,10 @@ modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt
 [bar/pythos-right]
 inherit = bar/base-top
 monitor = HDMI-0
-tray-position = 
+tray-position =
 modules-right = clock-full
 
-[bar/dragon-bottom]
+[bar/dragon-top]
 inherit = bar/base-top
 modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws clock
 
@@ -109,14 +109,14 @@ modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws
 [bar/dragon-right]
 inherit = bar/base-top
 monitor = DP-1
-tray-position = 
+tray-position =
 modules-right = clock-full
 
-[bar/gargoyle-bottom]
+[bar/gargoyle-top]
 inherit = bar/base-top
 modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
 
-[bar/pegasus-bottom]
+[bar/pegasus-top]
 inherit = bar/base-top
 modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
 
@@ -254,7 +254,7 @@ format-prefix-foreground = ${colors.background-alt}
 format-underline = ${colors.active}
 format-padding = 1
 
-label-layout = 
+label-layout =
 
 label-indicator = "CAPS"
 label-indicator-foreground = ${colors.foreground}

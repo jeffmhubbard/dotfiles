@@ -15,8 +15,8 @@ plugins=( \
         history \
         command-not-found \
         tmux \
-        git \
         fzf \
+        git \
         ssh-agent \
         virtualenv \
         virtualenvwrapper \
@@ -40,5 +40,8 @@ eval $(dircolors ~/.dircolors)
 # aliases
 alias vi="vim"
 alias pf="playfetch"
+
+alias week='gcalcli calw'
+alias month='gcalcli calm'
 
 # vim: set ft=zsh:

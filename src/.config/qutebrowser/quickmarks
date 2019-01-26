@@ -1,8 +1,9 @@
 d https://duckduckgo.com/
 g https://www.google.com/
-aw https://wiki.archlinux.org/index.php/Main_page
+aw https://wiki.archlinux.org/
 aur https://aur.archlinux.org/
-wp https://www.wikipedia.org/
-gh https://github.com/
-rd https://reddit.com/
+bbs https://bbs.archlinux.org/
+wiki https://www.wikipedia.org/
+github https://github.com/
+reddit https://reddit.com/
 code https://code.linuxit.us/
