@@ -1,6 +1,6 @@
 " vim/vimrc
 
-" for Arch Linux
+" btw
 runtime! archlinux.vim
 
 " enable syntax highlighting if available
@@ -42,7 +42,7 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set foldmethod=indent   
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
@@ -50,6 +50,9 @@ set encoding=utf-8
 set fileencoding=utf-8
 set mouse=a
 set statusline=""
+
+" testing options
+autocmd BufEnter * silent! lcd %:p:h
 
 " lightline.vim
 let g:lightline = {
@@ -60,13 +63,34 @@ let g:lightline = {
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ],
-      \              [ 'gitbranch' ] ],
-      \              
+      \              [ 'gitbranch' ],
+      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
+      \
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
       \ },
       \ }
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'left',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+
+let g:lightline#ale#indicator_checking = " "
+let g:lightline#ale#indicator_warnings = " "
+let g:lightline#ale#indicator_errors = " "
+let g:lightline#ale#indicator_ok = ""
+
 " nerdtree
 " auto open NERDTree when vim starts with directory
 autocmd StdinReadPre * let s:std_in=1
@@ -75,7 +99,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " options
 let NERDTreeShowHidden = 1
-let NERDTreeStatusline = 2
+let NERDTreeStatusline = 1
 let NERDTreeWinSize = 25
 let NERDTreeMinimalUI=1
 
@@ -114,21 +138,56 @@ let g:ale_fixers = {
     \ 'javascript': ['eslint'],
 	\ 'python': ['black', 'yapf', 'autopep8', 'isort', 'add_blank_lines_for_python_control_statements'],
     \ }
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
+
+" incsearch
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+" edit vimrc and reload vimrc
+nmap <silent> <leader>ve :e $MYVIMRC<CR>
+nmap <silent> <leader>vr :so $MYVIMRC<CR>
+
+" navigate panes
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
 
 " toggle NERDTree
-map <F5> :NERDTreeToggle<CR>
+map <leader>\d :NERDTreeToggle<CR>
+
+" save
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
 
 " toggle paste\nopaste
-nnoremap <F6> :set invpaste paste?<CR>
-set pastetoggle=<F6>
+set pastetoggle=<leader>z
+
+" macros - qq record, q stop, and Q apply
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+
+" ALE
+nmap <leader>f <Plug>(ale_fix)
+nmap <leader>] <Plug>(ale_next)
+nmap <leader>[ <Plug>(ale_previous)
 
 " toggle Tagbar
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>\t :TagbarToggle<CR>
 
 " map next and previous buffers
 nnoremap <C-N> :bnext<CR>
 nnoremap <C-P> :bprev<CR>
 
 silent! helptags ALL
+
 " vim: set ft=vim:
