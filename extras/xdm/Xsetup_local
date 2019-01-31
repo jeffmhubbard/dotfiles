@@ -2,10 +2,6 @@
 
 # Xsetup_local
 
-# set black background
-[[ "command -v xsetroot" ]] && \
-    xsetroot -solid black &
-
 # set wallpaper
 [[ "command -v feh" ]] && \
     feh --no-xinerama --bg-fill /etc/X11/xdm/background.png &

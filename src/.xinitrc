@@ -16,7 +16,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 # Extra X settings
 [[ "command -v xsetroot" ]] && \
-    xsetroot -solid black -cursor_name left_ptr &
+    xsetroot -cursor_name left_ptr &
 
 # Disable DPMS
 [[ "command -v xset" ]] && \
