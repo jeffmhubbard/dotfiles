@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-import os
 from distutils.dir_util import copy_tree
+from os import path
 
-copy_tree('src/', os.path.expanduser('~'))
-
+if input("Install? (yes/no): ").lower().strip()[:1] == "yes":
+    copy_tree('src/', path.expanduser('~'))
