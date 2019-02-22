@@ -53,38 +53,45 @@ set statusline=""
 
 " testing options
 autocmd BufEnter * silent! lcd %:p:h
+set list lcs=tab:\┆\ 
+
+" indentLine
+let g:indentLine_enabled = 1
+"let g:indentLine_setColors = 0
+let g:indentLine_char = '┆'
+
 
 " lightline.vim
 let g:lightline = {
-      \ 'colorscheme': 'antsy',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ],
-      \              [ 'gitbranch' ],
-      \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
-      \
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+    \ 'colorscheme': 'antsy',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype' ],
+    \              [ 'gitbranch' ],
+    \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ] ],
+    \
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ }
 
 let g:lightline.component_expand = {
-      \  'linter_checking': 'lightline#ale#checking',
-      \  'linter_warnings': 'lightline#ale#warnings',
-      \  'linter_errors': 'lightline#ale#errors',
-      \  'linter_ok': 'lightline#ale#ok',
-      \ }
+    \  'linter_checking': 'lightline#ale#checking',
+    \  'linter_warnings': 'lightline#ale#warnings',
+    \  'linter_errors': 'lightline#ale#errors',
+    \  'linter_ok': 'lightline#ale#ok',
+    \ }
 
 let g:lightline.component_type = {
-      \     'linter_checking': 'left',
-      \     'linter_warnings': 'warning',
-      \     'linter_errors': 'error',
-      \     'linter_ok': 'left',
-      \ }
+    \     'linter_checking': 'left',
+    \     'linter_warnings': 'warning',
+    \     'linter_errors': 'error',
+    \     'linter_ok': 'left',
+    \ }
 
 let g:lightline#ale#indicator_checking = " "
 let g:lightline#ale#indicator_warnings = " "
@@ -105,6 +112,7 @@ let NERDTreeMinimalUI=1
 
 " nerdtree-git
 let g:NERDTreeShowGitStatus = 1
+
 " icons to match oh-my-zsh prompt
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "●",

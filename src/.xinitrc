@@ -38,8 +38,8 @@ export QT_QPA_PLATFORMTHEME=gtk2
 [[ "command -v xautolock" ]] && \
     xautolock -resetsaver \
         -time 5 \
-        -locker "betterlockscreen -l blur" \
-        -nowlocker "betterlockscreen -l blur" \
+        -locker "betterlockscreen -l" \
+        -nowlocker "betterlockscreen -l" \
         &
 
 # Start notification daemon

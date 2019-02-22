@@ -22,6 +22,7 @@ plugins=( \
         virtualenvwrapper \
         django \
         fabric \
+        zsh-syntax-highlighting \
         )
 
 # oh-my-zsh init

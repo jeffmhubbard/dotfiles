@@ -17,8 +17,9 @@ dark_cyan       = ${xrdb:color6}
 cyan            = ${xrdb:color14}
 grey            = ${xrdb:color7}
 white           = ${xrdb:color15}
+transparent     = #E6000000
 
-background      = ${self.black}
+background      = ${self.transparent}
 background-alt  = ${self.dark_grey}
 foreground      = ${self.white}
 foreground-alt  = ${self.grey}
@@ -36,6 +37,7 @@ alert-alt       = ${self.dark_red}
 
 [settings]
 screenchange-reload = false
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 0
@@ -87,13 +89,13 @@ modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt clock
 [bar/pythos-left]
 inherit = bar/base-top
 monitor = DVI-I-1
-tray-position = right
+tray-position =
 modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt
 
 [bar/pythos-right]
 inherit = bar/base-top
 monitor = HDMI-0
-tray-position =
+tray-position = right
 modules-right = clock-full
 
 [bar/dragon-top]
@@ -135,10 +137,10 @@ fuzzy-match = true
 ;               
 ws-icon-0 = 1;
 ws-icon-1 = 2;
-ws-icon-2 = 3;
+ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-5 = 6;
 ws-icon-default = 
 
 format = <label-state> <label-mode>

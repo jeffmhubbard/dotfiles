@@ -33,7 +33,7 @@ c.window.title_format = "{perc}{title}"
 c.completion.height = "30%"
 
 c.colors.webpage.bg = xres["*color15"]
-c.hints.border = "1px solid " + xres["*color0"]
+c.hints.border = "0px solid " + xres["*color0"]
 
 c.colors.completion.category.bg = xres["*color0"]
 c.colors.completion.category.border.bottom = xres["*color8"]
@@ -60,11 +60,11 @@ c.colors.downloads.stop.fg = xres["*color0"]
 c.colors.downloads.system.bg = "none"
 c.colors.downloads.system.fg = "none"
 
-c.colors.hints.bg = "rgba(0, 0, 0, 60%)"
+c.colors.hints.bg = "rgba(0, 0, 0, 90%)"
 c.colors.hints.fg = xres["*color15"]
 c.colors.hints.match.fg = xres["*color14"]
 
-c.colors.keyhint.bg = "rgba(0, 0, 0, 60%)"
+c.colors.keyhint.bg = "rgba(0, 0, 0, 90%)"
 c.colors.keyhint.fg = xres["*color15"]
 c.colors.keyhint.suffix.fg = xres["*color11"]
 
@@ -126,7 +126,7 @@ c.fonts.completion.entry = "10pt monospace"
 c.fonts.debug_console = "10pt monospace"
 c.fonts.downloads = "10pt monospace"
 c.fonts.hints = "bold 12pt monospace"
-c.fonts.keyhint = "12pt monospace"
+c.fonts.keyhint = "10pt monospace"
 c.fonts.messages.error = "bold 10pt monospace"
 c.fonts.messages.info = "bold 10pt monospace"
 c.fonts.messages.warning = "bold 10pt monospace"

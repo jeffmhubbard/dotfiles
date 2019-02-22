@@ -61,7 +61,6 @@ force_display_urgency_hint 500 ms
 focus_on_window_activation smart
 
 
-
 ## theme
 # xresources
 set_from_resource $black       color0  #000000
@@ -97,7 +96,7 @@ font pango:Hack Nerd Font 10, FontAwesome 10
 floating_modifier $super
 
 # session menu
-bindsym $super+$ctrl+i exec $HOME/.bin/i3-session-menu
+bindsym $super+$ctrl+Escape exec $HOME/.bin/i3-session-menu
 
 # window list
 bindsym $super+Tab exec rofi -show window
@@ -118,17 +117,18 @@ bindsym $alt+Tab exec $HOME/.bin/wmfocus.sh
 bindsym $super+$ctrl+q kill
 
 # volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym $super+$ctrl+Next exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # mpd
-bindsym XF86AudioPlay exec --no-startup-id mpc toggle
-bindsym XF86AudioNext exec --no-startup-id mpc -q next
-bindsym XF86AudioPrev exec --no-startup-id mpc -q prev
+bindsym $super+F9 exec --no-startup-id mpc -q prev
+bindsym $super+F10 exec --no-startup-id mpc stop
+bindsym $super+F11 exec --no-startup-id mpc toggle
+bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # playfetch
-bindsym XF86Tools exec playfetch -fcls lucky -t 100
+bindsym $super+$alt+slash exec playfetch -fcls lucky -t 100
 bindsym $super+$alt+period exec playfetch rank --up && dunstify -u normal -t 3000 'Thumbs Up!'
 bindsym $super+$alt+comma exec playfetch rank --down && dunstify -u critical -t 3000 'Thumbs Down!' 'Skipping...'
 
@@ -143,10 +143,10 @@ bindsym $super+k focus up
 bindsym $super+l focus right
 
 # change focus
-#bindsym $super+Left focus left
-#bindsym $super+Down focus down
-#bindsym $super+Up focus up
-#bindsym $super+Right focus right
+bindsym $super+Left focus left
+bindsym $super+Down focus down
+bindsym $super+Up focus up
+bindsym $super+Right focus right
 
 # move window (vi)
 bindsym $super+$shift+h move left
@@ -155,16 +155,21 @@ bindsym $super+$shift+k move up
 bindsym $super+$shift+l move right
 
 # move window
-#bindsym $super+$shift+Left move left
-#bindsym $super+$shift+Down move down
-#bindsym $super+$shift+Up move up
-#bindsym $super+$shift+Right move right
+bindsym $super+$shift+Left move left
+bindsym $super+$shift+Down move down
+bindsym $super+$shift+Up move up
+bindsym $super+$shift+Right move right
+
+# layouts
+bindsym $super+$shift+s layout stacking
+bindsym $super+$shift+w layout tabbed
+bindsym $super+$shift+e layout toggle split
 
 # split horizontal
-bindsym $super+bar split h
+bindsym $super+$shift+bar split h
 
 # split vertical
-bindsym $super+$shift+bar split v
+bindsym $super+bar split v
 
 # focus parent container
 bindsym $super+a focus parent
@@ -227,54 +232,71 @@ mode "resize" {
 }
 bindsym $super+r mode "resize"
 
-# float dialogs
+
+# special windows
 for_window [window_type="dialog"] floating enable
-#for_window [window_type="utility"] floating enable
-#for_window [window_type="toolbar"] floating enable
-#for_window [window_type="splash"] floating enable
-#for_window [window_type="menu"] floating enable
-#for_window [window_type="dropdown_menu"] floating enable
-#for_window [window_type="popup_menu"] floating enable
-#for_window [window_type="tooltip"] floating enable
-#for_window [window_type="notification"] floating enable
+for_window [window_type="utility"] floating enable
+for_window [window_type="toolbar"] floating enable
+for_window [window_type="splash"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_type="dropdown_menu"] floating enable
+for_window [window_type="popup_menu"] floating enable
+for_window [window_type="tooltip"] floating enable
+for_window [window_type="notification"] floating enable
 
-# app specific rules
-for_window [class="feh"] floating enable
-for_window [class="mpv"] floating enable
+# file handlers
+for_window [class="feh"] floating enable focus
+for_window [class="mpv"] floating enable focus
+for_window [class="Zathura"] floating enable focus
 
-assign [class="Steam"] 3
-for_window [class="^Steam$"] floating enable
+# ws term
+#
 
-assign [class="csgo_linux64"] 3
-for_window [class="csgo_linux64"] floating enable focus
+# ws code
+#
 
-assign [class="X3AP_config"] 3
-for_window [class="X3AP_config"] floating enable focus
-assign [class="X3AP_main"] 3
-for_window [class="X3AP_main"] fullscreen enable focus
+# ws util
+assign [class="^Lxappearance$"] 3
+for_window [class="^Lxappearance$"] floating enable focus
 
+assign [class="^Oomox$"] 3
+for_window [class="^Oomox$"] floating enable focus
+
+assign [class="^Gimp-2.8$"] 3
+for_window [class="^Gimp-2.8$"] focus
+
+assign [class="^Inkscape$"] 3
+for_window [class="^Inkscape$"] focus
+
+# ws webs
 assign [class="^qutebrowser$"] 4
 for_window [class="^qutebrowser$"] focus
 
 assign [class="^URxvt$" instance="^RTV$"] 4
 for_window [class="^URxvt$" instance="^RTV$"] focus
 
+# ws comm
 assign [class="^URxvt$" instance="^Irssi$"] 5
 for_window [class="^URxvt$" instance="^Irssi$"] focus
 
 assign [class="^URxvt$" instance="^NeoMutt$"] 5
 for_window [class="^URxvt$" instance="^NeoMutt$"] focus
 
-assign [class="^URxvt$" instance="^LitStats$"] 6
-for_window [class="^URxvt$" instance="^LitStats$"] floating enable focus
-
-assign [class="^Gimp-2.8$"] 6
-for_window [class="^Gimp-2.8$"] floating enable focus
-
-assign [class="^Lutris$"] 3
+# ws game
+assign [class="^Lutris$"] 6
 for_window [class="^Lutris$"] floating enable focus
 
-for_window [class="Zathura"] floating enable focus
+assign [class="Steam"] 6
+for_window [class="^Steam$"] floating enable focus
+
+assign [class="csgo_linux64"] 6
+for_window [class="csgo_linux64"] floating enable focus
+
+assign [class="X3AP_config"] 6
+for_window [class="X3AP_config"] floating enable focus
+assign [class="X3AP_main"] 6
+for_window [class="X3AP_main"] fullscreen enable focus
+
 
 # startup
 exec_always --no-startup-id ~/.config/polybar/launch.sh &

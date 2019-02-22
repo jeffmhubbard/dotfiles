@@ -13,7 +13,7 @@ notification_height = 0
 horizontal_padding = 5
 separator_color = frame
 separator_height = 2
-transparency = 0
+transparency = 10
 format = "%s\n%b"
 font = Hack Nerd Font 10
 markup = full
@@ -42,10 +42,10 @@ class = Dunst
 
 
 [shortcuts]
-close = mod4+apostrophe
-close_all = mod4+mod1+apostrophe
-history = mod4+ctrl+apostrophe
-context = mod4+ctrl+semicolon
+close = mod4+grave
+close_all = mod4+shift+grave
+history = mod4+ctrl+grave
+context = mod4+alt+grave
 
 [urgency_low]
 background = "#000000"
