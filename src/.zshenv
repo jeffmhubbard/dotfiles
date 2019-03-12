@@ -22,6 +22,9 @@ export FZF_DEFAULT_OPTS='
   --color=info:13,prompt:15,spinner:14,pointer:10,marker:9
 '
 
+# zsh-syntax-highlighting
+export ZSH_HIGHLIGHT_THEME=antsy
+
 # MPD
 export MPD_HOST=pythos
 export MPD_PORT=6600

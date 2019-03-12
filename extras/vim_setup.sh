@@ -26,6 +26,7 @@ PLUGINS=(
     https://github.com/mhinz/vim-signify.git
     https://github.com/tpope/vim-surround.git
     https://github.com/Yggdroot/indentLine.git
+    https://github.com/skywind3000/asyncrun.vim.git
 )
 
 # create directories

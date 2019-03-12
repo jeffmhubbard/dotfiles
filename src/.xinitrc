@@ -10,6 +10,9 @@ export MPD_HOST=pythos
 export MPD_PORT=6600
 export QT_QPA_PLATFORMTHEME=gtk2
 
+export I3SCRIPTS=$HOME/.config/i3/scripts
+export PBSCRIPTS=$HOME/.config/polybar/scripts
+
 # Load X settings
 [[ -f ~/.Xresources ]] && \
     xrdb -merge -I$HOME ~/.Xresources
@@ -17,10 +20,6 @@ export QT_QPA_PLATFORMTHEME=gtk2
 # Extra X settings
 [[ "command -v xsetroot" ]] && \
     xsetroot -cursor_name left_ptr &
-
-# Disable DPMS
-[[ "command -v xset" ]] && \
-    xset s off -dpms &
 
 # Hide idle mouse cursor
 [[ "command -v unclutter" ]] && \
@@ -35,12 +34,9 @@ export QT_QPA_PLATFORMTHEME=gtk2
     sh ~/.fehbg &
 
 # Lock screen
-[[ "command -v xautolock" ]] && \
-    xautolock -resetsaver \
-        -time 5 \
-        -locker "betterlockscreen -l" \
-        -nowlocker "betterlockscreen -l" \
-        &
+[[ "command -v xss-lock" ]] && \
+    xset s 600 180 &
+    xss-lock -- awful --capture &
 
 # Start notification daemon
 [[ "command -v dunst" ]] && \

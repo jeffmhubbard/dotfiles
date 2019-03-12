@@ -19,7 +19,7 @@ if [ ${HOSTNAME} = "pythos" ]; then
         sleep 1 &
         polybar pythos-right &
     else
-        polybar pythos-top &
+        polybar pythos-bottom &
     fi
 fi
 
@@ -31,18 +31,18 @@ if [ ${HOSTNAME} = "dragon" ]; then
         sleep 1 &
         polybar dragon-right &
     else
-        polybar dragon-top &
+        polybar dragon-bottom &
     fi
 fi
 
 # gargoyle
 if [ ${HOSTNAME} = "gargoyle" ]; then
-    polybar gargoyle-top &
+    polybar gargoyle-bottom &
 fi
 
 # pegasus
 if [ ${HOSTNAME} = "pegasus" ]; then
-    polybar pegasus-top &
+    polybar pegasus-bottom &
 fi
 
 # vim: set ft=sh:

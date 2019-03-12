@@ -17,7 +17,7 @@ dark_cyan       = ${xrdb:color6}
 cyan            = ${xrdb:color14}
 grey            = ${xrdb:color7}
 white           = ${xrdb:color15}
-transparent     = #E6000000
+transparent     = #cc000000
 
 background      = ${self.transparent}
 background-alt  = ${self.dark_grey}
@@ -44,11 +44,11 @@ margin-top = 0
 margin-bottom = 0
 
 
-[bar/base-top]
+[bar/base-bottom]
 width = 100%
 height = 28
 radius = 0.0
-bottom = false
+bottom = true
 fixed-center = true
 
 override-redirect = false
@@ -82,44 +82,44 @@ modules-left = i3 xwindow
 modules-center =
 modules-right = clock
 
-[bar/pythos-top]
-inherit = bar/base-top
+[bar/pythos-bottom]
+inherit = bar/base-bottom
 modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt clock
 
 [bar/pythos-left]
-inherit = bar/base-top
+inherit = bar/base-bottom
 monitor = DVI-I-1
 tray-position =
 modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt
 
 [bar/pythos-right]
-inherit = bar/base-top
+inherit = bar/base-bottom
 monitor = HDMI-0
 tray-position = right
 modules-right = clock-full
 
-[bar/dragon-top]
-inherit = bar/base-top
+[bar/dragon-bottom]
+inherit = bar/base-bottom
 modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws clock
 
 [bar/dragon-left]
-inherit = bar/base-top
+inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
 modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws
 
 [bar/dragon-right]
-inherit = bar/base-top
+inherit = bar/base-bottom
 monitor = DP-1
 tray-position =
 modules-right = clock-full
 
-[bar/gargoyle-top]
-inherit = bar/base-top
+[bar/gargoyle-bottom]
+inherit = bar/base-bottom
 modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
 
-[bar/pegasus-top]
-inherit = bar/base-top
+[bar/pegasus-bottom]
+inherit = bar/base-bottom
 modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
 
 
@@ -531,7 +531,7 @@ interface = wlp7s0b1
 
 [module/upd-arch]
 type = custom/script
-exec = $HOME/.bin/arch-updates
+exec = $PBSCRIPTS/arch-updates
 interval = 300
 
 format-prefix = " "
@@ -544,7 +544,7 @@ label-padding = 0
 
 [module/upd-mint]
 type = custom/script
-exec = $HOME/.bin/lm-updates
+exec = $PBSCRIPTS/lm-updates
 interval = 90
 
 format-prefix = " "

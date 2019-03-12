@@ -80,12 +80,14 @@ set_from_resource $magenta     color13 #000000
 set_from_resource $cyan        color14 #000000
 set_from_resource $white       color15 #000000
 
+set $a CC
+
 # class                 border      backgr      text        indicator   child_border
-client.focused          $blue       $blue       $black      $blue       $blue
-client.focused_inactive $black      $black      $lightgrey  $black      $black
-client.unfocused        $black      $black      $lightgrey  $black      $black
-client.urgent           $cyan       $cyan       $black      $cyan       $cyan
-client.background       $black
+client.focused          $blue$a     $blue$a     $black      $blue$a     $blue$a
+client.focused_inactive $black$a    $black$a    $lightgrey  $black$a    $black$a
+client.unfocused        $black$a    $black$a    $lightgrey  $black$a    $black$a
+client.urgent           $cyan$a     $cyan$a     $black      $cyan$a     $cyan$a
+client.background       $black$a
 
 # fonts
 font pango:Hack Nerd Font 10, FontAwesome 10
@@ -96,7 +98,7 @@ font pango:Hack Nerd Font 10, FontAwesome 10
 floating_modifier $super
 
 # session menu
-bindsym $super+$ctrl+Escape exec $HOME/.bin/i3-session-menu
+bindsym $super+$ctrl+Escape exec $I3SCRIPTS/i3-session-menu
 
 # window list
 bindsym $super+Tab exec rofi -show window
@@ -111,7 +113,7 @@ bindsym $super+semicolon exec rofi -show run
 bindsym $super+Return exec urxvtc
 
 # wmfocus
-bindsym $alt+Tab exec $HOME/.bin/wmfocus.sh
+bindsym $alt+Tab exec $I3SCRIPTS/wmfocus.sh
 
 # kill focused window
 bindsym $super+$ctrl+q kill
@@ -297,8 +299,10 @@ for_window [class="X3AP_config"] floating enable focus
 assign [class="X3AP_main"] 6
 for_window [class="X3AP_main"] fullscreen enable focus
 
-
 # startup
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id $PBSCRIPTS/launch.sh &
+
+# Load default layouts
+exec --no-startup-id $I3SCRIPTS/session.sh &
 
 # vim: set ft=i3config

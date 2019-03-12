@@ -1,5 +1,5 @@
 ! .Xresources
- 
+
 !! --- Colors ---
 #include ".Xresources.antsy"
 
@@ -28,7 +28,7 @@ URxvt*cursorBlink:              true
 URxvt*cursorUnderline:          true
 URxvt*colorULMode:              on
 URxvt*transparent:              true
-URxvt*shading:                  10
+URxvt*shading:                  20
 URxvt*font:                     xft:Hack Nerd Font:pixelsize=13:Regular
 URxvt*boldFont:                 xft:Hack Nerd Font:pixelsize=13:Regular:Bold
 URxvt.italicFont:               xft:Hack Nerd Font:pixelsize=13:Italic

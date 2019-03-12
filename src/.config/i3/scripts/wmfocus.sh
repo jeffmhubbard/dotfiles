@@ -4,7 +4,7 @@ wmfocus \
     --chars asdf \
     --textcolor '#e9ebeb' \
     --textcoloralt '#14f0f0' \
-    --bgcolor 'rgba(0, 0, 0, 0.9)' \
+    --bgcolor 'rgba(0, 0, 0, 0.8)' \
     --font 'Hack Nerd Font Mono':64 \
     --margin 0.5 \
     --halign left \

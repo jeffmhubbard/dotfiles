@@ -1,14 +1,14 @@
 # neomutt/colors
 
 # --- Main ---
-color error         color1          default # message line error text
-color tilde         color8          default # vi-like tildes marking blank lines
-color message       color7          default 
-color markers       color5          default # wrapped-line /^\+/ markers
-color attachment    color13         default # attachment headers
-color search        color0          color11 # search patterns in pager
-color indicator     color0          color12 # selected email in index
-color tree          color8          default # arrow in threads (`-->')
+color error         color1          default     # message line error text
+color tilde         color8          default     # vi-like tildes marking blank lines
+color message       color7          default     
+color markers       color5          default     # wrapped-line /^\+/ markers
+color attachment    color13         default     # attachment headers
+color search        color0          color11     # search patterns in pager
+color indicator     color0          color12     # selected email in index
+color tree          color8          default     # arrow in threads (`-->')
 
 # --- Status ---
 color status        color8          default
@@ -26,10 +26,18 @@ mono header         bold                        "^(From|Subject|Date|To|Cc|Bcc):
 mono quoted         bold
 
 # --- Index ---
-color index         color7          default     "~A"            # all messages
-color index         brightcolor15   default     "~N"            # new messages
-color index         brightcolor15   default     "~U"            # unread messages
-color index         brightcolor11   default     "~F"            # flagged messages
+color index         default         default     '~A'    # all messages
+color index         brightcolor15   default     '~N'    # new messages
+color index         brightcolor14   default     '~U'    # unread messages
+color index         default         default     '~R'    # read
+color index         color3          default     '~Q'    # replied
+color index         color6          default     '~T'    # tagged
+color index         color8          default     '~D'    # deleted messages
+color index         brightcolor11   default     '~F'    # flags
+color index_author  brightcolor11   default     '~F'    # flags
+color index         color10         default     '~l'    # mailing list
+color index_author  color10         default     '~l'    # mailing list
+color index_flags   color5          default     '%A'
 
 # --- Headers ---
 color hdrdefault    default         default
@@ -51,8 +59,8 @@ color quoted1       color6          default
 # --- URLs ---
 color body          brightcolor12   default     "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
 color body          brightcolor12   default     "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
-color body		    brightcolor12   default	    "(ftp|https?|gopher|news|telnet|finger)://[^ \"\t\r\n]+"
-color body		    brightcolor12   default	    "[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body          brightcolor12   default     "(ftp|https?|gopher|news|telnet|finger)://[^ \"\t\r\n]+"
+color body          brightcolor12   default     "[-a-z_0-9.]+@[-a-z_0-9.]+"
 
 # --- PGP ---
 color body          color1          default     "(BAD signature)"
@@ -64,11 +72,11 @@ mono  body          bold                        "^gpg: Good signature"
 mono  body          bold                        "^gpg: BAD signature from.*"
 
 # --- Sidebar ---
-color sidebar_indicator     black           color15
-color sidebar_highlight     black           color12
-color sidebar_divider       brightblack     default
-color sidebar_flagged       brightyellow    default
-color sidebar_new           brightcyan      default
+color sidebar_indicator     color0          color15
+color sidebar_highlight     color0          color12
+color sidebar_divider       brightcolor8    default
+color sidebar_flagged       brightcolor11   default
+color sidebar_new           brightcolor14   default
 
 
 # vim: set ft=muttrc :

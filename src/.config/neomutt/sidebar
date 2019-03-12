@@ -10,7 +10,7 @@ set sidebar_width = 20
 set sidebar_short_path = yes
 set sidebar_delim_chars = '/.'
 set sidebar_folder_indent = yes
-set sidebar_indent_string = ' '
+set sidebar_indent_string = '- '
 set sidebar_new_mail_only = no
 set sidebar_next_new_wrap = yes
 set sidebar_divider_char = '│'
@@ -19,7 +19,9 @@ set sidebar_sort_method = path
 
 # --- Bindings ---
 bind index,pager \Cp sidebar-prev
+#bind index,pager \CP sidebar-prev-new
 bind index,pager \Cn sidebar-next
+#bind index,pager \CN sidebar-next-new
 bind index,pager \Co sidebar-open
 
 
