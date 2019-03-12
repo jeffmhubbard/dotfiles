@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if ! repo=$(checkupdates 2> /dev/null | wc -l ); then
+    repo=0
+fi
+
+if ! aur=$(auracle sync -q | wc -l); then
+    aur=0
+fi
+
+if  [[ "$arch" -gt 0 ]] || [[ "$aur" -gt 0 ]]; then
+    echo "$repo:$aur"
+else
+    echo ""
+fi
