@@ -5,7 +5,7 @@ info_eol = "false";
 replaces = { "[]()=" = ""; ":\\/" = "%K$*%n"; };
 abstracts = {
   line_start = "";
-  timestamp = "%K$*│%N";
+  timestamp = "%K$*%N";
   hilight = "%_$*%_";
   error = "%R%_$*%_%n";
   channel = "%B%_$*%_%n";
@@ -81,7 +81,7 @@ abstracts = {
   sb_topic = "$0";
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*}";
-  prompt = "$* %W▶%N %|";
+  prompt = "$* %W➜%N %|";
   sb = "%W$*%N";
   sbmode = "%N%K(+$*)%n";
   sbaway = "%9%K %Raway %n";
