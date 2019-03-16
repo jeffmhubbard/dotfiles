@@ -5,7 +5,7 @@ HOSTNAME=$(hostname -s)
 
 dunstify -u normal -t 1500 "Loading layouts for $HOSTNAME"
 
-if [ $HOSTNAME == 'pythos' ]; then
+if [ "$HOSTNAME" == 'pythos' ]; then
     i3-msg "append_layout $HOME/.config/i3/layouts/layout-TERM.json"
     (urxvtc -name CAVA -title CAVA -e cava &)
     (urxvtc -name Htop -title Htop -e htop &)
@@ -22,7 +22,7 @@ if [ $HOSTNAME == 'pythos' ]; then
     (sleep)
 fi
 
-if [ $HOSTNAME == 'dragon' ]; then
+if [ "$HOSTNAME" == 'dragon' ]; then
     i3-msg "append_layout ~/.config/i3/layouts/layout-TERM.json"
     (urxvtc -name Htop -title Htop -e htop &)
     (urxvtc -name Vifm -title Vifm -e vifm &)
@@ -36,7 +36,7 @@ if [ $HOSTNAME == 'dragon' ]; then
     (urxvtc -name Irssi -title Irssi -e irssi &)
 fi
 
-if [ $HOSTNAME == 'gargoyle' ]; then
+if [ "$HOSTNAME" == 'gargoyle' ]; then
     i3-msg "workspace 1; append_layout $HOME/.config/i3/layouts/layout-TERM.json"
     (urxvtc -name Htop -title Htop -e htop &)
     (urxvtc -name Vifm -title Vifm -e vifm &)
@@ -52,7 +52,7 @@ if [ $HOSTNAME == 'gargoyle' ]; then
     (sleep)
 fi
 
-if [ $HOSTNAME == 'nebula' ]; then
+if [ "$HOSTNAME" == 'nebula' ]; then
     i3-msg "append_layout ~/.config/i3/layouts/layout-TERM.json"
     (urxvtc -name Htop -title Htop -e htop &)
     (urxvtc -name Vifm -title Vifm -e vifm &)

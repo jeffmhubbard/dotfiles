@@ -11,10 +11,12 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # get hostname
 HOSTNAME="$(hostname -s)"
+MONITORS=$(xrandr --listactivemonitors | wc -l)
+
 # pythos
-if [ ${HOSTNAME} = "pythos" ]; then
-    # check for dual screen and load two bars
-    if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
+if [ "$HOSTNAME" = "pythos" ]; then
+    ((MONITORS--))
+    if [ "$MONITORS" -eq 2 ]; then
         polybar pythos-left &
         sleep 1 &
         polybar pythos-right &
@@ -24,9 +26,9 @@ if [ ${HOSTNAME} = "pythos" ]; then
 fi
 
 # dragon
-if [ ${HOSTNAME} = "dragon" ]; then
-    # check for dual screen and load two bars
-    if [ $((`xrandr --listactivemonitors | wc -l`-1)) -eq 2 ]; then
+if [ "$HOSTNAME" = "dragon" ]; then
+    ((MONITORS--))
+    if [ "$MONITORS" -eq 2 ]; then
         polybar dragon-left &
         sleep 1 &
         polybar dragon-right &
@@ -36,12 +38,12 @@ if [ ${HOSTNAME} = "dragon" ]; then
 fi
 
 # gargoyle
-if [ ${HOSTNAME} = "gargoyle" ]; then
+if [ "$HOSTNAME" = "gargoyle" ]; then
     polybar gargoyle-bottom &
 fi
 
 # pegasus
-if [ ${HOSTNAME} = "pegasus" ]; then
+if [ "$HOSTNAME" = "pegasus" ]; then
     polybar pegasus-bottom &
 fi
 

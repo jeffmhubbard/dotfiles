@@ -8,7 +8,7 @@ if ! aur=$(auracle sync -q | wc -l); then
     aur=0
 fi
 
-if  [[ "$arch" -gt 0 ]] || [[ "$aur" -gt 0 ]]; then
+if  [[ "$repo" -gt 0 ]] || [[ "$aur" -gt 0 ]]; then
     echo "$repo:$aur"
 else
     echo ""

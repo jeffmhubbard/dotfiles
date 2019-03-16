@@ -26,8 +26,7 @@ rofi.display-drun:  Applications
 rofi.terminal: urxvtc
 !                  'background', 'border', 'separator'
 rofi.color-window: argb:cc000000, #5833ff, #000000
-! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal: argb:00000000, #e9ebeb, argb:00000000, argb:ff5833ff, #000000 
-rofi.color-active: argb:ffffffff, #000000, argb:00000000, argb:ff5833ff, #000000 
+rofi.color-active: argb:ffffffff, #000000, argb:ffffffff, argb:ff5833ff, #000000 
 rofi.color-urgent: argb:ff00ffff, #000000, argb:00000000, argb:ff00ffff, #000000
-!rofi.theme: ~/.config/rofi/antsy.rasi

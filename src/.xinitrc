@@ -36,7 +36,7 @@ export PBSCRIPTS=$HOME/.config/polybar/scripts
 # Lock screen
 [[ "command -v xss-lock" ]] && \
     xset s 600 180 &
-    xss-lock -- awful --capture &
+    xss-lock -l -- awful --capture &
 
 # Start notification daemon
 [[ "command -v dunst" ]] && \
