@@ -50,10 +50,17 @@ set encoding=utf-8
 set fileencoding=utf-8
 set mouse=a
 set statusline=""
-
-" testing options
-autocmd BufEnter * silent! lcd %:p:h
 set list lcs=tab:\┆\ 
+
+" cwd follows current buffer
+autocmd BufEnter * silent! lcd %:p:h
+
+" save undo history
+if !isdirectory($HOME."/.vim/undo")
+    call mkdir($HOME."/.vim/undo", "", 0700)
+endif
+set undodir=~/.vim/undo
+set undofile
 
 " indentLine
 let g:indentLine_enabled = 1
@@ -144,9 +151,12 @@ let b:ale_linters = ['pyflakes', 'flake8']
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'javascript': ['eslint'],
-	\ 'python': ['black', 'yapf', 'autopep8', 'isort', 'add_blank_lines_for_python_control_statements'],
+    \ 'python': ['black', 'yapf', 'autopep8', 'isort', 'add_blank_lines_for_python_control_statements'],
     \ }
 let g:ale_fix_on_save = 0
+
+" AsyncRun auto open
+let g:asyncrun_open = 10
 
 " incsearch
 map /  <Plug>(incsearch-forward)

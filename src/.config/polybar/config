@@ -513,11 +513,11 @@ format-disconnected-padding = 1
 label-disconnected = %ifname%
 label-disconnected-padding = 0
 
-ramp-signal-0 = " "
-ramp-signal-1 = " "
-ramp-signal-2 = " "
-ramp-signal-3 = " "
-ramp-signal-4 = " "
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
 ramp-signal-foreground = ${colors.background-alt}
 
 [module/wifi-lt1]
