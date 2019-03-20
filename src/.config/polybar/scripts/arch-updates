@@ -1,15 +1,27 @@
 #!/usr/bin/env bash
 
-if ! repo=$(checkupdates 2> /dev/null | wc -l ); then
-    repo=0
+# polybar/scripts/arch-updates
+#
+# check for arch repo\aur updates
+#
+
+updates=""
+separator="%{F#818383}+%{F-}"
+
+# check for repo updates
+if repo=$(checkupdates 2> /dev/null | wc -l ); then
+    updates+="$repo"
 fi
 
-if ! aur=$(auracle sync -q | wc -l); then
-    aur=0
+updates+="$separator"
+
+# check for aur updates
+if aur=$(auracle sync -q | wc -l); then
+    updates+="$aur"
 fi
 
-if  [[ "$repo" -gt 0 ]] || [[ "$aur" -gt 0 ]]; then
-    echo "$repo:$aur"
-else
-    echo ""
+# display string if ANY updates
+if [ "$repo" -gt 0 ] || [ "$aur" -gt 0 ]; then
+    echo "$updates"
 fi
+

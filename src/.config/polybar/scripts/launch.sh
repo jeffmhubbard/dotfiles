@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # extbin: pgrep, killall, xrandr, polybar
 
-# polybar/launch.sh
+# polybar/scripts/launch.sh
+#
+# launch polybar based on hostname and displays
+#
 
 # kill existing polybar
 killall -q polybar
