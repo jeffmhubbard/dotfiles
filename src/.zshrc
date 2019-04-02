@@ -10,19 +10,18 @@ COMPLETION_WAITING_DOTS="true"
 
 # oh-my-zsh plugins
 plugins=( \
+        ssh-agent \
+        gpg-agent \
         archlinux \
         systemd \
+        fzf \
+        pass \
+        git \
+        tmux \
+        virtualenv \
         history \
         command-not-found \
-        tmux \
-        fzf \
-        git \
-        ssh-agent \
-        virtualenv \
-        virtualenvwrapper \
-        django \
-        fabric \
-        zsh-syntax-highlighting \
+        fast-syntax-highlighting \
         )
 
 # oh-my-zsh init
@@ -40,6 +39,8 @@ eval $(dircolors ~/.dircolors)
 
 # aliases
 alias vi="vim"
+alias vim_up="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
+
 alias pf="playfetch"
 
 alias week='gcalcli calw'
