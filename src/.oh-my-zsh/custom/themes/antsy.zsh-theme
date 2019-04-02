@@ -33,7 +33,7 @@ precmd(){
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 
-PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}▶ %#%f%b '
+PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}➜ %F{white}%#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
 
 # colored-man-pages (antsy)
