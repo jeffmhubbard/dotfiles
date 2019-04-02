@@ -31,7 +31,8 @@ export PBSCRIPTS=$HOME/.config/polybar/scripts
 
 # Restore wallpaper
 [[ -f ~/.fehbg ]] && \
-    sh ~/.fehbg &
+#    sh ~/.fehbg &
+    sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
 
 # Lock screen
 [[ "command -v xss-lock" ]] && \

@@ -251,16 +251,12 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-format-prefix = ""
+format = "<label-indicator>"
 format-prefix-foreground = ${colors.background-alt}
 format-underline = ${colors.active}
 format-padding = 1
 
-label-layout =
-
-label-indicator = "CAPS"
-label-indicator-foreground = ${colors.foreground}
-
+label-indicator-on-capslock = " CAPS"
 
 [module/cpu]
 type = internal/cpu
@@ -532,7 +528,7 @@ interface = wlp7s0b1
 [module/upd-arch]
 type = custom/script
 exec = $PBSCRIPTS/arch-updates
-interval = 300
+interval = 120
 
 format-prefix = " "
 format-prefix-foreground = ${colors.background-alt}

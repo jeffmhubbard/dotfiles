@@ -23,5 +23,7 @@ fi
 # display string if ANY updates
 if [ "$repo" -gt 0 ] || [ "$aur" -gt 0 ]; then
     echo "$updates"
+else
+    echo ""
 fi
 

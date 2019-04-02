@@ -129,6 +129,8 @@ bindsym $super+F10 exec --no-startup-id mpc stop
 bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
+# rofi-pass
+bindsym $super+$alt+p exec rofi-pass
 # playfetch
 bindsym $super+$alt+slash exec playfetch -fcls lucky -t 100
 bindsym $super+$alt+period exec playfetch rank --up && dunstify -u normal -t 3000 'Thumbs Up!'
@@ -206,6 +208,11 @@ bindsym $super+3 workspace $ws3
 bindsym $super+4 workspace $ws4
 bindsym $super+5 workspace $ws5
 bindsym $super+6 workspace $ws6
+
+# switch workspace on both outputs
+bindsym $super+$alt+1 workspace $ws1 workspace $ws4
+bindsym $super+$alt+2 workspace $ws2 workspace $ws5
+bindsym $super+$alt+3 workspace $ws3 workspace $ws6
 
 # move container to workspace
 bindsym $super+$shift+1 move container to workspace $ws1
@@ -291,6 +298,9 @@ for_window [class="^Lutris$"] floating enable focus
 assign [class="Steam"] 6
 for_window [class="^Steam$"] floating enable focus
 
+assign [class="Civ6Sub"] 6
+for_window [class="Civ6Sub"] floating enable focus
+
 assign [class="csgo_linux64"] 6
 for_window [class="csgo_linux64"] floating enable focus
 
@@ -304,5 +314,7 @@ exec_always --no-startup-id $PBSCRIPTS/launch.sh &
 
 # Load default layouts
 exec --no-startup-id $I3SCRIPTS/session.sh &
+
+#exec_always --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
 
 # vim: set ft=i3config
