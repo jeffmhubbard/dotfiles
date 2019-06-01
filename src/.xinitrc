@@ -14,42 +14,39 @@ export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
 # Load X settings
-[[ -f ~/.Xresources ]] && \
-    xrdb -merge -I$HOME ~/.Xresources
-
-# Extra X settings
-[[ "command -v xsetroot" ]] && \
-    xsetroot -cursor_name left_ptr &
-
-# Hide idle mouse cursor
-[[ "command -v unclutter" ]] && \
-    unclutter -root &
-
-# X compositor
-[[ "command -v compton" ]] && \
-    compton &
+xrdb -merge ~/.Xresources
 
 # Restore wallpaper
-[[ -f ~/.fehbg ]] && \
-#    sh ~/.fehbg &
-    sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
+# sh ~/.fehbg &
+sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 600 &
+
+# Extra X settings
+xsetroot -cursor_name left_ptr &
 
 # Lock screen
-[[ "command -v xss-lock" ]] && \
-    xset s 600 180 &
-    xss-lock -l -- awful --capture &
+xset s 600 180 &
+xss-lock -l -- awful --capture &
+
+# Hide idle mouse cursor
+unclutter -root &
+
+# X compositor
+compton &
 
 # Start notification daemon
-[[ "command -v dunst" ]] && \
-    dunst &
+dunst &
+
+# polkit agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Sound daemon
-[[ "command -v start-pulseaudio-x11" ]] && \
-    start-pulseaudio-x11 &
+start-pulseaudio-x11 &
 
 # Terminal emulator
-[[ "command -v urxvtd" ]] && \
-    urxvtd -q -o -f &
+urxvtd -q -o -f &
+
+# Storage
+udiskie &
 
 # Start window manager
 exec i3
