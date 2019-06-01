@@ -18,10 +18,10 @@ def read_xresources(prefix):
 
 xres = read_xresources("*")
 
-c.url.start_pages = ["https://www.google.com/"]
+c.url.start_pages = ["https://start.duckduckgo.com/"]
 c.url.default_page = "about:blank"
 c.url.searchengines = {
-    "DEFAULT": "https://www.google.com/search?q={}",
+    "DEFAULT": "https://duckduckgo.com/?q={}",
     "d": "https://duckduckgo.com/?q={}",
     "g": "https://www.google.com/search?q={}",
     "wa": "https://wiki.archlinux.org/?search={}",
@@ -32,7 +32,7 @@ c.hints.mode = "letter"
 c.window.title_format = "{perc}{title}"
 c.completion.height = "30%"
 
-c.colors.webpage.bg = xres["*color15"]
+c.colors.webpage.bg = xres["*color7"]
 c.hints.border = "0px solid " + xres["*color0"]
 
 c.colors.completion.category.bg = xres["*color0"]
