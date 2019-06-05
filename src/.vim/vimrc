@@ -3,70 +3,136 @@
 " btw
 runtime! archlinux.vim
 
-" enable syntax highlighting if available
+" Enable Pathogen
+execute pathogen#infect()
+
+" Colorscheme and Terminal
+colorscheme antsy
+set term=screen-256color
+
+" Enable filetype
+if has("autocmd")
+  filetype on
+  filetype plugin on
+  filetype indent on
+endif
+
+" Enable syntax highlighting
 if has("syntax")
   syntax on
 endif
 
-if has("autocmd")
-  filetype plugin indent on
-endif
+"
+" Common Settings
+"
 
-" enable pathogen
-execute pathogen#infect()
-
-" set theme
-colorscheme antsy
-set term=screen-256color
-
-" common settings
-set laststatus=2
-set shortmess+=F
-set fillchars+=vert:│
-set noshowmode
-set noshowcmd
+" Basic editor
 set nowrap
 set number
 set cursorline
 set showmatch
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-set autowrite
-set hidden
-set wildmenu
-set wildmode=longest:full,full
 set scrolloff=3
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=2
+
+" File encoding
 set encoding=utf-8
 set fileencoding=utf-8
-set mouse=a
-set statusline=""
+
+" Indention
+set expandtab
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set list lcs=tab:\┆\ 
 
-" cwd follows current buffer
-autocmd BufEnter * silent! lcd %:p:h
+" Hidden buffers
+set hidden
 
-" save undo history
+" Autosave
+set autowriteall
+
+" Update buffer when file changes
+set autoread
+
+" Enable mouse support
+set mouse=a
+
+" Toggle paste\nopaste
+set pastetoggle=<leader>z
+
+" Backspace nice
+set backspace=indent,eol,start
+
+" Save undo history
 if !isdirectory($HOME."/.vim/undo")
     call mkdir($HOME."/.vim/undo", "", 0700)
 endif
 set undodir=~/.vim/undo
 set undofile
 
-" indentLine
-let g:indentLine_enabled = 1
-"let g:indentLine_setColors = 0
-let g:indentLine_char = '┆'
+" Search options
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
+" Vertical separator
+set fillchars+=vert:│
+
+" Menus
+set wildmenu
+set wildmode=list:longest,full
+
+" Folds
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+" status line
+set statusline=""
+set laststatus=2
+set shortmess=a
+set noshowmode
+set noshowcmd
+
+" Clear autocmd
+augroup Local
+    autocmd!
+augroup END
+
+" CWD follows current buffer
+autocmd Local BufEnter * silent! lcd %:p:h
+
+"
+" Mappings that don't use plugins
+"
+
+" Edit and reload vimrc
+nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
+nnoremap <silent> <leader>vr :so $MYVIMRC<CR>
+
+" Save
+nnoremap <leader>s :w<cr>
+inoremap <leader>s <C-c>:w<cr>
+
+" Next and previous buffers
+noremap <C-N> :bnext<CR>
+noremap <C-P> :bprev<CR>
+
+" Navigate panes
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+
+" macros - qq record, q stop and Q apply
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+
+"""
+""" Plugins
+"""
 
 " lightline.vim
 let g:lightline = {
@@ -94,7 +160,7 @@ let g:lightline.component_expand = {
     \ }
 
 let g:lightline.component_type = {
-    \     'linter_checking': 'left',
+    \     'linter_checking': 'normal',
     \     'linter_warnings': 'warning',
     \     'linter_errors': 'error',
     \     'linter_ok': 'left',
@@ -106,21 +172,17 @@ let g:lightline#ale#indicator_errors = " "
 let g:lightline#ale#indicator_ok = ""
 
 " nerdtree
-" auto open NERDTree when vim starts with directory
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" close vim if NERDTree is only window remaining
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" options
+" auto open nerdtree when vim starts with directory
+autocmd Local StdinReadPre * let s:std_in=1
+autocmd Local VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" close vim if nerdtree is only window remaining
+autocmd Local bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 let NERDTreeShowHidden = 1
 let NERDTreeStatusline = 1
 let NERDTreeWinSize = 25
 let NERDTreeMinimalUI=1
 
-" nerdtree-git
-let g:NERDTreeShowGitStatus = 1
-
-" icons to match oh-my-zsh prompt
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "●",
     \ "Staged"    : "▲",
@@ -134,6 +196,14 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+map <leader>\d :NERDTreeToggle<CR>
+
+" nerdtree-git
+let g:NERDTreeShowGitStatus = 1
+
+" vim-devicons
+let g:webdevicons_conceal_nerdtree_brackets = 1
+
 " buftabline
 let g:buftabline_show = 1
 let g:buftabline_numbers = 1
@@ -141,28 +211,34 @@ let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
 
 " Tagbar
-let g:tagbar_compact = 1
+let g:tagbar_compact = 0
 
-" vim-devicons
-let g:webdevicons_conceal_nerdtree_brackets = 1
+nmap <leader>\t :TagbarToggle<CR>
 
 " ALE
-let b:ale_linters = ['pyflakes', 'flake8']
+let b:ale_linters = ['pyflakes', 'flake8', 'shellcheck']
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
     \ 'javascript': ['eslint'],
     \ 'python': ['black', 'yapf', 'autopep8', 'isort', 'add_blank_lines_for_python_control_statements'],
     \ }
+
 let g:ale_fix_on_save = 0
+
+nmap <leader>at <Plug>(ale_toggle)
+nmap <leader>af <Plug>(ale_fix)
+nmap <leader>] <Plug>(ale_next)
+nmap <leader>[ <Plug>(ale_previous)
 
 " AsyncRun auto open
 let g:asyncrun_open = 10
 
 " incsearch
+let g:incsearch#auto_nohlsearch = 1
+
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
 map N  <Plug>(incsearch-nohl-N)
 map *  <Plug>(incsearch-nohl-*)
@@ -170,41 +246,22 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
-" edit vimrc and reload vimrc
-nmap <silent> <leader>ve :e $MYVIMRC<CR>
-nmap <silent> <leader>vr :so $MYVIMRC<CR>
+" indentLine
+let g:indentLine_enabled = 1
+let g:indentLine_setColors = 1
+let g:indentLine_char = '┆'
 
-" navigate panes
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-
-" toggle NERDTree
-map <leader>\d :NERDTreeToggle<CR>
-
-" save
-nnoremap <leader>s :w<cr>
-inoremap <leader>s <C-c>:w<cr>
-
-" toggle paste\nopaste
-set pastetoggle=<leader>z
-
-" macros - qq record, q stop, and Q apply
-nnoremap Q @q
-vnoremap Q :norm @q<cr>
-
-" ALE
-nmap <leader>f <Plug>(ale_fix)
-nmap <leader>] <Plug>(ale_next)
-nmap <leader>[ <Plug>(ale_previous)
-
-" toggle Tagbar
-nmap <leader>\t :TagbarToggle<CR>
-
-" map next and previous buffers
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+" vim-fugitive
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gca :Gcommit --amend<CR>
+nmap <leader>gw :Gwrite<CR>
+nmap <leader>gp :Gpush<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gvd :Gvdiff<CR>
+nmap <leader>gdp :diffput<CR>
+nmap <leader>gdg :diffget<CR>
+vmap <leader>gdp :diffput<CR>
+vmap <leader>gdg :diffget<CR>
 
 silent! helptags ALL
 
