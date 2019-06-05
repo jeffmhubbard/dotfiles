@@ -2,6 +2,10 @@
 
 # extras/vim_setup.sh
 
+#
+# install pathogen, colorscheme, and some plugins
+#
+
 
 PATHOGEN="https://tpo.pe/pathogen.vim"
 BUNDLE_DIR="$HOME/.vim/bundle"
@@ -9,8 +13,8 @@ AUTOLOAD_DIR="$HOME/.vim/autoload"
 
 declare -a PLUGINS
 PLUGINS=(
-    https://github.com/w0rp/ale.git
     https://github.com/jeffmhubbard/antsy.vim.git
+    https://github.com/w0rp/ale.git
     https://github.com/junegunn/fzf.vim.git
     https://github.com/haya14busa/incsearch.vim.git
     https://github.com/scrooloose/nerdtree.git
@@ -29,17 +33,42 @@ PLUGINS=(
     https://github.com/skywind3000/asyncrun.vim.git
 )
 
+# check for vim
+if ! type "vim" > /dev/null; then
+    echo "Vim is not installed!"
+cat << EOF
+Try:
+    Arch: pacman -S vim
+    Void: xbps-install -S vim
+    Debian: apt install vim
+EOF
+    exit 0
+fi
+
 # create directories
-mkdir -p ${AUTOLOAD_DIR} ${BUNDLE_DIR}
+echo "Creating directories..."
+mkdir -p "${AUTOLOAD_DIR}" "${BUNDLE_DIR}"
 
 # install pathogen
-curl -LSso ${AUTOLOAD_DIR}/$(basename "$PATHOGEN") https://tpo.pe/pathogen.vim
+echo "Installing Pathogen..."
+curl -LSso "${AUTOLOAD_DIR}"/"$(basename "$PATHOGEN")" "$PATHOGEN"
 
 # install plugins
+echo "Installing plugins..."
 for url in "${PLUGINS[@]}"
 do
     repo=$(basename "$url" ".${url##*.}")
-    git clone ${url} ${BUNDLE_DIR}/${repo}
+    git clone "${url}" "${BUNDLE_DIR}"/"${repo}"
 done
+
+#
+cat << EOF
+Add the following alias to .zshrc or .bashrc:
+
+    alias vim_up="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
+
+EOF
+
+echo "Done"
 
 # vim: set ft=sh:
