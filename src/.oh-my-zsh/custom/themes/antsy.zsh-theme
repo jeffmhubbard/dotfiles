@@ -21,6 +21,8 @@ ZSH_THEME_GIT_PROMPT_AHEAD=' ▲'
 ZSH_THEME_VIRTUALENV_PREFIX="("
 ZSH_THEME_VIRTUALENV_SUFFIX=")"
 
+MODE_INDICATOR="%F{cyan}"
+
 precmd(){
     if [ $UID -eq 0 ]; then
         admin="%F{red}!"
@@ -33,7 +35,7 @@ precmd(){
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 
-PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}➜ %F{white}%#%f%b '
+PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}$(vi_mode_prompt_info)➜ %F{white}%#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
 
 # colored-man-pages (antsy)

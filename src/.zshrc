@@ -14,13 +14,13 @@ plugins=( \
         gpg-agent \
         archlinux \
         systemd \
+        command-not-found \
+        vi-mode \
         fzf \
         pass \
         git \
         tmux \
         virtualenv \
-        history \
-        command-not-found \
         fast-syntax-highlighting \
         )
 
@@ -39,11 +39,21 @@ eval $(dircolors ~/.dircolors)
 
 # aliases
 alias vi="vim"
-alias vim_up="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
 
+# update plugins
+alias vim_upd="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
+alias omz_upd="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
+
+# google music
 alias pf="playfetch"
+alias pfsh="playfetch shell"
 
-alias week='gcalcli calw'
-alias month='gcalcli calm'
+# calendar
+alias week="gcalcli calw"
+alias month="gcalcli calm"
+
+# weather
+alias weather="curl -s 'wttr.in/aus?0'"
+alias forecast="curl -s 'wttr.in/aus'"
 
 # vim: set ft=zsh:

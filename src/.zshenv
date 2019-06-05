@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # PATHS
-export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.bin:$HOME/.local/bin:$PATH
 export WORKON_HOME=$HOME/Env
 
 # TEXT
@@ -23,7 +23,7 @@ export FZF_DEFAULT_OPTS='
 '
 
 # MPD
-export MPD_HOST=pythos
+export MPD_HOST=localhost
 export MPD_PORT=6600
 
 # vim: set ft=zsh:
