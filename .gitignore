@@ -3,3 +3,6 @@
 *.priv
 test.sh
 test.py
+*.pyc
+*.pyo
+__pycache__

@@ -6,7 +6,7 @@ typingcolor=00ff0080
 deletecolor=ffff0080
 authcolor=00ffff80
 errorcolor=ff000080
-textcolor=ffffffe6
+textcolor=ffffff99
 subtextcolor=7f7f7f99
 font="NotoSans Nerd Font"
 textsize=64
@@ -24,6 +24,6 @@ failedmesg=" Lock Failed"
 inputmesg=" Enter Password..."
 screen=1
 span=true
-stepper=7
+stepper=10
 
 # vim: set ft=cfg:

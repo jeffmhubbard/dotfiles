@@ -54,7 +54,7 @@ focus_wrapping no
 # back and forth workplace switching
 workspace_auto_back_and_forth yes
 
-#
+# time to show urgency hint
 force_display_urgency_hint 500 ms
 
 # window focus
@@ -80,6 +80,7 @@ set_from_resource $magenta     color13 #000000
 set_from_resource $cyan        color14 #000000
 set_from_resource $white       color15 #000000
 
+# alpha bit
 set $a CC
 
 # class                 border      backgr      text        indicator   child_border
@@ -98,7 +99,7 @@ font pango:Hack Nerd Font 10, FontAwesome 10
 floating_modifier $super
 
 # session menu
-bindsym $super+$ctrl+Escape exec $I3SCRIPTS/i3-session-menu
+bindsym $super+$ctrl+Escape exec $I3SCRIPTS/rofi-session-menu.sh
 
 # window list
 bindsym $super+Tab exec rofi -show window
@@ -132,9 +133,10 @@ bindsym $super+F12 exec --no-startup-id mpc -q next
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
 # playfetch
-bindsym $super+$alt+slash exec playfetch -fcls lucky -t 100
-bindsym $super+$alt+period exec playfetch rank --up && dunstify -u normal -t 3000 'Thumbs Up!'
-bindsym $super+$alt+comma exec playfetch rank --down && dunstify -u critical -t 3000 'Thumbs Down!' 'Skipping...'
+bindsym $super+F5 exec --no-startup-id playfetch rate --down && dunstify -u critical -t 6000 'Thumbs Down!'
+bindsym $super+F6 exec --no-startup-id playfetch lucky -t 100 -FA && dunstify -u normal -t 6000 'Im Feeling Lucky!'
+bindsym $super+F7 exec --no-startup-id playfetch promoted -FA && dunstify -u normal -t 6000 'Playing favorites!'
+bindsym $super+F8 exec --no-startup-id playfetch rate --up && dunstify -u normal -t 6000 'Thumbs Up!'
 
 # sceenshot
 bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
@@ -259,47 +261,55 @@ for_window [class="mpv"] floating enable focus
 for_window [class="Zathura"] floating enable focus
 
 # ws term
-#
+assign [class="^URxvt$" instance="^CAVA$"] 1
+for_window [class="^URxvt$" instance="^CAVA$"] focus
 
-# ws code
-#
+assign [class="^URxvt$" instance="^Htop$"] 1
+for_window [class="^URxvt$" instance="^Htop$"] focus
 
-# ws util
-assign [class="^Lxappearance$"] 3
-for_window [class="^Lxappearance$"] floating enable focus
-
-assign [class="^Oomox$"] 3
-for_window [class="^Oomox$"] floating enable focus
-
-assign [class="^Gimp-2.8$"] 3
-for_window [class="^Gimp-2.8$"] focus
-
-assign [class="^Inkscape$"] 3
-for_window [class="^Inkscape$"] focus
+assign [class="^URxvt$" instance="^Ranger$"] 1
+for_window [class="^URxvt$" instance="^Ranger$"] focus
 
 # ws webs
-assign [class="^qutebrowser$"] 4
+assign [class="^qutebrowser$"] 2
 for_window [class="^qutebrowser$"] focus
 
-assign [class="^URxvt$" instance="^RTV$"] 4
+assign [class="^URxvt$" instance="^RTV$"] 2
 for_window [class="^URxvt$" instance="^RTV$"] focus
 
 # ws comm
-assign [class="^URxvt$" instance="^Irssi$"] 5
+assign [class="^URxvt$" instance="^Irssi$"] 3
 for_window [class="^URxvt$" instance="^Irssi$"] focus
 
-assign [class="^URxvt$" instance="^NeoMutt$"] 5
+assign [class="^URxvt$" instance="^NeoMutt$"] 3
 for_window [class="^URxvt$" instance="^NeoMutt$"] focus
+
+# ws code
+assign [class="^URxvt$" instance="^Vim$"] 4
+for_window [class="^URxvt$" instance="^Vim$"] focus
+
+# ws util
+assign [class="^Lxappearance$"] 5
+for_window [class="^Lxappearance$"] floating enable focus
+
+assign [class="^Oomox$"] 5
+for_window [class="^Oomox$"] floating enable focus
+
+assign [class="^Gimp-2.8$"] 5
+for_window [class="^Gimp-2.8$"] focus
+
+assign [class="^Inkscape$"] 5
+for_window [class="^Inkscape$"] focus
 
 # ws game
 assign [class="^Lutris$"] 6
 for_window [class="^Lutris$"] floating enable focus
 
-assign [class="Steam"] 6
+assign [class="^Steam$"] 6
 for_window [class="^Steam$"] floating enable focus
 
-assign [class="Civ6Sub"] 6
-for_window [class="Civ6Sub"] floating enable focus
+assign [class="^Civ6Sub$"] 6
+for_window [class="^Civ6Sub$"] floating enable focus
 
 assign [class="csgo_linux64"] 6
 for_window [class="csgo_linux64"] floating enable focus
@@ -309,12 +319,15 @@ for_window [class="X3AP_config"] floating enable focus
 assign [class="X3AP_main"] 6
 for_window [class="X3AP_main"] fullscreen enable focus
 
-# startup
+# Start polybar
 exec_always --no-startup-id $PBSCRIPTS/launch.sh &
 
 # Load default layouts
-exec --no-startup-id $I3SCRIPTS/session.sh &
+exec --no-startup-id $I3SCRIPTS/load-layouts.sh &
 
-#exec_always --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
+# Set random background color
+#exec --no-startup-id sh $HOME/.bin/xsetrbg &
+# or wallpaper
+#exec --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
 
 # vim: set ft=i3config
