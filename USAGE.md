@@ -1,95 +1,105 @@
 # USAGE.md
 
-Arrow and vim keys for all directional movements, but only arrow key are shown.
-
-### session menu (restart, exit, etc)
-    Super + Ctrl + Esc
-
-### window list
-    Super + Tab
-
-### window hints
-    Alt + Tab
-
 ### launch terminal
     Super + Return
 
-### application launcher
+### application launcher [rofi]
     Super + space
 
-### run command
+### run command [rofi]
     Super + ; (Shift+Return to launch in terminal)
 
-### focus given desktop
+### session menu [rofi]
+    Super + Ctrl + Esc
+
+### window list [rofi]
+    Super + Tab
+
+### window hints [wmfocus]
+    Alt + Tab
+
+### focus desktop [i3]
     Super + 1-6
 
-### focus window in given direction
+### focus window in direction [i3]
     Super + Up, Down, Left, Right
 
-### select parent node
+### select parent container [i3]
     Super + a
 
-### select child node
+### select child container [i3]
     Super + c
 
-### toggle window floating
+### toggle window floating [i3]
     Super + f
 
-### toggle window fullscreen
+### toggle window fullscreen [i3]
     Super + Shift + f
 
-### move window in given direction
+### move window in direction [i3]
     Super + Shift + Up, Down, Left, Right
 
-### send to given desktop
+### send to desktop [i3]
     Super + Shift + 1-6
 
-### window resize mode
+### window resize mode [i3]
     Super + r
     Up, Down, Left, Right
 
-### move floating window
+### move floating window [i3]
     Super + Shift + Up, Down, Left, Right
 
-### close window
+### close window [i3]
     Super + Ctrl + w
 
-### kill window
+### kill window [i3]
     Super + Ctrl + q
 
-### close notification
+### close notification [dunst]
     Super + `
 
-### close all notifications
+### close all notifications [dunst]
     Super + Shift + `
 
-### notification history
+### notification history [dunst]
     Super + Ctrl + `
 
-### notification context
+### notification context [dunst]
     Super + Alt + `
 
-### screenshot
+### screenshot [maim]
     Print
 
-### screenshot focused window
+### screenshot focused window [maim]
     Shift + Print
 
-### volume up
+### volume up [pactl]
     Super + PgUp
 
-### volume down
+### volume down [pactl]
     Super + PgDn
 
-### start lucky playlist
-    Super + F
+### play/pause playback [mpc]
+    Super + F11
 
-### start favorites playlist
+### stop playback [mpc]
+    Super + F10
+
+### next track [mpc]
+    Super + F12
+
+### previous track [mpc]
+    Super + F9
+
+### start lucky playlist [playfetch]
+    Super + F6
+
+### start favorites playlist [playfetch]
     Super + F7
 
-### thumbs up
+### thumbs up [playfetch]
     Super + F8
 
-### thumbs down and skip
+### thumbs down and skip [playfetch]
     Super + F5
 
