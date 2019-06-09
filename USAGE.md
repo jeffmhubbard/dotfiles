@@ -1,122 +1,95 @@
 # USAGE.md
 
-### session menu (exit, reload settings)
-super + ctrl + =
+Arrow and vim keys for all directional movements, but only arrow key are shown.
 
-### display settings (xrandr)
-super + shift + =
+### session menu (restart, exit, etc)
+    Super + Ctrl + Esc
 
 ### window list
-super + Tab
+    Super + Tab
 
-### application launcher
-super + space
-
-### run command
-super + ` (shift+return to launch in terminal)
+### window hints
+    Alt + Tab
 
 ### launch terminal
-super + Return
+    Super + Return
+
+### application launcher
+    Super + space
+
+### run command
+    Super + ; (Shift+Return to launch in terminal)
 
 ### focus given desktop
-super + 1-6
-
-### focus display left/right
-super + [
-super + ]
+    Super + 1-6
 
 ### focus window in given direction
-super + Up, Down, Left, Right
-
-### move forward or back in focus history
-super + ,
-super + .
+    Super + Up, Down, Left, Right
 
 ### select parent node
-super + a
+    Super + a
 
 ### select child node
-super + c
+    Super + c
 
-### rotate windows 
-super + r
-super + shift + r
+### toggle window floating
+    Super + f
 
-### set window tiled
-super + t
-
-### set window psuedo-tiled
-super + shift + t
-
-### set window floating
-super + f
-
-### set window fullscreen
-super + shift + f
-
-### toggle monocle layout
-super + m
-
-### set window marked
-super + ctrl + m
-
-### set window locked
-super + ctrl + l
-
-### set window sticky
-super + ctrl + s
-
-### set window private
-super + ctrl + p
-
-### preselect in given direction
-super + ctrl + Up, Down, Left, Right
-
-### cancel preselection
-super + Escape
-
-### cancel preselection for focused desktop
-super + ctrl + Escape
+### toggle window fullscreen
+    Super + Shift + f
 
 ### move window in given direction
-super + shift + Up, Down, Left, Right
+    Super + Shift + Up, Down, Left, Right
 
 ### send to given desktop
-super + shift + 1-6
+    Super + Shift + 1-6
 
-### send marked window to preselection
-super + shift + g
-
-### grow window
-super + shift + h, j, k, l
-
-### shrink window
-super + shift + alt + h, j, k, l
+### window resize mode
+    Super + r
+    Up, Down, Left, Right
 
 ### move floating window
-super + alt + Up, Down, Left, Right
+    Super + Shift + Up, Down, Left, Right
 
 ### close window
-super + w
+    Super + Ctrl + w
 
 ### kill window
-super + q
+    Super + Ctrl + q
 
 ### close notification
-super + '
+    Super + `
 
 ### close all notifications
-super + alt + '
+    Super + Shift + `
 
 ### notification history
-super + ctrl + '
+    Super + Ctrl + `
 
 ### notification context
-super + ctrl + ;
+    Super + Alt + `
 
 ### screenshot
-Print
+    Print
 
 ### screenshot focused window
-shift + Delete
+    Shift + Print
+
+### volume up
+    Super + PgUp
+
+### volume down
+    Super + PgDn
+
+### start lucky playlist
+    Super + F
+
+### start favorites playlist
+    Super + F7
+
+### thumbs up
+    Super + F8
+
+### thumbs down and skip
+    Super + F5
 
