@@ -31,6 +31,12 @@ if [ "$answer" = y ] ; then
         sh extras/vim_setup.sh
     fi
 
+    # prompt for tmux extras
+    read -r -p "Run extras/tmux_setup.sh? [yn] " tanswer
+    if [ "$tanswer" = y ] ; then
+        sh extras/tmux_setup.sh
+    fi
+
     echo "Copying dotfiles..."
     cp -r "$SRC_DIR" "$DST_DIR"
 
