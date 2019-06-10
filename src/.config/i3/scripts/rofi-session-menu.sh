@@ -2,6 +2,7 @@
 
 # use rofi to create a simple session menu
 
+MENU_TITLE="  Arch Linux "
 declare -A OPTIONS
 OPTIONS=(
   [" Lock Desktop"]="awful --lock"
@@ -21,7 +22,7 @@ get_options() {
 
 #    
 main() {
-  choice=$( (get_options) | rofi -dmenu -p " i3 Session" )
+  choice=$( (get_options) | rofi -dmenu -i -p "$MENU_TITLE" )
   if [[ -n "$choice" ]]; then
     exec ${OPTIONS[$choice]}
   fi

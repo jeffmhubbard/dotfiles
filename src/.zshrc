@@ -10,11 +10,11 @@ COMPLETION_WAITING_DOTS="true"
 
 # oh-my-zsh plugins
 plugins=( \
-        ssh-agent \
-        gpg-agent \
         archlinux \
         systemd \
         command-not-found \
+        ssh-agent \
+        gpg-agent \
         vi-mode \
         fzf \
         pass \
@@ -22,6 +22,7 @@ plugins=( \
         tmux \
         virtualenv \
         fast-syntax-highlighting \
+        history \
         )
 
 # oh-my-zsh init

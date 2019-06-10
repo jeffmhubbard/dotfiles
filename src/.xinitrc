@@ -6,7 +6,7 @@
 export BROWSER=/usr/bin/qutebrowser
 export RTV_BROWSER=$BROWSER
 export TERMINAL=urxvtc
-export MPD_HOST=pythos
+export MPD_HOST=localhost
 export MPD_PORT=6600
 export QT_QPA_PLATFORMTHEME=gtk2
 
@@ -15,10 +15,6 @@ export PBSCRIPTS=$HOME/.config/polybar/scripts
 
 # Load X settings
 xrdb -merge ~/.Xresources
-
-# Restore wallpaper
-# sh ~/.fehbg &
-sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 600 &
 
 # Extra X settings
 xsetroot -cursor_name left_ptr &
@@ -29,9 +25,6 @@ xss-lock -l -- awful --capture &
 
 # Hide idle mouse cursor
 unclutter -root &
-
-# X compositor
-compton &
 
 # Start notification daemon
 dunst &
@@ -47,6 +40,9 @@ urxvtd -q -o -f &
 
 # Storage
 udiskie &
+
+# X compositor
+compton &
 
 # Start window manager
 exec i3

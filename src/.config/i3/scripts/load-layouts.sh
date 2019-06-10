@@ -22,50 +22,39 @@ HOSTNAME=$(hostname)
 
 if [ "$HOSTNAME" == 'pythos' ]; then
     i3-msg "workspace 3; append_layout $HOME/.config/i3/layouts/$HOSTNAME/COMM.json"
-    ( $_neomutt &)
-    ( $_irssi &)
-    (sleep)
+    ( $_neomutt & )
+    ( $_irssi & )
     i3-msg "workspace 2; append_layout $HOME/.config/i3/layouts/$HOSTNAME/WEBS.json"
-    ( $_qutebrowser &)
-    ( $_rtv &)
-    (sleep)
+    ( $_qutebrowser & )
+    ( $_rtv & )
     i3-msg "workspace 1; append_layout $HOME/.config/i3/layouts/$HOSTNAME/TERM.json"
-    ( $_urxvt &)
-    ( $_ranger &)
-    ( $_htop &)
-    ( $_cava &)
-    (sleep)
+    ( $_urxvt & )
+    ( $_ranger & )
+    ( $_htop & )
+    ( $_cava & )
 fi
 
 if [ "$HOSTNAME" == 'dragon' ]; then
-    (sleep)
     i3-msg "workspace 3; append_layout ~/.config/i3/layouts/$HOSTNAME/COMM.json"
-    ( $_neomutt &)
-    ( $_irssi &)
-    (sleep)
+    ( $_neomutt & )
+    ( $_irssi & )
     i3-msg "workspace 2; append_layout ~/.config/i3/layouts/$HOSTNAME/WEBS.json"
-    ( $_qutebrowser &)
-    (sleep)
+    ( $_qutebrowser & )
     i3-msg "workspace 1; append_layout ~/.config/i3/layouts/$HOSTNAME/TERM.json"
-    ( $_urxvt &)
-    ( $_ranger &)
-    ( $_htop &)
-    (sleep)
+    ( $_urxvt & )
+    ( $_ranger & )
+    ( $_htop & )
 fi
 
 if [ "$HOSTNAME" == 'gargoyle' ]; then
     i3-msg "workspace 3; append_layout $HOME/.config/i3/layouts/$HOSTNAME/COMM.json"
-    ( $_neomutt &)
-    ( $_irssi &)
-    (sleep)
+    ( $_neomutt & )
+    ( $_irssi & )
     i3-msg "workspace 2; append_layout $HOME/.config/i3/layouts/$HOSTNAME/WEBS.json"
-    ( $_qutebrowser &)
-    ( $_rtv &)
-    (sleep)
+    ( $_qutebrowser & )
+    ( $_rtv & )
     i3-msg "workspace 1; append_layout $HOME/.config/i3/layouts/$HOSTNAME/TERM.json"
-    ( $_urxvt &)
-    ( $_ranger &)
-    ( $_htop &)
-    (sleep)
+    ( $_urxvt & )
+    ( $_ranger & )
+    ( $_htop & )
 fi
-

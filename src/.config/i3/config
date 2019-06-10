@@ -95,14 +95,8 @@ font pango:Hack Nerd Font 10, FontAwesome 10
 
 
 ## keybindings
-# mouse dragging
-floating_modifier $super
-
-# session menu
-bindsym $super+$ctrl+Escape exec $I3SCRIPTS/rofi-session-menu.sh
-
-# window list
-bindsym $super+Tab exec rofi -show window
+# start a terminal
+bindsym $super+Return exec urxvtc
 
 # application launcher
 bindsym $super+space exec rofi -show drun
@@ -110,10 +104,13 @@ bindsym $super+space exec rofi -show drun
 # command launcher
 bindsym $super+semicolon exec rofi -show run
 
-# start a terminal
-bindsym $super+Return exec urxvtc
+# session menu
+bindsym $super+$ctrl+Escape exec $I3SCRIPTS/rofi-session-menu.sh
 
-# wmfocus
+# window list
+bindsym $super+Tab exec rofi -show window
+
+# show window hints
 bindsym $alt+Tab exec $I3SCRIPTS/wmfocus.sh
 
 # kill focused window
@@ -130,13 +127,14 @@ bindsym $super+F10 exec --no-startup-id mpc stop
 bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
+# playfetch
+bindsym $super+F5 exec --no-startup-id playfetch rate --down && dunstify -u critical -t 6000 "Thumbs Down!"
+bindsym $super+F6 exec --no-startup-id playfetch lucky -t 100 -FA && dunstify -u low -t 6000 "I'm Feeling Lucky!"
+bindsym $super+F7 exec --no-startup-id playfetch promoted -FA && dunstify -u low -t 6000 "Playing favorites!"
+bindsym $super+F8 exec --no-startup-id playfetch rate --up && dunstify -u normal -t 6000 "Thumbs Up!"
+
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
-# playfetch
-bindsym $super+F5 exec --no-startup-id playfetch rate --down && dunstify -u critical -t 6000 'Thumbs Down!'
-bindsym $super+F6 exec --no-startup-id playfetch lucky -t 100 -FA && dunstify -u normal -t 6000 'Im Feeling Lucky!'
-bindsym $super+F7 exec --no-startup-id playfetch promoted -FA && dunstify -u normal -t 6000 'Playing favorites!'
-bindsym $super+F8 exec --no-startup-id playfetch rate --up && dunstify -u normal -t 6000 'Thumbs Up!'
 
 # sceenshot
 bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
@@ -166,10 +164,19 @@ bindsym $super+$shift+Down move down
 bindsym $super+$shift+Up move up
 bindsym $super+$shift+Right move right
 
-# layouts
-bindsym $super+$shift+s layout stacking
-bindsym $super+$shift+w layout tabbed
-bindsym $super+$shift+e layout toggle split
+# mouse dragging
+floating_modifier $super
+
+# layouts are ugly
+#bindsym $super+$shift+s layout stacking
+#bindsym $super+$shift+w layout tabbed
+#bindsym $super+$shift+e layout toggle split
+
+# toggle floating
+bindsym $super+f floating toggle
+
+# toggle fullscreen
+bindsym $super+$shift+f fullscreen toggle
 
 # split horizontal
 bindsym $super+$shift+bar split h
@@ -185,12 +192,6 @@ bindsym $super+c focus child
 
 # Focus last floating/tiling container
 bindsym $super+$ctrl+space focus mode_toggle
-
-# toggle floating
-bindsym $super+f floating toggle
-
-# toggle fullscreen
-bindsym $super+$shift+f fullscreen toggle
 
 # focus urgent window
 bindsym $super+quote [urgent=latest] focus
@@ -210,11 +211,6 @@ bindsym $super+3 workspace $ws3
 bindsym $super+4 workspace $ws4
 bindsym $super+5 workspace $ws5
 bindsym $super+6 workspace $ws6
-
-# switch workspace on both outputs
-bindsym $super+$alt+1 workspace $ws1 workspace $ws4
-bindsym $super+$alt+2 workspace $ws2 workspace $ws5
-bindsym $super+$alt+3 workspace $ws3 workspace $ws6
 
 # move container to workspace
 bindsym $super+$shift+1 move container to workspace $ws1
@@ -289,35 +285,22 @@ assign [class="^URxvt$" instance="^Vim$"] 4
 for_window [class="^URxvt$" instance="^Vim$"] focus
 
 # ws util
+assign [class="^Gparted$"] 5
+for_window [class="^Gparted$"] floating enable focus
+assign [class="^Blueman$"] 5
+for_window [class="^Blueman$"] floating enable focus
 assign [class="^Lxappearance$"] 5
 for_window [class="^Lxappearance$"] floating enable focus
-
 assign [class="^Oomox$"] 5
 for_window [class="^Oomox$"] floating enable focus
-
-assign [class="^Gimp-2.8$"] 5
-for_window [class="^Gimp-2.8$"] focus
-
+assign [class="^Gimp-2.10$"] 5
+for_window [class="^Gimp-2.10$"] floating enable focus
 assign [class="^Inkscape$"] 5
-for_window [class="^Inkscape$"] focus
+for_window [class="^Inkscape$"] floating enable focus
 
 # ws game
-assign [class="^Lutris$"] 6
-for_window [class="^Lutris$"] floating enable focus
-
-assign [class="^Steam$"] 6
-for_window [class="^Steam$"] floating enable focus
-
-assign [class="^Civ6Sub$"] 6
-for_window [class="^Civ6Sub$"] floating enable focus
-
-assign [class="csgo_linux64"] 6
-for_window [class="csgo_linux64"] floating enable focus
-
-assign [class="X3AP_config"] 6
-for_window [class="X3AP_config"] floating enable focus
-assign [class="X3AP_main"] 6
-for_window [class="X3AP_main"] fullscreen enable focus
+for_window [class="^Lutris$"] move container to workspace 6, floating enable focus
+for_window [class="^Steam$"] move container to workspace 6, floating enable focus
 
 # Start polybar
 exec_always --no-startup-id $PBSCRIPTS/launch.sh &
@@ -328,6 +311,6 @@ exec --no-startup-id $I3SCRIPTS/load-layouts.sh &
 # Set random background color
 #exec --no-startup-id sh $HOME/.bin/xsetrbg &
 # or wallpaper
-#exec --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy" 300 &
+exec_always --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy/gradient" 300 &
 
 # vim: set ft=i3config
