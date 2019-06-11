@@ -6,6 +6,13 @@
 # install oh-my-zsh and fast-syntax-highlighting
 #
 
+PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
+
+declare -a PLUGINS
+PLUGINS=(
+    https://github.com/zdharma/fast-syntax-highlighting.git
+)
+
 # check for zsh
 if ! type "zsh" > /dev/null; then
     echo "Zsh is not installed!"
@@ -18,11 +25,17 @@ EOF
     exit 0
 fi
 
+# install pathogen
 echo "Installing Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "Installing zsh-syntax-highlighting..."
-git clone https://github.com/zdharma/fast-syntax-highlighting.git "$HOME"/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+# install plugins
+echo "Installing plugins..."
+for url in "${PLUGINS[@]}"
+do
+    repo=$(basename "$url" ".${url##*.}")
+    git clone "${url}" "${PLUGIN_DIR}"/"${repo}"
+done
 
 echo "Done"
 

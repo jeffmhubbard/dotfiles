@@ -61,14 +61,6 @@ do
     git clone "${url}" "${BUNDLE_DIR}"/"${repo}"
 done
 
-#
-cat << EOF
-Add the following alias to .zshrc or .bashrc:
-
-    alias vim_up="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
-
-EOF
-
 echo "Done"
 
 # vim: set ft=sh:
