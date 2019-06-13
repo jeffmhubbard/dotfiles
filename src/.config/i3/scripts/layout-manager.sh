@@ -48,7 +48,7 @@ fi
 
 # #}
 
-LAYOUT_PATH=$HOME/.config/i3/layouts/$(hostname -s)
+LAYOUT_PATH=$HOME/.config/i3/layouts/$HOSTNAME
 
 # make directory for storing layouts
 mkdir -p $LAYOUT_PATH > /dev/null 2>&1
@@ -61,23 +61,23 @@ LOG_FILE=/tmp/i3_layout_manager.txt
 # if operating using dmenu
 if [ -z $1 ]; then
 
-  ACTION=$(echo "LOAD LAYOUT
-SAVE LAYOUT
-DELETE LAYOUT" | rofi -i -dmenu -no-custom -p "Select action")
+  ACTION=$(echo "Load Layout
+Save Layout
+Delete Layout" | rofi -i -dmenu -no-custom -p "Select action")
 
   if [ -z "$ACTION" ]; then
     exit
   fi
 
   # get me layout names based on existing file names in the LAYOUT_PATH
-  LAYOUT_NAMES=$(ls -Rt $LAYOUT_PATH | grep "layout.*json" | sed -nr 's/(.*)\.json/\1/p' | sed 's/\s/\n/g' | sed 's/_/ /g') # layout names
+  LAYOUT_NAMES=$(ls -Rt $LAYOUT_PATH | grep ".json" | sed -nr 's/(.*)\.json/\1/p' | sed 's/\s/\n/g' | sed 's/_/ /g') # layout names
   LAYOUT_NAME=$(echo "$LAYOUT_NAMES" | rofi -i -dmenu -p "Select layout (you may type new name when creating)" | sed 's/\s/_/g') # ask for selection
   LAYOUT_NAME=${LAYOUT_NAME^^} # upper case
 
 # getting argument from command line
 else
 
-  ACTION="LOAD LAYOUT"
+  ACTION="Load Layout"
   LAYOUT_NAME="${1^^}"
 
 fi
@@ -91,7 +91,7 @@ fi
 
 LAYOUT_FILE=$LAYOUT_PATH/"$LAYOUT_NAME".json
 
-if [ "$ACTION" == "LOAD LAYOUT" ] && [ ! -f "$LAYOUT_FILE" ]; then
+if [ "$ACTION" == "Load Layout" ] && [ ! -f "$LAYOUT_FILE" ]; then
   exit
 fi
 
@@ -100,7 +100,7 @@ WORKSPACE_ID=$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' 
 
 # #{ LOAD
 
-if [[ "$ACTION" = "LOAD LAYOUT" ]]; then
+if [[ "$ACTION" = "Load Layout" ]]; then
 
   # updating the workspace to the new layout is tricky
   # normally it does not influence existing windows
@@ -111,7 +111,7 @@ if [[ "$ACTION" = "LOAD LAYOUT" ]]; then
   # are recognize by having no process inside them.
 
   # get the list of windows on the current workspace
-  windows=$(XDOTOol search --all --onlyvisible --desktop $(xprop -notype -root _NET_CURRENT_DESKTOP | cut -c 24-) "" 2>/dev/null)
+  windows=$(xdotool search --all --onlyvisible --desktop $(xprop -notype -root _NET_CURRENT_DESKTOP | cut -c 24-) "" 2>/dev/null)
 
   for window in $WINDOWS; do
 
@@ -150,18 +150,18 @@ fi
 
 # #{ SAVE
 
-if [[ "$ACTION" = "SAVE LAYOUT" ]]; then
+if [[ "$ACTION" = "Save Layout" ]]; then
 
-  ACTION=$(echo "DEFAULT (INSTANCE)
-SPECIFIC (CHOOSE)
-MATCH ANY" | rofi -i -dmenu -p "How to identify windows? (xprop style)")
+  ACTION=$(echo "Default (Instance)
+Specific (Choose)
+Match Any" | rofi -i -dmenu -p "How to identify windows? (xprop style)")
 
 
-  if [[ "$ACTION" = "DEFAULT (INSTANCE)" ]]; then
+  if [[ "$ACTION" = "Default (Instance)" ]]; then
     CRITERION="default"
-  elif [[ "$ACTION" = "SPECIFIC (CHOOSE)" ]]; then
+  elif [[ "$ACTION" = "Specific (Choose)" ]]; then
     CRITERION="specific"
-  elif [[ "$ACTION" = "MATCH ANY" ]]; then
+  elif [[ "$ACTION" = "Match Any" ]]; then
     CRITERION="any"
   fi
 
@@ -355,7 +355,7 @@ MATCH ANY" | rofi -i -dmenu -p "How to identify windows? (xprop style)")
 
   rm "$ALL_WS_FILE"
 
-  notify-send -u low -t 2000 "Layout saved" -h string:x-canonical-private-synchronous:anything
+  dunstify -u low -t 2000 "Layout saved" -h string:x-canonical-private-synchronous:anything
 
 fi
 
@@ -363,9 +363,9 @@ fi
 
 # #{ DELETE
 
-if [[ "$ACTION" = "DELETE LAYOUT" ]]; then
+if [[ "$ACTION" = "Delete Layout" ]]; then
   rm "$LAYOUT_FILE"
-  notify-send -u low -t 2000 "Layout deleted" -h string:x-canonical-private-synchronous:anything
+  dunstify -u low -t 2000 "Layout deleted" -h string:x-canonical-private-synchronous:anything
   exec "$0" "$@"
 fi
 
