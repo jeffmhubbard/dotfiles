@@ -285,16 +285,21 @@ assign [class="^URxvt$" instance="^Vim$"] 4
 for_window [class="^URxvt$" instance="^Vim$"] focus
 
 # ws util
-assign [class="^Gparted$"] 5
-for_window [class="^Gparted$"] floating enable focus
+assign [class="^GParted$"] 5
+for_window [class="^GParted$"] floating enable focus
+
 assign [class="^Blueman$"] 5
 for_window [class="^Blueman$"] floating enable focus
+
 assign [class="^Lxappearance$"] 5
 for_window [class="^Lxappearance$"] floating enable focus
+
 assign [class="^Oomox$"] 5
 for_window [class="^Oomox$"] floating enable focus
+
 assign [class="^Gimp-2.10$"] 5
 for_window [class="^Gimp-2.10$"] floating enable focus
+
 assign [class="^Inkscape$"] 5
 for_window [class="^Inkscape$"] floating enable focus
 
@@ -311,6 +316,6 @@ exec --no-startup-id $I3SCRIPTS/load-layouts.sh &
 # Set random background color
 #exec --no-startup-id sh $HOME/.bin/xsetrbg &
 # or wallpaper
-exec_always --no-startup-id sh "$HOME/.bin/feh_randomizer.sh" "$HOME/Wallpapers/antsy/gradient" 300 &
+exec --no-startup-id sh $HOME/.bin/feh_randomizer.sh $HOME/Wallpapers/antsy/gradient 300
 
 # vim: set ft=i3config
