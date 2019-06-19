@@ -5,12 +5,12 @@ rofi.width: 320
 rofi.lines: 16
 rofi.columns: 1
 rofi.font: Hack Nerd Font 10
-rofi.bw: 1
+rofi.bw: 2
 rofi.bc: #000000
 rofi.location: 7
-rofi.padding: 1
-rofi.yoffset: -33
-rofi.xoffset: 5
+rofi.padding: 2
+rofi.yoffset: -32
+rofi.xoffset: 6
 rofi.fixed-num-lines: false
 rofi.show-icons: true
 rofi.drun-icon-theme: oomox-antsy
@@ -24,9 +24,13 @@ rofi.display-window:  Windows
 rofi.display-run:  Run
 rofi.display-drun:  Applications
 rofi.terminal: urxvtc
+
 !                  'background', 'border', 'separator'
 rofi.color-window: argb:cc000000, #5833ff, #000000
+
 ! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal: argb:00000000, #e9ebeb, argb:00000000, argb:ff5833ff, #000000 
 rofi.color-active: argb:ffffffff, #000000, argb:ffffffff, argb:ff5833ff, #000000 
 rofi.color-urgent: argb:ff00ffff, #000000, argb:00000000, argb:ff00ffff, #000000
+
+! vim: set ft=xdefaults :

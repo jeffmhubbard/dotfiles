@@ -21,8 +21,8 @@ set $ws6 "6"
 
 
 ## settings
-new_window 1pixel
-gaps inner 10
+new_window pixel 2
+gaps inner 6
 
 # default orientation
 default_orientation auto
@@ -31,10 +31,10 @@ default_orientation auto
 workspace_layout default
 
 # default for new window
-default_border 1pixel
+default_border pixel 2
 
 # default for new floating window
-default_floating_border 1pixel
+default_floating_border pixel 2
 
 #
 hide_edge_borders none
