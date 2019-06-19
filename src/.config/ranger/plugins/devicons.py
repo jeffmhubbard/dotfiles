@@ -182,6 +182,9 @@ dir_node_exact_matches = {
     'Public'                           : '',
     'Templates'                        : '',
     'Videos'                           : '',
+    'Source'                           : '',
+    'Projects'                         : '',
+    'eBooks'                           : '',
 # Spanish
     'Escritorio'                       : '',
     'Documentos'                       : '',

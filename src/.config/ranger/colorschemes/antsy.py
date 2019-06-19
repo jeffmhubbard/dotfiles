@@ -26,17 +26,20 @@ class Default(ColorScheme):
             else:
                 attr = normal
             if context.empty or context.error:
-                fg = black
-                bg = red
-            if context.border:
+                attr |= bold
                 fg = red
+                fg += BRIGHT
+                # bg = red
+            if context.border:
+                attr |= bold
+                fg = black
             if context.media:
                 if context.image:
                     fg = magenta
                 else:
                     fg = magenta
             if context.container:
-                fg = red
+                fg = yellow
             if context.directory:
                 attr |= bold
                 fg = blue
@@ -98,7 +101,12 @@ class Default(ColorScheme):
                 fg = blue
             elif context.tab:
                 if context.good:
-                    bg = green
+                    attr |= bold | reverse
+                    bg = black
+                    fg = blue
+                else:
+                    attr |= bold
+                    fg = black
             elif context.link:
                 fg = blue
             attr |= bold
