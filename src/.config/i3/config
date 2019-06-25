@@ -22,7 +22,7 @@ set $ws6 "6"
 
 ## settings
 new_window pixel 2
-gaps inner 6
+gaps inner 10 
 
 # default orientation
 default_orientation auto
@@ -84,14 +84,14 @@ set_from_resource $white       color15 #000000
 set $a CC
 
 # class                 border      backgr      text        indicator   child_border
-client.focused          $blue$a     $blue$a     $black      $blue$a     $blue$a
+client.focused          $blue       $blue       $black      $blue       $blue  
 client.focused_inactive $black$a    $black$a    $lightgrey  $black$a    $black$a
 client.unfocused        $black$a    $black$a    $lightgrey  $black$a    $black$a
-client.urgent           $cyan$a     $cyan$a     $black      $cyan$a     $cyan$a
+client.urgent           $cyan       $cyan       $black      $cyan       $cyan  
 client.background       $black$a
 
 # fonts
-font pango:Hack Nerd Font 10, FontAwesome 10
+font pango:Hack Nerd Font 10
 
 
 ## keybindings
@@ -111,21 +111,10 @@ bindsym $super+$ctrl+Escape exec $I3SCRIPTS/rofi-session-menu.sh
 bindsym $super+Tab exec rofi -show window
 
 # show window hints
-bindsym $alt+Tab exec $I3SCRIPTS/wmfocus.sh
+bindsym $alt+Tab exec $I3SCRIPTS/focus-hints.sh
 
 # kill focused window
 bindsym $super+$ctrl+q kill
-
-# volume
-bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym $super+$ctrl+Next exec --no-startup-id pactl set-sink-mute 1 toggle
-
-# mpd
-bindsym $super+F9 exec --no-startup-id mpc -q prev
-bindsym $super+F10 exec --no-startup-id mpc stop
-bindsym $super+F11 exec --no-startup-id mpc toggle
-bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # playfetch
 bindsym $super+F5 exec --no-startup-id playfetch rate --down && dunstify -u critical -t 6000 "Thumbs Down!"
@@ -133,10 +122,21 @@ bindsym $super+F6 exec --no-startup-id playfetch lucky -t 100 -FA && dunstify -u
 bindsym $super+F7 exec --no-startup-id playfetch promoted -FA && dunstify -u low -t 6000 "Playing favorites!"
 bindsym $super+F8 exec --no-startup-id playfetch rate --up && dunstify -u normal -t 6000 "Thumbs Up!"
 
+# mpd
+bindsym $super+F9 exec --no-startup-id mpc -q prev
+bindsym $super+F10 exec --no-startup-id mpc stop
+bindsym $super+F11 exec --no-startup-id mpc toggle
+bindsym $super+F12 exec --no-startup-id mpc -q next
+
+# volume
+bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym $super+$ctrl+Next exec --no-startup-id pactl set-sink-mute 1 toggle
+
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
 
-# sceenshot
+# maim screen capture
 bindsym Print exec maim ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
 bindsym $super+Print exec maim -s ~/Screenshots/$(date '+%Y-%m-%d_%H-%M-%S').png && dunstify -u low 'Screenshot captured'
 
@@ -285,6 +285,9 @@ assign [class="^URxvt$" instance="^Vim$"] 4
 for_window [class="^URxvt$" instance="^Vim$"] focus
 
 # ws util
+assign [class="^Pavucontrol$"] 5
+for_window [class="^Pavucontrol$"] floating enable focus
+
 assign [class="^GParted$"] 5
 for_window [class="^GParted$"] floating enable focus
 
@@ -307,15 +310,17 @@ for_window [class="^Inkscape$"] floating enable focus
 for_window [class="^Lutris$"] move container to workspace 6, floating enable focus
 for_window [class="^Steam$"] move container to workspace 6, floating enable focus
 
+##
+## auto start
+##
+
+# Set wallpaper
+exec --no-startup-id sh $HOME/.bin/wallpaper_randomizer.sh $HOME/Wallpapers/Shuffle 5 &
+
 # Start polybar
-exec_always --no-startup-id $PBSCRIPTS/launch.sh &
+exec_always --no-startup-id $PBSCRIPTS/load-bar.sh &
 
 # Load default layouts
 exec --no-startup-id $I3SCRIPTS/load-layouts.sh &
-
-# Set random background color
-#exec --no-startup-id sh $HOME/.bin/xsetrbg &
-# or wallpaper
-exec --no-startup-id sh $HOME/.bin/feh_randomizer.sh $HOME/Wallpapers/antsy/gradient 300
 
 # vim: set ft=i3config

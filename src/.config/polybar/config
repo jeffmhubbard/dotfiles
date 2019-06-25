@@ -527,7 +527,7 @@ interface = wlp7s0b1
 
 [module/upd-arch]
 type = custom/script
-exec = $PBSCRIPTS/arch-updates
+exec = $PBSCRIPTS/arch-updates.sh
 interval = 120
 
 format-prefix = " "
@@ -549,3 +549,4 @@ label = %output%
 label-padding = 0
 
 ;vim: set filetype=dosini
+SESSION_DIR
