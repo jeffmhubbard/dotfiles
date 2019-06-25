@@ -12,7 +12,7 @@ frame_width = 2
 padding = 6
 notification_height = 0
 horizontal_padding = 6
-separator_color = frame
+separator_color = auto
 separator_height = 2
 format = "%s\n%b"
 font = Hack Nerd Font 10
@@ -45,7 +45,7 @@ class = Dunst
 close = mod4+grave
 close_all = mod4+shift+grave
 history = mod4+ctrl+grave
-context = mod4+alt+grave
+context = mod4+mod1+grave
 
 [urgency_low]
 background = "#000000"

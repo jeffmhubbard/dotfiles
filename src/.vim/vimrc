@@ -92,7 +92,7 @@ set foldlevel=2
 " status line
 set statusline=""
 set laststatus=2
-set shortmess=a
+set shortmess=F
 set noshowmode
 set noshowcmd
 
