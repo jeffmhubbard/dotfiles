@@ -1,13 +1,16 @@
 #!/bin/sh
 
-# Extra X settings
-xsetroot -cursor_name left_ptr &
-
 # Set random wallpaper
 walsh -d /usr/share/backgrounds/antsy/nologo -t 0 -b center &
 
+#
+compton --config /etc/X11/xdm/compton.conf &
+
 # Custom polybar with clock and shudown\reboot menu
 polybar -c /etc/X11/xdm/polybar.ini "$(hostname)" &
+
+# Extra X settings
+xsetroot -cursor_name left_ptr &
 
 # screenshot xdm
 sleep 15 && import -w root /tmp/xdm.png &
