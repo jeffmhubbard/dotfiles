@@ -1,10 +1,13 @@
 #!/bin/sh
 
-# Xsetup_local
+# Extra X settings
+xsetroot -cursor_name left_ptr &
 
-# set wallpaper
-[[ "command -v feh" ]] && \
-    feh --no-xinerama --bg-fill /etc/X11/xdm/background.png &
+# Set random wallpaper
+walsh -d /usr/share/backgrounds/antsy/nologo -t 0 &
+
+# Custom polybar with clock and shudown\reboot menu
+polybar -c /etc/X11/xdm/polybar.ini xdm-bottom &
 
 # screenshot xdm
 sleep 15 && import -w root /tmp/xdm.png &
