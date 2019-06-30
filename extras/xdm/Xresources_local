@@ -66,17 +66,17 @@ Xmessage*message.scrollVertical:        Never
 Xmessage*message.scrollHorizontal:      Never
 Xmessage*Command.highlightThickness:    0
 Xmessage*Command.shapeStyle:            rectangle
-Xmessage*font:              -*-hack nerd font mono-*-r-normal-*--120-100-100-p-*-iso8859-1
+Xmessage*font:                          -*-hack nerd font mono-*-r-normal-*--120-100-100-p-*-iso8859-1
 
 !! --- Chooser ---
-Chooser*geometry:		    430x200-0+0
-Chooser*allowShellResize:	false
-Chooser*viewport.forceBars:	true
-Chooser*label.label:		XDMCP Host Menu from CLIENTHOST
-Chooser*label.font:		    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
-Chooser*list.font:		    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
-Chooser*Command.font:		-*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+Chooser*geometry:		                430x200-0+0
+Chooser*allowShellResize:	            false
+Chooser*viewport.forceBars:	            true
+Chooser*label.label:		            XDMCP Host Menu from CLIENTHOST
+Chooser*label.font:		                -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+Chooser*list.font:		                -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+Chooser*Command.font:		            -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
 
 !! --- Cursor ---
-Xcursor.theme:                  "OpenZone Black"
-Xcursor.size:                   16
+Xcursor.theme:                          "OpenZone Black"
+Xcursor.size:                           16
