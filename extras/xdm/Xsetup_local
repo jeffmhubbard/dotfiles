@@ -4,7 +4,7 @@
 xsetroot -cursor_name left_ptr &
 
 # Set random wallpaper
-walsh -d /usr/share/backgrounds/antsy/nologo -t 0 &
+walsh -d /usr/share/backgrounds/antsy/nologo -t 0 -b center &
 
 # Custom polybar with clock and shudown\reboot menu
 polybar -c /etc/X11/xdm/polybar.ini xdm-bottom &
