@@ -173,7 +173,7 @@ floating_modifier $super
 #bindsym $super+$shift+e layout toggle split
 
 # toggle floating
-bindsym $super+f floating toggle
+bindsym $super+$alt+f floating toggle
 
 # toggle fullscreen
 bindsym $super+$shift+f fullscreen toggle
@@ -191,7 +191,7 @@ bindsym $super+a focus parent
 bindsym $super+c focus child
 
 # Focus last floating/tiling container
-bindsym $super+$ctrl+space focus mode_toggle
+bindsym $super+$alt+space focus mode_toggle
 
 # focus urgent window
 bindsym $super+quote [urgent=latest] focus
@@ -254,35 +254,34 @@ for_window [window_type="notification"] floating enable
 # file handlers
 for_window [class="feh"] floating enable focus
 for_window [class="mpv"] floating enable focus
-for_window [class="Zathura"] floating enable focus
 
-# ws term
-assign [class="^URxvt$" instance="^CAVA$"] 1
-for_window [class="^URxvt$" instance="^CAVA$"] focus
-
-assign [class="^URxvt$" instance="^Htop$"] 1
-for_window [class="^URxvt$" instance="^Htop$"] focus
-
-assign [class="^URxvt$" instance="^Ranger$"] 1
-for_window [class="^URxvt$" instance="^Ranger$"] focus
-
-# ws webs
-assign [class="^qutebrowser$"] 2
-for_window [class="^qutebrowser$"] focus
-
-assign [class="^URxvt$" instance="^RTV$"] 2
-for_window [class="^URxvt$" instance="^RTV$"] focus
-
-# ws comm
-assign [class="^URxvt$" instance="^Irssi$"] 3
-for_window [class="^URxvt$" instance="^Irssi$"] focus
-
-assign [class="^URxvt$" instance="^NeoMutt$"] 3
-for_window [class="^URxvt$" instance="^NeoMutt$"] focus
-
-# ws code
-assign [class="^URxvt$" instance="^Vim$"] 4
-for_window [class="^URxvt$" instance="^Vim$"] focus
+# # ws term
+# assign [class="^URxvt$" instance="^CAVA$"] 1
+# for_window [class="^URxvt$" instance="^CAVA$"] focus
+# 
+# assign [class="^URxvt$" instance="^Htop$"] 1
+# for_window [class="^URxvt$" instance="^Htop$"] focus
+# 
+# assign [class="^URxvt$" instance="^Ranger$"] 1
+# for_window [class="^URxvt$" instance="^Ranger$"] focus
+# 
+# # ws webs
+# assign [class="^qutebrowser$"] 2
+# for_window [class="^qutebrowser$"] focus
+# 
+# assign [class="^URxvt$" instance="^RTV$"] 2
+# for_window [class="^URxvt$" instance="^RTV$"] focus
+# 
+# # ws comm
+# assign [class="^URxvt$" instance="^Irssi$"] 3
+# for_window [class="^URxvt$" instance="^Irssi$"] focus
+# 
+# assign [class="^URxvt$" instance="^NeoMutt$"] 3
+# for_window [class="^URxvt$" instance="^NeoMutt$"] focus
+# 
+# # ws code
+# assign [class="^URxvt$" instance="^Vim$"] 4
+# for_window [class="^URxvt$" instance="^Vim$"] focus
 
 # ws util
 assign [class="^Pavucontrol$"] 5
@@ -314,13 +313,10 @@ for_window [class="^Steam$"] move container to workspace 6, floating enable focu
 ## auto start
 ##
 
-# Set wallpaper
-exec --no-startup-id sh $HOME/.bin/wallpaper_randomizer.sh $HOME/Wallpapers/Shuffle 5 &
-
 # Start polybar
-exec_always --no-startup-id $PBSCRIPTS/load-bar.sh &
+exec_always --no-startup-id $PBSCRIPTS/load-bar.sh
 
 # Load default layouts
-exec --no-startup-id $I3SCRIPTS/load-layouts.sh &
+exec --no-startup-id $I3SCRIPTS/load-layouts.sh
 
 # vim: set ft=i3config

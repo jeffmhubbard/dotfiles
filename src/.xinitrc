@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# extbin: xrdb, xsetroot, feh, compton, unclutter, dunst, xautolock,
-#       betterlockscreen, start-pulseaudio-x11, urxvtd, i3
+
+# extbin: xrdb, xset, xsetroot, feh, compton, unclutter,
+#         dunst, xss-lock, awful, start-pulseaudio-x11,
+#         urxvtd, i3, udiskie, polkit-gnome
 
 # Environment variables
 export BROWSER=/usr/bin/qutebrowser
