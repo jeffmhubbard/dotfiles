@@ -19,7 +19,7 @@ xlogin*login.translations: #override \
 
 ! --- Position ---
 xlogin.geometry:                        430x200
-xlogin*borderWidth:                     2
+xlogin*borderWidth:                     1
 xlogin*frameWidth:                      0
 xlogin*innerFramesWidth:                0
 
@@ -33,14 +33,14 @@ xlogin*namePrompt:                      Username:\040
 xlogin*passwdPrompt:                    Password:\040
 xlogin*fail:                            Authentication Error
 
-xlogin*shdColor:                        #818383
+xlogin*shdColor:                        #000000
 xlogin*hiColor:                         #818383
 xlogin*background:                      #000000
 xlogin*inpColor:                        #000000
 xlogin*foreground:                      #e9ebeb
 xlogin*greetColor:                      #31e722
 xlogin*failColor:                       #fc391f
-*Foreground:                            #cbcccd
+*Foreground:                            #e9ebeb
 *Background:                            #000000
 
 xlogin*greetFont: 	                    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
@@ -53,14 +53,17 @@ xlogin*promptFace: 	                    Hack Nerd Font Mono-12:bold
 xlogin*failFace: 	                    Hack Nerd Font Mono-10:bold
 
 !! --- Xconsole ---
-XConsole.text.geometry:	                430x200-0-0
+XConsole.text.geometry:	                430x200+10-34
 XConsole.verbose:	                    true
 XConsole*iconic:	                    true
 XConsole*font:		                    -*-hack nerd font mono-*-r-normal-*-17-120-100-100-p-*-iso8859-1
+XConsole*scrollVertical:		        Never
+XConsole*scrollHorizontal:		        Never
+XConsole*allowShellResize:		        false
 
 !! --- Xmessage ---
-Xmessage*geometry:	                    430x200+0+0
-Xmessage*foreground:                    #cbcccd
+Xmessage*geometry:	                    430x200
+Xmessage*foreground:                    #e9ebeb
 Xmessage*background:                    #000000
 Xmessage*message.scrollVertical:        Never
 Xmessage*message.scrollHorizontal:      Never
@@ -69,7 +72,7 @@ Xmessage*Command.shapeStyle:            rectangle
 Xmessage*font:                          -*-hack nerd font mono-*-r-normal-*--120-100-100-p-*-iso8859-1
 
 !! --- Chooser ---
-Chooser*geometry:		                430x200-0+0
+Chooser*geometry:		                430x200
 Chooser*allowShellResize:	            false
 Chooser*viewport.forceBars:	            true
 Chooser*label.label:		            XDMCP Host Menu from CLIENTHOST

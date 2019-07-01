@@ -1,18 +1,21 @@
 #!/bin/sh
 
-# Set random wallpaper
-walsh -d /usr/share/backgrounds/antsy/nologo -t 0 -b center &
+# Extra X settings
+xsetroot -cursor_name left_ptr &
 
-#
+# Set random wallpaper
+walsh -d /usr/share/backgrounds/antsy-nologo-lines -t 0 -b center &
+
+# Shadows and transparency
 compton --config /etc/X11/xdm/compton.conf &
 
 # Custom polybar with clock and shudown\reboot menu
 polybar -c /etc/X11/xdm/polybar.ini "$(hostname)" &
 
-# Extra X settings
-xsetroot -cursor_name left_ptr &
+# Screenshot XDM
+#sleep 15 && import -w root /tmp/xdm.png &
 
-# screenshot xdm
-sleep 15 && import -w root /tmp/xdm.png &
+#
+xconsole -geometry 430x200+10-34 -daemon -notify -verbose -exitOnFail
 
 # vim: set ft=sh:

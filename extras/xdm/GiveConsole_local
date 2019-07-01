@@ -7,9 +7,9 @@
 # causing serious grief.
 #
 
-# the fun is over
-killall polybar
-killall compton
+killall -9 xconsole
+killall -9 compton
+killall -9 polybar
 
 chown $USER /dev/console
 exec /usr/bin/sessreg  -a -w "/var/log/wtmp" -u "/run/utmp" \
