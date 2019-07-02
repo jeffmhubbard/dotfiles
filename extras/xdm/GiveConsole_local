@@ -6,10 +6,9 @@
 # the console output.  This way a random user can invoke xterm -C without
 # causing serious grief.
 #
-
-killall -9 xconsole
-killall -9 compton
-killall -9 polybar
+# stop compton and polybar
+cat /var/run/xdm-compton.pid | xargs kill -9
+cat /var/run/xdm-polybar.pid | xargs kill -9
 
 chown $USER /dev/console
 exec /usr/bin/sessreg  -a -w "/var/log/wtmp" -u "/run/utmp" \
