@@ -18,7 +18,10 @@ set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
-
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "0"
 
 ## settings
 new_window pixel 2
@@ -131,7 +134,6 @@ bindsym $super+F12 exec --no-startup-id mpc -q next
 # volume
 bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
 bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym $super+$ctrl+Next exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
@@ -211,6 +213,10 @@ bindsym $super+3 workspace $ws3
 bindsym $super+4 workspace $ws4
 bindsym $super+5 workspace $ws5
 bindsym $super+6 workspace $ws6
+bindsym $super+7 workspace $ws7
+bindsym $super+8 workspace $ws8
+bindsym $super+9 workspace $ws9
+bindsym $super+0 workspace $ws0
 
 # move container to workspace
 bindsym $super+$shift+1 move container to workspace $ws1
@@ -219,6 +225,10 @@ bindsym $super+$shift+3 move container to workspace $ws3
 bindsym $super+$shift+4 move container to workspace $ws4
 bindsym $super+$shift+5 move container to workspace $ws5
 bindsym $super+$shift+6 move container to workspace $ws6
+bindsym $super+$shift+7 move container to workspace $ws7
+bindsym $super+$shift+8 move container to workspace $ws8
+bindsym $super+$shift+9 move container to workspace $ws9
+bindsym $super+$shift+0 move container to workspace $ws0
 
 # resize mode
 mode "resize" {
@@ -243,6 +253,7 @@ bindsym $super+r mode "resize"
 # special windows
 for_window [window_type="dialog"] floating enable
 for_window [window_type="utility"] floating enable
+for_window [window_type="toolbar"] floating enable
 for_window [window_type="toolbar"] floating enable
 for_window [window_type="splash"] floating enable
 for_window [window_type="menu"] floating enable
@@ -305,13 +316,29 @@ for_window [class="^Gimp-2.10$"] floating enable focus
 assign [class="^Inkscape$"] 5
 for_window [class="^Inkscape$"] floating enable focus
 
-# ws game
-for_window [class="^Lutris$"] move container to workspace 6, floating enable focus
-for_window [class="^Steam$"] move container to workspace 6, floating enable focus
+## Steam
+## https://github.com/ValveSoftware/steam-for-linux/issues/1040
+assign [class="^Steam$"] 6
+for_window [class="^Steam$" title="^Friends$"] floating enable
+for_window [class="^Steam$" title="Steam - News"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title=".* - event started"] floating enable
+for_window [class="^Steam$" title=".* CD key"] floating enable
+for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
+for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
+for_window [title="^Steam Keyboard$"] floating enable
+
+assign [title="^Civ6Sub$"] 6
+for_window [title="^Civ6Sub$"] floating enable
 
 ##
 ## auto start
 ##
+
+# Wallpaper Shuffler
+exec --no-startup-id walsh
 
 # Start polybar
 exec_always --no-startup-id $PBSCRIPTS/load-bar.sh
