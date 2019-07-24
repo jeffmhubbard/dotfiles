@@ -26,4 +26,7 @@ export FZF_DEFAULT_OPTS='
 export MPD_HOST=localhost
 export MPD_PORT=6600
 
+# toggle-touchpad.sh
+export TOUCHPAD='12'
+
 # vim: set ft=zsh:

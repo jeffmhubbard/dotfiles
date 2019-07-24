@@ -28,6 +28,21 @@ plugins=( \
 # oh-my-zsh init
 source $ZSH/oh-my-zsh.sh
 
+## Copied from lib/key-bindings.zsh
+## Fix up arrow history in vi-mode
+# start typing + [Up-Arrow] - fuzzy find history forward
+if [[ "${terminfo[kcuu1]}" != "" ]]; then
+  autoload -U up-line-or-beginning-search
+  zle -N up-line-or-beginning-search
+  bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search
+fi
+# start typing + [Down-Arrow] - fuzzy find history backward
+if [[ "${terminfo[kcud1]}" != "" ]]; then
+  autoload -U down-line-or-beginning-search
+  zle -N down-line-or-beginning-search
+  bindkey "${terminfo[kcud1]}" down-line-or-beginning-search
+fi
+
 # env
 export LANG=en_US.UTF-8
 export ARCHFLAGS="-arch x86_64"
@@ -44,6 +59,9 @@ alias vi="vim"
 # update plugins
 alias vim_upd="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
 alias omz_upd="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
+
+# package browser
+alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # google music
 alias pf="playfetch"
