@@ -16,7 +16,7 @@ PLUGINS=(
     https://github.com/jeffmhubbard/antsy.vim.git
     https://github.com/w0rp/ale.git
     https://github.com/junegunn/fzf.vim.git
-    https://github.com/haya14busa/incsearch.vim.git
+    https://github.com/haya14busa/is.vim.git
     https://github.com/scrooloose/nerdtree.git
     https://github.com/Xuyuanp/nerdtree-git-plugin.git
     https://github.com/itchyny/lightline.vim.git
@@ -31,6 +31,7 @@ PLUGINS=(
     https://github.com/tpope/vim-surround.git
     https://github.com/Yggdroot/indentLine.git
     https://github.com/skywind3000/asyncrun.vim.git
+    https://github.com/ycm-core/YouCompleteMe
 )
 
 # check for vim
