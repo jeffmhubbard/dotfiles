@@ -1,6 +1,8 @@
-" vim/vimrc
+" ==========================
+" vimrc
+" ==========================
 
-" btw
+" BTW
 runtime! archlinux.vim
 
 " Enable Pathogen
@@ -22,9 +24,11 @@ if has("syntax")
   syntax on
 endif
 
-"
-" Common Settings
-"
+
+" ==========================
+" Common
+" ==========================
+
 
 " Basic editor
 set nowrap
@@ -104,9 +108,11 @@ augroup END
 " CWD follows current buffer
 autocmd Local BufEnter * silent! lcd %:p:h
 
-"
-" Mappings that don't use plugins
-"
+
+" ==========================
+" Mappings
+" ==========================
+
 
 " Edit and reload vimrc
 nnoremap <silent> <leader>ve :e $MYVIMRC<CR>
@@ -130,11 +136,13 @@ noremap <C-k> <C-w>k
 nnoremap Q @q
 vnoremap Q :norm @q<cr>
 
-"""
-""" Plugins
-"""
 
-" lightline.vim
+" ==========================
+" Plugins
+" ==========================
+
+
+" itchyny/lightline.vim
 let g:lightline = {
     \ 'colorscheme': 'antsy',
     \ 'active': {
@@ -152,6 +160,8 @@ let g:lightline = {
     \ },
     \ }
 
+
+" maximbaz/lightline-ale
 let g:lightline.component_expand = {
     \  'linter_checking': 'lightline#ale#checking',
     \  'linter_warnings': 'lightline#ale#warnings',
@@ -171,17 +181,19 @@ let g:lightline#ale#indicator_warnings = " "
 let g:lightline#ale#indicator_errors = " "
 let g:lightline#ale#indicator_ok = ""
 
-" nerdtree
+
+" scrooloose/nerdtree
 " auto open nerdtree when vim starts with directory
 autocmd Local StdinReadPre * let s:std_in=1
 autocmd Local VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
 " close vim if nerdtree is only window remaining
 autocmd Local bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let NERDTreeShowHidden = 1
-let NERDTreeStatusline = 1
-let NERDTreeWinSize = 25
-let NERDTreeMinimalUI=1
+let NERDTreeStatusline = 0
+let NERDTreeWinSize = 30
+let NERDTreeMinimalUI = 1
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "●",
@@ -190,7 +202,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Renamed"   : "➤",
     \ "Unmerged"  : "♦",
     \ "Deleted"   : "✖",
-    \ "Dirty"     : "",
+    \ "Dirty"     : "",
     \ "Clean"     : "",
     \ "Ignored"   : '',
     \ "Unknown"   : "?"
@@ -198,24 +210,32 @@ let g:NERDTreeIndicatorMapCustom = {
 
 map <leader>\d :NERDTreeToggle<CR>
 
-" nerdtree-git
+
+" Xuyuanp/nerdtree-git-plugin
 let g:NERDTreeShowGitStatus = 1
 
-" vim-devicons
+
+
+" vim: set ft=vim:
+" ryanoasis/vim-devicons
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
-" buftabline
+
+" ap/vim-buftabline
 let g:buftabline_show = 1
-let g:buftabline_numbers = 1
+let g:buftabline_numbers = 2
 let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
 
-" Tagbar
-let g:tagbar_compact = 0
+
+" majutsushi/tagbar
+let g:tagbar_compact = 1
+let g:tagbar_width = 30
 
 nmap <leader>\t :TagbarToggle<CR>
 
-" ALE
+
+" w0rp/ale
 let b:ale_linters = ['pyflakes', 'flake8', 'shellcheck']
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -227,31 +247,30 @@ let g:ale_fix_on_save = 0
 
 nmap <leader>at <Plug>(ale_toggle)
 nmap <leader>af <Plug>(ale_fix)
-nmap <leader>] <Plug>(ale_next)
-nmap <leader>[ <Plug>(ale_previous)
+nmap <leader>]] <Plug>(ale_next)
+nmap <leader>[[ <Plug>(ale_previous)
 
-" AsyncRun auto open
+
+" skywind3000/asyncrun.vim
 let g:asyncrun_open = 10
 
-" incsearch
-let g:incsearch#auto_nohlsearch = 1
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
+" junegunn/fzf.vim
+nnoremap <silent> <leader>fz :Files<CR>
+nnoremap <silent> <leader>fa :Buffers<CR>
+nnoremap <silent> <leader>fA :Windows<CR>
+nnoremap <silent> <leader>fl :BLines<CR>
+nnoremap <silent> <leader>ft :BTags<CR>
+nnoremap <silent> <leader>fT :Tags<CR>
 
-" indentLine
+
+" Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_setColors = 1
 let g:indentLine_char = '┆'
 
-" vim-fugitive
+
+" tpope/vim-fugitive
 nmap <leader>gc :Gcommit<CR>
 nmap <leader>gca :Gcommit --amend<CR>
 nmap <leader>gw :Gwrite<CR>
@@ -263,6 +282,22 @@ nmap <leader>gdg :diffget<CR>
 vmap <leader>gdp :diffput<CR>
 vmap <leader>gdg :diffget<CR>
 
+
+" farmergreg/vim-lastplace
+let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+let g:lastplace_ignore_buftype = "quickfix,nofile,help"
+
+
+" airblade/vim-gitgutter
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '!'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^'
+let g:gitgutter_sign_modified_removed = 'w'
+
+
+"
 silent! helptags ALL
+
 
 " vim: set ft=vim:
