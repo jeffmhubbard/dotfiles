@@ -19,10 +19,11 @@
     Alt + Tab
 
 ### focus desktop [i3]
-    Super + 1-6
+    Super + 1-0
 
 ### focus window in direction [i3]
     Super + Up, Down, Left, Right
+    Super + k, j, h, l
 
 ### select parent container [i3]
     Super + a
@@ -31,23 +32,26 @@
     Super + c
 
 ### toggle window floating [i3]
-    Super + f
+    Super + Alt + f
 
 ### toggle window fullscreen [i3]
     Super + Shift + f
 
 ### move window in direction [i3]
     Super + Shift + Up, Down, Left, Right
+    Super + Shift + k, j, h, l
 
 ### send to desktop [i3]
-    Super + Shift + 1-6
+    Super + Shift + 1-0
 
 ### window resize mode [i3]
     Super + r
     Up, Down, Left, Right
+    k, j, h, l
 
 ### move floating window [i3]
     Super + Shift + Up, Down, Left, Right
+    Super + Shift + k, j, h, l
 
 ### close window [i3]
     Super + Ctrl + w
