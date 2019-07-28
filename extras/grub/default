@@ -1,5 +1,0 @@
-GRUB_GFXMODE=1920x1080x32
-GRUB_COLOR_NORMAL="dark-gray/black"
-GRUB_COLOR_HIGHLIGHT="black/light-blue"
-GRUB_BACKGROUND="/boot/grub/background.png"
-GRUB_FONT="/boot/grub/Terminus-32.pf2"
