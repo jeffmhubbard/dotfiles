@@ -316,6 +316,9 @@ for_window [class="^Gimp-2.10$"] floating enable focus
 assign [class="^Inkscape$"] 5
 for_window [class="^Inkscape$"] floating enable focus
 
+assign [class="^SimpleScreenRecorder$"] 5
+for_window [class="^SimpleScreenRecorder$"] floating enable focus
+
 ## Steam
 ## https://github.com/ValveSoftware/steam-for-linux/issues/1040
 assign [class="^Steam$"] 6
