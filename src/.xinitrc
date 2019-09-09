@@ -5,9 +5,9 @@
 #         urxvtd, i3, udiskie, polkit-gnome
 
 # Environment variables
-export BROWSER=/usr/bin/qutebrowser
+export BROWSER=qutebrowser
 export RTV_BROWSER=$BROWSER
-export TERMINAL=urxvtc
+export TERMINAL=alacritty
 export MPD_HOST=localhost
 export MPD_PORT=6600
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -23,7 +23,7 @@ xsetroot -cursor_name left_ptr &
 
 # Lock screen
 xset s 600 180 &
-xss-lock -l -- awful --capture &
+xss-lock -l -- awful --lock &
 
 # Hide idle mouse cursor
 unclutter -root &
@@ -36,9 +36,6 @@ dunst &
 
 # Sound daemon
 start-pulseaudio-x11 &
-
-# Terminal emulator
-urxvtd -q -o -f &
 
 # Storage
 udiskie &

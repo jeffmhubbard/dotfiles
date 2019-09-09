@@ -1,11 +1,11 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
-Terminal=false
+Terminal=true
 Type=Application
 Name=NeoMutt
 GenericName=NeoMutt
 Comment=NeoMutt is a command line mail reader 
-Exec=urxvtc -name NeoMutt -title NeoMutt -e neomutt %u
+Exec=neomutt %u
 Icon=internet-mail
 MimeType=x-scheme-handler/mailto;

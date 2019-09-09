@@ -1,7 +1,93 @@
 ! .Xresources
 
 !! --- Colors ---
-#include ".Xresources.antsy"
+#define black           #000000
+#define dark_red        #c23621
+#define dark_green      #25bc24
+#define dark_yellow     #adad27
+#define dark_blue       #492ee1
+#define dark_magenta    #d338d3
+#define dark_cyan       #33bbc8
+#define grey            #cbcccd
+#define dark_grey       #818383
+#define red             #fc391f
+#define green           #31e722
+#define yellow          #eaec23
+#define blue            #5833ff
+#define magenta         #f935f8
+#define cyan            #14f0f0
+#define white           #e9ebeb
+
+*color0:        black
+*color1:        dark_red
+*color2:        dark_green
+*color3:        dark_yellow
+*color4:        dark_blue
+*color5:        dark_magenta
+*color6:        dark_cyan
+*color7:        grey
+*color8:        dark_grey
+*color9:        red
+*color10:       green
+*color11:       yellow
+*color12:       blue
+*color13:       magenta
+*color14:       cyan
+*color15:       white
+*background:    black
+*foreground:    grey
+!*cursorColor:   green
+!
+!#define fonts xft:Hack Nerd Font:pixelsize=13,\
+!              xft:NotoEmoji Nerd Font:pixelsize=13
+
+!! --- URxvt ---
+!URxvt*title:                    URxvt
+!URxvt*termName:                 rxvt-unicode-256color
+!URxvt*depth:                    32
+!URxvt*saveLines:                2500
+!URxvt*urgentOnBell:             true
+!URxvt*internalBorder:           3
+!URxvt*lineSpace:                0
+!URxvt*scrollBar:                false
+!URxvt*cursorBlink:              true
+!URxvt*cursorUnderline:          true
+!URxvt*colorULMode:              on
+!URxvt*transparent:              true
+!URxvt*shading:                  20
+!URxvt*font:                     fonts
+!URxvt*boldFont:                 fonts
+!URxvt.italicFont:               fonts
+!URxvt.boldItalicFont:           fonts
+!URxvt*perl-ext-common:          default,matcher
+!URxvt.url-launcher:             qutebrowser
+!URxvt.matcher.button:           1
+
+!! --- Xterm ---
+!XTerm.termName: xterm-256color
+!xterm*faceName:                 Hack Nerd Font, NotoEmojiNerd Font
+!xterm*fontWarnings:             2
+!xterm*faceSize:                 10
+!xterm*allowBoldFonts:           false
+!xterm*assumeAllChars:           true
+!xterm*wideChars:                true
+!xterm*showMissingGlyphs:        true
+!xterm*selectToClipboard:        true
+!xterm*dynamicColors:            true
+!xterm*cursorBlink:              true
+!xterm*locale:                   UTF-8
+!xterm*utf8:                     3
+!xterm*utf8Fonts:                2
+!xterm*eightBitInput:            true
+!xterm*saveLines:                1000
+!xterm*scrollKey:                true
+!xterm*scrollTtyOutput:          false
+!xterm*scrollBar:                false
+!xterm*rightScrollBar:           true
+!xterm*jumpScroll:               true
+!xterm*multiScroll:              true
+!xterm*toolBar:                  false
+!XTerm*TrimSelection:            true
 
 !! --- Fonts ---
 Xft.lcdfilter:                  lcddefault
@@ -15,28 +101,4 @@ Xft.rgba:                       rgb
 Xcursor.theme:                  "OpenZone Black"
 Xcursor.size:                   16
 
-!! --- URxvt ---
-URxvt*title:                    URxvt
-URxvt*termName:                 rxvt-unicode-256color
-URxvt*depth:                    32
-URxvt*saveLines:                2500
-URxvt*urgentOnBell:             true
-URxvt*internalBorder:           3
-URxvt*lineSpace:                0
-URxvt*scrollBar:                false
-URxvt*cursorBlink:              true
-URxvt*cursorUnderline:          true
-URxvt*colorULMode:              on
-URxvt*transparent:              true
-URxvt*shading:                  20
-URxvt*font:                     xft:Hack Nerd Font:pixelsize=13:Regular
-URxvt*boldFont:                 xft:Hack Nerd Font:pixelsize=13:Regular:Bold
-URxvt.italicFont:               xft:Hack Nerd Font:pixelsize=13:Italic
-URxvt.boldItalicFont:           xft:Hack Nerd Font:pixelsize=13:Italic:Bold
-URxvt*perl-ext-common:          default,matcher
-URxvt.url-launcher:             qutebrowser
-URxvt.matcher.button:           1
-
-XTerm*font:                     xft:Hack Nerd Font:pixelsize=13:Regular
-
-! vim: set ft=xdefaults :
+! vim: set ft=xdefaults:

@@ -10,9 +10,9 @@ export EDITOR=vim
 export DIFFPROG=vimdiff
 
 # GUI
-export BROWSER=/usr/bin/qutebrowser
+export BROWSER=qutebrowser
 export RTV_BROWSER=$BROWSER
-export TERMINAL=urxvtc
+export TERMINAL=alacritty
 
 # fzf
 export FZF_BASE=/usr/bin/fzf

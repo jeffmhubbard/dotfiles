@@ -29,7 +29,7 @@ c.url.searchengines = {
 c.confirm_quit = ["downloads"]
 c.auto_save.session = False
 c.hints.mode = "letter"
-c.window.title_format = "{perc}{title}"
+c.window.title_format = "{perc}{current_title}"
 c.completion.height = "30%"
 
 c.colors.webpage.bg = xres["*color7"]

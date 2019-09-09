@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=newsboat
+Comment=Launches Newsboat feed reader
+Icon=internet-feed-reader
+Terminal=true
+Exec=newsboat

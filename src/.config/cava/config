@@ -1,5 +1,5 @@
 [general]
-bar_width = 1
+bar_width = 3
 bar_spacing = 1
 
 [input]
@@ -11,7 +11,7 @@ method = ncurses
 style = stereo
 
 [color]
-foreground = magenta
+foreground = '#14f0f0'
 
 [smoothing]
 integral = 30

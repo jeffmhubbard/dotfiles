@@ -8,8 +8,7 @@ set $shift  Shift
 set $alt    Mod1
 
 # monitors
-set $mon1 DVI-I-1
-set $mon2 HDMI-0
+set $mon1 HDMI-0
 
 # workspace names
 set $ws1 "1"
@@ -99,7 +98,7 @@ font pango:Hack Nerd Font 10
 
 ## keybindings
 # start a terminal
-bindsym $super+Return exec urxvtc
+bindsym $super+Return exec $TERMINAL
 
 # application launcher
 bindsym $super+space exec rofi -show drun
@@ -132,8 +131,8 @@ bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # volume
-bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym $super+Next exec --no-startup-id pactl set-sink-volume 0 -5%
 
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
@@ -170,15 +169,15 @@ bindsym $super+$shift+Right move right
 floating_modifier $super
 
 # layouts are ugly
-#bindsym $super+$shift+s layout stacking
-#bindsym $super+$shift+w layout tabbed
-#bindsym $super+$shift+e layout toggle split
+bindsym $super+$shift+s layout stacking
+bindsym $super+$shift+t layout tabbed
+bindsym $super+$shift+e layout toggle split
 
 # toggle floating
-bindsym $super+$alt+f floating toggle
+bindsym $super+$shift+f floating toggle
 
 # toggle fullscreen
-bindsym $super+$shift+f fullscreen toggle
+bindsym $super+$alt+f fullscreen toggle
 
 # split horizontal
 bindsym $super+$shift+bar split h
@@ -202,9 +201,9 @@ bindsym $super+quote [urgent=latest] focus
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
 workspace $ws3 output $mon1
-workspace $ws4 output $mon2
-workspace $ws5 output $mon2
-workspace $ws6 output $mon2
+workspace $ws4 output $mon1
+workspace $ws5 output $mon1
+workspace $ws6 output $mon1
 
 # switch to workspace
 bindsym $super+1 workspace $ws1
@@ -347,6 +346,6 @@ exec --no-startup-id walsh
 exec_always --no-startup-id $PBSCRIPTS/load-bar.sh
 
 # Load default layouts
-exec --no-startup-id $I3SCRIPTS/load-layouts.sh
+#exec --no-startup-id $I3SCRIPTS/load-layouts.sh
 
 # vim: set ft=i3config

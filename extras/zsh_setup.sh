@@ -3,7 +3,7 @@
 # extras/zsh_setup.sh
 
 #
-# install oh-my-zsh and fast-syntax-highlighting
+# install oh-my-zsh and plugins
 #
 
 PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
@@ -11,17 +11,12 @@ PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
 declare -a PLUGINS
 PLUGINS=(
     https://github.com/zdharma/fast-syntax-highlighting.git
+    https://github.com/zsh-users/zsh-autosuggestions.git
 )
 
 # check for zsh
 if ! type "zsh" > /dev/null; then
     echo "Zsh is not installed!"
-cat << EOF
-Try:
-    Arch: pacman -S zsh
-    Void: xbps-install -S zsh
-    Debian: apt install zsh
-EOF
     exit 0
 fi
 

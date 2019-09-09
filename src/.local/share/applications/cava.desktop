@@ -1,10 +1,10 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
-Terminal=false
+Terminal=true
 Type=Application
 Name=Console-based Audio Visualizer for Alsa
 GenericName=cava
 Comment=Console-based Audio Visualizer for Alsa
-Exec=urxvtc -name CAVA -title CAVA -e cava
+Exec=cava
 Icon=visualization

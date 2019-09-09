@@ -215,8 +215,6 @@ map <leader>\d :NERDTreeToggle<CR>
 let g:NERDTreeShowGitStatus = 1
 
 
-
-" vim: set ft=vim:
 " ryanoasis/vim-devicons
 let g:webdevicons_conceal_nerdtree_brackets = 1
 
@@ -227,6 +225,16 @@ let g:buftabline_numbers = 2
 let g:buftabline_indicators = "on"
 let g:buftabline_separators = "off"
 
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 " majutsushi/tagbar
 let g:tagbar_compact = 1
@@ -256,12 +264,11 @@ let g:asyncrun_open = 10
 
 
 " junegunn/fzf.vim
-nnoremap <silent> <leader>fz :Files<CR>
-nnoremap <silent> <leader>fa :Buffers<CR>
-nnoremap <silent> <leader>fA :Windows<CR>
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <silent> <leader>fb :Buffers<CR>
+nnoremap <silent> <leader>fw :Windows<CR>
 nnoremap <silent> <leader>fl :BLines<CR>
 nnoremap <silent> <leader>ft :BTags<CR>
-nnoremap <silent> <leader>fT :Tags<CR>
 
 
 " Yggdroot/indentLine
@@ -295,6 +302,13 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = 'w'
 
+
+" ycm-core/YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_insertion=1
+
+"
+" au FileType gitcommit au! BufEnter COMMIT_EDITMSG :call( unamp \s<CR> )
 
 "
 silent! helptags ALL

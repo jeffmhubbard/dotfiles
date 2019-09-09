@@ -10,20 +10,21 @@ COMPLETION_WAITING_DOTS="true"
 
 # oh-my-zsh plugins
 plugins=( \
-        archlinux \
-        systemd \
-        command-not-found \
-        ssh-agent \
-        gpg-agent \
-        vi-mode \
-        fzf \
-        pass \
-        git \
-        tmux \
-        virtualenv \
-        fast-syntax-highlighting \
-        history \
-        )
+    archlinux \
+    systemd \
+    command-not-found \
+    ssh-agent \
+    gpg-agent \
+    vi-mode \
+    fzf \
+    pass \
+    git \
+    tmux \
+    virtualenv \
+    fast-syntax-highlighting \
+    zsh-autosuggestions \
+    history \
+)
 
 # oh-my-zsh init
 source $ZSH/oh-my-zsh.sh
@@ -75,4 +76,5 @@ alias month="gcalcli calm"
 alias weather="curl -s 'wttr.in/aus?0'"
 alias forecast="curl -s 'wttr.in/aus'"
 
+#alias afetch="afetch | nms -caf cyan"
 # vim: set ft=zsh:

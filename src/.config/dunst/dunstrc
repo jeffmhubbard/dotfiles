@@ -20,7 +20,6 @@ markup = full
 alignment = left
 icon_position = left
 max_icon_size = 48
-#icon_path = /usr/share/icons/HighContrast/48x48/status:/usr/share/icons/HighContrast/48x48/stock:/usr/share/icons/HighContrast/48x48/actions
 icon_path = /usr/share/icons/oomox-antsy/actions/scalable:/usr/share/icons/oomox-antsy/status/scalable:/usr/share/icons/oomox-antsy/stock/scalable
 word_wrap = no
 ignore_newline = no
@@ -32,7 +31,7 @@ idle_threshold = 0
 sticky_history = yes
 history_length = 20
 indicate_hidden = true
-stack_duplicates = true
+stack_duplicates = false
 hide_duplicate_count = false
 show_indicators = yes
 browser = /usr/bin/qutebrowser
@@ -65,9 +64,9 @@ foreground = "#e9ebeb"
 frame_color = "#14f0f0"
 timeout = 0
 
-[music]
-appname = mpnotd
-new_icon = "/usr/share/icons/oomox-antsy/mimetypes/scalable/audio-x-generic.svg"
+#[music]
+#appname = mpnotd
+#new_icon = "/usr/share/icons/oomox-antsy/mimetypes/scalable/audio-x-generic.svg"
 
 [mail]
 appname = neomutt
