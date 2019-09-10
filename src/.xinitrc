@@ -7,7 +7,7 @@
 # Environment variables
 export BROWSER=qutebrowser
 export RTV_BROWSER=$BROWSER
-export TERMINAL=alacritty
+export TERMINAL=urxvtc
 export MPD_HOST=localhost
 export MPD_PORT=6600
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -42,6 +42,9 @@ udiskie &
 
 # X compositor
 compton &
+
+# Terminal emulator
+urxvtd -q -o -f &
 
 # Start window manager
 exec i3

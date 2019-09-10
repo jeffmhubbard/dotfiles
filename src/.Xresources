@@ -36,32 +36,32 @@
 *color15:       white
 *background:    black
 *foreground:    grey
-!*cursorColor:   green
-!
-!#define fonts xft:Hack Nerd Font:pixelsize=13,\
-!              xft:NotoEmoji Nerd Font:pixelsize=13
+*cursorColor:   green
+
+#define fonts xft:Hack Nerd Font:pixelsize=13,\
+              xft:NotoEmoji Nerd Font:pixelsize=13
 
 !! --- URxvt ---
-!URxvt*title:                    URxvt
-!URxvt*termName:                 rxvt-unicode-256color
-!URxvt*depth:                    32
-!URxvt*saveLines:                2500
-!URxvt*urgentOnBell:             true
-!URxvt*internalBorder:           3
-!URxvt*lineSpace:                0
-!URxvt*scrollBar:                false
-!URxvt*cursorBlink:              true
-!URxvt*cursorUnderline:          true
-!URxvt*colorULMode:              on
-!URxvt*transparent:              true
-!URxvt*shading:                  20
-!URxvt*font:                     fonts
-!URxvt*boldFont:                 fonts
-!URxvt.italicFont:               fonts
-!URxvt.boldItalicFont:           fonts
-!URxvt*perl-ext-common:          default,matcher
-!URxvt.url-launcher:             qutebrowser
-!URxvt.matcher.button:           1
+URxvt*title:                    URxvt
+URxvt*termName:                 rxvt-unicode-256color
+URxvt*depth:                    32
+URxvt*saveLines:                2500
+URxvt*urgentOnBell:             true
+URxvt*internalBorder:           3
+URxvt*lineSpace:                0
+URxvt*scrollBar:                false
+URxvt*cursorBlink:              true
+URxvt*cursorUnderline:          true
+URxvt*colorULMode:              on
+URxvt*transparent:              true
+URxvt*shading:                  20
+URxvt*font:                     fonts
+URxvt*boldFont:                 fonts
+URxvt.italicFont:               fonts
+URxvt.boldItalicFont:           fonts
+URxvt*perl-ext-common:          default,matcher
+URxvt.url-launcher:             qutebrowser
+URxvt.matcher.button:           1
 
 !! --- Xterm ---
 !XTerm.termName: xterm-256color

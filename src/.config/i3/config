@@ -8,7 +8,8 @@ set $shift  Shift
 set $alt    Mod1
 
 # monitors
-set $mon1 HDMI-0
+set $mon1 DVI-I-1
+set $mon2 HDMI-0
 
 # workspace names
 set $ws1 "1"
@@ -118,6 +119,9 @@ bindsym $alt+Tab exec $I3SCRIPTS/focus-hints.sh
 # kill focused window
 bindsym $super+$ctrl+q kill
 
+# toggle touchpad
+bindsym $super+$alt+t exec --no-startup-id $I3SCRIPTS/toggle-touchpad.sh
+
 # playfetch
 bindsym $super+F5 exec --no-startup-id playfetch rate --down && dunstify -u critical -t 6000 "Thumbs Down!"
 bindsym $super+F6 exec --no-startup-id playfetch lucky -t 100 -FA && dunstify -u low -t 6000 "I'm Feeling Lucky!"
@@ -131,8 +135,8 @@ bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # volume
-bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym $super+Next exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
 
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
@@ -169,15 +173,15 @@ bindsym $super+$shift+Right move right
 floating_modifier $super
 
 # layouts are ugly
-bindsym $super+$shift+s layout stacking
-bindsym $super+$shift+t layout tabbed
-bindsym $super+$shift+e layout toggle split
+#bindsym $super+$shift+s layout stacking
+#bindsym $super+$shift+w layout tabbed
+#bindsym $super+$shift+e layout toggle split
 
 # toggle floating
-bindsym $super+$shift+f floating toggle
+bindsym $super+$alt+f floating toggle
 
 # toggle fullscreen
-bindsym $super+$alt+f fullscreen toggle
+bindsym $super+$shift+f fullscreen toggle
 
 # split horizontal
 bindsym $super+$shift+bar split h
@@ -201,9 +205,9 @@ bindsym $super+quote [urgent=latest] focus
 workspace $ws1 output $mon1
 workspace $ws2 output $mon1
 workspace $ws3 output $mon1
-workspace $ws4 output $mon1
-workspace $ws5 output $mon1
-workspace $ws6 output $mon1
+workspace $ws4 output $mon2
+workspace $ws5 output $mon2
+workspace $ws6 output $mon2
 
 # switch to workspace
 bindsym $super+1 workspace $ws1
@@ -231,20 +235,20 @@ bindsym $super+$shift+0 move container to workspace $ws0
 
 # resize mode
 mode "resize" {
-        # shrink (vi)
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        # grow (vi)
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
-        # shrink
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        # grow
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-        # exit resize mode
-        bindsym Escape mode "default"
+    # shrink (vi)
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    # grow (vi)
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+    # shrink
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    # grow
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    # exit resize mode
+    bindsym Escape mode "default"
 }
 bindsym $super+r mode "resize"
 
@@ -265,34 +269,6 @@ for_window [window_type="notification"] floating enable
 for_window [class="feh"] floating enable focus
 for_window [class="mpv"] floating enable focus
 
-# # ws term
-# assign [class="^URxvt$" instance="^CAVA$"] 1
-# for_window [class="^URxvt$" instance="^CAVA$"] focus
-# 
-# assign [class="^URxvt$" instance="^Htop$"] 1
-# for_window [class="^URxvt$" instance="^Htop$"] focus
-# 
-# assign [class="^URxvt$" instance="^Ranger$"] 1
-# for_window [class="^URxvt$" instance="^Ranger$"] focus
-# 
-# # ws webs
-# assign [class="^qutebrowser$"] 2
-# for_window [class="^qutebrowser$"] focus
-# 
-# assign [class="^URxvt$" instance="^RTV$"] 2
-# for_window [class="^URxvt$" instance="^RTV$"] focus
-# 
-# # ws comm
-# assign [class="^URxvt$" instance="^Irssi$"] 3
-# for_window [class="^URxvt$" instance="^Irssi$"] focus
-# 
-# assign [class="^URxvt$" instance="^NeoMutt$"] 3
-# for_window [class="^URxvt$" instance="^NeoMutt$"] focus
-# 
-# # ws code
-# assign [class="^URxvt$" instance="^Vim$"] 4
-# for_window [class="^URxvt$" instance="^Vim$"] focus
-
 # ws util
 assign [class="^Pavucontrol$"] 5
 for_window [class="^Pavucontrol$"] floating enable focus
@@ -309,32 +285,6 @@ for_window [class="^Lxappearance$"] floating enable focus
 assign [class="^Oomox$"] 5
 for_window [class="^Oomox$"] floating enable focus
 
-assign [class="^Gimp-2.10$"] 5
-for_window [class="^Gimp-2.10$"] floating enable focus
-
-assign [class="^Inkscape$"] 5
-for_window [class="^Inkscape$"] floating enable focus
-
-assign [class="^SimpleScreenRecorder$"] 5
-for_window [class="^SimpleScreenRecorder$"] floating enable focus
-
-## Steam
-## https://github.com/ValveSoftware/steam-for-linux/issues/1040
-assign [class="^Steam$"] 6
-for_window [class="^Steam$" title="^Friends$"] floating enable
-for_window [class="^Steam$" title="Steam - News"] floating enable
-for_window [class="^Steam$" title=".* - Chat"] floating enable
-for_window [class="^Steam$" title="^Settings$"] floating enable
-for_window [class="^Steam$" title=".* - event started"] floating enable
-for_window [class="^Steam$" title=".* CD key"] floating enable
-for_window [class="^Steam$" title="^Steam - Self Updater$"] floating enable
-for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
-for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
-for_window [title="^Steam Keyboard$"] floating enable
-
-assign [title="^Civ6Sub$"] 6
-for_window [title="^Civ6Sub$"] floating enable
-
 ##
 ## auto start
 ##
@@ -344,8 +294,5 @@ exec --no-startup-id walsh
 
 # Start polybar
 exec_always --no-startup-id $PBSCRIPTS/load-bar.sh
-
-# Load default layouts
-#exec --no-startup-id $I3SCRIPTS/load-layouts.sh
 
 # vim: set ft=i3config
