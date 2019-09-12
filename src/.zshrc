@@ -17,6 +17,7 @@ plugins=( \
     gpg-agent \
     vi-mode \
     fzf \
+    fd \
     pass \
     git \
     tmux \

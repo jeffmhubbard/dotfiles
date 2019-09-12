@@ -9,24 +9,15 @@ export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
 
-# GUI
-export BROWSER=qutebrowser
-export RTV_BROWSER=$BROWSER
-export TERMINAL=alacritty
-
 # fzf
 export FZF_BASE=/usr/bin/fzf
 export FZF_DEFAULT_OPTS='
-  --color=16
-  --color=fg:-1,bg:-1,hl:9,fg+:15,bg+:-1,hl+:11
-  --color=info:13,prompt:15,spinner:14,pointer:14,marker:9
+  --height 40%
+  --color=dark
+  --color=fg:-1,bg:-1,hl:11
+  --color=fg+:15,bg+:-1,hl+:14
+  --color=info:13,prompt:15,spinner:10
+  --color=pointer:14,marker:9,header:8
 '
-
-# MPD
-export MPD_HOST=localhost
-export MPD_PORT=6600
-
-# toggle-touchpad.sh
-export TOUCHPAD='12'
 
 # vim: set ft=zsh:

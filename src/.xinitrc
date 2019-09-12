@@ -8,9 +8,14 @@
 export BROWSER=qutebrowser
 export RTV_BROWSER=$BROWSER
 export TERMINAL=urxvtc
+export QT_QPA_PLATFORMTHEME=gtk2
+
+# mpd
 export MPD_HOST=localhost
 export MPD_PORT=6600
-export QT_QPA_PLATFORMTHEME=gtk2
+
+# toggle-touchpad.sh
+export TOUCHPAD='12'
 
 export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
