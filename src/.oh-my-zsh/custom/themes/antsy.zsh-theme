@@ -2,11 +2,12 @@
 
 setopt prompt_subst
 
-# fix console and xterm
+# fix RPROMPT, break other things
 if [[ ! $TERM == 'linux' ]]; then
-    ZLE_RPROMPT_INDENT=-1
+    ZLE_RPROMPT_INDENT=0
 fi
 
+# git prompt
 ZSH_THEME_GIT_PROMPT_PREFIX='±'
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
 ZSH_THEME_GIT_PROMPT_DIRTY=''
@@ -19,11 +20,14 @@ ZSH_THEME_GIT_PROMPT_UNMERGED=' ♦'
 ZSH_THEME_GIT_PROMPT_UNTRACKED=' ✱'
 ZSH_THEME_GIT_PROMPT_AHEAD=' ▲'
 
+# python virtualenv prompt
 ZSH_THEME_VIRTUALENV_PREFIX="("
 ZSH_THEME_VIRTUALENV_SUFFIX=")"
 
+# vi-mode indicator
 MODE_INDICATOR="%F{cyan}"
 
+# first line of prompt
 precmd(){
     if [ $UID -eq 0 ]; then
         admin="%F{red}"
@@ -36,9 +40,13 @@ precmd(){
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 
+# second line of prompt, left and right
 PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}$(vi_mode_prompt_info)➜ %F{white}%#%f%b '
 RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
+
+# secondary prompts (when wrapping statement with \)
 PS2="%B%F{black}...%b%f "
+RPS2="%B%F{black}...%b%f"
 
 # colored-man-pages (antsy)
 function man() {
