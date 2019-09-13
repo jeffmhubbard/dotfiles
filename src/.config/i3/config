@@ -290,7 +290,10 @@ for_window [class="^Oomox$"] floating enable focus
 ##
 
 # Wallpaper Shuffler
-exec --no-startup-id walsh
+exec_always --no-startup-id walsh -d $HOME/Wallpapers/Shuffle
+
+# Random lock screen
+exec_always --no-startup-id awful -u $HOME/Wallpapers/Shuffle
 
 # Start polybar
 exec_always --no-startup-id $PBSCRIPTS/load-bar.sh
