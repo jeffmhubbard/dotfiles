@@ -85,13 +85,13 @@ modules-right = clock
 [bar/pythos-bottom]
 inherit = bar/base-bottom
 monitor = HDMI-0
-modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt weather clock
+modules-right = keyboard upd-arch cpu mem fs vol-dt eth-dt weather clock
 
 [bar/pythos-left]
 inherit = bar/base-bottom
 monitor = DVI-I-1
 tray-position = right
-modules-right = keyboard upd-arch cpu mem fs-dt vol-dt eth-dt
+modules-right = keyboard upd-arch cpu mem fs vol-dt eth-dt
 
 [bar/pythos-right]
 inherit = bar/base-bottom
@@ -101,13 +101,13 @@ modules-right = weather clock-full
 
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws clock
+modules-right = keyboard upd-arch cpu temp mem fs vol-ws eth-ws clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard upd-arch cpu temp mem fs-ws vol-ws eth-ws
+modules-right = keyboard upd-arch cpu temp mem fs vol-ws eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
@@ -117,11 +117,12 @@ modules-right = clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch cpu temp mem fs-lt1 bat-lt1 vol-lt1 wifi-lt1 clock
+modules-right = keyboard upd-arch cpu temp mem fs bat-lt1 vol-lt1 wifi-lt1 clock
 
-[bar/pegasus-bottom]
+[bar/openbox-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch bat-lt2 vol-lt2 wifi-lt2 clock
+modules-left = xwindow
+modules-right = upd-arch clock
 
 
 [module/i3]
@@ -315,6 +316,8 @@ interval = 30
 fixed-values = false
 spacing = 1
 
+mount-0 = /
+
 format-mounted = <label-mounted>
 format-mounted-prefix = " "
 format-mounted-prefix-foreground = ${colors.background-alt}
@@ -331,22 +334,6 @@ format-unmounted-padding = 1
 
 label-unmounted = %mountpoint%
 label-unmounted-padding = 0
-
-[module/fs-ws]
-inherit = module/fs
-mount-0 = /
-
-[module/fs-dt]
-inherit = module/fs
-mount-0 = /
-
-[module/fs-lt1]
-inherit = module/fs
-mount-0 = /
-
-[module/fs-lt2]
-inherit = module/fs
-mount-0 = /
 
 
 [module/battery]
@@ -396,12 +383,6 @@ inherit = module/battery
 battery = BAT1
 adapter = ACAD
 
-[module/bat-lt2]
-inherit = module/battery
-battery = BAT0
-adapter = AC
-
-
 [module/pulseaudio]
 type = internal/pulseaudio
 ;sink = alsa_output.pci-0000_00_1b.0.analog-stereo
@@ -446,12 +427,6 @@ sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 use-ui-max = true
 interval = 5
 
-[module/vol-lt2]
-inherit = module/pulseaudio
-sink = alsa_output.pci-0000_00_14.2.analog-stereo
-use-ui-max = true
-interval = 5
-
 
 [module/ethernet]
 type = internal/network
@@ -485,10 +460,6 @@ interface = enp2s0
 inherit = module/ethernet
 interface = enp1s0
 
-[module/eth-lt2]
-inherit = module/ethernet
-interface = enp0s3
-
 
 [module/wireless]
 type = internal/network
@@ -520,10 +491,6 @@ ramp-signal-foreground = ${colors.background-alt}
 [module/wifi-lt1]
 inherit = module/wireless
 interface = wlo1
-
-[module/wifi-lt2]
-inherit = module/wireless
-interface = wlp7s0b1
 
 
 [module/upd-arch]

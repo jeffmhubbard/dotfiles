@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# extbin: pgrep, killall, xrandr, polybar
 
-# polybar/scripts/launch.sh
+# polybar/scripts/load-bar.sh
 #
 # launch polybar based on hostname and displays
 #
+# extbin: pgrep, killall, xrandr, polybar
 
 # kill existing polybar
 killall -q polybar
@@ -14,40 +14,26 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # get hostname
 HOSTNAME="$(hostname -s)"
-MONITORS=$(xrandr --listactivemonitors | wc -l)
 
-# pythos
-if [ "$HOSTNAME" = "pythos" ]; then
-    ((MONITORS--))
-    if [ "$MONITORS" -eq 2 ]; then
+MONITORS=$(xrandr --listactivemonitors | wc -l)
+((MONITORS--))
+
+case "$HOSTNAME" in
+  pythos)
+    if [ "$MONITORS" -eq 2 ]
+    then
         polybar pythos-left &
         sleep 1 &
         polybar pythos-right &
     else
         polybar pythos-bottom &
     fi
-fi
+    ;;
+  dragon) polybar dragon-bottom ;;
+  gargoyle) polybar gargoyle-bottom ;;
+  *) polybar base-bottom ;;
+esac
 
-# dragon
-if [ "$HOSTNAME" = "dragon" ]; then
-    ((MONITORS--))
-    if [ "$MONITORS" -eq 2 ]; then
-        polybar dragon-left &
-        sleep 1 &
-        polybar dragon-right &
-    else
-        polybar dragon-bottom &
-    fi
-fi
+exit 0
 
-# gargoyle
-if [ "$HOSTNAME" = "gargoyle" ]; then
-    polybar gargoyle-bottom &
-fi
-
-# pegasus
-if [ "$HOSTNAME" = "pegasus" ]; then
-    polybar pegasus-bottom &
-fi
-
-# vim: set ft=sh:
+# vim: set ft=sh ts=2 sw=0 et:
