@@ -5,7 +5,7 @@ rofi.width: 320
 rofi.lines: 16
 rofi.columns: 1
 rofi.font: Hack Nerd Font 10
-rofi.bw: 1
+rofi.bw: 2
 rofi.bc: #000000
 rofi.location: 7
 rofi.padding: 2
