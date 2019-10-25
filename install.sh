@@ -3,7 +3,7 @@
 # install.sh
 
 #
-# install dotfiles, zsh, and vim setups
+# install dotfiles, zsh, vim, and tmux setups
 #
 
 SRC_DIR="./src/."
@@ -14,37 +14,38 @@ cat << EOF
 ****** THIS SCRIPT DOES NOT MAKE BACKUPS ******
 ******       USE AT YOUR OWN RISK        ******
 
-You will be prompted to install extras for zsh,
-vim, and tmux. They are optional, but are very
-much recommended (read: required).
-
 EOF
 
-read -r -p "Install? [y/n] " answer
-if [ "$answer" = y ] ; then
-
-    # prompt for zsh extras
-    read -r -p "Run extras/zsh_setup.sh? [y/n] " zanswer
-    if [ "$zanswer" = y ] ; then
-        sh extras/zsh_setup.sh
-    fi
-
-    # prompt for vim extras
-    read -r -p "Run extras/vim_setup.sh? [y/n] " vanswer
-    if [ "$vanswer" = y ] ; then
-        sh extras/vim_setup.sh
-    fi
-
-    # prompt for tmux extras
-    read -r -p "Run extras/tmux_setup.sh? [y/n] " tanswer
-    if [ "$tanswer" = y ] ; then
-        sh extras/tmux_setup.sh
-    fi
-
-    echo "Copying dotfiles..."
-    cp -r "$SRC_DIR" "$DST_DIR"
-
-    echo "Done"
+read -r -e -n1 -p "Continue? [y/n] " dotsIn
+if [ ! "$dotsIn" = y ] ; then
+  echo
+  echo "Wokay?!"
 fi
 
-# vim: set ft=sh:
+# prompt for zsh extras
+read -r -e -n1 -p "Run Zsh Setup? [y/n] " zshIn
+if [ "$zshIn" = y ] ; then
+  bash extras/zsh_setup.sh
+fi
+
+# prompt for vim extras
+read -r -e -n1 -p "Run Vim Setup? [y/n] " vimIn
+if [ "$vimIn" = y ] ; then
+  bash extras/vim_setup.sh
+fi
+
+# prompt for tmux extras
+read -r -e -n1 -p "Run Tmux Setup? [y/n] " tmuxIn
+if [ "$tmuxIn" = y ] ; then
+  bash extras/tmux_setup.sh
+fi
+
+read -r -e -n1 -p "Copy dotfiles? [y/n] " dotsCp
+if [ "$dotsCp" = y ] ; then
+  echo
+  echo "Copying dotfiles..."
+  cp -r "$SRC_DIR" "$DST_DIR"
+  echo "Done"
+fi
+
+# vim: set ft=bash ts=2 sw=0 et:
