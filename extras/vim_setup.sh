@@ -14,6 +14,7 @@ declare -a PLUGINS
 PLUGINS=(
   https://github.com/jeffmhubbard/antsy.vim.git
   https://github.com/w0rp/ale.git
+  https://github.com/dense-analysis/ale.git
   https://github.com/junegunn/fzf.vim.git
   https://github.com/haya14busa/is.vim.git
   https://github.com/scrooloose/nerdtree.git
