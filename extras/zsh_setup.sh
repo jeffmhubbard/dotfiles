@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 # extras/zsh_setup.sh
-
-#
 # install oh-my-zsh and plugins
-#
 
 PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
@@ -26,6 +23,7 @@ do
   git clone "${url}" "${PLUGIN_DIR}"/"${repo}"
 done
 
-echo "Done"
+echo "Complete"
+exit 0
 
-# vim: set ft=bash ts=2 sw=0 et:
+# vim: ft=sh ts=2 sw=0 et:

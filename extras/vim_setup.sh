@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 # extras/vim_setup.sh
-
-#
 # install pathogen and plugins
-#
 
 PATHOGEN="https://tpo.pe/pathogen.vim"
 BUNDLE_DIR="$HOME/.vim/bundle"
@@ -30,9 +27,10 @@ PLUGINS=(
   https://github.com/mhinz/vim-signify.git
   https://github.com/tpope/vim-surround.git
   https://github.com/Yggdroot/indentLine.git
-  https://github.com/skywind3000/asyncrun.vim.git
-  https://github.com/ycm-core/YouCompleteMe
 )
+#https://github.com/skywind3000/asyncrun.vim.git
+#https://github.com/ycm-core/YouCompleteMe
+
 
 # create directories
 echo "Creating directories..."
@@ -50,6 +48,7 @@ do
   git clone "${url}" "${BUNDLE_DIR}"/"${repo}"
 done
 
-echo "Done"
+echo "Complete"
+exit 0
 
-# vim: set ft=bash ts=2 sw=0 et:
+# vim: ft=sh ts=2 sw=0 et:
