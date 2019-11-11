@@ -21,6 +21,9 @@ set new_mail_command="dunstify -a neomutt -u normal -t 10000 'New Messages' '%n 
 set beep = no
 set sendmail="/usr/sbin/ssmtp"
 
+set ts_enabled = yes
+set ts_status_format = "NeoMutt [%f]%?u? (%u unread)?"
+
 set use_from = yes
 set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
