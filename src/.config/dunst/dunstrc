@@ -20,7 +20,7 @@ markup = full
 alignment = left
 icon_position = left
 max_icon_size = 48
-icon_path = /usr/share/icons/oomox-antsy/actions/scalable:/usr/share/icons/oomox-antsy/status/scalable:/usr/share/icons/oomox-antsy/stock/scalable
+icon_path = /usr/share/icons/Antsy/actions/scalable:/usr/share/icons/Antsy/status/scalable:/usr/share/icons/Antsy/stock/scalable
 word_wrap = no
 ignore_newline = no
 line_height = 0
@@ -66,11 +66,11 @@ timeout = 0
 
 #[music]
 #appname = mpnotd
-#new_icon = "/usr/share/icons/oomox-antsy/mimetypes/scalable/audio-x-generic.svg"
+#new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/audio-x-generic.svg"
 
 [mail]
 appname = neomutt
-new_icon = "/usr/share/icons/oomox-antsy/apps/scalable/internet-mail.svg"
+new_icon = "/usr/share/icons/Antsy/apps/scalable/internet-mail.svg"
 
 
 # vim: set ft=cfg:
