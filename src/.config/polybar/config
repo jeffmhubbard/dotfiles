@@ -85,7 +85,7 @@ modules-right = clock
 [bar/pythos-bottom]
 inherit = bar/base-bottom
 monitor = HDMI-0
-modules-right = keyboard upd-arch cpu mem fs vol-dt eth-dt weather clock
+modules-right = keyboard upd-arch vol-dt eth-dt weather clock
 
 [bar/pythos-left]
 inherit = bar/base-bottom
@@ -101,28 +101,23 @@ modules-right = weather clock-full
 
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch cpu temp mem fs vol-ws eth-ws clock
+modules-right = keyboard upd-arch vol-ws eth-ws weather clock
 
 [bar/dragon-left]
 inherit = bar/base-bottom
 monitor = VGA-1
 tray-position = right
-modules-right = keyboard upd-arch cpu temp mem fs vol-ws eth-ws
+modules-right = keyboard upd-arch vol-ws eth-ws
 
 [bar/dragon-right]
 inherit = bar/base-bottom
 monitor = DP-1
 tray-position =
-modules-right = clock-full
+modules-right = weather clock-full
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch cpu temp mem fs bat-lt1 vol-lt1 wifi-lt1 clock
-
-[bar/openbox-bottom]
-inherit = bar/base-bottom
-modules-left = xwindow
-modules-right = upd-arch clock
+modules-right = keyboard upd-arch bat-lt1 vol-lt1 wifi-lt1 weather clock
 
 
 [module/i3]

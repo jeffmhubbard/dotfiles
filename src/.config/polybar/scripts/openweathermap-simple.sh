@@ -1,11 +1,11 @@
 #!/bin/sh
 
-KEY="5a8ee2a1219f6211e45343a8f8276118"
 CITY="4671654"
 UNITS="imperial"
 SYMBOL=""
 COLOR="#7f7f7f"
 API="https://api.openweathermap.org/data/2.5"
+KEY="5a8ee2a1219f6211e45343a8f8276118"
 
 # use nerd fonts
 get_icon() {
@@ -28,7 +28,6 @@ get_icon() {
         50n) icon="";;
         *) icon="";
     esac
-
     echo $icon
 }
 
@@ -38,7 +37,6 @@ if [ -n "$CITY" ]; then
     else
         CITY_PARAM="q=$CITY"
     fi
-
     weather=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS")
 else
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
@@ -46,7 +44,6 @@ else
     if [ -n "$location" ]; then
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
-
         weather=$(curl -sf "$API/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
     fi
 fi
