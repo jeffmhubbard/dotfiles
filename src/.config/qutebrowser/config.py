@@ -135,4 +135,6 @@ c.fonts.prompts = "10pt monospace"
 c.fonts.statusbar = "10pt monospace"
 c.fonts.tabs = "10pt monospace"
 
+c.tabs.show = "switching"
+
 # vim: set ft=python :
