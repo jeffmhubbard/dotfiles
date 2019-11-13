@@ -90,29 +90,14 @@ auto-reload yes
 #
 # bind-key ^R reload-all
 
-bind-key j down
-bind-key k up
+bind-key j down feedlist
+bind-key k up feedlist
 bind-key j next articlelist
 bind-key k prev articlelist
-bind-key l next-feed articlelist
-bind-key h prev-feed articlelist
-bind-key l next-unread
-bind-key h prev-unread
-bind-key e end
-bind-key E home
-bind-key g pageup
-bind-key G pagedown
-bind-key o open
-bind-key b open-in-browser-and-mark-read
-bind-key B open-in-browser
-bind-key w toggle-source-view
-bind-key q quit
-bind-key v toggle-article-read
-bind-key r reload
-bind-key R reload-all
-bind-key D pb-download
-bind-key u show-urls
-bind-key x pb-delete
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key j down article
+bind-key k up article
 
 ####  bookmark-autopilot
 #
@@ -124,7 +109,7 @@ bind-key x pb-delete
 #
 # Default value: no
 #
-# bookmark-autopilot yes
+bookmark-autopilot yes
 
 ####  bookmark-cmd
 #
@@ -146,7 +131,7 @@ bind-key x pb-delete
 #
 # Default value: no
 #
-# bookmark-interactive yes
+bookmark-interactive no
 
 ####  browser
 #
@@ -213,7 +198,7 @@ color article            default    default
 #
 # Default value: no
 #
-# confirm-exit yes
+confirm-exit yes
 
 ####  cookie-cache
 #
@@ -930,7 +915,7 @@ include "~/.newsboat/colors"
 #
 # Default value: no
 #
-# notify-xterm yes
+notify-xterm yes
 
 ####  ocnews-flag-star
 #
