@@ -74,6 +74,9 @@ endif
 set undodir=~/.vim/undo
 set undofile
 
+" Move viminfo
+set viminfo+=n~/.vim/viminfo
+ 
 " Search options
 set hlsearch
 set incsearch
@@ -156,10 +159,16 @@ let g:lightline = {
     \
     \ },
     \ 'component_function': {
-    \   'gitbranch': 'fugitive#head'
+    \    'gitbranch': 'LightlineFugitive'
     \ },
     \ }
-
+    function! LightlineFugitive()
+        if exists('*fugitive#head')
+            let branch = fugitive#head()
+            return branch !=# '' ? ' '.branch : ''
+        endif
+        return ''
+    endfunction
 
 " maximbaz/lightline-ale
 let g:lightline.component_expand = {
