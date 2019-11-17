@@ -135,8 +135,8 @@ bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # volume
-bindsym $super+Prior exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym $super+Next exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym $super+Prior exec --no-startup-id $I3SCRIPTS/pactl-volume.sh -u 5
+bindsym $super+Next exec --no-startup-id $I3SCRIPTS/pactl-volume.sh -d 5
 
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
@@ -284,6 +284,12 @@ for_window [class="^Lxappearance$"] floating enable focus
 
 assign [class="^Oomox$"] 5
 for_window [class="^Oomox$"] floating enable focus
+
+assign [class="^VirtualBox Manager$"] 5
+for_window [class="^VirtualBox Manager$"] floating enable focus
+
+assign [class="^VirtualBox Machine$"] 5
+for_window [class="^VirtualBox Machine$"] floating enable focus
 
 ##
 ## auto start

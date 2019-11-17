@@ -17,6 +17,9 @@ export MPD_PORT=6600
 # toggle-touchpad.sh
 export TOUCHPAD='12'
 
+# pactl-volume.sh
+export PACTLSINK='alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1'
+
 export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
