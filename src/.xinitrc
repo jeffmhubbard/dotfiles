@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# extbin: xrdb, xset, xsetroot, feh, compton, unclutter,
+# extbin: xrdb, xset, xsetroot, feh, picom, unclutter,
 #         dunst, xss-lock, awful, start-pulseaudio-x11,
 #         urxvtd, i3, udiskie, polkit-gnome
 
@@ -49,7 +49,7 @@ start-pulseaudio-x11 &
 udiskie &
 
 # X compositor
-compton &
+picom &
 
 # Terminal emulator
 urxvtd -q -o -f &
