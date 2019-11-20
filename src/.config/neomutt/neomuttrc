@@ -35,6 +35,7 @@ set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
+set mailcap_path = ~/.mailcap
 auto_view text/html
 
 # --- Editor ---

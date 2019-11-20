@@ -14,7 +14,9 @@ set sidebar_indent_string = '- '
 set sidebar_new_mail_only = no
 set sidebar_next_new_wrap = yes
 set sidebar_divider_char = '│'
-set sidebar_format = '  %B %?N?(%N)?%* %S '
+set sidebar_format = ' %B %?F?%F?%* %?N?%N ? '
+#set sidebar_format = ' %B %?F?(%F)?%* %?N?%N/?%S'
+
 set sidebar_sort_method = path
 
 # --- Bindings ---
