@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# extbin: xrdb, xset, xsetroot, feh, picom, unclutter,
+# extbin: xrdb, xset, xsetroot, feh, compton, unclutter,
 #         dunst, xss-lock, awful, start-pulseaudio-x11,
 #         urxvtd, i3, udiskie, polkit-gnome
 
@@ -17,9 +17,7 @@ export MPD_PORT=6600
 # toggle-touchpad.sh
 export TOUCHPAD='12'
 
-# pactl-volume.sh
-export PACTLSINK='alsa_output.pci-0000_01_00.1.hdmi-stereo-extra1'
-
+#
 export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
@@ -31,7 +29,8 @@ xsetroot -cursor_name left_ptr &
 
 # Lock screen
 xset s 600 180 &
-xss-lock -l -- awful --lock &
+#xss-lock -l -- awful --lock &
+xss-lock -l -- multilockscreen -l blur &
 
 # Hide idle mouse cursor
 unclutter -root &
@@ -44,6 +43,9 @@ dunst &
 
 # Sound daemon
 start-pulseaudio-x11 &
+
+# Volume OSD
+(tail -f "$HOME/.cache/xob/volume.fifo" | xob -s volume)&
 
 # Storage
 udiskie &

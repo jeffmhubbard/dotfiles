@@ -135,8 +135,9 @@ bindsym $super+F11 exec --no-startup-id mpc toggle
 bindsym $super+F12 exec --no-startup-id mpc -q next
 
 # volume
-bindsym $super+Prior exec --no-startup-id $I3SCRIPTS/pactl-volume.sh -u 5
-bindsym $super+Next exec --no-startup-id $I3SCRIPTS/pactl-volume.sh -d 5
+bindsym $super+Prior exec --no-startup-id $I3SCRIPTS/volume-osd.sh -u 5
+bindsym $super+Next exec --no-startup-id $I3SCRIPTS/volume-osd.sh -d 5
+bindsym $super+$shift+Next exec --no-startup-id $I3SCRIPTS/volume-osd.sh -m
 
 # rofi-pass
 bindsym $super+$alt+p exec rofi-pass
