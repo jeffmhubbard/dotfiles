@@ -10,7 +10,6 @@ AUTOLOAD_DIR="$HOME/.vim/autoload"
 declare -a PLUGINS
 PLUGINS=(
   https://github.com/jeffmhubbard/antsy.vim.git
-  https://github.com/w0rp/ale.git
   https://github.com/dense-analysis/ale.git
   https://github.com/junegunn/fzf.vim.git
   https://github.com/haya14busa/is.vim.git
@@ -25,12 +24,8 @@ PLUGINS=(
   https://github.com/airblade/vim-gitgutter.git
   https://github.com/farmergreg/vim-lastplace.git
   https://github.com/mhinz/vim-signify.git
-  https://github.com/tpope/vim-surround.git
   https://github.com/Yggdroot/indentLine.git
 )
-#https://github.com/skywind3000/asyncrun.vim.git
-#https://github.com/ycm-core/YouCompleteMe
-
 
 # create directories
 echo "Creating directories..."

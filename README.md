@@ -6,46 +6,46 @@ Antsy
 ## Included
 
 #### Shell
-* Oh My Zsh prompt with git, virtualenv, vi-mode, and exit codes
-* fast-syntax-highlighting theme
-* fzf theme
+* oh-my-zsh prompt (git, virtualenv, vi-mode, and exit code)
+* fast-syntax-highlighting
+* zsh-autosuggestions
+* tmux
+* fzf
+* fd
+* LS_COLORS
 * alt bash prompt
-* colored man pages
-* dircolors theme
-* tmux status
-* ranger colorscheme
-* Vim colorscheme (separate repo)
 
 #### Desktop
-* i3-gaps config
+* i3-gaps
 * polybar 
-* rofi menus
+* rofi
 * dunst
-* compton
+* picom
 * wmfocus
-* Xresources (URxvt, Xft, Xcursor)
-* oomox template (GTK2/3, icons)
-* fontconfig
+* xob
 
 #### Apps
+* rxvt-unicode
+* vim
 * qutebrowser
-* NeoMutt with sidebar
+* ranger
+* neomutt
+* newsboat
 * rtv
 * zathura
 * ncmpcpp
-* CAVA
+* cava
 * irssi
 * neofetch
 
 #### Extra
-* Wallpaper set (1920x1080)
-* XDM theme with polybar and compton
+* [GTK2/3 theme](https://github.com/jeffmhubbard/antsy-gtk-theme)
+* [Icon theme](https://github.com/jeffmhubbard/antsy-icon-theme)
+* [Wallpapers](https://github.com/jeffmhubbard/antsy-wallpaper)
+* [XDM theme](https://github.com/jeffmhubbard/antsy-xdm-theme)
 
 ## Tips (or reminders for me)
-* Do not use `install.sh`, that's for me
 * Install `rxvt-unicode-cvs-patched-wideglyphs` from AUR
-* Install `nerd-font-complete` from AUR
-* Run `fast-theme antsy` to set fast-syntax-highlighting theme
-* Run `install.py` in `~/.vim/bundle/YouCompleteMe`
+* Install `nerd-font-hack` from AUR
 * Turn around, don't drown
 
