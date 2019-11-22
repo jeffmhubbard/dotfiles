@@ -22,7 +22,7 @@ export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
 # Load X settings
-xrdb -merge ~/.Xresources
+xrdb -merge $HOME/.Xresources
 
 # Extra X settings
 xsetroot -cursor_name left_ptr &
@@ -44,8 +44,8 @@ dunst &
 # Sound daemon
 start-pulseaudio-x11 &
 
-# Volume OSD
-(tail -f "$HOME/.cache/xob/volume.fifo" | xob -s volume)&
+# xob
+$HOME/.config/xob/load-bars.sh &
 
 # Storage
 udiskie &
