@@ -13,8 +13,8 @@ declare -A OPTIONS
 OPTIONS=(
     # - menuitem -------- command
     [" Lock Desktop"]="awful --lock"
-    [" Display Settings"]="$I3SCRIPTS/rofi_randr.zsh"
-    [" Layout Manager"]="$I3SCRIPTS/layout_manager.sh"
+    [" Display Settings"]="$I3SCRIPTS/rofi-randr.zsh"
+    [" Layout Manager"]="$I3SCRIPTS/layout-manager.sh"
     [" Reload Config"]="i3-msg reload"
     [" Restart Desktop"]="i3-msg restart"
     [" Exit Desktop"]="i3-msg exit"
