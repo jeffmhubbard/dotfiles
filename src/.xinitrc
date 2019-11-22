@@ -29,8 +29,7 @@ xsetroot -cursor_name left_ptr &
 
 # Lock screen
 xset s 600 180 &
-#xss-lock -l -- awful --lock &
-xss-lock -l -- multilockscreen -l blur &
+xss-lock -l -- awful --lock &
 
 # Hide idle mouse cursor
 unclutter -root &
