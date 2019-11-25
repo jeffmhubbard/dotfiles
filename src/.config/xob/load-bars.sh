@@ -6,12 +6,12 @@ BARS=(volume backlight)         # bars must be specified in styles.cfg
 CACHE_DIR="$HOME/.cache/xob"    # directory where pipes will be created
 
 # create cache dir
-mkdir "$CACHE_DIR" 2&> /dev/null
+mkdir "$CACHE_DIR" &> /dev/null
 
 for bar in "${BARS[@]}"; do
   # make pipe
   pipe="$CACHE_DIR/$bar.fifo"
-  mkfifo "$pipe" 2&> /dev/null
+  mkfifo "$pipe" &> /dev/null
   # watch pipe
   (tail -f "$pipe" | xob -s "$bar")&
 done
