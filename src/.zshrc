@@ -20,6 +20,7 @@ plugins=( \
     fd \
     pass \
     git \
+    forgit \
     tmux \
     virtualenv \
     fast-syntax-highlighting \
@@ -57,13 +58,14 @@ eval $(dircolors ~/.dircolors)
 
 # aliases
 alias vi="vim"
+alias ip="ip -c"
 
 # update plugins
 alias vim_upd="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
 alias omz_upd="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
 
 # package browser
-alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --height=100% --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # google music
 alias pf="playfetch"
@@ -77,5 +79,4 @@ alias month="gcalcli calm"
 alias weather="curl -s 'wttr.in/aus?0'"
 alias forecast="curl -s 'wttr.in/aus'"
 
-#alias afetch="afetch | nms -caf cyan"
 # vim: set ft=zsh:
