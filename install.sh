@@ -48,7 +48,7 @@ read -r -e -n1 -p "Copy dotfiles? [y/n] " dotsCp
 if [ "$dotsCp" = y ] ; then
   echo
   echo "Copying dotfiles..."
-  cp -r "$SRC_DIR" "$DST_DIR"
+  cp -bru "$SRC_DIR" "$DST_DIR"
 fi
 
 echo "Complete"

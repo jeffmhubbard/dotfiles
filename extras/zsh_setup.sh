@@ -9,6 +9,8 @@ declare -a PLUGINS
 PLUGINS=(
   https://github.com/zdharma/fast-syntax-highlighting.git
   https://github.com/zsh-users/zsh-autosuggestions.git
+  https://github.com/MichaelAquilina/zsh-auto-notify.git
+  https://github.com/wfxr/forgit.git
 )
 
 # install oh-my-zsh

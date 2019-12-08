@@ -25,6 +25,7 @@ plugins=( \
     virtualenv \
     fast-syntax-highlighting \
     zsh-autosuggestions \
+    auto-notify \
     history \
 )
 
@@ -57,15 +58,19 @@ export SAVEHIST=1000
 eval $(dircolors ~/.dircolors)
 
 # aliases
-alias vi="vim"
+#alias vi="vim" ### STOP TYPING VI ALREADY
 alias ip="ip -c"
 
 # update plugins
 alias vim_upd="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
 alias omz_upd="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
+alias tmux_upd="~/.tmux/plugins && find . -name .git -type d -execdir git pull ';'"
 
 # package browser
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --height=100% --bind 'enter:execute(pacman -Qil {} | less)'"
+
+# fast pacman mirrorlist
+alias pacfast="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
 
 # google music
 alias pf="playfetch"
