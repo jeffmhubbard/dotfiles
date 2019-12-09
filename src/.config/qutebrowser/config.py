@@ -24,14 +24,13 @@ c.url.searchengines = {
     "DEFAULT": "https://duckduckgo.com/?q={}",
     "d": "https://duckduckgo.com/?q={}",
     "g": "https://www.google.com/search?q={}",
-    "wa": "https://wiki.archlinux.org/?search={}",
+    "aw": "https://wiki.archlinux.org/?search={}",
 }
 c.confirm_quit = ["downloads"]
 c.auto_save.session = False
 c.hints.mode = "letter"
 c.window.title_format = "{perc}{current_title}"
 c.completion.height = "30%"
-
 c.colors.webpage.bg = xres["*color7"]
 c.hints.border = "0px solid " + xres["*color0"]
 
@@ -135,6 +134,7 @@ c.fonts.prompts = "10pt monospace"
 c.fonts.statusbar = "10pt monospace"
 c.fonts.tabs = "10pt monospace"
 
-c.tabs.show = "switching"
+c.tabs.show = "multiple"
+c.downloads.position = "bottom"
 
 # vim: set ft=python :

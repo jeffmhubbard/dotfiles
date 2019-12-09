@@ -1,8 +1,9 @@
 d https://duckduckgo.com/
 g https://www.google.com/
-aw https://wiki.archlinux.org/
+arch https://www.archlinux.org/
 aur https://aur.archlinux.org/
 bbs https://bbs.archlinux.org/
+awiki https://wiki.archlinux.org/
 wiki https://www.wikipedia.org/
 github https://github.com/
 pydoc https://docs.python.org/3/
