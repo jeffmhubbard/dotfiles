@@ -25,8 +25,9 @@ plugins=( \
     virtualenv \
     fast-syntax-highlighting \
     zsh-autosuggestions \
-    auto-notify \
     history \
+    auto-notify \
+    web-search \
 )
 
 # oh-my-zsh init
@@ -56,6 +57,10 @@ export SAVEHIST=1000
 
 # LS_COLORS
 eval $(dircolors ~/.dircolors)
+
+# auto-notify
+AUTO_NOTIFY_IGNORE+=("tmux" "pacman" "diff" "ranger" "neomutt" "newsboat" "irssi" "cava")
+AUTO_NOTIFY_IGNORE+=("git add" "git commit" "git diff" "git log" "fzf")
 
 # aliases
 #alias vi="vim" ### STOP TYPING VI ALREADY
