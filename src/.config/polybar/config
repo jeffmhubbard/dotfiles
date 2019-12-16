@@ -85,13 +85,13 @@ modules-right = clock
 [bar/pythos-bottom]
 inherit = bar/base-bottom
 monitor = HDMI-0
-modules-right = keyboard upd-arch volume eth-dt weather clock
+modules-right = keyboard updates ethernet1 weather clock
 
 [bar/pythos-left]
 inherit = bar/base-bottom
 monitor = DVI-I-1
 tray-position = right
-modules-right = keyboard upd-arch cpu mem fs volume eth-dt
+modules-right = keyboard updates cpu mem fs ethernet1
 
 [bar/pythos-right]
 inherit = bar/base-bottom
@@ -101,23 +101,11 @@ modules-right = weather clock-full
 
 [bar/dragon-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch volume eth-ws weather clock
-
-[bar/dragon-left]
-inherit = bar/base-bottom
-monitor = VGA-1
-tray-position = right
-modules-right = keyboard upd-arch volume eth-ws
-
-[bar/dragon-right]
-inherit = bar/base-bottom
-monitor = DP-1
-tray-position =
-modules-right = weather clock-full
+modules-right = keyboard updates ethernet3 weather clock
 
 [bar/gargoyle-bottom]
 inherit = bar/base-bottom
-modules-right = keyboard upd-arch bat-lt1 volume wifi-lt1 weather clock
+modules-right = keyboard updates battery2 wifi2 weather clock
 
 
 [module/i3]
@@ -131,13 +119,13 @@ wrapping-scroll = false
 reverse-scroll = false
 fuzzy-match = true
 
-;               
+;               
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-5 = 6;
 ws-icon-default = 
 
 format = <label-state> <label-mode>
@@ -161,46 +149,6 @@ label-visible-padding = 1
 label-urgent = %icon%
 label-urgent-underline = ${colors.urgent}
 label-urgent-padding = 1
-
-
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = true
-inline-mode = false
-enable-click = true
-enable-scroll = false
-reverse-scroll = false
-fuzzy-match = false
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-default = 
-
-format = <label-state> <label-mode>
-format-padding = 0
-
-label-focused = %icon%
-label-focused-underline = ${colors.primary}
-label-focused-padding = 1
-
-label-dimmed-foreground = ${colors.background-alt}
-label-dimmed-focused-underline = ${colors.foreground}
-label-dimmed-padding = 1
-
-label-occupied= %icon%
-label-occupied-underline = ${colors.background-alt}
-label-occupied-padding = 1
-
-label-urgent = %icon%
-label-urgent-underline = ${colors.urgent}
-label-urgent-padding = 1
-
-label-empty = %icon%
-label-empty-padding = 1
 
 
 [module/xwindow]
@@ -373,42 +321,13 @@ ramp-capacity-4 = ""
 ramp-capacity-foreground = ${colors.background-alt}
 ramp-capacity-framerate = 500
 
-[module/bat-lt1]
+[module/battery2]
 inherit = module/battery
 battery = BAT1
 adapter = ACAD
-
-[module/pulseaudio]
-type = internal/pulseaudio
-;sink = alsa_output.pci-0000_00_1b.0.analog-stereo
-use-ui-max = true
-interval = 5
-
-format-volume = <ramp-volume> <label-volume>
-format-volume-prefix-foreground = ${colors.background-alt}
-format-volume-padding = 1
-
-label-volume = %percentage%%
-label-volume-padding = 0
-
-format-muted-prefix = " "
-format-muted-prefix-foreground = ${colors.background-alt}
-format-muted-underline = ${colors.alert}
-format-muted-padding = 1
-
-label-muted = "---"
-label-muted-padding = 0
-
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
-ramp-volume-foreground = ${colors.background-alt}
-
-[module/volume]
-inherit = module/pulseaudio
-sink = $PACTLSINK
-use-ui-max = true
-interval = 5
+format-charging = <animation-charging>
+format-discharging = <ramp-capacity>
+format-full = 
 
 
 [module/ethernet]
@@ -431,52 +350,38 @@ format-disconnected-padding = 1
 label-disconnected = %ifname%
 label-disconnected-padding = 0
 
-[module/eth-ws]
-inherit = module/ethernet
-interface = eno1
-
-[module/eth-dt]
+[module/ethernet1]
 inherit = module/ethernet
 interface = enp2s0
 
-[module/eth-lt1]
+[module/ethernet2]
 inherit = module/ethernet
 interface = enp1s0
+
+[module/ethernet3]
+inherit = module/ethernet
+interface = eno1
 
 
 [module/wireless]
 type = internal/network
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = "%{A1:urxvtc -title wifimenu -e sudo wifi-menu:}%{A}"
+format-connected-foreground = ${colors.background-alt}
 format-connected-underline = ${colors.secondary}
 format-connected-padding = 1
 
-label-connected = %essid%
-label-connected-padding = 0
-
-format-disconnected = <label-disconnected>
-format-disconnected-prefix = " "
-format-disconnected-prefix-foreground = ${colors.background-alt}
+format-disconnected = "睊"
+format-disconnected-foreground = ${colors.background-alt}
 format-disconnected-underline = ${colors.alert}
 format-disconnected-padding = 1
 
-label-disconnected = %ifname%
-label-disconnected-padding = 0
-
-ramp-signal-0 = ""
-ramp-signal-1 = ""
-ramp-signal-2 = ""
-ramp-signal-3 = ""
-ramp-signal-4 = ""
-ramp-signal-foreground = ${colors.background-alt}
-
-[module/wifi-lt1]
+[module/wifi2]
 inherit = module/wireless
 interface = wlo1
 
-
-[module/upd-arch]
+[module/updates]
 type = custom/script
 exec = $PBSCRIPTS/arch-updates.sh
 interval = 120
@@ -489,9 +394,10 @@ format-padding = 1
 label = %output%
 label-padding = 0
 
+
 [module/weather]
 type = custom/script
-exec = $PBSCRIPTS/openweathermap-simple.sh
+exec = $PBSCRIPTS/weather-icon.sh
 interval = 600
 
 format-padding = 1
@@ -499,4 +405,21 @@ format-padding = 1
 label = %output%
 label-padding = 0
 
-;vim: set filetype=dosini
+
+[module/bluetooth]
+type = custom/script
+exec = $PBSCRIPTS/system-bluetooth-bluetoothctl.sh
+tail = true
+click-left = $PBSCRIPTS/system-bluetooth-bluetoothctl.sh --toggle &
+interval = 120
+
+format-prefix = " "
+format-prefix-foreground = ${colors.background-alt}
+format-underline = ${colors.urgent}
+format-padding = 1
+
+label = %output%
+label-padding = 0
+
+
+;vim: ft=dosini

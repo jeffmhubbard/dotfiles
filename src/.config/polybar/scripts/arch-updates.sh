@@ -1,13 +1,10 @@
 #!/usr/bin/env bash
 
-#
 # arch-updates.sh
-#
 # Check for Arch repo and AUR updates
-#
 
 REPO_CMD="checkupdates"
-AUR_CMD="auracle sync -q"
+AUR_CMD="pacman -Q | aur vercmp"
 
 DISPLAY_TEXT=""
 SEPARATOR="%{F#818383}+%{F-}"
