@@ -9,6 +9,9 @@ export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
 
+# 
+export BROWSER=qutebrowser
+
 # fzf
 export FZF_BASE=/usr/bin/fzf
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
@@ -33,5 +36,6 @@ FORGIT_FZF_DEFAULT_OPTS="
 
 # auto-notify
 export AUTO_NOTIFY_THRESHOLD=30
+export AUTO_NOTIFY_WHITELIST=("pacman" "aur" "unzip" "tar" "wget" "curl")
 
 # vim: set ft=zsh:

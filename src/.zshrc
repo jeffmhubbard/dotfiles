@@ -58,12 +58,8 @@ export SAVEHIST=1000
 # LS_COLORS
 eval $(dircolors ~/.dircolors)
 
-# auto-notify
-AUTO_NOTIFY_IGNORE+=("tmux" "pacman" "diff" "ranger" "neomutt" "newsboat" "irssi" "cava")
-AUTO_NOTIFY_IGNORE+=("git add" "git commit" "git diff" "git log" "fzf")
-
 # aliases
-#alias vi="vim" ### STOP TYPING VI ALREADY
+alias vi="echo -e '\e[91mSTOP TYPING VI:\e[0m vim'"
 alias ip="ip -c"
 
 # update plugins
@@ -75,7 +71,7 @@ alias tmux_upd="~/.tmux/plugins && find . -name .git -type d -execdir git pull '
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --height=100% --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # fast pacman mirrorlist
-alias pacfast="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+alias pacfast="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist --verbose"
 
 # google music
 alias pf="playfetch"
