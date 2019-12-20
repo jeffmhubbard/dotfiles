@@ -136,5 +136,6 @@ c.fonts.tabs = "10pt monospace"
 
 c.tabs.show = "multiple"
 c.downloads.position = "bottom"
+c.statusbar.hide = True
 
 # vim: set ft=python :
