@@ -1,8 +1,9 @@
 [Desktop Entry]
 Type=Application
 Name=ranger
+GenericName=File Manager
 Comment=Launches the ranger file manager
-Icon=utilities-terminal
+Icon=file-manager
 Terminal=true
 Exec=ranger
 Categories=ConsoleOnly;System;FileTools;FileManager
