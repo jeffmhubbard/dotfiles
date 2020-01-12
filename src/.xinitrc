@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-# extbin: xrdb, xset, xsetroot, feh, compton, unclutter,
-#         dunst, xss-lock, awful, start-pulseaudio-x11,
-#         urxvtd, i3, udiskie, polkit-gnome
+# extbin: xrdb, xset, xsetroot, feh, picom, unclutter,
+#         dunst, xss-lock, xob, start-pulseaudio-x11,
+#         urxvtd, i3, udiskie, polkit-gnome, awful
 
 # Environment variables
-export BROWSER=qutebrowser
-export RTV_BROWSER=$BROWSER
 export TERMINAL=urxvtc
 export QT_QPA_PLATFORMTHEME=gtk2
 
@@ -15,9 +13,9 @@ export MPD_HOST=localhost
 export MPD_PORT=6600
 
 # toggle-touchpad.sh
-export TOUCHPAD='12'
+#export TOUCHPAD='10'
 
-#
+# script paths
 export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
@@ -43,7 +41,7 @@ dunst &
 # Sound daemon
 start-pulseaudio-x11 &
 
-# xob
+# Volume and brightness bars
 $HOME/.config/xob/load-bars.sh &
 
 # Storage
@@ -58,4 +56,4 @@ urxvtd -q -o -f &
 # Start window manager
 exec i3
 
-# vim: set ft=sh:
+# vim: set ft=sh ts=2 sw=0 et:
