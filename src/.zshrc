@@ -10,24 +10,24 @@ COMPLETION_WAITING_DOTS="true"
 
 # oh-my-zsh plugins
 plugins=( \
-    archlinux \
-    systemd \
-    command-not-found \
-    ssh-agent \
-    gpg-agent \
-    vi-mode \
-    fzf \
-    fd \
-    pass \
-    git \
-    forgit \
-    tmux \
-    virtualenv \
-    fast-syntax-highlighting \
-    zsh-autosuggestions \
-    history \
-    auto-notify \
-    web-search \
+  archlinux \
+  systemd \
+  command-not-found \
+  ssh-agent \
+  gpg-agent \
+  vi-mode \
+  fzf \
+  fd \
+  pass \
+  git \
+  forgit \
+  tmux \
+  virtualenv \
+  fast-syntax-highlighting \
+  zsh-autosuggestions \
+  history \
+  auto-notify \
+  web-search \
 )
 
 # oh-my-zsh init
@@ -63,19 +63,15 @@ alias vi="echo -e '\e[91mSTOP TYPING VI:\e[0m vim'"
 alias ip="ip -c"
 
 # update plugins
-alias vim_upd="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
-alias omz_upd="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
-alias tmux_upd="~/.tmux/plugins && find . -name .git -type d -execdir git pull ';'"
+alias update_vim_plugins="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
+alias update_zsh_plugins="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
+alias update_tmux_plugins="~/.tmux/plugins && find . -name .git -type d -execdir git pull ';'"
 
 # package browser
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --height=100% --bind 'enter:execute(pacman -Qil {} | less)'"
 
 # fast pacman mirrorlist
 alias pacfast="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist --verbose"
-
-# google music
-alias pf="playfetch"
-alias pfsh="playfetch shell"
 
 # calendar
 alias week="gcalcli calw"
@@ -85,4 +81,4 @@ alias month="gcalcli calm"
 alias weather="curl -s 'wttr.in/aus?0'"
 alias forecast="curl -s 'wttr.in/aus'"
 
-# vim: set ft=zsh:
+# vim: set ft=zsh ts=2 sw=0 et:

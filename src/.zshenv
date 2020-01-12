@@ -9,9 +9,6 @@ export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
 
-# 
-export BROWSER=qutebrowser
-
 # fzf
 export FZF_BASE=/usr/bin/fzf
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
@@ -26,16 +23,17 @@ export FZF_DEFAULT_OPTS="
 "
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+# forgit
 FORGIT_FZF_DEFAULT_OPTS="
-    --exact
-    --border
-    --cycle
-    --reverse
-    --height '80%'
+  --exact
+  --border
+  --cycle
+  --reverse
+  --height '80%'
 "
 
 # auto-notify
-export AUTO_NOTIFY_THRESHOLD=30
-export AUTO_NOTIFY_WHITELIST=("pacman" "aur" "unzip" "tar" "wget" "curl")
+export AUTO_NOTIFY_THRESHOLD=60
+export AUTO_NOTIFY_WHITELIST=("pacman" "aur" "makepkg" "pip" "wget" "curl" "tar" "unzip" "dd")
 
-# vim: set ft=zsh:
+# vim: set ft=zsh ts=2 sw=0 et:
