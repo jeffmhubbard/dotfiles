@@ -1,0 +1,13 @@
+[user]
+	email = jeffmhubbard@gmail.com
+	name = Jeff M. Hubbard
+[core]
+	editor = vim
+[web]
+    browser = qutebrowser
+[color]
+    ui = true
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false

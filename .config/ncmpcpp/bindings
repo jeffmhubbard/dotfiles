@@ -1,0 +1,6 @@
+# ncmpcpp/bindings
+
+#def_key "ctrl-`"
+#  run_external_command "false"
+
+# vim: set ft=cfg :

@@ -1,0 +1,29 @@
+# awful config
+
+# Defaults
+barcolor=ffffff19
+typingcolor=00ff0080
+deletecolor=ffff0080
+authcolor=00ffff80
+errorcolor=ff000080
+textcolor=ffffff99
+subtextcolor=7f7f7f99
+font="NotoSans Nerd Font"
+textsize=64
+subtextsize=24
+greetertext="$(hostname -s | tr a-z A-Z)"
+timetext="%l:%M%p"
+datetext="%A, %b %e, %Y"
+mesgcolor=ffffffff
+mesgfont="NotoSans Nerd Font"
+mesgsize=16
+authmesg=" Verifying..."
+errormesg=" Access Denied"
+lockmesg=" Locking..."
+failedmesg=" Lock Failed"
+inputmesg=" Enter Password..."
+screen=1
+span=false
+stepper=10
+
+# vim: set ft=cfg:

@@ -1,0 +1,8 @@
+[mpnotd]
+host = localhost
+port = 6600
+auth = 
+timeout = 10
+music = /mnt/storage/Media/Music
+cava = 2
+cava_colors = #818383,#fc391f,#31e722,#eaec23,#5833ff,#f935f8,#14f0f0,#e9ebeb

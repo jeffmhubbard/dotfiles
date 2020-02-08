@@ -1,0 +1,106 @@
+! .Xresources
+
+!! --- Aliases ---
+#define black           #000000
+#define dark_red        #c23621
+#define dark_green      #25bc24
+#define dark_yellow     #adad27
+#define dark_blue       #492ee1
+#define dark_magenta    #d338d3
+#define dark_cyan       #33bbc8
+#define grey            #cbcccd
+#define dark_grey       #818383
+#define red             #fc391f
+#define green           #31e722
+#define yellow          #eaec23
+#define blue            #5833ff
+#define magenta         #f935f8
+#define cyan            #14f0f0
+#define white           #e9ebeb
+
+#define fonts xft:Hack Nerd Font:pixelsize=13
+
+!! --- Colors ---
+*color0:        black
+*color1:        dark_red
+*color2:        dark_green
+*color3:        dark_yellow
+*color4:        dark_blue
+*color5:        dark_magenta
+*color6:        dark_cyan
+*color7:        grey
+*color8:        dark_grey
+*color9:        red
+*color10:       green
+*color11:       yellow
+*color12:       blue
+*color13:       magenta
+*color14:       cyan
+*color15:       white
+*background:    black
+*foreground:    grey
+*cursorColor:   green
+
+!! --- URxvt ---
+URxvt*title:                    URxvt
+URxvt*termName:                 rxvt-unicode-256color
+URxvt*depth:                    32
+URxvt*saveLines:                2500
+URxvt*urgentOnBell:             true
+URxvt*intensityStyles:          true
+URxvt*internalBorder:           3
+URxvt*lineSpace:                0
+URxvt*scrollBar:                false
+URxvt*cursorBlink:              true
+URxvt*cursorUnderline:          true
+URxvt*colorULMode:              on
+URxvt*transparent:              true
+URxvt*shading:                  20
+URxvt*font:                     fonts
+URxvt*boldFont:                 fonts
+URxvt.italicFont:               fonts
+URxvt.boldItalicFont:           fonts
+URxvt*perl-ext-common:          default,matcher
+URxvt.url-launcher:             qutebrowser
+URxvt.matcher.button:           1
+
+!! --- Xterm ---
+XTerm.termName:                 xterm-256color
+xterm*faceName:                 Source Code Pro
+xterm*fontWarnings:             2
+xterm*faceSize:                 10
+xterm*allowBoldFonts:           false
+xterm*assumeAllChars:           true
+XTerm*boldColors:               true
+xterm*wideChars:                true
+xterm*showMissingGlyphs:        true
+xterm*selectToClipboard:        true
+xterm*dynamicColors:            true
+xterm*cursorBlink:              true
+xterm*locale:                   UTF-8
+xterm*utf8:                     3
+xterm*utf8Fonts:                2
+xterm*eightBitInput:            true
+xterm*saveLines:                1000
+xterm*scrollKey:                true
+xterm*scrollTtyOutput:          false
+xterm*scrollBar:                false
+xterm*rightScrollBar:           true
+xterm*jumpScroll:               true
+xterm*multiScroll:              true
+xterm*toolBar:                  false
+XTerm*TrimSelection:            true
+
+!! --- Fonts ---
+Xft.lcdfilter:                  lcddefault
+Xft.hinting:                    true
+Xft.hintstyle:                  hintslight
+Xft.autohint:                   true
+Xft.antialias:                  true
+Xft.rgba:                       rgb
+
+!! --- Cursor ---
+Xcursor.theme:                  "OpenZone Black"
+Xcursor.size:                   16
+
+! vim: set ft=xdefaults:

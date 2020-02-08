@@ -1,0 +1,6 @@
+NAME=" Tools"
+ITEMS=(
+  [" Toggle TouchPad"]="$I3SCRIPTS/toggle-touchpad.sh"
+  [" Display Settings"]="$I3SCRIPTS/rofi-randr.zsh"
+  [" Layout Manager"]="$I3SCRIPTS/layout-manager.sh"
+)

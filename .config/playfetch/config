@@ -1,0 +1,6 @@
+[playfetch]
+proxy-url = http://localhost:9999
+plist-dest = ~/.cache/mpd/playlists
+plist-prefix = play
+mpd-host = 127.0.0.1
+mpd-port = 6600

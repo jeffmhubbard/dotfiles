@@ -1,0 +1,76 @@
+# dunst/dunstrc
+
+[global]
+startup_notification = false
+monitor = 0
+;follow = mouse
+follow = keyboard
+geometry = "320x16-6-32"
+transparency = 20
+shrink = yes
+frame_width = 2
+padding = 6
+notification_height = 0
+horizontal_padding = 6
+separator_color = auto
+separator_height = 2
+format = "%s\n%b"
+font = Hack Nerd Font 10
+markup = full
+alignment = left
+icon_position = left
+max_icon_size = 48
+icon_path = /usr/share/icons/Antsy/actions/scalable:/usr/share/icons/Antsy/status/scalable:/usr/share/icons/Antsy/stock/scalable
+word_wrap = no
+ignore_newline = no
+line_height = 0
+sort = yes
+bounce_freq = 0
+show_age_threshold = 60
+idle_threshold = 0
+sticky_history = yes
+history_length = 20
+indicate_hidden = true
+stack_duplicates = false
+hide_duplicate_count = false
+show_indicators = yes
+browser = /usr/bin/qutebrowser
+dmenu = /usr/bin/rofi -dmenu -p dunst:
+title = Dunst
+class = Dunst
+
+
+[shortcuts]
+close = mod4+grave
+close_all = mod4+shift+grave
+history = mod4+ctrl+grave
+context = mod4+mod1+grave
+
+[urgency_low]
+background = "#000000"
+foreground = "#cbcccd"
+frame_color = "#818383"
+timeout = 15
+
+[urgency_normal]
+background = "#000000"
+foreground = "#e9ebeb"
+frame_color = "#e9ebeb"
+timeout = 30
+
+[urgency_critical]
+background = "#000000"
+foreground = "#e9ebeb"
+frame_color = "#14f0f0"
+timeout = 0
+
+#[music]
+#appname = mpnotd
+#new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/audio-x-generic.svg"
+
+[mail]
+appname = neomutt
+new_icon = "/usr/share/icons/Antsy/apps/scalable/internet-mail.svg"
+
+
+# vim: set ft=cfg:

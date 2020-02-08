@@ -1,0 +1,55 @@
+{
+    "antsy": [
+        [
+            "header",
+            "dark gray",
+            "black",
+            "bold"
+        ],
+        [
+            "footer",
+            "black",
+            "light gray",
+            "standout"
+        ],
+        [
+            "search",
+            "black",
+            "white",
+            "standout"
+        ],
+        [
+            "msgtext",
+            "",
+            ""
+        ],
+        [
+            "msgtext:ellipses",
+            "white",
+            "black"
+        ],
+        [
+            "urlref:number:braces",
+            "white",
+            "black"
+        ],
+        [
+            "urlref:number",
+            "white",
+            "black",
+            "standout"
+        ],
+        [
+            "urlref:url",
+            "light blue",
+            "black",
+            "standout"
+        ],
+        [
+            "url:sel",
+            "black",
+            "white",
+            "standout"
+        ]
+    ]
+}
