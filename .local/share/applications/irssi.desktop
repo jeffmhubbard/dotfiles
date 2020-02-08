@@ -1,0 +1,10 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=true
+Type=Application
+Name=Irssi
+GenericName=IRC Client
+Comment=Text mode chat client
+Exec=irssi
+Icon=im-message-new
