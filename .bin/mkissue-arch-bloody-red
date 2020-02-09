@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# extras/etc-issue/mkissue-arch-bloody-red
+# ascii login banner
+
+DEST="/etc/issue"
+
+if [[ $EUID -ne 0 ]]; then
+ echo "Failed. You must run as root"; exit 1
+fi
+
+if [[ -f $DEST ]]; then
+  BACKUP="$DEST-$(date +%F-%R)"
+  cp "$DEST" "$BACKUP"
+  echo "Backup '$BACKUP' created..."
+fi
+
+echo -e '\e[0m' > $DEST
+echo -e '   \e[1;31m▄▄▄       ██▀███   ▄████▄   ██░ ██     ██▓     ██▓ ███▄    █  █    ██ ▒██   ██▒  ' >> $DEST
+echo -e '  \e[1;31m▒████▄    ▓██ ▒ ██▒▒██▀ ▀█  ▓██░ ██▒   ▓██▒    ▓██▒ ██ ▀█   █  ██  ▓██▒▒▒ █ █ ▒░  ' >> $DEST
+echo -e '  \e[1;31m▒██  ▀█▄  ▓██ ░▄█ ▒▒▓█    ▄ ▒██▀▀██░   ▒██░    ▒██▒▓██  ▀█ ██▒▓██  ▒██░░░  █   ░  ' >> $DEST
+echo -e '  \e[1;31m░██▄▄▄▄██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒░▓█ ░██    ▒██░    ░██░▓██▒  ▐▌██▒▓▓█  ░██░ ░ █ █ ▒   ' >> $DEST
+echo -e '   \e[1;31m▓█   ▓██▒░██▓ ▒██▒▒ ▓███▀ ░░▓█▒░██▓   ░██████▒░██░▒██░   ▓██░▒▒█████▓ ▒██▒ ▒██▒  ' >> $DEST
+echo -e '   \e[1;31m▒▒   ▓▒█░░ ▒▓ ░▒▓░░ ░▒ ▒  ░ ▒ ░░▒░▒   ░ ▒░▓  ░░▓  ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ▒▒ ░ ░▓ ░  ' >> $DEST
+echo -e '    \e[1;31m▒   ▒▒ ░  ░▒ ░ ▒░  ░  ▒    ▒ ░▒░ ░   ░ ░ ▒  ░ ▒ ░░ ░░   ░ ▒░░░▒░ ░ ░ ░░   ░▒ ░  ' >> $DEST
+echo -e '    \e[1;31m░   ▒     ░░   ░ ░         ░  ░░ ░     ░ ░    ▒ ░   ░   ░ ░  ░░░ ░ ░  ░    ░    ' >> $DEST
+echo -e '        \e[1;31m░  ░   ░     ░ ░       ░  ░  ░       ░  ░ ░           ░    ░      ░    ░    ' >> $DEST
+echo -e '                     \e[1;31m░                                                              ' >> $DEST
+echo -e '\e[0m' >> $DEST
+echo -e '\e[1;37mWelcome to \e[1;32m\\n \e[1;30m(\e[1;33m\\l\e[1;30m)' >> $DEST
+echo -e '\e[1;37mRunning \e[1;34mLinux \e[1;30m(\e[0;39m\\r\e[1;30m)' >> $DEST
+echo -e '\e[0m' >> $DEST
+
+echo "Complete"
+exit 0
+
+# vim: ft=sh ts=2 sw=0 et:
