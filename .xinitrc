@@ -20,7 +20,7 @@ export I3SCRIPTS=$HOME/.config/i3/scripts
 export PBSCRIPTS=$HOME/.config/polybar/scripts
 
 # Load X settings
-xrdb -merge $HOME/.Xresources
+xrdb -merge "$HOME/.Xresources"
 
 # Extra X settings
 xsetroot -cursor_name left_ptr &
@@ -55,6 +55,6 @@ picom &
 urxvtd -q -o -f &
 
 # Start window manager
-exec i3
+exec i3 -c "$HOME/.config/i3/$HOSTNAME.conf"
 
 # vim: set ft=sh ts=2 sw=0 et:
