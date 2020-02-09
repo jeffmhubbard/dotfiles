@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-# polybar/scripts/load-bar.sh
-#
 # launch polybar based on hostname and displays
 #
-# extbin: pgrep, killall, xrandr, polybar
+# extbin: pgrep, killall, polybar
 
 # kill existing polybar
 killall -q polybar
@@ -12,27 +10,21 @@ killall -q polybar
 # wait for it end
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-# get hostname
-HOSTNAME="$(hostname -s)"
-
-MONITORS=$(xrandr --listactivemonitors | wc -l)
-((MONITORS--))
-
-case "$HOSTNAME" in
-  pythos)
-    if [ "$MONITORS" -eq 2 ]
-    then
-        polybar pythos-left &
-        sleep 1 &
-        polybar pythos-right &
-    else
-        polybar pythos-bottom &
-    fi
-    ;;
-  dragon) polybar dragon-bottom ;;
-  gargoyle) polybar gargoyle-bottom ;;
-  *) polybar base-bottom ;;
-esac
+conf="$HOME/.config/polybar/$HOSTNAME.conf"
+if [ -f "$conf" ]
+then
+  if [ "$(polybar -m | wc -l)" -eq 2 ]
+  then
+      polybar -c "$conf" left &
+      sleep 1 &
+      polybar -c "$conf" right &
+  else
+      polybar -c "$conf" bottom &
+  fi
+else
+  echo "ERROR: no config found! $conf"
+  exit 1
+fi
 
 exit 0
 
