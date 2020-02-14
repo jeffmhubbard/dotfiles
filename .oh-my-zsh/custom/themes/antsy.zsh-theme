@@ -2,11 +2,6 @@
 
 setopt prompt_subst
 
-# fix RPROMPT, break other things
-if [[ ! $TERM == 'linux' ]]; then
-    ZLE_RPROMPT_INDENT=0
-fi
-
 # git prompt
 ZSH_THEME_GIT_PROMPT_PREFIX=' '
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
@@ -29,24 +24,28 @@ MODE_INDICATOR="%F{cyan}"
 
 # first line of prompt
 precmd(){
+    # check for root
     if [ $UID -eq 0 ]; then
         admin="%F{red}"
     fi
-    local preprompt_left="%B%F{green}$admin%n%F{green}@%m %B%F{blue}%47<...<%~%<<%f%b"
-    local preprompt_right="%B%F{red}$(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
+    # construct left and right sides
+    local preprompt_left="%B%F{green}$admin%n%F{green}@%m %B%F{blue}%47<...<%~%<<% %B%F{red}%(?..%? ↵) $(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
+    local preprompt_right="%B%F{yellow}%D{%H:%M:%S}%f%b"
+    # get length of each side
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
+    # calculate filler spaces
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))
+    # display first line
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 
 # second line of prompt, left and right
 PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}$(vi_mode_prompt_info)➜ %F{white}%#%f%b '
-RPROMPT="%B%F{red}%(?..%? ↵) %B%F{yellow}%D{%H:%M:%S}%f%b"
+RPROMPT="%B%F{red}%(?..%? ↵)%f%b"
 
 # secondary prompts (when wrapping statement with \)
 PS2="%B%F{black}...%b%f "
-RPS2="%B%F{black}...%b%f"
 
 # colored-man-pages (antsy)
 function man() {
