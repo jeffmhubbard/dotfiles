@@ -1,7 +1,5 @@
 # antsy.zsh-theme
 
-setopt prompt_subst
-
 # git prompt
 ZSH_THEME_GIT_PROMPT_PREFIX=' '
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
@@ -46,20 +44,5 @@ RPROMPT="%B%F{red}%(?..%? ↵)%f%b"
 
 # secondary prompts (when wrapping statement with \)
 PS2="%B%F{black}...%b%f "
-
-# colored-man-pages (antsy)
-function man() {
-    env \
-    LESS_TERMCAP_mb=$(printf "\e[1;34m") \
-    LESS_TERMCAP_md=$(printf "\e[1;35m") \
-    LESS_TERMCAP_me=$(printf "\e[0m") \
-    LESS_TERMCAP_so=$(printf "\e[0;107;30m") \
-    LESS_TERMCAP_se=$(printf "\e[0m") \
-    LESS_TERMCAP_us=$(printf "\e[1;4;32m") \
-    LESS_TERMCAP_ue=$(printf "\e[0m") \
-    PAGER="${commands[less]:-$PAGER}" \
-    _NROFF_U=1 \
-        man "$@"
-}
 
 # vim: set ft=zsh:
