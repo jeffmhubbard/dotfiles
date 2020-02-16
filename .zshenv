@@ -8,13 +8,12 @@ export WORKON_HOME=$HOME/Env
 export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
-
-export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export LESS=' -RF '
 
 # fzf
 export FZF_BASE=/usr/bin/fzf
 export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="
   --ansi
   --height 40%
@@ -24,7 +23,6 @@ export FZF_DEFAULT_OPTS="
   --color=info:13,prompt:15,spinner:10
   --color=pointer:14,marker:9,header:8
 "
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # forgit
 export FORGIT_FZF_DEFAULT_OPTS="
@@ -36,15 +34,15 @@ export FORGIT_FZF_DEFAULT_OPTS="
 "
 
 # auto-notify
-#export AUTO_NOTIFY_EXPIRE_TIME=300
-#export AUTO_NOTIFY_THRESHOLD=60
-
-#export AUTO_NOTIFY_IGNORE=( "vim" )
-
-# Run using echo -e in order to make sure notify-send picks up new line
-export AUTO_NOTIFY_TITLE="\"%command\" Complete"
-export AUTO_NOTIFY_BODY="$(echo -e "Time: %elapsed seconds\nStatus: %exit_code")"
-
+export AUTO_NOTIFY_EXPIRE_TIME=600
+export AUTO_NOTIFY_THRESHOLD=60
 export AUTO_NOTIFY_WHITELIST=("pacman" "aur" "makepkg" "pip" "wget" "curl" "tar" "unzip" "dd")
+
+# you-should-use
+export YSU_MODE=BESTMATCH
+export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 7) $(tput sgr0)\
+Found $(tput bold)$(tput setaf 3)%alias_type$(tput sgr0) for \
+$(tput bold)$(tput setaf 6)%command$(tput sgr0), \
+use: $(tput smul)$(tput setaf 2)%alias$(tput sgr0)"
 
 # vim: set ft=zsh ts=2 sw=0 et:
