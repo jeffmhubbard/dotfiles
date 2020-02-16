@@ -1,6 +1,6 @@
 # antsy.zsh-theme
 
-# git prompt
+# git
 ZSH_THEME_GIT_PROMPT_PREFIX=' '
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
 ZSH_THEME_GIT_PROMPT_DIRTY=''
@@ -13,36 +13,43 @@ ZSH_THEME_GIT_PROMPT_UNMERGED=' ♦'
 ZSH_THEME_GIT_PROMPT_UNTRACKED=' ✱'
 ZSH_THEME_GIT_PROMPT_AHEAD=' ▲'
 
-# python virtualenv prompt
+# virtualenv
 ZSH_THEME_VIRTUALENV_PREFIX="("
-ZSH_THEME_VIRTUALENV_SUFFIX=")"
+ZSH_THEME_VIRTUALENV_SUFFIX=") "
 
-# vi-mode indicator
+# vi-mode
 MODE_INDICATOR="%F{cyan}"
 
-# first line of prompt
+# first line
 precmd(){
-    # check for root
+
+    # root
     if [ $UID -eq 0 ]; then
         admin="%F{red}"
     fi
-    # construct left and right sides
+
+    # user@host, pwd, git branch and status
     local preprompt_left="%B%F{green}$admin%n%F{green}@%m %B%F{blue}%47<...<%~%<<% %B%F{red}%(?..%? ↵) $(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
-    local preprompt_right="%B%F{yellow}%D{%H:%M:%S}%f%b"
-    # get length of each side
+
+    # timestamp
+    local preprompt_right="%B%F{black}%D{%H:%M:%S}%f%b"
+
+    # calculate spaces
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
     local preprompt_right_length=${#${(S%%)preprompt_right//(\%([KF1]|)\{*\}|\%[Bbkf])}}
-    # calculate filler spaces
     local num_filler_spaces=$((COLUMNS - preprompt_left_length - preprompt_right_length))
-    # display first line
+
+    # display
     print -Pr "$preprompt_left${(l:$num_filler_spaces:)}$preprompt_right"
 }
 
-# second line of prompt, left and right
-PROMPT='%B%F{cyan}$(virtualenv_prompt_info)%F{white}$(vi_mode_prompt_info)➜ %F{white}%#%f%b '
-RPROMPT="%B%F{red}%(?..%? ↵)%f%b"
+# virtualenv, vi-mode, prompt
+PS1='%B%F{cyan}$(virtualenv_prompt_info)%F{white}$(vi_mode_prompt_info)➜ %F{white}%#%f%b '
 
-# secondary prompts (when wrapping statement with \)
+# exit code
+RPS1="%B%F{red}%(?..%? ↵)%f%b"
+
+# continuation dots
 PS2="%B%F{black}...%b%f "
 
 # vim: set ft=zsh:
