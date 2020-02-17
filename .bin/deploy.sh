@@ -5,7 +5,7 @@
 echo "Deploying dotfiles..."
 
 dotgit="$HOME/.dotfiles"
-repo="git@code.linuxit.us:dotfiles"
+repo="https://github.com/jeffmhubbard/dotfiles"
 temp="/tmp/dotfiles"
 
 [[ -z $(command -v git 2>/dev/null) ]] && \
@@ -30,8 +30,11 @@ fi
 [[ -d "$temp" ]] && \
     { echo "Cleaing up!"; rm -r "$temp"; }
 
-git --git-dir="$dotgit" --work-tree="$HOME" \
-    config --local status.showUntrackedFiles no
+if ! git --git-dir="$dotgit" --work-tree="$HOME" \
+  config --local status.showUntrackedFiles no
+then
+  echo "ERROR: failed to set 'status.showUntrackedFiles no'!"; exit 1;
+fi
 
 echo "Done"
 exit 0
