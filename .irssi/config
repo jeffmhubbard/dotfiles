@@ -191,7 +191,7 @@ statusbar = {
 
     lag = " {sb %R $0-}";
     more = " {sb %R $0-}";
-    time = " {sb %Y$Z}";
+    time = " {sb %K$Z}";
 
     prompt = "{prompt $[.15]itemname}";
     prompt_empty = "{prompt $winname}";
