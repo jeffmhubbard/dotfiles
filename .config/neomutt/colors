@@ -11,11 +11,11 @@ color indicator     color0          color12     # selected email in index
 color tree          color8          default     # arrow in threads (`-->')
 
 # --- Status ---
-color status        color8          default
-color status        color15         default     '(M|F): [:alnum:]+'
-color status        color8          default     '\([^)]+/[^)]+\)'
-color status        color5          default     '\(threads/last-date-received\)'
-color status        color7          default     '\[([^]]+)\]' 1
+color status        color8          brightdefault
+color status        color15         brightdefault     '(M|F): [:alnum:]+'
+color status        color8          brightdefault     '\([^)]+/[^)]+\)'
+color status        color5          brightdefault     '\(threads/last-date-received\)'
+color status        color7          brightdefault     '\[([^]]+)\]' 1
 
 # --- Mono ---
 mono bold           bold
@@ -72,12 +72,12 @@ mono  body          bold                        "^gpg: Good signature"
 mono  body          bold                        "^gpg: BAD signature from.*"
 
 # --- Sidebar ---
-color sidebar_divider       brightcolor8    default
-color sidebar_indicator     color0          color15
-color sidebar_highlight     color0          color12
+color sidebar_indicator     color0          color12
+color sidebar_highlight     color0          color15
 color sidebar_new           brightcolor14   default
 color sidebar_unread        brightcolor15   default
 color sidebar_flagged       brightcolor11   default
+color sidebar_divider       color8          default
 
 
 # vim: set ft=muttrc :

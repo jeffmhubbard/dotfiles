@@ -3,6 +3,7 @@
 # --- Options ---
 set mail_check_stats = yes
 set imap_check_subscribed = yes
+set sidebar_sort_method = path
 
 # --- Style ---
 set sidebar_visible = yes
@@ -10,20 +11,15 @@ set sidebar_width = 25
 set sidebar_short_path = yes
 set sidebar_delim_chars = '/.'
 set sidebar_folder_indent = yes
-set sidebar_indent_string = ' '
+set sidebar_indent_string = ' '
 set sidebar_new_mail_only = no
 set sidebar_next_new_wrap = yes
 set sidebar_divider_char = '│'
-set sidebar_format = ' %B%* %?F?%F ?%?N?%N ? '
-
-set sidebar_sort_method = path
+set sidebar_format = ' %B%> %?F? %F ?%?N? %N ?'
 
 # --- Bindings ---
 bind index,pager \Cp sidebar-prev
-bind index,pager \CP sidebar-prev-new
 bind index,pager \Cn sidebar-next
-bind index,pager \CN sidebar-next-new
 bind index,pager \Co sidebar-open
-
 
 # vim: set ft=muttrc :
