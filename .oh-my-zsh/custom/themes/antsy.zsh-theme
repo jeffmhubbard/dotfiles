@@ -28,11 +28,17 @@ precmd(){
         admin="%F{red}"
     fi
 
+    # jobs
+    local running=$(jobs -l | wc -l)
+    if [[ $running -ne 0 ]]; then
+        showjobs=" $running "
+    fi
+
     # user@host, pwd, git branch and status
     local preprompt_left="%B%F{green}$admin%n%F{green}@%m %B%F{blue}%47<...<%~%<<% %B%F{red}%(?..%? ↵) $(git_prompt_info)%B%F{red}$(git_prompt_status)%f%b"
 
     # timestamp
-    local preprompt_right="%B%F{black}%D{%H:%M:%S}%f%b"
+    local preprompt_right="%B%F{yellow}$showjobs%F{black}%D{%H:%M:%S}%f%b"
 
     # calculate spaces
     local preprompt_left_length=${#${(S%%)preprompt_left//(\%([KF1]|)\{*\}|\%[Bbkf])}}
