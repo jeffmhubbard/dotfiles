@@ -2,7 +2,7 @@
 
 # --- Server ---
 mpd_host = 10.0.0.1
-mpd_music_dir = /mnt/storage/Media/Music
+mpd_music_dir = /home/jeff/Music
 
 # --- Playback ---
 incremental_seeking = yes
@@ -58,11 +58,11 @@ alternative_header_first_line_format = $b$(16) {%a - %t}|{%f} $/b$(end)
 alternative_header_second_line_format = $b$(9){%b (%y)}|{%D}$/b$(end)
 song_status_format = {%a - }{%t}|{%f} 
 song_window_title_format = { : }{%a - }{%t}|{%f}
-current_item_prefix = $(13)$r
+current_item_prefix = $(16)$r
 current_item_suffix = $/r$(end)
-current_item_inactive_column_prefix = $(16)$r
+current_item_inactive_column_prefix = $(13)$r
 current_item_inactive_column_suffix = $/r$(end)
-now_playing_prefix = $r$(16)
+now_playing_prefix = $r$(13)
 now_playing_suffix = $/r$(end)
 browser_playlist_prefix = "$2playlist$9 "
 selected_item_prefix = $(15)$r
@@ -85,7 +85,7 @@ color2 = 8
 progressbar_color = 9
 progressbar_elapsed_color = 11
 statusbar_color = 16
-statusbar_time_color = 12
+statusbar_time_color = 9
 player_state_color = 15:b
 alternative_ui_separator_color = 9
 window_border_color = 9

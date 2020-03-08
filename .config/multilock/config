@@ -2,7 +2,7 @@
 
 # default options
 display_on=1
-span_image=false
+span_image=true
 lock_timeout=600
 fx_list=(blur color dim dimblur dimpixel pixel)
 dim_level=40
@@ -11,7 +11,7 @@ pixel_scale=10,1000
 solid_color=333333
 
 # default theme
-loginbox=000000CC
+loginbox=000000D9
 loginshadow=00000000
 locktext="Type password to unlock..."
 font="Source Code Sans"

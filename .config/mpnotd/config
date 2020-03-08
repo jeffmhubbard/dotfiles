@@ -1,8 +1,22 @@
-[mpnotd]
-host = localhost
-port = 6600
-auth = 
-timeout = 10
-music = /mnt/storage/Media/Music
-cava = 2
-cava_colors = #818383,#fc391f,#31e722,#eaec23,#5833ff,#f935f8,#14f0f0,#e9ebeb
+# mpnotd config
+
+#CACHE_DIR=$HOME/.cache/$APP_NAME
+CACHE_DAYS=1
+#MUSIC_DIR=$HOME/Music
+#COVER_CUR=$CACHE_DIR/current.jpg
+#STOCK_ART=$CACHE_DIR/stock.jpg
+
+#POPUP_ENABLE=false
+#POPUP_TITLE=" Now Playing"
+#POPUP_TIME=30
+#POPUP_LEVEL=low
+
+CAVA_ENABLE=true
+#CAVA_CFG=$HOME/.config/cava/config
+CAVA_COLORS=(c23621 25bc24 adad27 492ee1 d338d3 33bbc8 fc391f 31e722 eaec23 5833ff f935f8 14f0f0)
+
+COVER_ENABLE=true
+COVER_SIZE=128x128
+COVER_POSITION=+20+20
+#COVER_TIME=20
+

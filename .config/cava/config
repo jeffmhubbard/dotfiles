@@ -11,7 +11,7 @@ method = ncurses
 style = stereo
 
 [color]
-foreground = '#818383'
+foreground = '#25bc24'
 
 [smoothing]
 integral = 30

@@ -13,7 +13,7 @@ export MPD_HOST=localhost
 export MPD_PORT=6600
 
 # toggle-touchpad.sh
-#export TOUCHPAD='10'
+export TOUCHPAD=10
 
 # script paths
 export I3SCRIPTS=$HOME/.config/i3/scripts
@@ -27,7 +27,7 @@ xsetroot -cursor_name left_ptr &
 
 # Lock screen
 #xset s 600 180 &
-#xss-lock -l -- awful --capture &
+xset s off &
 xss-lock -l -- multilockscreen -l blur &
 
 # Hide idle mouse cursor
@@ -43,7 +43,7 @@ dunst &
 start-pulseaudio-x11 &
 
 # Volume and brightness bars
-$HOME/.config/xob/load-bars.sh &
+sh -c "$HOME/.config/xob/load-bars.sh" &
 
 # Storage
 udiskie &

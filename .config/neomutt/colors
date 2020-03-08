@@ -11,11 +11,11 @@ color indicator     color0          color12     # selected email in index
 color tree          color8          default     # arrow in threads (`-->')
 
 # --- Status ---
-color status        color8          brightdefault
-color status        color15         brightdefault     '(M|F): [:alnum:]+'
-color status        color8          brightdefault     '\([^)]+/[^)]+\)'
-color status        color5          brightdefault     '\(threads/last-date-received\)'
-color status        color7          brightdefault     '\[([^]]+)\]' 1
+color status        color8          default
+color status        color15         default     '(M|F): [:alnum:]+'
+color status        color8          default     '\([^)]+/[^)]+\)'
+color status        color5          default     '\(threads/last-date-received\)'
+color status        color7          default     '\[([^]]+)\]' 1
 
 # --- Mono ---
 mono bold           bold

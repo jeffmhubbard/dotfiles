@@ -9,4 +9,6 @@ video/*; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
 
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 
+text/plain; less %s
+
 # vim: set ft=mailcap:

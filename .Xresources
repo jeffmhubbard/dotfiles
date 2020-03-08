@@ -55,7 +55,7 @@ URxvt*cursorBlink:              true
 URxvt*cursorUnderline:          true
 URxvt*colorULMode:              on
 URxvt*transparent:              true
-URxvt*shading:                  20
+URxvt*shading:                  10
 URxvt*font:                     fonts
 URxvt*boldFont:                 fonts
 URxvt.italicFont:               fonts
@@ -66,7 +66,7 @@ URxvt.matcher.button:           1
 
 !! --- Xterm ---
 XTerm.termName:                 xterm-256color
-xterm*faceName:                 Source Code Pro
+xterm*faceName:                 Hack Nerd Font
 xterm*fontWarnings:             2
 xterm*faceSize:                 10
 xterm*allowBoldFonts:           false

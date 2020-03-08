@@ -61,7 +61,7 @@ default_autotype='user :tab pass'
 
 # color of the help messages
 # leave empty for autodetection
-help_color="#4872FF"
+help_color=""
 
 # Clipboard settings
 # Possible options: primary, clipboard, both

@@ -41,7 +41,7 @@ export AUTO_NOTIFY_WHITELIST=("pacman" "aur" "makepkg" "pip" "wget" "curl" "tar"
 
 # you-should-use
 export YSU_MODE=BESTMATCH
-export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 7) $(tput sgr0)\
+tty -s && export YSU_MESSAGE_FORMAT="$(tput bold)$(tput setaf 7) $(tput sgr0)\
 Found $(tput bold)$(tput setaf 3)%alias_type$(tput sgr0) for \
 $(tput bold)$(tput setaf 6)%command$(tput sgr0), \
 use: $(tput smul)$(tput setaf 2)%alias$(tput sgr0)"
