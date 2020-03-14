@@ -9,7 +9,6 @@ export PAGER=less
 export EDITOR=vim
 export DIFFPROG=vimdiff
 export LESS=' -RF '
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # fzf
 export FZF_BASE=/usr/bin/fzf

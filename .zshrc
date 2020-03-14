@@ -13,6 +13,7 @@ plugins=( \
   archlinux \
   systemd \
   command-not-found \
+  colored-man-pages \
   ssh-agent \
   gpg-agent \
   vi-mode \
