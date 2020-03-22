@@ -11,6 +11,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # mpd
 export MPD_HOST=localhost
 export MPD_PORT=6600
+export MPD_PLAYLISTS=$HOME/.cache/mpd/playlists
 
 # toggle-touchpad.sh
 export TOUCHPAD=10
@@ -26,9 +27,8 @@ xrdb -merge "$HOME/.Xresources"
 xsetroot -cursor_name left_ptr &
 
 # Lock screen
-#xset s 600 180 &
-xset s off &
-xss-lock -l -- multilockscreen -l blur &
+xset s 600 180 &
+xss-lock -l -- multilockscreen --lock dimblur &
 
 # Hide idle mouse cursor
 unclutter -root &

@@ -55,7 +55,7 @@ fi
 if [ -n "$weather" ]; then
   weather_icon=$(echo "$weather" | jq -r ".weather[0].icon")
   weather_temp=$(echo "$weather" | jq ".main.temp" | cut -d "." -f 1)
-  echo "%{F${COLOR}}%{T2}$(get_icon "$weather_icon")%{T-}%{F-}  $weather_temp%{T2}$SYMBOL%{T-}"
+  echo "%{F${COLOR}}%{T2}$(get_icon "$weather_icon") %{T-}%{F-}$weather_temp%{T2}$SYMBOL%{T-}"
 fi
 
 # vim: ft=sh ts=2 sw=0 et:

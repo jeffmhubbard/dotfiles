@@ -2,9 +2,9 @@
 
 # default options
 display_on=1
-span_image=true
+span_image=false
 lock_timeout=600
-fx_list=(blur color dim dimblur dimpixel pixel)
+fx_list=(dimblur)
 dim_level=40
 blur_level=1
 pixel_scale=10,1000

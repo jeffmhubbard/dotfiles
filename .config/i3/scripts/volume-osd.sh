@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# pavolosd.sh
+# volume-osd.sh
 # raise, lower, and mute volume with pamixer
 # get OSD feedback with xob
 

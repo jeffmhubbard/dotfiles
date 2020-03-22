@@ -30,8 +30,8 @@ plugins=( \
   zsh-autosuggestions \
   history \
   you-should-use \
-  web-search \
   auto-notify \
+  antsy \
 )
 
 # oh-my-zsh init
@@ -58,36 +58,5 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export HISTSIZE=9999
 export SAVEHIST=1000
-
-# LS_COLORS
-eval $(dircolors ~/.dircolors)
-
-# aliases
-alias vi="echo -e '\e[91mSTOP TYPING VI:\e[0m vim'"
-alias ip="ip -c"
-
-# update plugins
-alias update_vim_plugins="~/.vim/bundle && find . -name .git -type d -execdir git pull ';'"
-alias update_zsh_plugins="~/.oh-my-zsh/custom/plugins && find . -name .git -type d -execdir git pull ';'"
-alias update_tmux_plugins="~/.tmux/plugins && find . -name .git -type d -execdir git pull ';'"
-
-# package browser
-alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --height=100% --bind 'enter:execute(pacman -Qil {} | less)'"
-
-# fast pacman mirrorlist
-alias pacfast="sudo reflector --country US --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist --verbose"
-
-# calendar
-alias week="gcalcli calw"
-alias month="gcalcli calm"
-
-# weather
-alias weather="curl -s 'wttr.in/aus?0'"
-alias forecast="curl -s 'wttr.in/aus'"
-
-alias pf="playfetch "
-alias pf!="playfetch lucky -t 100 -FA"
-
-alias dots='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # vim: set ft=zsh ts=2 sw=0 et:
