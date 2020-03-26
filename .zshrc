@@ -31,7 +31,6 @@ plugins=( \
   history \
   you-should-use \
   auto-notify \
-  antsy \
 )
 
 # oh-my-zsh init

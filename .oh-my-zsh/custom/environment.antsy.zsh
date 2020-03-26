@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# LS_COLORS
+# https://github.com/trapd00r/LS_COLORS
+eval $(dircolors ~/.dircolors)
+
 # PATHS
 export PATH=$HOME/.bin:$HOME/.local/bin:$PATH
 export WORKON_HOME=$HOME/Env
