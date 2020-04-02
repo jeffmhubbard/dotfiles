@@ -26,11 +26,13 @@ plugins=( \
   forgit \
   tmux \
   virtualenv \
+  autopair \
   fast-syntax-highlighting \
   zsh-autosuggestions \
   history \
   you-should-use \
   auto-notify \
+  antsy \
 )
 
 # oh-my-zsh init
