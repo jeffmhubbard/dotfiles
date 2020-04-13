@@ -1,0 +1,21 @@
+!! --- PuTTy ---
+*color0:                        #000000
+*color1:                        #BB0000
+*color2:                        #00BB00
+*color3:                        #BBBB00
+*color4:                        #0000BB
+*color5:                        #BB00BB
+*color6:                        #00BBBB
+*color7:                        #BBBBBB
+*color8:                        #555555
+*color9:                        #FF5555
+*color10:                       #55FF55
+*color11:                       #FFFF55
+*color12:                       #5555FF
+*color13:                       #FF55FF
+*color14:                       #55FFFF
+*color15:                       #FFFFFF
+*background:                    #000000
+*foreground:                    #BBBBBB
+*cursorColor:                   #55FF55
+! vim: set ft=xdefaults:

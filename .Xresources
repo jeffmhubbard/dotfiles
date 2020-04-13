@@ -1,45 +1,7 @@
 ! .Xresources
 
-!! --- Aliases ---
-#define black           #000000
-#define dark_red        #c23621
-#define dark_green      #25bc24
-#define dark_yellow     #adad27
-#define dark_blue       #492ee1
-#define dark_magenta    #d338d3
-#define dark_cyan       #33bbc8
-#define grey            #cbcccd
-#define dark_grey       #818383
-#define red             #fc391f
-#define green           #31e722
-#define yellow          #eaec23
-#define blue            #5833ff
-#define magenta         #f935f8
-#define cyan            #14f0f0
-#define white           #e9ebeb
-
+#include ".Xresources.d/colors/VSCodeDark"
 #define fonts xft:Hack Nerd Font:pixelsize=13
-
-!! --- Colors ---
-*color0:        black
-*color1:        dark_red
-*color2:        dark_green
-*color3:        dark_yellow
-*color4:        dark_blue
-*color5:        dark_magenta
-*color6:        dark_cyan
-*color7:        grey
-*color8:        dark_grey
-*color9:        red
-*color10:       green
-*color11:       yellow
-*color12:       blue
-*color13:       magenta
-*color14:       cyan
-*color15:       white
-*background:    black
-*foreground:    grey
-*cursorColor:   green
 
 !! --- URxvt ---
 URxvt*title:                    URxvt
