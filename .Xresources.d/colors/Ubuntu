@@ -18,4 +18,5 @@
 *background:                    #010101
 *foreground:                    #CCCCCC
 *cursorColor:                   #00FF00
+*cursorUL:                      #00FF00
 ! vim: set ft=xdefaults:
