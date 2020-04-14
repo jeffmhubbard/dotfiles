@@ -2,7 +2,7 @@
 
 # --- Server ---
 mpd_host = 127.0.0.1
-mpd_music_dir = /home/jeff/Music
+mpd_music_dir = /mnt/storage/Media/Music
 
 # --- Playback ---
 incremental_seeking = yes
@@ -10,7 +10,7 @@ seek_time = 1
 
 # --- Misc ---
 lastfm_preferred_language = en
-# execute_on_song_change = "walsh -t 0 >/dev/null"
+execute_on_song_change = "walsh -t 10 >/dev/null &"
 external_editor = vim
 use_console_editor = yes
 generate_win32_compatible_filenames = yes
