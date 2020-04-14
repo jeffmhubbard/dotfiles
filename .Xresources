@@ -1,6 +1,6 @@
 ! .Xresources
 
-#include ".Xresources.d/colors/VSCodeDark"
+#include ".Xresources.d/colors/Terminal.app"
 #define fonts xft:Hack Nerd Font:pixelsize=13
 
 !! --- URxvt ---
