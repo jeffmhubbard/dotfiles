@@ -28,7 +28,7 @@ then
 fi
 
 [[ -d "$temp" ]] && \
-    { echo "Cleaing up!"; rm -r "$temp"; }
+    { echo "Cleaning up!"; rm -r "$temp"; }
 
 if ! git --git-dir="$dotgit" --work-tree="$HOME" \
   config --local status.showUntrackedFiles no
