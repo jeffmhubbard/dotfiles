@@ -18,14 +18,20 @@ PLUGINS=(\
 
 # install oh-my-zsh
 echo "Installing Oh My Zsh..."
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+if ! sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended; then
+  echo "Failed to install Oh My Zsh!"; exit 1
+fi
 
 # install plugins
 echo "Installing plugins..."
-for name in "${!PLUGINS[@]}"
+for plugin in "${!PLUGINS[@]}"
 do
-  git clone "${PLUGINS[$name]}" "$PLUGIN_DIR/$name"
+  if ! git clone "${PLUGINS[$plugin]}" "$PLUGIN_DIR/$plugin"; then
+    echo "Failed to install $plugin!"
+    PLUGERR=true
+  fi
 done
+[[ "$PLUGERR" == true ]] && exit 1
 
 echo "Complete"
 exit 0

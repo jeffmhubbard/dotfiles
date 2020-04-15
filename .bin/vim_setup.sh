@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# extras/vim_setup.sh
 # install pathogen and plugins
 
 PATHOGEN="https://tpo.pe/pathogen.vim"
@@ -9,14 +8,15 @@ AUTOLOAD_DIR="$HOME/.vim/autoload"
 
 declare -A PLUGINS
 PLUGINS=(\
-  [antsy.vim]="https://github.com/jeffmhubbard/antsy.vim.git" \
   [ale]="https://github.com/dense-analysis/ale.git" \
+  [antsy.vim]="https://github.com/jeffmhubbard/antsy.vim.git" \
   [fzf.vim]="https://github.com/junegunn/fzf.vim.git" \
+  [indentLine]="https://github.com/Yggdroot/indentLine.git" \
   [is.vim]="https://github.com/haya14busa/is.vim.git" \
-  [nerdtree]="https://github.com/scrooloose/nerdtree.git" \
-  [nerdtree-git-plugin]="https://github.com/Xuyuanp/nerdtree-git-plugin.git" \
   [lightline]="https://github.com/itchyny/lightline.vim.git" \
   [lightline-ale]="https://github.com/maximbaz/lightline-ale.git" \
+  [nerdtree]="https://github.com/scrooloose/nerdtree.git" \
+  [nerdtree-git-plugin]="https://github.com/Xuyuanp/nerdtree-git-plugin.git" \
   [tagbar]="https://github.com/majutsushi/tagbar.git" \
   [vim-buftabline]="https://github.com/ap/vim-buftabline.git" \
   [vim-devicons]="https://github.com/ryanoasis/vim-devicons.git" \
@@ -24,7 +24,7 @@ PLUGINS=(\
   [vim-gitgutter]="https://github.com/airblade/vim-gitgutter.git" \
   [vim-lastplace]="https://github.com/farmergreg/vim-lastplace.git" \
   [vim-signify]="https://github.com/mhinz/vim-signify.git" \
-  [indentLine]="https://github.com/Yggdroot/indentLine.git" \
+  [YouCompleteMe]="https://github.com/ycm-core/YouCompleteMe.git" \
 )
 
 # create directories
@@ -33,14 +33,20 @@ mkdir -p "${AUTOLOAD_DIR}" "${BUNDLE_DIR}"
 
 # install pathogen
 echo "Installing Pathogen..."
-curl -LSso "${AUTOLOAD_DIR}"/"$(basename "$PATHOGEN")" "$PATHOGEN"
+if ! curl -LSso "${AUTOLOAD_DIR}"/"$(basename "$PATHOGEN")" "$PATHOGEN"; then
+  echo "Failed to install Pathogen!"; exit 1
+fi
 
 # install plugins
 echo "Installing plugins..."
-for name in "${!PLUGINS[@]}"
+for plugin in "${!PLUGINS[@]}"
 do
-  git clone "${PLUGINS[$name]}" "$BUNDLE_DIR/$name"
+  if ! git clone "${PLUGINS[$plugin]}" "$BUNDLE_DIR/$plugin"; then
+    echo "Failed to install $plugin!"
+    PLUGERR=true
+  fi
 done
+[[ "$PLUGERR" == true ]] && exit 1
 
 echo "Complete"
 exit 0
