@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 
-# extras/zsh_setup.sh
 # install oh-my-zsh and plugins
 
 PLUGIN_DIR="$HOME/.oh-my-zsh/custom/plugins"
 
-declare -a PLUGINS
-PLUGINS=(
-  https://github.com/zdharma/fast-syntax-highlighting.git
-  https://github.com/zsh-users/zsh-autosuggestions.git
-  https://github.com/MichaelAquilina/zsh-auto-notify.git
-  https://github.com/wfxr/forgit.git
+declare -A PLUGINS
+PLUGINS=(\
+  [autopair]="https://github.com/hlissner/zsh-autopair.git" \
+  [autoswitch_virtualenv]="https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git" \
+  [auto-notify]="https://github.com/MichaelAquilina/zsh-auto-notify.git" \
+  [fast-syntax-highlighting]="https://github.com/zdharma/fast-syntax-highlighting.git" \
+  [forgit]="https://github.com/wfxr/forgit.git" \
+  [fz]="https://github.com/changyuheng/fz.git" \
+  [you-should-use]="https://github.com/MichaelAquilina/zsh-you-should-use.git" \
+  [zsh-autosuggections]="https://github.com/zsh-users/zsh-autosuggestions.git" \
 )
 
 # install oh-my-zsh
@@ -19,10 +22,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # install plugins
 echo "Installing plugins..."
-for url in "${PLUGINS[@]}"
+for name in "${!PLUGINS[@]}"
 do
-  repo=$(basename "$url" ".${url##*.}")
-  git clone "${url}" "${PLUGIN_DIR}"/"${repo}"
+  git clone "${PLUGINS[$name]}" "$PLUGIN_DIR/$name"
 done
 
 echo "Complete"
