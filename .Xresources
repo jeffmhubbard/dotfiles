@@ -23,7 +23,7 @@ URxvt*boldFont:                 fonts
 URxvt.italicFont:               fonts
 URxvt.boldItalicFont:           fonts
 URxvt*perl-ext-common:          default,matcher
-URxvt.url-launcher:             qutebrowser
+URxvt.url-launcher:             xdg-open
 URxvt.matcher.button:           1
 
 !! --- Xterm ---

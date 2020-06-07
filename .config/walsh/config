@@ -1,7 +1,7 @@
 # walsh config
-wall_path="$HOME/Wallpapers/Shuffle"
+wall_path="$HOME/Wallpapers/Shuffle/Desktop"
 sleep_time=3
-bg_mode=center
+bg_mode=fill
 span_bool=false
 lock_exe="i3lock"
 # vim: ft=sh:
