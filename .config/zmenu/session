@@ -1,7 +1,0 @@
-NAME=" Session"
-ITEMS=(
-  [" Lock Screen"]="multilockscreen --lock"
-  [" Reload Config"]="i3-msg reload"
-  [" Restart Desktop"]="i3-msg restart"
-  [" Exit Desktop"]="i3-msg exit"
-)
