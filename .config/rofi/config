@@ -23,7 +23,7 @@ rofi.show-match: true
 rofi.display-window:  Windows
 rofi.display-run:  Run
 rofi.display-drun:  Applications
-rofi.terminal: urxvtc
+rofi.terminal: termite
 
 !                  'background', 'border', 'separator'
 rofi.color-window: argb:cc000000, #5833ff, #000000

@@ -132,7 +132,6 @@ c.fonts.messages.warning = "bold 10pt monospace"
 c.fonts.default_family = "Hack Nerd Font Mono"
 c.fonts.prompts = "10pt monospace"
 c.fonts.statusbar = "10pt monospace"
-c.fonts.tabs = "10pt monospace"
 
 c.tabs.show = "multiple"
 c.downloads.position = "bottom"

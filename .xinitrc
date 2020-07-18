@@ -2,10 +2,11 @@
 
 # extbin: xrdb, xset, xsetroot, feh, picom, unclutter,
 #         dunst, xss-lock, xob, start-pulseaudio-x11,
-#         urxvtd, i3, udiskie, polkit-gnome, awful
+#         termite, i3, udiskie, polkit-gnome, blueman
 
 # Environment variables
-export TERMINAL=urxvtc
+export TERMINAL=termite
+export BROWSER=qutebrowser
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # mpd
@@ -48,13 +49,17 @@ sh -c "$HOME/.config/xob/load-bars.sh" &
 # Storage
 udiskie &
 
+# Bluetooth
+blueman-applet &
+
 # X compositor
 picom &
 
-# Terminal emulator
-urxvtd -q -o -f &
-
 # Start window manager
-exec i3 -c "$HOME/.config/i3/$HOSTNAME.conf"
+WM_DIR="$HOME/.config/i3"
+WM_CONF="$WM_DIR/$HOSTNAME.conf"
+[[ -f "$WM_CONF" ]] || WM_CONF="$WM_DIR/default.conf"
+
+exec i3 -c "$WM_CONF"
 
 # vim: set ft=sh ts=2 sw=0 et:
