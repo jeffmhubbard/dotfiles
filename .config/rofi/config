@@ -5,7 +5,7 @@ rofi.width: 320
 rofi.lines: 10
 rofi.columns: 1
 rofi.font: Hack Nerd Font 10
-rofi.bw: 2
+rofi.bw: 1
 rofi.bc: #000000
 rofi.location: 0
 rofi.padding: 2
@@ -15,7 +15,7 @@ rofi.fixed-num-lines: false
 rofi.show-icons: true
 rofi.drun-icon-theme: Antsy
 rofi.sort: true
-rofi.separator-style: none
+rofi.separator-style: none 
 rofi.hide-scrollbar: true
 rofi.fake-transparency: false
 rofi.click-to-exit: true
@@ -26,7 +26,7 @@ rofi.display-drun:  Applications
 rofi.terminal: termite
 
 !                  'background', 'border', 'separator'
-rofi.color-window: argb:cc000000, #5833ff, #000000
+rofi.color-window: argb:cc000000, argb:cc5833ff, #818383
 
 ! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal: argb:00000000, #e9ebeb, argb:00000000, argb:ff5833ff, #000000 

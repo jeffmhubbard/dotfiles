@@ -21,7 +21,7 @@ set new_mail_command="dunstify -a neomutt -u normal -t 10000 'New Messages' '%n 
 set beep = no
 
 set use_from = yes
-set envelope_from                    # which from?
+#set envelope_from                    # which from?
 set sig_dashes                       # dashes before sig
 set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying

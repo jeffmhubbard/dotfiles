@@ -103,6 +103,10 @@ set shortmess=F
 set noshowmode
 set noshowcmd
 
+" disable preview on completion
+set completeopt-=preview
+set splitbelow
+
 " Clear autocmd
 augroup Local
     autocmd!
@@ -311,6 +315,9 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^'
 let g:gitgutter_sign_modified_removed = 'w'
 
+" ycm
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_add_preview_to_completeopt = 1
 
 "
 " au FileType gitcommit au! BufEnter COMMIT_EDITMSG :call( unamp \s<CR> )
