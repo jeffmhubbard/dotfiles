@@ -1,27 +1,24 @@
 #!/usr/bin/env bash
 
-# volume-osd.sh
-# raise, lower, and mute volume with pamixer
-# get OSD feedback with xob
+# i3/scripts/volume-osd.sh
 
+# setup xob pipe
 OSDPIPE="$HOME/.cache/xob/volume.fifo"
+[[ -p "$OSDPIPE" ]] || mkfifo "$OSDPIPE" &>/dev/null
 
-while getopts u:d:m ARGS; do
-  case "${ARGS}" in
-    u) pamixer -i "$OPTARG";;
-    d) pamixer -d "$OPTARG";;
-    m) pamixer -t;;
-    *) exit 1;;
-  esac
-done
-shift $((OPTIND-1))
+# set volume or mute
+case "$1" in
+  -u) pamixer -i "$2";;
+  -d) pamixer -d "$2";;
+  -m) pamixer -t;;
+  *) exit 1;;
+esac
 
-if [[ -p "$OSDPIPE" ]]; then
-  VOLUME=$(pamixer --get-volume)
-  MUTED=$(pamixer --get-mute)
-  [[ "$MUTED" = true ]] && MI="!"
-  echo "$VOLUME$MI" > "$OSDPIPE"
-fi
+# display current level
+VOLUME=$(pamixer --get-volume)
+MUTED=$(pamixer --get-mute)
+[[ "$MUTED" = true ]] && MI="!"
+echo "$VOLUME$MI" > "$OSDPIPE"
 
 exit 0
 
