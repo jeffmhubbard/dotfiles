@@ -2,7 +2,7 @@
 
 # Display notification for software updates
 
-declare -i INTERVAL=120
+declare -i INTERVAL=600
 declare REPO_CUR AUR_CUR
 declare -i REPO_LAST AUR_LAST
 
@@ -26,7 +26,6 @@ clean_run() {
 
 main() {
 
-  # there can be only one
   clean_run
 
   while true
@@ -37,9 +36,11 @@ main() {
 
     # if counts are different from last, show notification
     if [[ "$REPO_CUR" -ne "$REPO_LAST" ]] || [[ "$AUR_CUR" -ne "$AUR_LAST" ]]; then
-      TITLE="Software Updates Avaiable"
-      BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
-      dunstify -u low "$TITLE" "$BODY"
+      if [[ "$REPO_CUR" -gt 0 ]] && [[ "$AUR_CUR" -gt 0 ]]; then
+        TITLE="Software Updates Avaiable"
+        BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
+        dunstify -u low "$TITLE" "$BODY"
+      fi
     fi
 
     # update last counts
