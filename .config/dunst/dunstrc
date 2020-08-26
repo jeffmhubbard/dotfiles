@@ -3,8 +3,7 @@
 [global]
 startup_notification = false
 monitor = 0
-;follow = mouse
-follow = keyboard
+follow = none
 geometry = "320x16-6-32"
 transparency = 15
 shrink = yes
@@ -19,19 +18,23 @@ font = Hack Nerd Font 10
 markup = full
 alignment = left
 icon_position = left
+alignment = left
+vertical_alignment = top
 max_icon_size = 64
+min_icon_size = 48
 icon_path = /usr/share/icons/Antsy/actions/scalable:/usr/share/icons/Antsy/status/scalable:/usr/share/icons/Antsy/stock/scalable
 word_wrap = yes
+ellipsize = end
 ignore_newline = no
 line_height = 0
 sort = yes
 bounce_freq = 0
 show_age_threshold = 60
-idle_threshold = 0
+idle_threshold = 5m
 sticky_history = yes
 history_length = 20
 indicate_hidden = true
-stack_duplicates = false
+stack_duplicates = true
 hide_duplicate_count = false
 show_indicators = yes
 browser = /usr/bin/qutebrowser
@@ -39,12 +42,6 @@ dmenu = /usr/bin/rofi -dmenu -p dunst:
 title = Dunst
 class = Dunst
 
-
-[shortcuts]
-close = mod4+grave
-close_all = mod4+shift+grave
-history = mod4+ctrl+grave
-context = mod4+mod1+grave
 
 [urgency_low]
 background = "#000000"
@@ -64,13 +61,17 @@ foreground = "#e9ebeb"
 frame_color = "#14f0f0"
 timeout = 0
 
-#[music]
-#appname = mpnotd
-#new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/audio-x-generic.svg"
+[music]
+appname = mpnotd
+new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/audio-x-generic.svg"
 
 [mail]
 appname = neomutt
 new_icon = "/usr/share/icons/Antsy/apps/scalable/internet-mail.svg"
+
+[updates]
+appname = updates
+new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/package-x-generic.svg"
 
 
 # vim: set ft=cfg:

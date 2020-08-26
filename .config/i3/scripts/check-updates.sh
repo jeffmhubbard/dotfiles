@@ -39,7 +39,7 @@ main() {
       if [[ "$REPO_CUR" -gt 0 ]] || [[ "$AUR_CUR" -gt 0 ]]; then
         TITLE="Software Updates Avaiable"
         BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
-        dunstify -u low "$TITLE" "$BODY"
+        dunstify -a updates -u low "$TITLE" "$BODY"
       fi
     fi
 
