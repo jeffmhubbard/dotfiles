@@ -36,7 +36,7 @@ main() {
 
     # if counts are different from last, show notification
     if [[ "$REPO_CUR" -ne "$REPO_LAST" ]] || [[ "$AUR_CUR" -ne "$AUR_LAST" ]]; then
-      if [[ "$REPO_CUR" -gt 0 ]] && [[ "$AUR_CUR" -gt 0 ]]; then
+      if [[ "$REPO_CUR" -gt 0 ]] || [[ "$AUR_CUR" -gt 0 ]]; then
         TITLE="Software Updates Avaiable"
         BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
         dunstify -u low "$TITLE" "$BODY"
