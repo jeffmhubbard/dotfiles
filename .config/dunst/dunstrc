@@ -1,47 +1,46 @@
 # dunst/dunstrc
 
 [global]
-startup_notification = false
 monitor = 0
 follow = none
 geometry = "320x16-6-32"
+indicate_hidden = true
+shrink = true
 transparency = 15
-shrink = yes
-frame_width = 1
-padding = 6
 notification_height = 0
-horizontal_padding = 6
-separator_color = auto
 separator_height = 2
-format = "%s\n%b"
+padding = 6
+horizontal_padding = 6
+frame_width = 1
+frame_color = "#000000"
+separator_color = auto
+sort = true
+idle_threshold = 5m
 font = Hack Nerd Font 10
+line_height = 0
 markup = full
-alignment = left
-icon_position = left
+format = "%s\n%b"
 alignment = left
 vertical_alignment = top
-max_icon_size = 64
-min_icon_size = 48
-icon_path = /usr/share/icons/Antsy/actions/scalable:/usr/share/icons/Antsy/status/scalable:/usr/share/icons/Antsy/stock/scalable
-word_wrap = yes
+show_age_threshold = 10m
+word_wrap = true
 ellipsize = end
-ignore_newline = no
-line_height = 0
-sort = yes
-bounce_freq = 0
-show_age_threshold = 60
-idle_threshold = 5m
-sticky_history = yes
-history_length = 20
-indicate_hidden = true
+ignore_newline = false
 stack_duplicates = true
 hide_duplicate_count = false
-show_indicators = yes
-browser = /usr/bin/qutebrowser
+show_indicators = true
+icon_position = left
+min_icon_size = 48
+max_icon_size = 64
+icon_path = /usr/share/icons/Antsy/actions/scalable:/usr/share/icons/Antsy/status/scalable:/usr/share/icons/Antsy/apps/scalable:/usr/share/icons/Antsy/devices/scalable
+sticky_history = true
+history_length = 20
 dmenu = /usr/bin/rofi -dmenu -p dunst:
+browser = /usr/bin/xdg-open
+always_run_script = false
 title = Dunst
 class = Dunst
-
+startup_notification = false
 
 [urgency_low]
 background = "#000000"
@@ -61,9 +60,6 @@ foreground = "#e9ebeb"
 frame_color = "#14f0f0"
 timeout = 0
 
-[music]
-appname = mpnotd
-new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/audio-x-generic.svg"
 
 [mail]
 appname = neomutt
@@ -71,7 +67,11 @@ new_icon = "/usr/share/icons/Antsy/apps/scalable/internet-mail.svg"
 
 [updates]
 appname = updates
-new_icon = "/usr/share/icons/Antsy/mimetypes/scalable/package-x-generic.svg"
+new_icon = "/usr/share/icons/Antsy/apps/scalable/system-software-update.svg"
+
+[welcome]
+appname = welcome
+new_icon = "/usr/share/icons/Antsy/status/scalable/user-idle-panel.svg"
 
 
 # vim: set ft=cfg:
