@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-# i3/scripts/backlight-osd.sh
+# backlight-xob.sh
 
 # setup xob pipe
-OSDPIPE="$HOME/.cache/xob/backlight.fifo"
-[[ -p "$OSDPIPE" ]] || mkfifo "$OSDPIPE" &>/dev/null
+XOB="$HOME/.cache/xob/backlight.fifo"
 
 # set backlight
 case "$1" in
@@ -15,7 +14,7 @@ esac
 
 # display current level
 LEVEL=$(xbacklight -get)
-printf "%.0f\n" "$LEVEL" > "$OSDPIPE"
+printf "%.0f\n" "$LEVEL" > "$XOB"
 
 exit 0
 
