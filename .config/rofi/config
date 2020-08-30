@@ -26,7 +26,7 @@ rofi.display-drun:  Applications
 rofi.terminal: termite
 
 !                  'background', 'border', 'separator'
-rofi.color-window: argb:cc000000, argb:cc5833ff, #818383
+rofi.color-window: argb:e6000000, argb:e65833ff, #818383
 
 ! State:           'bg',          'fg',    'bgalt',       'hlbg',        'hlfg'
 rofi.color-normal: argb:00000000, #e9ebeb, argb:00000000, argb:ff5833ff, #000000 
