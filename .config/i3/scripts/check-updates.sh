@@ -5,6 +5,7 @@
 declare -i INTERVAL=600
 declare REPO_CUR AUR_CUR
 declare -i REPO_LAST AUR_LAST
+declare -i ID="8730$RANDOM"
 
 # prevent multiple instances from running
 clean_run() {
@@ -39,7 +40,7 @@ main() {
       if [[ "$REPO_CUR" -gt 0 ]] || [[ "$AUR_CUR" -gt 0 ]]; then
         TITLE="Software Updates Avaiable"
         BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
-        dunstify -a updates -u low "$TITLE" "$BODY"
+        dunstify -r "$ID" -a updates -u low "$TITLE" "$BODY"
       fi
     fi
 

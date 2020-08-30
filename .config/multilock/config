@@ -1,0 +1,68 @@
+# ~/.config/multilock/config
+
+# default options
+display_on=1
+span_image=true
+lock_timeout=600
+fx_list=(color)
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+solid_color=333333
+
+# default theme
+loginbox=000000D9
+loginshadow=00000000
+locktext="Type password to unlock..."
+font="Source Code Sans"
+ringcolor=818383CC
+insidecolor=00000000
+separatorcolor=00000000
+ringvercolor=14f0f0ff
+insidevercolor=00000000
+ringwrongcolor=fc391fff
+insidewrongcolor=00000000
+keyhlcolor=31e722ff
+bshlcolor=eaec23ff
+verifcolor=14f0f0ff
+timecolor=ffffffff
+datecolor=ffffffff
+
+prelock() {
+
+	# start away timer
+	away_start="$(date -u +%s)"
+
+	# set dpms timeout
+	if [ -n "$lock_timeout" ]; then
+		xset dpms "$lock_timeout"
+	fi
+
+	# pause dunst
+	if [ -n "$(pidof dunst)" ]; then
+		pkill -u "$USER" -USR1 dunst
+	fi
+
+}
+
+postlock() {
+
+	# restore default dpms timeout
+	if [ -n "$lock_timeout" ]; then
+		xset dpms "$DEFAULT_TIMEOUT"
+	fi
+
+	# unpause dunst
+	if [ -n "$(pidof dunst)" ] ; then
+		pkill -u "$USER" -USR2 dunst
+	fi
+
+	# show time away
+	away_end="$(date -u +%s)"
+	if [[ "$away_start" -ne "$away_end" ]]; then
+		local away_since=$(date --date="@$away_start" +"%A, %_I:%M:%S%P")
+		dunstify -a welcome "Welcome Back" "You were away since $away_since"
+	fi
+
+}
+
