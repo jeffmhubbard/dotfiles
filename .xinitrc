@@ -7,19 +7,19 @@ WM_CONF="$WM_DIR/$HOSTNAME.conf"
 WM_BAR="$WM_DIR/status/$HOSTNAME.conf"
 
 # source conf files in INIT_DIR
-for conf in "${INIT_DIR}"/*.conf; do
+for conf in "${INIT_DIR}"/?*.conf; do
   source "$conf"
 done
 unset conf
 
 # get WM config
-if [[ ! -f "$WM_CONF" ]]; then
+if [ ! -f "$WM_CONF" ]; then
   WM_CONF="$WM_DIR/default.conf"
 fi
 export WM_CONF=$WM_CONF
 
 # get WM bar
-if [[ ! -f "$WM_BAR" ]]; then
+if [ ! -f "$WM_BAR" ]; then
   WM_BAR="$WM_DIR/status/default.conf"
 fi
 export WM_BAR=$WM_BAR
