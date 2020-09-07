@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
-
-# modular .xinitrc
-# sources config files from ~/.xinit.d
+# .xinitrc
 
 # setup some paths
 INIT_DIR="$HOME/.xinit.d"
