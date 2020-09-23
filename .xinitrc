@@ -1,16 +1,15 @@
 # .xinitrc
 
 # setup some paths
-INIT_DIR="$HOME/.xinit.d"
+XINIT_DIR="$HOME/.xinitrc.d"
 WM_DIR="$HOME/.config/i3"
 WM_CONF="$WM_DIR/$HOSTNAME.conf"
 WM_BAR="$WM_DIR/status/$HOSTNAME.conf"
 
-# source conf files in INIT_DIR
-for conf in "${INIT_DIR}"/?*.conf; do
+# source conf files in XINIT_DIR
+for conf in "${XINIT_DIR}"/?*.conf; do
   source "$conf"
 done
-unset conf
 
 # get WM config
 if [ ! -f "$WM_CONF" ]; then
