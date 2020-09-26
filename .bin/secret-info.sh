@@ -7,13 +7,18 @@
 # white, yellow, black, magenta, blue, green, or red (or cyan?)
 color="cyan"
 
-# check for no-more-secrets
-command -v nms >/dev/null 2>&1 || \
-    { echo >&2 "Please install no-more-secrets"; exit 1; }
+# check for commands
+# nms - no-more-secrets(-git)
+# distro - python-distro
+# pacman - i use arch btw
+for cmd in nms distro pacman; do
+  command -v "${cmd}" >/dev/null 2>&1 || \
+    { echo >&2 "Unable to locate '${cmd}'!"; exit 1; }
+done
 
 # collect sys info
 login="$USER"
-host="$(hostname)"
+host="$(uname -n)"
 os="$(distro | grep Name | cut -d ' ' -f 2-)"
 kernel="$(uname -sr)"
 cpu="$(awk -F ':' '/model name/ {printf $2; exit}' "/proc/cpuinfo")"
@@ -35,7 +40,8 @@ LC_ALL=C
 LANG=C
 
 # display sys info
-clear && \
+#clear && \
+clear
 echo "
  :LOGIN      ${login}
  :HOSTNAME   ${host}
@@ -50,4 +56,4 @@ echo "
  :SHELL      ${shell}
 " | nms -af "${color}"
 
-# vim: ft=sh ts=2 sw=0 et:
+# vim: ft=sh ts=2 sw=2 et:

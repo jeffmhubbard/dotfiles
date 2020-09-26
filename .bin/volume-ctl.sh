@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# volume-xob.sh
+# volume-ctl.sh
 
 # xob pipe
-XOB="$HOME/.cache/xob/volume.fifo"
+xobpipe="$HOME/.cache/xob/volume.fifo"
 
 # set volume or mute
 case "$1" in
@@ -14,10 +14,10 @@ case "$1" in
 esac
 
 # display current level
-VOLUME=$(pamixer --get-volume)
-MUTED=$(pamixer --get-mute)
-[[ "$MUTED" = true ]] && MI="!"
-echo "$VOLUME$MI" > "$XOB"
+volume=$(pamixer --get-volume)
+muted=$(pamixer --get-mute)
+[[ "$muted" = true ]] && alt="!"
+echo "$volume$alt" > "$xobpipe"
 
 exit 0
 

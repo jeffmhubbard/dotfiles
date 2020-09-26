@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# backlight-xob.sh
+# backlight-ctl.sh
 
 # setup xob pipe
-XOB="$HOME/.cache/xob/backlight.fifo"
+xobpipe="$HOME/.cache/xob/backlight.fifo"
 
 # set backlight
 case "$1" in
@@ -13,8 +13,8 @@ case "$1" in
 esac
 
 # display current level
-LEVEL=$(xbacklight -get)
-printf "%.0f\n" "$LEVEL" > "$XOB"
+level=$(xbacklight -get)
+printf "%.0f\n" "$level" > "$xobpipe"
 
 exit 0
 

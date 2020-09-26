@@ -1,59 +1,107 @@
 #!/usr/bin/env bash
 
 # Display notification for software updates
+# pacman + aurutils
 
-declare -i INTERVAL=600
-declare REPO_CUR AUR_CUR
-declare -i REPO_LAST AUR_LAST
-declare -i ID="8730$RANDOM"
+# check for commands
+declare -a deps=(pacman aur dunstify)
+
+for cmd in "${deps[@]}"; do
+  if ! command -v "${cmd}" >/dev/null 2>&1
+  then
+    echo >&2 "Unable to locate '${cmd}' command!"
+    exit 1
+  fi
+done
 
 # prevent multiple instances from running
-clean_run() {
+declare -i pid="$$"
+declare pidfile="/var/run/user/${UID}/${0##*/}.pid"
 
-  pid="$$"
-  pidfile="/var/run/user/$UID/check-updates.pid"
+if [ -f "${pidfile}" ]
+then
+  oldpid=$(head -n 1 "${pidfile}")
+  if [ ! "${pid}" == "${oldpid}" ]
+  then
+    kill -9 "${oldpid}" 2>/dev/null
+  fi
+fi
+echo "${pid}" > "${pidfile}"
 
-  if [ -f "$pidfile" ]; then
-    oldpid=$(head -n 1 $pidfile)
+# main loop
+declare -i interval=600
+declare repo_pkgs aur_pkgs
+declare -i repo_cnt aur_cnt
+declare -i repo_last aur_last
+declare repo_msg aur_msg notify_msg
 
-    if [ ! "$pid" == "$oldpid" ]; then
-      kill -9 "$oldpid" 2>/dev/null
-    fi
+while true
+do
+  # check for repo updates
+  repo_pkgs=($(checkupdates 2> /dev/null | cut -d ' ' -f 1))
+  repo_cnt="${#repo_pkgs[@]}"
+
+  # build repo message
+  if [[ ${repo_cnt} -gt 0 ]]
+  then
+    repo_msg+="Repo: ${repo_cnt}"
+    for p in "${repo_pkgs[@]}"
+    do
+      repo_msg+="\n- ${p}"
+    done
   fi
 
-  echo "$pid" > "$pidfile"
+  # add repo message
+  if [[ -n "${repo_msg}" ]]
+  then
+    notify_msg+="${repo_msg}"
+  fi
 
-}
+  # check for aur updates
+  aur_pkgs=($(pacman -Q | aur vercmp -q))
+  aur_cnt="${#aur_pkgs[@]}"
 
-main() {
+  # build aur message
+  if [[ ${aur_cnt} -gt 0 ]]
+  then
+    aur_msg+="AUR: ${aur_cnt}"
+    for p in "${aur_pkgs[@]}"
+    do
+      aur_msg+="\n- ${p}"
+    done
+  fi
 
-  clean_run
-
-  while true
-  do
-    # get current counts
-    REPO_CUR=$(checkupdates 2>/dev/null | wc -l )
-    AUR_CUR=$(pacman -Q | aur vercmp 2>/dev/null | wc -l)
-
-    # if counts are different from last, show notification
-    if [[ "$REPO_CUR" -ne "$REPO_LAST" ]] || [[ "$AUR_CUR" -ne "$AUR_LAST" ]]; then
-      if [[ "$REPO_CUR" -gt 0 ]] || [[ "$AUR_CUR" -gt 0 ]]; then
-        TITLE="Software Updates Avaiable"
-        BODY="pacman: $REPO_CUR\nAUR: $AUR_CUR"
-        dunstify -r "$ID" -a updates -u low "$TITLE" "$BODY"
-      fi
+  # add aur message
+  if [[ -n "${aur_msg}" ]]
+  then
+    # prepend newline if there were also repo updates
+    if [[ -n "${repo_msg}" ]]
+    then
+      notify_msg+="\n"
     fi
+    notify_msg+="${aur_msg}"
+  fi
 
-    # update last counts
-    REPO_LAST=$REPO_CUR
-    AUR_LAST=$AUR_CUR
+  # display notification if updates found
+  if [[ "${repo_cnt}" -ne "${repo_last}" ]] || [[ "${aur_cnt}" -ne "${aur_last}" ]]
+  then
+    if [[ "${repo_cnt}" -gt 0 ]] || [[ "${aur_cnt}" -gt 0 ]]
+    then
+      title="Software Updates Avaiable"
+      body="${notify_msg}"
+      dunstify -a updates -u low "${title}" "${body}"
+    fi
+  fi
+  unset repo_msg aur_msg notify_msg
 
-    # wait
-    sleep $INTERVAL
-  done
-}
+  # update last counts
+  repo_last=${repo_cnt}
+  aur_last=${aur_cnt}
+  unset repo_cnt aur_cnt
 
-main
+  # wait
+  sleep ${interval}
+done
 
 exit 0
 

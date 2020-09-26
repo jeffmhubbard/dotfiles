@@ -1,20 +1,16 @@
 #!/usr/bin/env bash
 
-# xsetroot-random-color.sh [MATCH] [--print]
+# xsetroot-random-color.sh [match] [--print]
 #
 # Set random color as root X window background using
 # list of named X colors
+# Lots O' Screen Colors - http://sub-atomic.com/~moses/decimalcol.html
 #
-# MATCH: String to match colors
+# match: String to match colors
 # --print: Print all available colors
 
-
-VER=$(basename "$0")
-
-# Lots O' Screen Colors
-# http://sub-atomic.com/~moses/decimalcol.html
-declare -a COLORS
-COLORS=( \
+declare -a colors
+colors=( \
     Snow SlateBlue1 DarkOrange1 \
     GhostWhite SlateBlue2 DarkOrange2 \
     WhiteSmoke SlateBlue3 DarkOrange3 \
@@ -198,46 +194,46 @@ COLORS=( \
     Azure4 Grey100
 )
 
-MATCH=$1
+match=$1
 
 # print list of colors and exit
-if [[ $MATCH == "--print" ]]; then
-    for color in "${COLORS[@]}"; do 
+if [[ $match == "--print" ]]; then
+    for color in "${colors[@]}"; do 
         printf "%-8s\n" "${color}"
     done | column
     exit
 fi
 
-# find colors containing MATCH string
-if [[ -n "$MATCH" ]]; then
-    printf "Matching: %s\n" "$MATCH"
-    declare -a MATCHING
-    for color in "${COLORS[@]}"; do
-        if [[ "${color,,}" == *"${MATCH,,}"* ]]; then
-            MATCHING+=("$color")
+# find colors containing match string
+if [[ -n "$match" ]]; then
+    printf "Matching: %s\n" "$match"
+    declare -a matching
+    for color in "${colors[@]}"; do
+        if [[ "${color,,}" == *"${match,,}"* ]]; then
+            matching+=("$color")
         fi
     done
-    if [ ! ${#MATCHING[@]} -eq 0 ]; then
-        unset COLORS
-        COLORS=("${MATCHING[@]}")
+    if [ ! ${#matching[@]} -eq 0 ]; then
+        unset colors
+        colors=("${matching[@]}")
     else
-        echo "$VER: ERROR: No matching colors!"
+        echo "ERROR: No matching colors!"
         exit 1
     fi
 fi
 
 # get random color from array
-RANDOM_SEED=$$$(date +%s)
-ARRAY_SIZE=${#COLORS[@]}
-RANDOM_NUMBER=$((RANDOM_SEED % ARRAY_SIZE))
-RANDOM_COLOR=${COLORS[$RANDOM_NUMBER]}
+rand_seed=$$$(date +%s)
+arr_size=${#colors[@]}
+rand_num=$((rand_seed % arr_size))
+rand_color=${colors[$rand_num]}
 
 # set root color
-if [[ -n $(command -v xsetroot 2>/dev/null) ]]; then
-    xsetroot -solid "$RANDOM_COLOR"
-    printf "Set root window color to: %s\n" "$RANDOM_COLOR"
+if command -v xsetroot 2>/dev/null; then
+    xsetroot -solid "$rand_color"
+    printf "Set root window color to: %s\n" "$rand_color"
 else
-    echo "$VER ERROR: Could not locate xsetroot!"
+    echo "ERROR: Could not locate xsetroot!"
     exit 1
 fi
 
