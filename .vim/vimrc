@@ -208,7 +208,7 @@ let NERDTreeStatusline = 0
 let NERDTreeWinSize = 30
 let NERDTreeMinimalUI = 1
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeStatusIndicatorMapCustom = {
     \ "Modified"  : "●",
     \ "Staged"    : "▲",
     \ "Untracked" : "✱",
@@ -225,7 +225,7 @@ map <leader>\d :NERDTreeToggle<CR>
 
 
 " Xuyuanp/nerdtree-git-plugin
-let g:NERDTreeShowGitStatus = 1
+let g:NERDTreeGitStatusEnable = 1
 
 
 " ryanoasis/vim-devicons
