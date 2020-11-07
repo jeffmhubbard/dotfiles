@@ -4,7 +4,7 @@
 # pacman + aurutils
 
 # check for commands
-declare -a deps=(pacman aur dunstify)
+declare -a deps=(pacman aur notify-send)
 
 for cmd in "${deps[@]}"; do
   if ! command -v "${cmd}" >/dev/null 2>&1
@@ -89,7 +89,7 @@ do
     then
       title="Software Updates Avaiable"
       body="${notify_msg}"
-      dunstify -a updates -u low "${title}" "${body}"
+      notify-send -a updates -u low "${title}" "${body}"
     fi
   fi
   unset repo_msg aur_msg notify_msg
