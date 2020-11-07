@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Music Notifications
+Type=Application
+Exec=mpnotd
+StartupNotify=false

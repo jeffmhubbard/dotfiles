@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Removable Media
+Type=Application
+Exec=udiskie
+StartupNotify=false
