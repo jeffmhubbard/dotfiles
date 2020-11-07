@@ -1,30 +1,31 @@
 # .xinitrc
 
-# setup some paths
-XINIT_DIR="$HOME/.xinitrc.d"
-#WM_DIR="$HOME/.config/i3"
-#WM_CONF="$WM_DIR/$HOSTNAME.conf"
-#WM_BAR="$WM_DIR/status/$HOSTNAME.conf"
+# Path variables
+export PATH=$PATH:$HOME/.bin
 
-# source conf files in XINIT_DIR
-for conf in "${XINIT_DIR}"/?*.conf; do
-  source "$conf"
-done
+# XDG paths
+export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
+#export XDG_RUNTIME_DIR=~/.xdg
 
-# get WM config
-#if [ ! -f "$WM_CONF" ]; then
-#  WM_CONF="$WM_DIR/default.conf"
-#fi
-#export WM_CONF=$WM_CONF
+# Common environment variables
+export TERMINAL=termite
+export EDITOR=vim
+export BROWSER=qutebrowser
+export QT_QPA_PLATFORMTHEME=qt5ct
+export AUR_PAGER=ranger
 
-# get WM bar
-#if [ ! -f "$WM_BAR" ]; then
-#  WM_BAR="$WM_DIR/status/default.conf"
-#fi
-#export WM_BAR=$WM_BAR
+# Load X settings
+xrdb -merge "$HOME/.Xresources"
 
-# start WM
-#exec i3 -c "$WM_CONF"
+# Set screen timeout
+xset s 600 180 &
+
+# Use left-facing pointer
+xsetroot -cursor_name left_ptr &
+
+# Start WM
 exec awesome
 
 exit 0
