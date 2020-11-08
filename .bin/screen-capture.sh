@@ -8,7 +8,7 @@ save_file="${save_to}/scr-$(date '+%Y-%m-%d_%H-%M-%S').png"
 thumbnail="${cache_dir}/scr-thumb.png"
 
 # check for commands
-for cmd in maim dunstify magick; do
+for cmd in maim notify-send magick; do
   command -v "${cmd}" >/dev/null 2>&1 || \
     { echo >&2 "Unable to locate '${cmd}'!"; exit 1; }
 done
@@ -40,7 +40,7 @@ if maim ${selection} "${save_file}"; then
     "${thumbnail}"
 
   # show notification
-  dunstify -u low -i "${thumbnail}" "Screenshot captured" "${save_file}"
+  notify-send -u low -i "${thumbnail}" "Screenshot captured" "${save_file}"
   
   # remove thumbnail
   [[ -f ${thumbnail} ]] && \

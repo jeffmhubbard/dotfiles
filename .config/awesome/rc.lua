@@ -91,8 +91,8 @@ awful.layout.layouts = {
     -- Enabled (order matters)
     awful.layout.suit.tile.left,
     awful.layout.suit.fair,
-    awful.layout.suit.max,
     awful.layout.suit.floating,
+    awful.layout.suit.max,
 }
 -- }}}
 
