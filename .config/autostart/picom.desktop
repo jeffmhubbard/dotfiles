@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=X Compositor
-Type=Application
-Exec=picom
-StartupNotify=false

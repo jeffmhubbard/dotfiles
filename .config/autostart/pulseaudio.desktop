@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Sound Server
-Type=Application
-Exec=start-pulseaudio-x11
-StartupNotify=false

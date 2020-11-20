@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Lock Screen
-Type=Application
-Exec=light-locker
-StartupNotify=false

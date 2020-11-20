@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Hide Mouse Cursor
-Type=Application
-Exec=unclutter --exclude-root
-StartupNotify=false

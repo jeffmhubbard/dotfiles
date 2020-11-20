@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Bluetooth Manager
-Type=Application
-Icon=blueman
-Exec=blueman-applet
-StartupNotify=false

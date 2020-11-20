@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Software Updates
-Type=Application
-Exec=software-update-notify.sh
-StartupNotify=false
