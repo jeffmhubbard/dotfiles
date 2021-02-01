@@ -1,7 +1,0 @@
-program_options:
-  udisks_version:   2
-  tray:             auto
-  automount:        false
-  notify:           false
-  file_manager:     xdg-open
-  password_prompt: 'builtin:gui'

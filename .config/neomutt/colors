@@ -5,7 +5,7 @@ color error         color1          default     # message line error text
 color tilde         color8          default     # vi-like tildes marking blank lines
 color message       color7          default     
 color markers       color5          default     # wrapped-line /^\+/ markers
-color attachment    color13         default     # attachment headers
+color attachment    color8          default     # attachment headers
 color search        color0          color11     # search patterns in pager
 color indicator     color0          color12     # selected email in index
 color tree          color8          default     # arrow in threads (`-->')
@@ -27,14 +27,14 @@ mono quoted         bold
 
 # --- Index ---
 color index         default         default     '~A'    # all messages
-color index         brightcolor15   default     '~N'    # new messages
+color index         brightcolor11   default     '~N'    # new messages
 color index         brightcolor14   default     '~U'    # unread messages
 color index         default         default     '~R'    # read
 color index         color3          default     '~Q'    # replied
 color index         color6          default     '~T'    # tagged
 color index         color8          default     '~D'    # deleted messages
-color index         brightcolor11   default     '~F'    # flags
-color index_author  brightcolor11   default     '~F'    # flags
+color index         color14         default     '~F'    # flags
+color index_author  brightcolor14   default     '~F'    # flags
 color index         color10         default     '~l'    # mailing list
 color index_author  color10         default     '~l'    # mailing list
 color index_flags   color5          default     '%A'
@@ -74,9 +74,9 @@ mono  body          bold                        "^gpg: BAD signature from.*"
 # --- Sidebar ---
 color sidebar_indicator     color0          color12
 color sidebar_highlight     color0          color15
-color sidebar_new           brightcolor14   default
-color sidebar_unread        brightcolor15   default
-color sidebar_flagged       brightcolor11   default
+color sidebar_new           color11         default
+color sidebar_unread        color15         default
+color sidebar_flagged       color14         default
 color sidebar_divider       color8          default
 
 

@@ -5,8 +5,8 @@
 color background         default    default
 color listnormal         default    default
 color listfocus          color0     color12
-color listnormal_unread  color14    default    bold
-color listfocus_unread   color15    color12
+color listnormal_unread  color11    default
+color listfocus_unread   color0     color12
 color info               color8     default    bold
 color article            default    default
 

@@ -10,10 +10,15 @@ export XDG_DATA_HOME=~/.local/share
 #export XDG_RUNTIME_DIR=~/.xdg
 
 # Common environment variables
-export TERMINAL=termite
+export TERMINAL=alacritty
 export EDITOR=vim
+export FILEXP=pcmanfm
 export BROWSER=qutebrowser
+
+# Make Qt themes follow Gtk (qt5-styleplugins)
 export QT_QPA_PLATFORMTHEME=qt5ct
+
+# File manager to review PKGBUILD in aurutils
 export AUR_PAGER=ranger
 
 # Load X settings

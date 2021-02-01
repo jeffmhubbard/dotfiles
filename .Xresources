@@ -1,6 +1,6 @@
 ! .Xresources
 
-!! --- Terminal.app ---
+!! --- Terminal.app color scheme ---
 *color0:                        #000000
 *color1:                        #c23621
 *color2:                        #25bc24
@@ -59,6 +59,6 @@ Xft.rgba:                       rgb
 
 !! --- Cursor ---
 Xcursor.theme:                  "OpenZone Black"
-Xcursor.size:                   16
+!Xcursor.size:                   16
 
 ! vim: set ft=xdefaults:

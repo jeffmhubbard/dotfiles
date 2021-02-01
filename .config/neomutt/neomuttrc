@@ -10,6 +10,7 @@ source $HOME/.config/neomutt/macros
 set header_cache = "~/.cache/neomutt/headers"
 set message_cachedir = "~/.cache/neomutt/bodies"
 set certificate_file = "~/.config/neomutt/certificates"
+set signature = "~/.config/neomutt/signature"
 
 # --- Options ---
 set index_format="%4C %Z %{%b %d %R} %-15.15L (%?l?%4l&%4c?) %s"

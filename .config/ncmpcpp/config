@@ -91,10 +91,9 @@ alternative_ui_separator_color = 9
 window_border_color = 9
 active_window_border = 9
 
- --- Visualizer ---
-visualizer_fifo_path = "~/.cache/mpd/visualizer.fifo"
-visualizer_output_name = "my_vis"
-visualizer_sync_interval = "10" 
+# --- Visualizer ---
+visualizer_data_source = "~/.cache/mpd/visualizer.fifo"
+visualizer_output_name = "Visualizer"
 visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "▰▰"
