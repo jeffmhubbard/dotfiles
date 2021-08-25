@@ -4,9 +4,7 @@ configuration {
 	lines: 10;
 	columns: 1;
 	font: "Hack Nerd Font 10";
-	bw: 2;
 	location: 0;
-	padding: 2;
 	yoffset: -120;
 	xoffset: 0;
 	fixed-num-lines: false;
@@ -21,6 +19,6 @@ configuration {
 	display-window: "  Windows";
 	display-run: "  Run";
 	display-drun: "  Applications";
-	theme: "antsy";
+	theme: "antsy-next";
 }
 /* vim:ft=css

@@ -1,3 +1,7 @@
+#
+# Newsboat URLs
+#
+
 https://www.archlinux.org/feeds/packages/added/ "~ARCH: Packages Added"
 https://www.archlinux.org/feeds/packages/removed/ "~ARCH: Packages Removed"
 https://aur.archlinux.org/rss/ "~ARCH: Packages Added (AUR)"
@@ -8,25 +12,13 @@ https://www.linuxjournal.com/news/feed "~RSS: Linux Journal"
 https://opensource.com/feed "~RSS: Opensource.com"
 http://feeds.arstechnica.com/arstechnica/index "~RSS: ArsTechnica (Index)"
 http://feeds.arstechnica.com/arstechnica/features "~RSS: ArsTechnica (Featured Articles)"
-http://feeds.arstechnica.com/arstechnica/open-source "~RSS: ArsTechnica (Open Source)"
 https://hnrss.org/frontpage "~RSS: Hacker News"
 https://www.osnews.com/feed/ "~RSS: OSNews"
 
 https://www.reddit.com/r/linux.rss "~REDDIT: r/linux"
 https://www.reddit.com/r/archlinux.rss "~REDDIT: r/archlinux"
+https://www.reddit.com/r/bspwm.rss "~REDDIT: r/awesomewm"
 https://www.reddit.com/r/commandline.rss "~REDDIT: r/commandline"
 https://www.reddit.com/r/zsh.rss "~REDDIT: r/zsh"
 https://www.reddit.com/r/vim.rss "~REDDIT: r/vim"
 https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn"
-https://www.reddit.com/r/i3wm.rss "~REDDIT: r/i3wm"
-https://www.reddit.com/r/bspwm.rss "~REDDIT: r/bspwm"
-
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg "~YOUTUBE: DistroTube"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCkK9UDm_ZNrq_rIXCz3xCGA "~YOUTUBE: Bryan Lunduke"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~YOUTUBE: Luke Smith"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCWJUSpXVHTaHErtGWC5qPlQ "~YOUTUBE: Destination Linux"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UC4w1YQAJMWOz4qtxinq55LQ "~YOUTUBE: Level1Techs"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCOWcZ6Wicl-1N34H0zZe38w "~YOUTUBE: Level1Linux"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCv1Kcz-CuGM6mxzL3B1_Eiw "~YOUTUBE: The Linux Gamer"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCRBHiacaQb5S70pljtJYB2g "~YOUTUBE: EposVox"
-#https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw "~YOUTUBE: Linus Tech Tips"

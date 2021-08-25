@@ -1,41 +1,34 @@
 /**
- * antsy.rasi - Terminal.app colors
+ * antsy-classic.rasi - Xterm colors
  * Rofi version: 1.6.0
  **/
 * {
     black:                       rgba ( 0, 0, 0, 100 % );
-    gray:                        rgba ( 129, 131, 131, 100 % );
-
-    red:                         rgba ( 194, 54, 33, 100 % );
-    lred:                        rgba ( 252, 57, 31, 100 % );
-
-    green:                       rgba ( 37, 188, 36, 100 % );
-    lgreen:                      rgba ( 49, 231, 34, 100 % );
-
-    yellow:                      rgba ( 173, 173, 39, 100 % );
-    lyellow:                     rgba ( 234, 236, 35, 100 % );
-
-    blue:                        rgba ( 73, 46, 225, 100 % );
-    lblue:                       rgba ( 88, 51, 255, 100 % );
-
-    magenta:                     rgba ( 211, 56, 211, 100 % );
-    lmagenta:                    rgba ( 249, 53, 248, 100 % );
-
-    cyan:                        rgba ( 51, 187, 200, 100 % );
-    lcyan:                       rgba ( 20, 240, 240, 100 % );
-
-    lgray:                       rgba ( 203, 204, 205, 100 % );
-    white:                       rgba ( 233, 235, 235, 100 % );
-
-    transparent:                 rgba ( 0, 0, 0, 0 % );
+    red:                         rgba ( 205, 0, 0, 100 % );
+    green:                       rgba ( 0, 205, 0, 100 % );
+    yellow:                      rgba ( 205, 205, 0, 100 % );
+    blue:                        rgba ( 0, 0, 238, 100 % );
+    magenta:                     rgba ( 205, 0, 205, 100 % );
+    cyan:                        rgba ( 0, 205, 205, 100 % );
+    lgray:                       rgba ( 229, 229, 229, 100 % );
+    gray:                        rgba ( 127, 127, 127, 100 % );
+    lred:                        rgba ( 255, 0, 0, 100 % );
+    lgreen:                      rgba ( 0, 255, 0, 100 % );
+    lyellow:                     rgba ( 255, 255, 0, 100 % );
+    lblue:                       rgba ( 92, 92, 255, 100 % );
+    lmagenta:                    rgba ( 255, 0, 255, 100 % );
+    lcyan:                       rgba ( 0, 255, 255, 100 % );
+    white:                       rgba ( 255, 255, 255, 100 % );
 
     background:                  rgba ( 0, 0, 0, 90 % );
-    foreground:                  var(white);
+    foreground:                  var(lgray);
+
+    transparent:                 rgba ( 0, 0, 0, 0 % );
 
     background-color:            var(background);
     border-color:                var(lblue);
     separatorcolor:              var(gray);
-    spacing:                     2;
+    spacing:                     0;
 
     normal-background:           var(background);
     normal-foreground:           var(foreground);
@@ -117,7 +110,7 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    padding:          2;
+    padding:          0;
     background-color: var(background);
     border:           2;
 }
@@ -137,7 +130,7 @@ listview {
     padding:      2px 0px 0px ;
     scrollbar:    false;
     border-color: var(separatorcolor);
-    spacing:      2px ;
+    spacing:      0px ;
     fixed-height: 0;
     border:       0px ;
 }
@@ -150,7 +143,7 @@ scrollbar {
 }
 sidebar {
     border-color: var(separatorcolor);
-    border:       2px dash 0px 0px ;
+    border:       2px solid 0px 0px ;
 }
 button {
     spacing:    0;

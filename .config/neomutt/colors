@@ -74,9 +74,9 @@ mono  body          bold                        "^gpg: BAD signature from.*"
 # --- Sidebar ---
 color sidebar_indicator     color0          color12
 color sidebar_highlight     color0          color15
-color sidebar_new           color11         default
+color sidebar_new           color14         default
 color sidebar_unread        color15         default
-color sidebar_flagged       color14         default
+color sidebar_flagged       color11         default
 color sidebar_divider       color8          default
 
 

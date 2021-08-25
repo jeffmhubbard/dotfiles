@@ -18,7 +18,7 @@ set sort=threads
 set move = no
 set imap_keepalive = 900
 set sleep_time = 0
-set new_mail_command="notify-send -a neomutt -u normal -t 10000 'New Messages' '%n new messages, %u unread.' &"
+set new_mail_command="notify-send -i mutt -a NeoMutt -u normal 'New Messages' '%n new messages, %u unread.' &"
 set beep = no
 
 set use_from = yes

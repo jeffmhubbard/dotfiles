@@ -5,10 +5,13 @@ aur https://aur.archlinux.org/
 bbs https://bbs.archlinux.org/
 awiki https://wiki.archlinux.org/
 wiki https://www.wikipedia.org/
+git https://git.linuxit.us/
 gh https://github.com/
 pydoc https://docs.python.org/3/
+awedoc https://awesomewm.org/apidoc/
+luadoc https://www.lua.org/manual/5.4/
 bashdoc https://www.gnu.org/software/bash/manual/html_node/
 reddit https://reddit.com/
+music https://music.youtube.com/
 cn https://cerberus.network/
 li https://linuxit.us/
-git https://git.linuxit.us/

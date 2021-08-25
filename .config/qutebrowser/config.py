@@ -38,6 +38,13 @@ c.hints.radius = 0
 c.tabs.show = "multiple"
 c.downloads.position = "bottom"
 
+c.colors.webpage.bg = "black"
+c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.threshold.background = 100
+c.colors.webpage.darkmode.threshold.text = 256 - c.colors.webpage.darkmode.threshold.background
+c.colors.webpage.darkmode.policy.images = 'smart'
+#c.colors.webpage.preferred_color_scheme = "dark"
+
 c.colors.completion.category.bg = xres["*color0"]
 c.colors.completion.category.border.bottom = xres["*color8"]
 c.colors.completion.category.border.top = xres["*color0"]
@@ -124,7 +131,7 @@ c.colors.tabs.selected.even.fg = xres["*color0"]
 c.colors.tabs.selected.odd.bg = xres["*color12"]
 c.colors.tabs.selected.odd.fg = xres["*color0"]
 
-c.fonts.default_family = "Hack Nerd Font Mono"
+c.fonts.default_family = "Hack Nerd Font"
 c.fonts.default_size = "10pt"
 
 
