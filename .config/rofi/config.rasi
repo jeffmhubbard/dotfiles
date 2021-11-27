@@ -1,24 +1,25 @@
 configuration {
-	modi: "window,drun,run,file-browser";
-	width: 320;
-	lines: 10;
-	columns: 1;
-	font: "Hack Nerd Font 10";
-	location: 0;
-	yoffset: -120;
-	xoffset: 0;
-	fixed-num-lines: false;
-	show-icons: true;
-	terminal: "rofi-sensible-terminal";
-	sort: true;
-	separator-style: "none";
-	hide-scrollbar: true;
-	fake-transparency: false;
-	click-to-exit: true;
-	show-match: true;
-	display-window: "  Windows";
-	display-run: "  Run";
-	display-drun: "  Applications";
-	theme: "antsy-next";
+    modi: "window,drun,run,filebrowser,combi";
+    location: 0;
+    yoffset: -120;
+    xoffset: 0;
+    fixed-num-lines: false;
+    show-icons: true;
+    terminal: "rofi-sensible-terminal";
+    sort: true;
+    click-to-exit: true;
+
+/**
+    // display-window: "  Windows";
+    // display-run: "  Run";
+    // display-drun: "  Applications";
+**/
+
+    theme: ".current";
+    filebrowser {
+        directory: "~/";
+        sorting-method: "name";
+        directories-first: true;
+    }
 }
 /* vim:ft=css

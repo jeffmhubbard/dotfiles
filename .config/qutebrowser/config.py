@@ -131,8 +131,7 @@ c.colors.tabs.selected.even.fg = xres["*color0"]
 c.colors.tabs.selected.odd.bg = xres["*color12"]
 c.colors.tabs.selected.odd.fg = xres["*color0"]
 
-c.fonts.default_family = "Hack Nerd Font"
+c.fonts.default_family = "Bitstream Vera Roman"
 c.fonts.default_size = "10pt"
-
 
 # vim: set ft=python :

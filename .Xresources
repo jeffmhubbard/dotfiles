@@ -1,8 +1,5 @@
 ! .Xresources
 
-#include ".config/xcolors/next.xres"
-!#include ".config/xcolors/classic.xres"
-
 #define black       #000000
 #define red         #c23621
 #define green       #25bc24
@@ -62,7 +59,7 @@ URxvt*letterSpace:              1
 URxvt*cursorBlink:              true
 URxvt*cursorUnderline:          true
 URxvt*colorULMode:              on
-URxvt*background:               [90]black
+URxvt*background:               bgcolor
 URxvt*transparent:              false
 URxvt*depth:                    32
 URxvt*shading:                  10

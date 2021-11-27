@@ -2,6 +2,17 @@
  * antsy.rasi - Terminal.app colors
  * Rofi version: 1.6.0
  **/
+
+configuration {
+    display-ssh:                 "  Remote Hosts";
+    display-run:                 "  Run command";
+    display-drun:                "  Start Application";
+    display-window:              "  Select Window";
+    display-filebrowser:         "  Browse Files";
+    display-combi:               "  Rofi";
+    show-icons:                  true;
+}
+
 * {
     black:                       rgba ( 0, 0, 0, 100 % );       /** #000000 **/
     red:                         rgba ( 194, 54, 33, 100 % );   /** #c23621 **/
@@ -56,7 +67,6 @@
 
     alternate-urgent-background: var(urgent-background);
     alternate-urgent-foreground: var(urgent-foreground);
-
 }
 element {
     padding: 1px ;
@@ -110,9 +120,16 @@ element-icon {
     text-color:       inherit;
 }
 window {
+    width: 320px;
+    columns: 1;
+    font: "Hack Nerd Font 10";
+    location: 0;
+    yoffset: -120;
+    xoffset: 0;
     padding:          0;
     background-color: var(background);
     border:           1;
+    border-radius:  3;
 }
 mainbox {
     padding: 0;
@@ -133,6 +150,7 @@ listview {
     spacing:      0px ;
     fixed-height: 0;
     border:       0px ;
+    lines:        10;
 }
 scrollbar {
     width:        4px ;

@@ -1,5 +1,12 @@
 # .xinitrc
 
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
 # Path variables
 export PATH=$PATH:$HOME/.bin
 
@@ -8,10 +15,10 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 #export XDG_RUNTIME_DIR=$HOME/.xdg
-#export XDG_CURRENT_DESKTOP=awesome
+#export XDG_CURRENT_DESKTOP=AwesomeWM
 
 # Common environment variables
-export TERMINAL=urxvtc
+export TERMINAL=kitty
 export EDITOR=vim
 export FILEXP=pcmanfm
 export BROWSER=qutebrowser
