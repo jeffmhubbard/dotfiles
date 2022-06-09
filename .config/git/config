@@ -2,15 +2,17 @@
 	email = jeffmhubbard@gmail.com
 	name = Jeff M. Hubbard
 [core]
-	editor = vim
+	editor = nvim
 [web]
-	browser = qutebrowser
+	browser = firefox
 [color]
 	ui = true
-[diff]
-	tool = vimdiff
 [difftool]
-	prompt = false
+	prompt = true
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 [pull]
 	rebase = false
 [init]

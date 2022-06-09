@@ -1,80 +1,30 @@
 ! .Xresources
 
-#define black       #000000
-#define red         #c23621
-#define green       #25bc24
-#define yellow      #adad27
-#define blue        #492ee1
-#define magenta     #d338d3
-#define cyan        #33bbc8
-#define lgray       #cbcccd
-#define dgray       #818383
-#define lred        #fc391f
-#define lgreen      #31e722
-#define lyellow     #eaec23
-#define lblue       #5833ff
-#define lmagenta    #f935f8
-#define lcyan       #14f0f0
-#define white       #e9ebeb
-
-#define fgcolor     #cbcccd
-#define bgcolor     #000000
-#define bgalpha     90
-
 !! -- Colors --
-*color0:            black
-*color1:            red
-*color2:            green
-*color3:            yellow
-*color4:            blue
-*color5:            magenta
-*color6:            cyan
-*color7:            lgray
-*color8:            dgray
-*color9:            lred
-*color10:           lgreen
-*color11:           lyellow
-*color12:           lblue
-*color13:           lmagenta
-*color14:           lcyan
-*color15:           white
-*background:        black
-*foreground:        lgray
-*cursorColor:       lgreen
-*cursorUL:          lgreen
-
-!! --- URxvt ---
-URxvt*title:                    URxvt
-URxvt.iconFile:                 /usr/share/icons/Antsy/48x48/apps/terminal.svg
-URxvt*termName:                 rxvt-unicode-256color
-URxvt*saveLines:                2500
-URxvt*urgentOnBell:             true
-URxvt*font:                     xft:Hack Nerd Font:size=10,xft:DejaVu Sans:size=10,xft:Noto Emoji
-URxvt*boldFont:                 xft:Hack Nerd Font:size=10:style=Bold,xft:DejaVu Sans:size=10:style=Bold,xft:Noto Emoji
-URxvt*italicFont:               xft:Hack:size=10:style=Italic,xft:DejaVu Serif:size=10:style=Italic,xft:Noto Emoji
-URxvt*boldItalicFont:           xft:Hack:size=10:style=Bold Italic,xft:DejaVu Serif:size=10:style=Bold Italic,xft:Noto Emoji
-URxvt*intensityStyles:          true
-URxvt*lineSpace:                0
-URxvt*letterSpace:              1
-URxvt*cursorBlink:              true
-URxvt*cursorUnderline:          true
-URxvt*colorULMode:              on
-URxvt*background:               bgcolor
-URxvt*transparent:              false
-URxvt*depth:                    32
-URxvt*shading:                  10
-URxvt*internalBorder:           3
-URxvt*scrollBar:                false
-URxvt*perl-ext-common:          default,matcher
-!URxvt.perl-ext:
-!URxvt.perl-ext-common:
-URxvt.url-launcher:             xdg-open
-URxvt.matcher.button:           1
-
+*color0:            #000000
+*color1:            #c23621
+*color2:            #25bc24
+*color3:            #adad27
+*color4:            #492ee1
+*color5:            #d338d3
+*color6:            #33bbc8
+*color7:            #cbcccd
+*color8:            #818383
+*color9:            #fc391f
+*color10:           #31e722
+*color11:           #eaec23
+*color12:           #5833ff
+*color13:           #f935f8
+*color14:           #14f0f0
+*color15:           #e9ebeb
+*background:        #000000
+*foreground:        #cbcccd
+*cursorColor:       #31e722
+*cursorUL:          #31e722
 
 !! --- Xterm ---
 XTerm.termName:             xterm-256color
-xterm*faceName:             Hack Nerd Font
+xterm*faceName:             Hack
 xterm*fontWarnings:         2
 xterm*faceSize:             10
 xterm*allowBoldFonts:       true

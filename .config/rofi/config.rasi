@@ -1,25 +1,28 @@
 configuration {
-    modi: "window,drun,run,filebrowser,combi";
-    location: 0;
+    modi:                   "drun,run,window";
+    terminal:               "rofi-sensible-terminal";
+    show-icons:             true;
+    sort:                   false;
+    fixed-num-lines:        false;
+    click-to-exit:          true;
     yoffset: -120;
-    xoffset: 0;
-    fixed-num-lines: false;
-    show-icons: true;
-    terminal: "rofi-sensible-terminal";
-    sort: true;
-    click-to-exit: true;
 
-/**
-    // display-window: "  Windows";
-    // display-run: "  Run";
-    // display-drun: "  Applications";
-**/
+    display-drun:           "Start >";
+    display-run:            "Run >";
+    display-window:         "Focus >";
+    display-ssh:            "Connect >";
+    display-filebrowser:    "Browse >";
 
-    theme: ".current";
     filebrowser {
-        directory: "~/";
-        sorting-method: "name";
-        directories-first: true;
+        directory:          "~/";
+        sorting-method:     "name";
+        directories-first:  true;
+    }
+
+    timeout {
+        delay: 10;
+        action: "kb-cancel";
     }
 }
-/* vim:ft=css
+
+@theme "awesome"
